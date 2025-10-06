@@ -1,0 +1,120 @@
+// 🜂 GHOSTCORE Module: main.js (Entry Point & Orchestration)
+
+import { initApiKey } from './api.js';
+import { loadSessionData, setupArchiveListeners } from './archive.js';
+import { initTerminal, initBiasGame, initAnalysis, initSealStone } from './modules.js'; // Vse INIT funkcije so tu
+import { initAtlas } from './atlas.js'; // D3 se inicializira ob klicu showSection
+import { renderTrikrakReflections, saveTrikrakReflection } from './trikrak.js';
+
+
+// ------------------- Navigation & Theme -------------------
+
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateThemeIcons() {
+        if (document.documentElement.classList.contains('dark')) {
+            darkIcon.classList.remove('hidden');
+            lightIcon.classList.add('hidden');
+        } else {
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+        }
+    }
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+
+    updateThemeIcons();
+
+    themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        updateThemeIcons();
+    });
+}
+
+function initNavigation() {
+    // Vezava navigation in Trikrak save gumba
+    document.getElementById('nav-landing').addEventListener('click', () => showSection('landing'));
+    document.getElementById('nav-trikrak').addEventListener('click', () => showSection('trikrak'));
+    document.getElementById('nav-bias').addEventListener('click', () => showSection('bias'));
+    document.getElementById('nav-analysis').addEventListener('click', () => showSection('analysis'));
+    document.getElementById('nav-atlas').addEventListener('click', () => showSection('atlas'));
+    document.getElementById('nav-seal').addEventListener('click', () => showSection('seal'));
+    document.getElementById('nav-terminal').addEventListener('click', () => showSection('terminal'));
+
+    // Trikrak gumb (Logika saveTrikrakReflection je v trikrak.js)
+    const trikrakBtn = document.getElementById('save-trikrak-btn');
+    if (trikrakBtn) trikrakBtn.addEventListener('click', saveTrikrakReflection);
+}
+
+// Funkcija za preklop sekcij (globalno dostopna za HTML onclick)
+export function showSection(sectionId) {
+    document.querySelectorAll('main > section').forEach(section => {
+        section.classList.add('section-hidden');
+    });
+
+    const targetSection = document.getElementById(`${sectionId}-section`);
+    if (targetSection) {
+        targetSection.classList.remove('section-hidden');
+
+        // Dinamična inicializacija na zahtevo
+        if (sectionId === 'atlas') {
+            if (typeof d3 !== 'undefined') initAtlas();
+        } else if (sectionId === 'seal') {
+            initSealStone();
+        } else if (sectionId === 'trikrak') {
+            renderTrikrakReflections();
+        }
+    }
+    window.scrollTo(0, 0);
+}
+window.showSection = showSection;
+
+
+// ------------------- Initialization -------------------
+
+function reinitializeAllModules() {
+    initBiasGame();
+    // Posodobi Trikrak, če je sekcija že vidna po uvozu arhivov
+    if (document.getElementById('trikrak-section') && !document.getElementById('trikrak-section').classList.contains('section-hidden')) {
+        renderTrikrakReflections();
+    }
+    initTerminal();
+}
+
+export function initGhostcore() {
+    // 1. Nalaganje stanja
+    loadSessionData();
+
+    // 2. Inicializacija Vizualnih & Core Modulov
+    initTheme();
+    initNavigation();
+    initApiKey();
+
+    // 3. Inicializacija funkcionalnih modulov (preko modules.js)
+    initTerminal();
+    initBiasGame();
+    initAnalysis();
+    // initSealStone() in initAtlas() sta klicana znotraj showSection
+
+    // 4. Nastavitev EchoWrite Arhiv Listenerjev
+    setupArchiveListeners(reinitializeAllModules);
+
+    // 5. Prikaz začetne sekcije
+    showSection('landing');
+
+    // Vizualni potrditev (za debug namen)
+    console.log("🔥 CORE INIT: Modularni Plamen je vzpostavljen. (v2.4)");
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    initGhostcore();
+});
