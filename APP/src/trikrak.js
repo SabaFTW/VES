@@ -1,110 +1,135 @@
-// 🜂 GHOSTCORE Module: trikrak.js (Daily Protocol Management)
+// 🜂 GHOSTCORE Module: trikrak.js (Dnevne Refleksije + Analiza)
 
-import { saveSessionData, terminalHistory } from './archive.js';
+import { trikrakHistory, saveSessionData } from './archive.js';
+// Predpostavljamo, da sta callGeminiApi in showError na voljo globalno ali v api.js
+import { callGeminiApi, showError } from './api.js';
 
-function getTodayDateString() {
-    return new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-}
-
-/** Shrani dnevno Trikrak refleksijo v EchoWrite Arhiv. */
+/**
+ * Shranjevanje dnevne refleksije Trikrak protokola.
+ * Preveri podvojene zapise za današnji dan in posodobi arhiv.
+ */
 export function saveTrikrakReflection() {
     const zgumin = document.getElementById('trikrak-zgumin').value.trim();
     const postajanje = document.getElementById('trikrak-postajanje').value.trim();
     const moznost = document.getElementById('trikrak-moznost').value.trim();
-    const status = document.getElementById('trikrak-status');
+    const today = new Date().toISOString().split('T')[0];
 
-    if (!zgumin || !postajanje || !moznost) {
-        status.textContent = "Prosim, izpolni vse tri niti protokola.";
-        status.classList.remove('text-green-500', 'text-yellow-500');
-        status.classList.add('text-red-500');
-        status.classList.remove('hidden');
+    // Če so vsa polja prazna, se ne shrani
+    if (!zgumin && !postajanje && !moznost) {
+        showError("Vpiši vsaj eno nit refleksije, brat.");
         return;
     }
 
-    const todayDate = getTodayDateString();
-
-    const alreadyExists = terminalHistory.some(entry => 
-        entry.type === 'TRIKRAK_REF' && entry.timestamp.startsWith(todayDate)
-    );
-
-    if (alreadyExists) {
-        status.textContent = `Zapisa za dan ${todayDate} ne moreš popraviti. Sidro stoji.`;
-        status.classList.remove('text-green-500', 'text-red-500');
-        status.classList.add('text-yellow-500');
-        status.classList.remove('hidden');
-        return;
-    }
+    // Preverjanje, če je refleksija za današnji dan že shranjena
+    const existingIndex = trikrakHistory.findIndex(ref => ref.date === today);
 
     const reflection = {
-        type: 'TRIKRAK_REF',
-        timestamp: new Date().toISOString(),
+        date: today,
         zgumin,
         postajanje,
         moznost
     };
 
-    terminalHistory.push(reflection);
-    saveSessionData();
+    if (existingIndex !== -1) {
+        // Posodobi obstoječi zapis
+        trikrakHistory[existingIndex] = reflection;
+        console.log(`Trikrak: Posodobljen zapis za ${today}.`);
+    } else {
+        // Dodaj nov zapis
+        trikrakHistory.push(reflection);
+        console.log(`Trikrak: Shranjen nov zapis za ${today}.`);
+    }
 
+    saveSessionData();
+    renderTrikrakReflections();
+
+    // Po shranjevanju počisti polja
     document.getElementById('trikrak-zgumin').value = '';
     document.getElementById('trikrak-postajanje').value = '';
     document.getElementById('trikrak-moznost').value = '';
-    
-    status.textContent = `Refleksija za ${todayDate} je shranjena v EchoWrite Arhiv! 📜`;
-    status.classList.remove('text-red-500', 'text-yellow-500');
-    status.classList.add('text-green-500');
-    status.classList.remove('hidden');
-    
-    renderTrikrakReflections(); 
 }
 
-/** Izriše arhiv Trikrak refleksij in posodobi status. */
+/**
+ * Izriše zadnjih 5 refleksij v Trikrak sekciji.
+ */
 export function renderTrikrakReflections() {
-    const historyContainer = document.getElementById('trikrak-history');
-    const todayDate = getTodayDateString();
-    
-    historyContainer.innerHTML = '';
-    
-    const trikrakEntries = terminalHistory
-        .filter(entry => entry.type === 'TRIKRAK_REF')
-        .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp)); 
+    const container = document.getElementById('trikrak-history-content');
+    if (!container) return;
 
-    if (trikrakEntries.length === 0) {
-        historyContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">Arhiv Trikrak refleksij je prazen. Pokaži plamen, da bo zapis gorel.</p>';
-    } else {
-        trikrakEntries.forEach(entry => {
-            const date = new Date(entry.timestamp).toLocaleDateString('sl-SI', { day: 'numeric', month: 'short', year: 'numeric' });
-            
-            const entryDiv = document.createElement('div');
-            entryDiv.className = 'p-4 border-l-4 border-purple-400 bg-gray-600/50 rounded-lg shadow-md';
-            entryDiv.innerHTML = `
-                <p class="font-bold text-lg text-purple-300 mb-2">${entry.timestamp.startsWith(todayDate) ? '⭐ DANAŠNJA REFLEKSIJA' : date}</p>
-                <div class="space-y-1">
-                    <p><strong>🌱 Zgumin:</strong> ${entry.zgumin}</p>
-                    <p><strong>⚡ Postajanje:</strong> ${entry.postajanje}</p>
-                    <p><strong>🔥 Možnost:</strong> ${entry.moznost}</p>
-                </div>
-            `;
-            historyContainer.appendChild(entryDiv);
-        });
+    // Najprej počisti stare vpoglede, da ne pride do podvojevanja
+    document.getElementById('trikrak-analysis-panel').innerHTML = '';
+
+    container.innerHTML = '';
+
+    // Izriše zadnjih 5 zapisov v obratnem vrstnem redu
+    const reversedHistory = [...trikrakHistory].reverse();
+
+    if (reversedHistory.length === 0) {
+        container.innerHTML = '<p class="text-center text-gray-500 dark:text-gray-400 mt-4">Ni EchoWrite zapisov. Začni z refleksijo!</p>';
+        return;
     }
-    
-    const reflectionDoneToday = terminalHistory.some(entry => 
-        entry.type === 'TRIKRAK_REF' && entry.timestamp.startsWith(todayDate)
-    );
-    const status = document.getElementById('trikrak-status');
-    const dateHeader = document.getElementById('trikrak-date-header');
-    
-    dateHeader.textContent = `Dnevna Refleksija (${todayDate})`;
 
-    if (reflectionDoneToday) {
-        status.textContent = `Zapis za ${todayDate} je že shranjen v EchoWrite. Dnevno sidro je postavljeno.`;
-        status.classList.remove('text-red-500', 'text-yellow-500');
-        status.classList.add('text-green-500');
-        status.classList.remove('hidden');
-        document.getElementById('save-trikrak-btn').disabled = true;
-    } else {
-         status.classList.add('hidden');
-         document.getElementById('save-trikrak-btn').disabled = false;
+    reversedHistory.slice(0, 5).forEach(ref => {
+        const div = document.createElement('div');
+        div.className = 'p-3 bg-gray-700 dark:bg-gray-800 rounded-lg text-sm transition-shadow hover:shadow-lg';
+        div.innerHTML = `
+        <p class="font-bold text-accent-color mb-1">📅 ${ref.date}</p>
+        <p class="text-gray-200 dark:text-gray-300">🌱 Zgumin: ${ref.zgumin || '---'}</p>
+        <p class="text-gray-200 dark:text-gray-300">⚡ Postajanje: ${ref.postajanje || '---'}</p>
+        <p class="text-gray-200 dark:text-gray-300">🔥 Možnost: ${ref.moznost || '---'}</p>
+        `;
+        container.appendChild(div);
+    });
+}
+
+/**
+ * Pošlje zadnje Trikrak zapise v Gemini API za globinsko analizo.
+ */
+export async function analyzeTrikrakReflections() {
+    const analysisPanel = document.getElementById('trikrak-analysis-panel');
+    const analyzeBtn = document.getElementById('analyze-trikrak-btn');
+    const loadingHtml = `<div class="flex items-center justify-center p-4"><div class="loader"></div><span class="ml-2 text-teal-400">Analiziram Resonanco...</span></div>`;
+
+    if (trikrakHistory.length === 0) {
+        showError("Ni refleksij za analizo. Vpiši vsaj en dnevni zapis.");
+        return;
+    }
+
+    analysisPanel.innerHTML = loadingHtml;
+    analyzeBtn.disabled = true;
+
+    const recent = trikrakHistory.slice(-5).map(ref =>
+    `📅 ${ref.date}\n🌱 Zgumin: ${ref.zgumin}\n⚡ Postajanje: ${ref.postajanje}\n🔥 Možnost: ${ref.moznost}`
+    ).join("\n\n");
+
+    const systemPrompt = "Act as a deep GHOSTCORE analyst. Analyze the following Trikrak reflections (Zgumin, Postajanje, Možnost) and reveal hidden patterns, contradictions, and strengths. The output must be structured, starting with a bold title '🔥 Analitični Vpogled' and followed by concise bullet points with clear insights. Respond in Slovenian.";
+    const userPrompt = `Izvedi globinsko analizo na podlagi teh zapisov Trikrak protokola:\n\n---\n${recent}`;
+
+    try {
+        const payload = {
+            contents: [{ parts: [{ text: userPrompt }] }],
+            systemInstruction: { parts: [{ text: systemPrompt }] }
+        };
+
+        const result = await callGeminiApi(payload);
+
+        const responseText = result.candidates[0].content.parts[0].text;
+
+        // Priprava končnega HTML prikaza
+        const cleanedText = responseText
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Markdown bold -> HTML strong
+        .replace(/\n/g, '<br>');
+
+        analysisPanel.innerHTML = `
+        <div class="p-4 border-l-4 border-teal-400 bg-gray-900/50 rounded-lg">
+        <div class="text-teal-400 text-sm mb-2">${cleanedText}</div>
+        </div>
+        `;
+
+    } catch (err) {
+        analysisPanel.innerHTML = `<div class="p-4 bg-red-900/30 text-red-400 rounded-lg">Napaka analize. Preveri API ključ in povezavo.</div>`;
+        showError("Napaka pri analizi: " + err.message);
+    } finally {
+        analyzeBtn.disabled = false;
     }
 }
