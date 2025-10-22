@@ -7,7 +7,7 @@ export default defineConfig({
     base: './',
     build: {
         // Izhodni imenik na root nivoju (VES/dist)
-        outDir: '../dist',
+        outDir: '../../dist',
         emptyOutDir: true,
         assetsDir: 'assets',
         sourcemap: false,
@@ -30,8 +30,7 @@ export default defineConfig({
         host: true,
         cors: true
     },
-    // Povezava public direktorija v APP/public
-    publicDir: 'APP/public',
+
         define: {
             '__APP_VERSION__': JSON.stringify('2.3.0'),
                             '__BUILD_TIME__': JSON.stringify(new Date().toISOString())
