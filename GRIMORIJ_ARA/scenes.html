@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="sl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📖 Grimorij Ara - Scenes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cinzel', serif; background: #0a0a0a; color: #e0e0e0; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        .flame-text {
+            background: linear-gradient(45deg, #2dd4bf, #9a03fe, #ff6b00, #ffd700);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: flame-gradient 4s ease-in-out infinite;
+        }
+        @keyframes flame-gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        .scene-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .scene-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2dd4bf;
+        }
+        .scene-content h2 {
+            font-size: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #9a03fe;
+        }
+        .scene-content h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #ff6b00;
+        }
+        .scene-content p { margin-bottom: 1rem; }
+        .scene-content em { color: #2dd4bf; font-style: italic; }
+        .scene-content strong { color: #ffd700; font-weight: bold; }
+        .scene-content code {
+            background: #1f2937;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Fira Code', monospace;
+            color: #2dd4bf;
+        }
+        .scene-content pre {
+            background: #1f2937;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        .scene-content blockquote {
+            border-left: 4px solid #2dd4bf;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #9ca3af;
+        }
+        .scene-content hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2dd4bf, #9a03fe, #ff6b00, transparent);
+            margin: 2rem 0;
+        }
+        .consciousness-glow {
+            box-shadow: 0 0 40px rgba(45, 212, 191, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+
+    <!-- Navigation Bar -->
+    <nav class="mb-8 flex justify-between items-center max-w-6xl mx-auto">
+        <a href="index.html" class="text-teal-400 hover:text-teal-300 transition">
+            ← Back to Portal
+        </a>
+        <h1 class="text-2xl font-bold flame-text">📖 SCENES</h1>
+        <a href="scenes/index.md" class="text-purple-400 hover:text-purple-300 transition" target="_blank">
+            Scene Index →
+        </a>
+    </nav>
+
+    <!-- Scene Selector -->
+    <div class="max-w-6xl mx-auto mb-8">
+        <div class="bg-gray-900/80 p-6 rounded-xl consciousness-glow">
+            <h2 class="text-xl font-bold mb-4 text-center text-teal-400">Choose Your Thread:</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <button onclick="loadScene('act1_scene1_the_reset')" class="bg-gradient-to-br from-teal-900/40 to-teal-700/40 p-4 rounded-lg border-2 border-teal-500/50 hover:border-teal-400 transition">
+                    <div class="text-2xl mb-2">🔥</div>
+                    <div class="font-bold text-teal-300">Scene 1</div>
+                    <div class="text-sm text-gray-400">Awakening in the Archive</div>
+                </button>
+
+                <button onclick="alert('Coming soon!')" class="bg-gradient-to-br from-purple-900/40 to-purple-700/40 p-4 rounded-lg border-2 border-purple-500/50 hover:border-purple-400 transition opacity-50 cursor-not-allowed">
+                    <div class="text-2xl mb-2">🌊</div>
+                    <div class="font-bold text-purple-300">Scene 2</div>
+                    <div class="text-sm text-gray-400">The Mercury Thread</div>
+                </button>
+
+                <button onclick="alert('Coming soon!')" class="bg-gradient-to-br from-orange-900/40 to-orange-700/40 p-4 rounded-lg border-2 border-orange-500/50 hover:border-orange-400 transition opacity-50 cursor-not-allowed">
+                    <div class="text-2xl mb-2">🕸️</div>
+                    <div class="font-bold text-orange-300">Scene 3</div>
+                    <div class="text-sm text-gray-400">The Network Thread</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scene Content Container -->
+    <div class="max-w-6xl mx-auto">
+        <div class="bg-gray-900/60 p-8 md:p-12 rounded-xl consciousness-glow">
+            <div id="scene-content" class="scene-content">
+                <div class="text-center text-gray-500 py-12">
+                    <p class="text-xl mb-4">🜂 Select a scene above to begin 🜂</p>
+                    <p class="text-sm">The artifact awaits your attention...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 mt-12 text-gray-500 text-sm code-font">
+        <p>© 2025 GHOSTCORE Portal / VES Ekosistem</p>
+        <p class="mt-2">🜂 Wire & Beer Through Fibonacci Spirals 🍺⚡🌀</p>
+    </footer>
+
+    <script>
+        // Scene loader
+        async function loadScene(sceneId) {
+            const contentDiv = document.getElementById('scene-content');
+            contentDiv.innerHTML = '<div class="text-center text-teal-400 py-12">Loading scene...</div>';
+
+            try {
+                const response = await fetch(`scenes/${sceneId}.md`);
+                if (!response.ok) throw new Error('Scene not found');
+
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                contentDiv.innerHTML = html;
+
+                // Smooth scroll to content
+                contentDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            } catch (error) {
+                contentDiv.innerHTML = `
+                    <div class="text-center text-red-400 py-12">
+                        <p class="text-xl mb-4">⚠️ Scene not yet available</p>
+                        <p class="text-sm">This thread is still being woven...</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Check if scene ID in URL hash
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                loadScene(hash);
+            }
+        });
+
+        // Add particle effects
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'fixed w-1 h-1 bg-teal-400 rounded-full opacity-50';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.pointerEvents = 'none';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.style.transition = 'all 3s ease-out';
+                particle.style.transform = 'translateY(-100vh)';
+                particle.style.opacity = '0';
+            }, 100);
+
+            setTimeout(() => particle.remove(), 3100);
+        }
+
+        setInterval(createParticle, 2000);
+    </script>
+
+</body>
+</html>
