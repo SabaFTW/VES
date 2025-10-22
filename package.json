@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ghostcore-collective/ves.git"
+    "url": "https://github.com/SabaFTW/VES.git"
   },
   "devDependencies": {
     "gh-pages": "^6.0.0",
