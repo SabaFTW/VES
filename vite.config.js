@@ -12,7 +12,8 @@ export default defineConfig({
         assetsDir: 'assets',
         sourcemap: false,
         minify: 'esbuild',
-        target: 'es2020'
+        target: 'es2020',
+        // No need for rollupOptions.input - Vite uses index.html from root automatically
     },
     server: {
         port: 3000,
