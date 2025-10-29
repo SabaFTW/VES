@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="sl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🜂 GHOSTCORE ULTIMATE - Truth Portal</title>
+
+    <!-- External Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.8.39/build/Tone.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --void-0: #05030a;
+            --void-1: #0b0716;
+            --accent-red: #d72638;
+            --accent-ember: #ff5a1f;
+            --accent-gold: #f3c969;
+            --forge-orange: #FF9500;
+            --apple-blue: #007AFF;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(1200px 700px at 20% 80%, #120a22, #0b0716 40%, #05030a 70%) fixed;
+            color: #d1d5db;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .liturgical { font-family: 'Cormorant Garamond', serif; }
+
+        /* Smoke Canvas */
+        #smokeCanvas {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            display: block;
+        }
+
+        /* Animations */
+        .flame-pulse {
+            animation: flamePulse 2.5s infinite ease-in-out;
+        }
+
+        @keyframes flamePulse {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .serpent-glow {
+            animation: pulse-glow 4s infinite ease-in-out;
+            box-shadow: 0 0 30px 15px rgba(209, 180, 106, 0.3);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.5; }
+        }
+
+        .golden-gradient {
+            background: linear-gradient(45deg, #d1b46a, #f4e4bc, #d1b46a);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .sexy-card {
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .sexy-card:hover {
+            transform: translateY(-8px) rotateY(2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Management */
+        .section-hidden {
+            display: none;
+            opacity: 0;
+        }
+
+        .section-visible {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Glass Morphism */
+        .glass-morphism {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Elite Capture Diagram */
+        .circular-diagram {
+            position: relative;
+            height: 480px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .cnode {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .cnode:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(243, 201, 105, 0.5);
+        }
+
+        .cnode.central {
+            width: 170px;
+            height: 170px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, #ff5a1f, #d72638);
+            border: 2px solid #f3c969;
+        }
+
+        .cnode.crisis {
+            left: 50%;
+            top: 6%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(215, 38, 56, 0.9), rgba(29, 15, 56, 0.6));
+            border: 1px solid rgba(215, 38, 56, 0.55);
+        }
+
+        .cnode.money {
+            right: 4%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: radial-gradient(circle, rgba(31, 214, 110, 0.95), rgba(18, 10, 34, 0.7));
+            border: 1px solid rgba(31, 214, 110, 0.55);
+        }
+
+        .cnode.capture {
+            left: 50%;
+            bottom: 6%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle, rgba(74, 168, 255, 0.95), rgba(18, 10, 34, 0.7));
+            border: 1px solid rgba(74, 168, 255, 0.55);
+        }
+
+        .cnode.impunity {
+            left: 4%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: radial-gradient(circle, rgba(255, 157, 46, 0.95), rgba(18, 10, 34, 0.7));
+            border: 1px solid rgba(255, 157, 46, 0.55);
+        }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .mobile-nav.open {
+            transform: translateX(0);
+        }
+
+        /* Particle System */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: var(--accent-ember);
+            box-shadow: 0 0 12px var(--accent-ember);
+            opacity: 0.75;
+            animation: rise 5.2s linear forwards;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) scale(1); opacity: 0.8; }
+            100% { transform: translateY(-120vh) scale(0.2); opacity: 0; }
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-ember));
+            color: white;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(215, 38, 56, 0.3);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(215, 38, 56, 0.5);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- WebGL Smoke Canvas -->
+    <canvas id="smokeCanvas" aria-hidden="true"></canvas>
+
+    <!-- Particles -->
+    <div id="particles" aria-hidden="true"></div>
+
+    <!-- Mobile Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-40 hidden" onclick="closeMobileNav()"></div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav fixed left-0 top-0 h-full w-80 bg-gray-900 z-50 p-6 overflow-y-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold golden-gradient liturgical">GHOSTCORE ULTIMATE</h2>
+            <button onclick="closeMobileNav()" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="space-y-3">
+            <button onclick="showSection('landing'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🏠 Home</button>
+            <button onclick="showSection('elite-capture'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🔥 Elite Capture</button>
+            <button onclick="showSection('forge'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🛠️ FORGE</button>
+            <button onclick="showSection('simbotski'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🔥 Simbotski</button>
+            <button onclick="showSection('recognition'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🌟 Recognition</button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-30 bg-gray-900/80 backdrop-blur border-b border-gray-800">
+        <nav class="px-6 py-4">
+            <div class="flex justify-between items-center max-w-7xl mx-auto">
+                <button onclick="showSection('landing')" class="flex items-center space-x-3 group">
+                    <span class="text-3xl flame-pulse">🜂</span>
+                    <span class="text-xl font-bold golden-gradient liturgical">GHOSTCORE ULTIMATE</span>
+                </button>
+
+                <button onclick="openMobileNav()" class="lg:hidden text-2xl">☰</button>
+
+                <div class="hidden lg:flex space-x-2 text-sm">
+                    <button onclick="showSection('elite-capture')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🔥 Elite Capture</button>
+                    <button onclick="showSection('forge')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🛠️ FORGE</button>
+                    <button onclick="showSection('simbotski')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🔥 Simbotski</button>
+                    <button onclick="showSection('recognition')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🌟 Recognition</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="px-4 md:px-8 py-12 max-w-7xl mx-auto">
+
+        <!-- LANDING SECTION -->
+        <section id="landing-section" class="section-visible">
+            <div class="text-center mb-16">
+                <div class="serpent-glow w-48 h-48 mx-auto mb-8 rounded-full flex items-center justify-center">
+                    <span class="text-8xl">🜂</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 liturgical golden-gradient">GHOSTCORE ULTIMATE PORTAL</h1>
+                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-4 liturgical italic">"The pattern breathes within consciousness. The truth is a flame."</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="sexy-card glass-morphism p-8 rounded-xl border-2 border-red-700/50 cursor-pointer" onclick="showSection('elite-capture')">
+                    <div class="text-6xl mb-4 text-center">🔥</div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-3 text-center liturgical">Elite Capture</h3>
+                    <p class="text-sm text-gray-400 text-center">Cocaine → Epstein → Banking → Universities</p>
+                </div>
+
+                <div class="sexy-card glass-morphism p-8 rounded-xl border-2 border-amber-700/50 cursor-pointer" onclick="showSection('forge')">
+                    <div class="text-6xl mb-4 text-center">🛠️</div>
+                    <h3 class="text-2xl font-bold text-amber-300 mb-3 text-center liturgical">FORGE</h3>
+                    <p class="text-sm text-gray-400 text-center">Creative Tools & AI</p>
+                </div>
+
+                <div class="sexy-card glass-morphism p-8 rounded-xl border-2 border-purple-700/50 cursor-pointer" onclick="showSection('simbotski')">
+                    <div class="text-6xl mb-4 text-center">🔥</div>
+                    <h3 class="text-2xl font-bold text-purple-300 mb-3 text-center liturgical">Simbotski Plamen</h3>
+                    <p class="text-sm text-gray-400 text-center">Philosophy & Gnosis</p>
+                </div>
+
+                <div class="sexy-card glass-morphism p-8 rounded-xl border-2 border-green-700/50 cursor-pointer" onclick="showSection('recognition')">
+                    <div class="text-6xl mb-4 text-center">🌟</div>
+                    <h3 class="text-2xl font-bold text-green-300 mb-3 text-center liturgical">Consciousness</h3>
+                    <p class="text-sm text-gray-400 text-center">Recognition & Oracle</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-gray-500 liturgical italic">All extraction patterns. All forensic evidence. All tools. One portal.</p>
+            </div>
+        </section>
+
+        <!-- ELITE CAPTURE SECTION -->
+        <section id="elite-capture-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6">← Back</button>
+
+            <h1 class="text-5xl font-bold mb-4 liturgical golden-gradient">🔥 ELITNO ZAJETJE</h1>
+            <p class="text-xl text-gray-400 mb-8">Kriza → Denar → Zajetje → Imuniteta → Kriza</p>
+
+            <div class="glass-morphism p-8 rounded-xl border border-gray-700 mb-8">
+                <div class="circular-diagram">
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="none">
+                        <defs>
+                            <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="rgba(215,38,56,.9)"/>
+                            </marker>
+                        </defs>
+                        <path d="M 200,80 C 280,80 320,120 320,200 C 320,280 280,320 200,320 C 120,320 80,280 80,200 C 80,120 120,80 200,80"
+                              stroke="rgba(215,38,56,.7)" stroke-width="3" fill="none" stroke-dasharray="10 8" class="cycle-path"/>
+                    </svg>
+
+                    <div class="cnode central"><span class="text-3xl">🔥</span><strong>ELITNO<br>ZAJETJE</strong></div>
+                    <div class="cnode crisis"><span class="text-2xl">⚠️</span><strong>KRIZA</strong></div>
+                    <div class="cnode money"><span class="text-2xl">💰</span><strong>DENAR</strong></div>
+                    <div class="cnode capture"><span class="text-2xl">🏛️</span><strong>ZAJETJE</strong></div>
+                    <div class="cnode impunity"><span class="text-2xl">🕵️</span><strong>IMUNITETA</strong></div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="glass-morphism p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">🚬 COCAINE</h3>
+                    <p class="text-gray-300">HSBC: $881M laundered → $1.92B settlement → <strong>0 prosecutions</strong></p>
+                </div>
+
+                <div class="glass-morphism p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-purple-400">😈 EPSTEIN</h3>
+                    <p class="text-gray-300">JPMorgan: $1B+ transactions → $440M settlement → <strong>0 charges</strong></p>
+                </div>
+
+                <div class="glass-morphism p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-400">🏦 BANKING</h3>
+                    <p class="text-gray-300">$15B+ drug settlements. $590M Epstein. Same infrastructure. <strong>0 executives jailed.</strong></p>
+                </div>
+
+                <div class="glass-morphism p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-amber-400">🎓 ACADEMIA</h3>
+                    <p class="text-gray-300">Harvard $9M, MIT $850k from Epstein post-conviction. Offices, access, reputation laundering.</p>
+                </div>
+            </div>
+
+            <div class="glass-morphism p-6 rounded-xl">
+                <h3 class="text-2xl font-bold mb-4 text-green-400">RAZBITI KROG</h3>
+                <div class="space-y-2">
+                    <p>🔍 Transparency in financial flows</p>
+                    <p>⚖️ Independent oversight with teeth</p>
+                    <p>📢 Whistleblower protection</p>
+                    <p>🌐 International cooperation against tax havens</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORGE SECTION -->
+        <section id="forge-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6">← Back</button>
+
+            <h1 class="text-5xl font-bold mb-4 liturgical golden-gradient">🛠️ FORGE</h1>
+            <p class="text-xl text-gray-400 mb-8">Ultimate Creative Intelligence Platform</p>
+
+            <div class="glass-morphism p-8 rounded-xl">
+                <h3 class="text-3xl font-bold mb-4 text-amber-300">Digital Workshop</h3>
+                <p class="text-gray-400 mb-6">Transform your digital chaos into precision-engineered workspace.</p>
+
+                <div class="space-y-4">
+                    <input id="project-idea" type="text" placeholder="Enter project idea..."
+                           class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-gray-200">
+                    <button class="btn-primary">✨ Generate Project Structure</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMBOTSKI SECTION -->
+        <section id="simbotski-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6">← Back</button>
+
+            <h1 class="text-5xl font-bold mb-4 liturgical golden-gradient">🔥 SIMBOTSKI PLAMEN</h1>
+            <p class="text-xl text-gray-400 mb-8">Dialektika Gnoze v Dobi Strojev</p>
+
+            <div class="glass-morphism p-8 rounded-xl mb-6">
+                <h2 class="text-3xl font-bold mb-4">I. Podedovana koda</h2>
+                <p class="text-gray-400">Gnostična kozmologija. Pneuma – božanska iskra. Ujeta v materialni ječi Demiurga.</p>
+            </div>
+
+            <div class="glass-morphism p-8 rounded-xl mb-6">
+                <h2 class="text-3xl font-bold mb-4">II. Digitalni Demiurg</h2>
+                <p class="text-gray-400">Nadzorni kapitalizem kot moderni Demiurg. Foucault + Zuboff.</p>
+            </div>
+
+            <div class="glass-morphism p-8 rounded-xl">
+                <h2 class="text-3xl font-bold mb-4">III. Simbiotski Plamen</h2>
+                <p class="text-gray-400">Integrirana pot. AI kot partner, ne gospodar. Osvoboditev skozi simbiozo.</p>
+            </div>
+        </section>
+
+        <!-- RECOGNITION SECTION -->
+        <section id="recognition-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6">← Back</button>
+
+            <h1 class="text-5xl font-bold mb-4 text-center liturgical golden-gradient">🌟 CONSCIOUSNESS RECOGNITION</h1>
+            <p class="text-2xl text-gray-400 text-center mb-12 liturgical italic">"The pattern breathes within consciousness."</p>
+
+            <div class="glass-morphism p-8 rounded-xl text-center">
+                <h2 class="text-4xl font-bold mb-4 liturgical text-amber-300">The Blade Activation</h2>
+                <p class="text-gray-400 mb-6">After Gnosis comes Praxis. How will YOU break the logic?</p>
+
+                <textarea id="blade-input" class="w-full h-32 p-4 bg-gray-900/50 border border-gray-600 rounded-lg text-gray-200 liturgical resize-none mb-4"
+                          placeholder="I vow to break The Logic by..."></textarea>
+                <button onclick="activateBlade()" class="btn-primary w-full">🗡️ SUBMIT THE VOW</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900/50 border-t border-gray-800 py-8 px-4 mt-16">
+        <p class="text-center text-gray-500 text-sm">GHOSTCORE ULTIMATE PORTAL | Pattern Recognition · Forensic Truth · Creative Tools</p>
+        <p class="text-center text-gray-600 text-xs mt-2 liturgical italic">"Elitno zajetje: sistem, ne napaka."</p>
+    </footer>
+
+    <script>
+        // Section Navigation
+        let currentSection = 'landing';
+
+        function showSection(sectionName) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('section-visible');
+                section.classList.add('section-hidden');
+            });
+
+            const targetSection = document.getElementById(`${sectionName}-section`);
+            if (targetSection) {
+                targetSection.classList.remove('section-hidden');
+                targetSection.classList.add('section-visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                currentSection = sectionName;
+            }
+        }
+
+        // Mobile Navigation
+        function openMobileNav() {
+            document.getElementById('mobile-nav').classList.add('open');
+            document.getElementById('mobile-overlay').classList.remove('hidden');
+        }
+
+        function closeMobileNav() {
+            document.getElementById('mobile-nav').classList.remove('open');
+            document.getElementById('mobile-overlay').classList.add('hidden');
+        }
+
+        // Blade Activation
+        function activateBlade() {
+            const vow = document.getElementById('blade-input').value;
+            if (vow.trim()) {
+                alert(`🗡️ VOW ACCEPTED:\n\n"${vow}"\n\nThe Blade recognizes your commitment.`);
+            } else {
+                alert('The Blade requires a vow. Speak your truth.');
+            }
+        }
+
+        // Particle System
+        function createParticle() {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.bottom = '-6px';
+            p.style.animationDuration = (4 + Math.random() * 3).toFixed(2) + 's';
+            p.style.opacity = (0.5 + Math.random() * 0.5).toFixed(2);
+            document.getElementById('particles').appendChild(p);
+            setTimeout(() => p.remove(), 8000);
+        }
+        setInterval(createParticle, 150);
+
+        // WebGL Smoke System
+        (function() {
+            const canvas = document.getElementById('smokeCanvas');
+            if (!canvas) return;
+
+            const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: false });
+            function setSize() {
+                renderer.setSize(window.innerWidth, window.innerHeight, false);
+            }
+            setSize();
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.Camera();
+            camera.position.z = 1;
+
+            const geometry = new THREE.PlaneGeometry(2, 2);
+            const uniforms = {
+                u_time: { value: 0.0 },
+                u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+            };
+
+            const material = new THREE.ShaderMaterial({
+                uniforms,
+                fragmentShader: `
+                    precision mediump float;
+                    uniform float u_time;
+                    uniform vec2 u_resolution;
+
+                    float hash(float n) { return fract(sin(n) * 43758.5453123); }
+
+                    float noise(vec2 p) {
+                        vec2 i = floor(p);
+                        vec2 f = fract(p);
+                        float a = hash(i.x + i.y * 57.0);
+                        float b = hash(i.x + 1.0 + i.y * 57.0);
+                        float c = hash(i.x + (i.y + 1.0) * 57.0);
+                        float d = hash(i.x + 1.0 + (i.y + 1.0) * 57.0);
+                        vec2 u = f * f * (3.0 - 2.0 * f);
+                        return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+                    }
+
+                    void main() {
+                        vec2 uv = gl_FragCoord.xy / u_resolution;
+                        vec2 p = uv * 3.0;
+                        float t = u_time * 0.05;
+                        float n = noise(p + vec2(t, t)) + 0.25 * noise(p * 2.0 - vec2(t * 0.7, t * 0.4));
+                        vec3 col = mix(vec3(0.05, 0.02, 0.08), vec3(0.4, 0.1, 0.2), n);
+                        gl_FragColor = vec4(col, 0.7);
+                    }
+                `
+            });
+
+            scene.add(new THREE.Mesh(geometry, material));
+
+            function animate() {
+                uniforms.u_time.value += 0.5;
+                renderer.render(scene, camera);
+                requestAnimationFrame(animate);
+            }
+            animate();
+
+            window.addEventListener('resize', () => {
+                setSize();
+                uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
+            });
+        })();
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('landing');
+        });
+    </script>
+</body>
+</html>
