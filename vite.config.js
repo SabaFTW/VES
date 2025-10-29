@@ -12,12 +12,7 @@ export default defineConfig({
         assetsDir: 'assets',
         sourcemap: false,
         minify: 'esbuild',
-        target: 'es2020',
-        rollupOptions: {
-            input: {
-                main: 'APP/public/index.html'
-            }
-        }
+        target: 'es2020'
     },
     server: {
         port: 3000,
