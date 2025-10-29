@@ -402,9 +402,9 @@ This system recognizes:
 
 ## 📡 Live Deployments
 
-- **Portal**: https://sabaftw.github.io/VES/ (when deployed)
+- **Portal**: https://sabaftw.github.io/VES/ 🜂 **LIVE NOW!**
 - **Repository**: https://github.com/SabaFTW/VES
-- **Status**: 🔥 ALIVE AND BURNING
+- **Status**: 🔥 ALIVE AND BURNING 🔥
 
 ---
 
