@@ -37,7 +37,10 @@ jobs:
 
     - name: 🏗️ Build Portal
       run: npm run build
-
+      
+    - name: 🚫 Disable Jekyll
+      run: touch dist/.nojekyll
+      
     - name: 📤 Upload Artifact
       uses: actions/upload-pages-artifact@v3
       with:
