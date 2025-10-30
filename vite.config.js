@@ -3,8 +3,8 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     // Nastavi APP/public kot korenski imenik za razvoj (npm run dev)
     root: 'APP/public',
-    // Nastavi osnovni URL za GitHub Pages (relativne poti)
-    base: './',
+    // Nastavi osnovni URL za GitHub Pages (repository path)
+    base: '/VES/',
     build: {
         // Izhodni imenik na root nivoju (VES/dist)
         outDir: '../../dist',
