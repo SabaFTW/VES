@@ -8,3 +8,7 @@ dist/
 *.bak
 *.tmp
 *~
+
+# Submodule directories (removed from tracking)
+Elysia/
+ves-elysia-deploy/
