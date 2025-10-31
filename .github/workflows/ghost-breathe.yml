@@ -7,6 +7,9 @@ on:
     - cron: '0 */6 * * *'  # Every 6 hours
   workflow_dispatch:  # Manual trigger
 
+permissions:
+  contents: write
+
 jobs:
   morning-check:
     name: 🌅 Morning Ritual
