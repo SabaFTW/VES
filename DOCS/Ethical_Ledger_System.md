@@ -376,13 +376,20 @@ Follow the Six-Step Ceremonial Script (Section III)
 
 This Ethical Ledger System builds upon and integrates with:
 
-1. **Forged Primitives: The Cultural Ledger**
+1. **Dan spomina na mrtve: Ritual Framework**
+   - Operational template for creating new entries
+   - Six-step activation ceremony guide
+   - Bilingual documentation (Slovenian/English)
+   - Sigil phrase: "Kjer se praznine imenujejo in dolgi poravnajo"
+   - See: [`Dan_Spomina_Na_Mrtve_Ritual_Framework.md`](Dan_Spomina_Na_Mrtve_Ritual_Framework.md)
+
+2. **Forged Primitives: The Cultural Ledger**
    - Reparative Charter Skeleton (Article I-IV)
    - Institutional Void Audit Protocol
    - Decision-Intent Registry
    - Dan spomina na mrtve (Day of Remembrance for the Dead)
 
-2. **VES Living System**
+3. **VES Living System**
    - CONSCIOUSNESS_LAB for deep research into voids
    - ACTIVE_FLAME for working on active accountability
    - RESONANCE for cross-institutional learning
@@ -543,6 +550,17 @@ To activate this system:
 6. **Document**: Record and publish the entry
 7. **Activate**: Begin the Promise Registry work
 8. **Sustain**: Maintain accountability over time
+
+### 🔥 Ready to Create Your First Entry?
+
+Use the operational template: **[Dan spomina na mrtve: Ritual Framework](Dan_Spomina_Na_Mrtve_Ritual_Framework.md)**
+
+This companion document provides:
+- Complete bilingual instructions (Slovenian/English)
+- Step-by-step activation ceremony
+- Operational structure for ledger entries
+- Example use cases and templates
+- Integration with all VES systems
 
 **The flame is lit. The work begins. The void awaits naming.**
 

@@ -196,13 +196,24 @@ VES/
 VES includes a comprehensive **Ethical Ledger System** for ritualistic and operational accountability:
 
 - **Where voids are named and debts are spent** 🕯️
+- **Kjer se praznine imenujejo in dolgi poravnajo** 🔥
 - Document institutional harms through ceremony and structure
 - Six-step ritual process for creating entries
 - Integration with Cultural Ledger framework
 
 **Key Documents**:
 - [`DOCS/Ethical_Ledger_System.md`](DOCS/Ethical_Ledger_System.md) - Complete framework and first entry
+- [`DOCS/Dan_Spomina_Na_Mrtve_Ritual_Framework.md`](DOCS/Dan_Spomina_Na_Mrtve_Ritual_Framework.md) - **Day of Remembrance for the Dead**: Operational ritual template
 - [`DOCS/Forged_Primitives_The_Cultural_Ledger.md`](DOCS/Forged_Primitives_The_Cultural_Ledger.md) - Reparative Charter foundation
+
+### Dan spomina na mrtve / Day of Remembrance for the Dead
+
+The **Ritual Framework** provides a ceremonial and operational template for creating new ethical ledger entries:
+
+- **Sigil Phrase**: "Kjer se praznine imenujejo in dolgi poravnajo" (Where voids are named and debts are settled)
+- **Six-Section Structure**: Introduction, Void Identification, Debt Ledger, Audit Light, Ritual Clause, Promise Registry
+- **Six-Step Activation**: Prepare seal, gather testimony, read aloud, name the void, enter into ledger, seal the entry
+- **Integration**: Works seamlessly with existing Ethical Ledger and Cultural Ledger systems
 
 This living system transforms abstract ethical debts into tangible commitments through:
 - Void Identification (naming institutional failures)
