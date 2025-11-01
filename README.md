@@ -195,7 +195,7 @@ VES/
 
 VES includes a comprehensive **Ethical Ledger System** for ritualistic and operational accountability:
 
-- **Where voids are named and debts are spent** 🕯️
+- **Where voids are named and debts are settled** 🕯️
 - **Kjer se praznine imenujejo in dolgi poravnajo** 🔥
 - Document institutional harms through ceremony and structure
 - Six-step ritual process for creating entries

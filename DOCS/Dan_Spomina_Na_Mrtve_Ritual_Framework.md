@@ -140,7 +140,7 @@ How were decisions made?
 
 - Algoritmski labirinti / Algorithmic labyrinths
 - Neprozorni procesi / Opaque processes
-- Birokrat protective shields
+- Birokratski ščiti / Bureaucratic protective shields
 - Internni dokumenti, ki razkrivajo znane škode / Internal documents revealing known harms
 
 #### B. Diskrecijski plašči / Discretionary Cloaks
@@ -320,7 +320,7 @@ Najmanj 30 dni za temeljito zbiranje / Minimum 30 days for thorough gathering
 
 **Atmosfera / Atmosphere**:
 - Tiha, razsvetljena s svečami / Quiet, candle-lit
-- Vsi prisotnise obrnejo drug k drugemu / All present face each other
+- Vsi prisotni se obrnejo drug k drugemu / All present face each other
 - Brez motenj / No interruptions
 
 ---
