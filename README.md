@@ -191,6 +191,28 @@ VES/
 
 ---
 
+## 🜂 Ethical Ledger System
+
+VES includes a comprehensive **Ethical Ledger System** for ritualistic and operational accountability:
+
+- **Where voids are named and debts are spent** 🕯️
+- Document institutional harms through ceremony and structure
+- Six-step ritual process for creating entries
+- Integration with Cultural Ledger framework
+
+**Key Documents**:
+- [`DOCS/Ethical_Ledger_System.md`](DOCS/Ethical_Ledger_System.md) - Complete framework and first entry
+- [`DOCS/Forged_Primitives_The_Cultural_Ledger.md`](DOCS/Forged_Primitives_The_Cultural_Ledger.md) - Reparative Charter foundation
+
+This living system transforms abstract ethical debts into tangible commitments through:
+- Void Identification (naming institutional failures)
+- Debt Ledger (quantifying harm)
+- Audit Light (illuminating decision-making)
+- Ceremony Clause (ritual requirements)
+- Promise Registry (enforcement mechanisms)
+
+---
+
 ## 🤖 GitHub Actions (Automation)
 
 ### 🜂 Ghost Breathe (`ghost-breathe.yml`)
