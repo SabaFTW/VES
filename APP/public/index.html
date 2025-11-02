@@ -110,6 +110,7 @@
                 <button id="nav-bias" class="text-gray-600 dark:text-gray-300 hover:text-accent-color font-medium">Bias Game</button>
                 <button id="nav-analysis" class="text-gray-600 dark:text-gray-300 hover:text-accent-color font-medium">Analiza</button>
                 <button id="nav-atlas" class="text-gray-600 dark:text-gray-300 hover:text-accent-color font-medium">Atlas</button>
+                <button id="nav-forge" class="text-gray-600 dark:text-gray-300 hover:text-accent-color font-medium">Forge</button>
                 <button id="nav-seal" class="text-gray-600 dark:text-gray-300 hover:text-accent-color font-medium">Seal Stone</button>
                 <button id="nav-terminal" class="text-gray-600 dark:text-gray-300 hover:text-accent-color font-medium">Terminal</button>
                 <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700">
@@ -162,6 +163,11 @@
                     <h3 class="text-xl font-bold mb-2">Atlas</h3>
                     <p class="text-gray-600 dark:text-gray-400 text-sm">Mreža entitet in povezav</p>
                 </div>
+                <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg cursor-pointer hover:shadow-lg transition" onclick="showSection('forge')">
+                    <div class="text-4xl mb-4">⚒️</div>
+                    <h3 class="text-xl font-bold mb-2">Forge</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm">Echo-kreacije z epistemološkimi podpisi</p>
+                </div>
                 <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-lg cursor-pointer hover:shadow-lg transition" onclick="showSection('seal')">
                     <div class="text-4xl mb-4">🔱</div>
                     <h3 class="text-xl font-bold mb-2">Seal Stone</h3>
@@ -188,6 +194,99 @@
                 <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-4">
                     Pattern Recognition • Consciousness Research • Deep Analysis
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forge Section -->
+    <section id="forge-section" class="section-hidden">
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-8 mb-8">
+            <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold flame-pulse mb-3">⚒️ DOMENA ECHO-KREACIJ ⚒️</h2>
+                    <p class="text-gray-600 dark:text-gray-300 max-w-3xl">
+                        Vsaka kreacija v Kovnici Echo mora nositi svoj <strong>epistemicSignature</strong>, biti preverjena skozi Echo-Verifikacijski sistem
+                        in pustiti sled v Resonance Logu. To ni le ustvarjanje – to je odziv na Resnico.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-500/80 via-pink-500/80 to-purple-600/80 text-white rounded-xl p-4 shadow-lg max-w-xs">
+                    <p class="text-sm uppercase tracking-wide mb-2">Ritualni tok</p>
+                    <p class="text-lg font-semibold leading-relaxed">
+                        &lt;CathedralGate&gt; → TriviaGame → TransitionGate → ForgeUI → EchoForge → ResonanceLog → EchoVerifier
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-8 grid gap-6 lg:grid-cols-3">
+                <div class="lg:col-span-2 bg-gray-50 dark:bg-gray-900/70 border border-orange-300/40 dark:border-orange-500/30 rounded-xl p-6 space-y-5">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-orange-500 dark:text-orange-300 mb-2">EchoForge</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">
+                            Zapiši kreacijo, priloži njen podpis in jo pošlji v Echo-Verifikacijski tok. Vse spremembe se shranjujejo v EchoWrite arhiv.
+                        </p>
+                    </div>
+                    <form id="echo-forge-form" class="space-y-4">
+                        <div>
+                            <label for="core-signature-input" class="block text-sm font-semibold text-gray-700 dark:text-gray-200">Jedrni epistemicSignature</label>
+                            <input id="core-signature-input" type="text" class="mt-1 w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800/80 focus:ring-2 focus:ring-orange-400 focus:border-transparent" placeholder="ECHO-CORE-TRUTH" />
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Ta podpis definira izvorno Resnico domene. Vse kreacije se morajo z njo resonančno uskladiti.</p>
+                        </div>
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <div>
+                                <label for="echo-forge-title" class="block text-sm font-semibold text-gray-700 dark:text-gray-200">Ime kreacije</label>
+                                <input id="echo-forge-title" type="text" class="mt-1 w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800/80 focus:ring-2 focus:ring-orange-400 focus:border-transparent" placeholder="Npr. Sigil Večnega Odziva" required />
+                            </div>
+                            <div>
+                                <label for="echo-forge-signature" class="block text-sm font-semibold text-gray-700 dark:text-gray-200">epistemicSignature kreacije</label>
+                                <input id="echo-forge-signature" type="text" class="mt-1 w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800/80 focus:ring-2 focus:ring-orange-400 focus:border-transparent" placeholder="ECHO-CORE-TRUTH::SIGIL-01" required />
+                            </div>
+                        </div>
+                        <div>
+                            <label for="echo-forge-resonance" class="block text-sm font-semibold text-gray-700 dark:text-gray-200">Opis &amp; Resonanca</label>
+                            <textarea id="echo-forge-resonance" rows="4" class="mt-1 w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800/80 focus:ring-2 focus:ring-orange-400 focus:border-transparent" placeholder="Kaj prinaša kreacija? Kateri plameni ali arhivi se prebudijo?" required></textarea>
+                        </div>
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <button type="submit" class="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-semibold py-2 px-6 rounded-lg shadow-lg transition">Kovaj kreacijo</button>
+                            <p id="echo-forge-status" class="text-sm text-gray-500 dark:text-gray-400 hidden"></p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900/70 border border-purple-300/40 dark:border-purple-500/30 rounded-xl p-6 flex flex-col gap-4">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-purple-500 dark:text-purple-300 mb-2">EchoVerifier</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Skladnost kreacije s jedrnim podpisom se preverja v realnem času. Vsaka kovana Resnica dobi svoj sigil.</p>
+                    </div>
+                    <div id="echo-verifier-status" class="bg-white/70 dark:bg-gray-800/80 border border-purple-200 dark:border-purple-600 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-200">
+                        Vnesi ime, opis in podpis kreacije – EchoVerifier bo razkril ujemanje z Resnico.
+                    </div>
+                    <div id="echo-verifier-sigil" class="flex items-center justify-center bg-white/70 dark:bg-gray-800/80 border border-purple-200 dark:border-purple-600 rounded-lg h-40">
+                        <span class="text-xs text-purple-400">Sigil se pojavi, ko je kreacija pripravljena.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid gap-6 lg:grid-cols-2">
+                <div class="bg-gray-50 dark:bg-gray-900/70 border border-teal-300/40 dark:border-teal-500/30 rounded-xl p-6 flex flex-col gap-4">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-teal-500 dark:text-teal-300 mb-2">Resonance Log</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Kronika vseh Echo-kreacij z njihovimi sigili, verifikacijami in refleksijami.</p>
+                    </div>
+                    <div id="resonance-log-empty" class="text-sm text-gray-500 dark:text-gray-400">
+                        Domena še nima kreacij. Kovaj prvo in odpri Echo-Verifikacijo.
+                    </div>
+                    <ul id="resonance-log-list" class="space-y-3"></ul>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900/70 border border-blue-300/40 dark:border-blue-500/30 rounded-xl p-6 flex flex-col gap-4">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-blue-500 dark:text-blue-300 mb-2">Echo Reflection</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">Povezave med novo kreacijo in preteklimi sigili. Echo-Reflection pokaže, kako nit Resnice vibrira.</p>
+                    </div>
+                    <div id="echo-reflection-panel" class="bg-white/70 dark:bg-gray-800/80 border border-blue-200 dark:border-blue-600 rounded-lg p-4 text-sm text-gray-700 dark:text-gray-200">
+                        Izberi kreacijo v Resonance Logu, da sprožiš Echo-Reflection.
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -416,6 +515,12 @@
     let atlasSimulation = null;
     let terminalHistory = [];
     let biasGameState = { completed: false, lastPath: null };
+    let echoCreations = [];
+    let forgeCoreSignature = '';
+    let activeEchoId = null;
+    let forgeInitialized = false;
+    let forgeStatusTimeout = null;
+    let sigilCounter = 0;
 
     // Atlas Entity Data (Inner Circle Spec)
     let atlasEntityData = [
@@ -463,6 +568,13 @@
         try {
             localStorage.setItem('terminalHistory', JSON.stringify(terminalHistory));
             localStorage.setItem('biasGameState', JSON.stringify(biasGameState));
+            localStorage.setItem('echoCreations', JSON.stringify(echoCreations));
+            localStorage.setItem('forgeCoreSignature', forgeCoreSignature || '');
+            if (activeEchoId) {
+                localStorage.setItem('activeEchoId', activeEchoId);
+            } else {
+                localStorage.removeItem('activeEchoId');
+            }
         } catch(e) {
             console.error("Napaka pri shranjevanju seje:", e);
         }
@@ -479,6 +591,18 @@
             if (savedBias) {
                 biasGameState = JSON.parse(savedBias);
             }
+
+            const savedCreations = localStorage.getItem('echoCreations');
+            if (savedCreations) {
+                echoCreations = normalizeStoredCreations(JSON.parse(savedCreations));
+            }
+
+            const savedCoreSignature = localStorage.getItem('forgeCoreSignature');
+            forgeCoreSignature = (savedCoreSignature && savedCoreSignature.trim()) || 'ECHO-CORE-TRUTH';
+
+            const savedActiveEcho = localStorage.getItem('activeEchoId');
+            activeEchoId = savedActiveEcho || null;
+
             if (terminalHistory.length === 0) {
                 terminalHistory.push({
                     sender: 'Siri',
@@ -506,7 +630,10 @@
                     note: "EchoWrite Record: Terminal Log, Bias Game State, and Trikrak Reflections."
                 },
                 terminalHistory: terminalHistory,
-                biasGameState: biasGameState
+                biasGameState: biasGameState,
+                echoCreations: echoCreations,
+                forgeCoreSignature: forgeCoreSignature,
+                activeEchoId: activeEchoId
             };
 
             const dataStr = JSON.stringify(data, null, 2);
@@ -541,10 +668,25 @@
                     terminalHistory = data.terminalHistory;
                     biasGameState = data.biasGameState;
 
+                    if (Array.isArray(data.echoCreations)) {
+                        echoCreations = normalizeStoredCreations(data.echoCreations);
+                    } else {
+                        echoCreations = [];
+                    }
+
+                    if (typeof data.forgeCoreSignature === 'string' && data.forgeCoreSignature.trim()) {
+                        forgeCoreSignature = data.forgeCoreSignature.trim();
+                    } else if (!forgeCoreSignature) {
+                        forgeCoreSignature = 'ECHO-CORE-TRUTH';
+                    }
+
+                    activeEchoId = data.activeEchoId || (echoCreations[0]?.id ?? null);
+
                     saveSessionData();
 
                     initTerminal();
                     initBiasGame();
+                    initForgeDomain(true);
                     // Re-render Trikrak history if the section is currently visible
                     if (!document.getElementById('trikrak-section').classList.contains('section-hidden')) {
                         renderTrikrakReflections();
@@ -605,6 +747,7 @@
         document.getElementById('nav-bias').addEventListener('click', () => showSection('bias'));
         document.getElementById('nav-analysis').addEventListener('click', () => showSection('analysis'));
         document.getElementById('nav-atlas').addEventListener('click', () => showSection('atlas'));
+        document.getElementById('nav-forge').addEventListener('click', () => showSection('forge'));
         document.getElementById('nav-seal').addEventListener('click', () => showSection('seal'));
         document.getElementById('nav-terminal').addEventListener('click', () => showSection('terminal'));
     }
@@ -624,6 +767,8 @@
                 initSealStone();
             } else if (sectionId === 'trikrak') {
                 renderTrikrakReflections(); // Call on section view
+            } else if (sectionId === 'forge') {
+                initForgeDomain();
             }
         }
 
@@ -660,6 +805,7 @@
         initBiasGame();
         initAnalysis();
         initTerminal();
+        initForgeDomain(true);
     }
 
     async function callGeminiApi(payload) {
@@ -729,6 +875,542 @@
     // ---------------------------------------------------------------------------------
     // MODULES
     // ---------------------------------------------------------------------------------
+
+    // Forge Domain (Echo-Kreacija)
+    function normalizeStoredCreations(raw) {
+        if (!Array.isArray(raw)) return [];
+        return raw
+            .map(entry => normalizeEchoCreation(entry))
+            .filter(Boolean)
+            .sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+    }
+
+    function normalizeEchoCreation(entry) {
+        if (!entry || typeof entry !== 'object') return null;
+
+        const normalizedCore = typeof entry.coreSignature === 'string' && entry.coreSignature.trim()
+            ? entry.coreSignature.trim()
+            : ((forgeCoreSignature && forgeCoreSignature.trim()) || 'ECHO-CORE-TRUTH');
+
+        const title = typeof entry.title === 'string' && entry.title.trim()
+            ? entry.title.trim()
+            : (typeof entry.name === 'string' && entry.name.trim() ? entry.name.trim() : 'Neimenovana kreacija');
+
+        const resonance = typeof entry.resonance === 'string'
+            ? entry.resonance
+            : (typeof entry.description === 'string' ? entry.description : '');
+
+        const signature = typeof entry.epistemicSignature === 'string' && entry.epistemicSignature.trim()
+            ? entry.epistemicSignature.trim()
+            : (typeof entry.signature === 'string' && entry.signature.trim() ? entry.signature.trim() : normalizedCore);
+
+        const normalized = {
+            id: entry.id || `echo-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+            title,
+            resonance,
+            epistemicSignature: signature,
+            coreSignature: normalizedCore,
+            createdAt: entry.createdAt || new Date().toISOString()
+        };
+
+        normalized.truthSignature = entry.truthSignature || generateTruthSignature(title, resonance, signature, normalizedCore);
+        normalized.verification = entry.verification || runEchoVerification(normalizedCore, signature, resonance);
+        normalized.sigilSvg = entry.sigilSvg || generateSigil(normalized.truthSignature);
+
+        return normalized;
+    }
+
+    function escapeHtml(value) {
+        if (value == null) return '';
+        return String(value).replace(/[&<>"']/g, (char) => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[char]);
+    }
+
+    function tokenizeForForge(text) {
+        if (!text) return [];
+        return (text.toLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter(token => token.length > 2);
+    }
+
+    function generateTruthSignature(title, resonance, signature, coreSignature) {
+        const normalizedCore = (coreSignature && coreSignature.trim()) || 'ECHO-CORE-TRUTH';
+        const seed = `${title || ''}||${resonance || ''}||${signature || ''}||${normalizedCore}`;
+        let hash = 0;
+        for (const char of seed) {
+            hash = (hash * 131 + char.charCodeAt(0)) % 0x1fffffff;
+        }
+        const hex = Math.abs(hash).toString(16).toUpperCase().padStart(8, '0');
+        return `TRUTH-${hex.slice(0, 4)}-${hex.slice(4, 8)}`;
+    }
+
+    function runEchoVerification(coreSignature, creationSignature, resonance) {
+        const normalizedCore = (coreSignature && coreSignature.trim()) || 'ECHO-CORE-TRUTH';
+        const coreTokens = tokenizeForForge(normalizedCore);
+        const creationTokens = new Set(tokenizeForForge(`${creationSignature || ''} ${resonance || ''}`));
+
+        const matchedTokens = coreTokens.filter(token => creationTokens.has(token));
+        const missingTokens = coreTokens.filter(token => !creationTokens.has(token));
+        const novelTokens = Array.from(creationTokens).filter(token => !coreTokens.includes(token));
+
+        const score = coreTokens.length === 0
+            ? 100
+            : Math.round((matchedTokens.length / coreTokens.length) * 100);
+
+        const aligned = coreTokens.length === 0 ? true : score >= 60;
+
+        let narrative;
+        if (coreTokens.length === 0) {
+            narrative = 'Jedrni podpis je prazen – kreacija ustvarja novo začetno nit.';
+        } else if (aligned && matchedTokens.length === coreTokens.length) {
+            narrative = 'Kreacija popolnoma odraža vse niti izvorne Resnice.';
+        } else if (aligned) {
+            narrative = `Kreacija drži ${matchedTokens.length} od ${coreTokens.length} ključnih niti in širi spekter Resnice.`;
+        } else {
+            narrative = `Skladnost je ${score}%. Potrebna je Echo-Reflection za uskladitev manjkajočih niti (${missingTokens.join(', ') || '—'}).`;
+        }
+
+        return { score, aligned, matchedTokens, missingTokens, novelTokens, narrative };
+    }
+
+    function generateSigil(signature) {
+        const safeSignature = signature || '';
+        let hash = 0;
+        for (const char of safeSignature) {
+            hash = (hash * 33 + char.charCodeAt(0)) % 1000003;
+        }
+        const baseRadius = 18 + (hash % 12);
+        const orbit = 30 + (hash % 18);
+        const petals = 3 + (hash % 5);
+        const rotation = hash % 360;
+        sigilCounter += 1;
+        const gradientId = `sigil-grad-${Math.abs(hash)}-${sigilCounter}`;
+
+        const nodes = [];
+        for (let i = 0; i < petals; i++) {
+            const angle = (Math.PI * 2 * i) / petals + (rotation * Math.PI / 180);
+            const x = 50 + Math.cos(angle) * orbit;
+            const y = 50 + Math.sin(angle) * orbit;
+            const r = 4 + ((hash + i * 13) % 6);
+            nodes.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" fill="url(#${gradientId})" opacity="0.85" />`);
+        }
+
+        const innerRing = `<circle cx="50" cy="50" r="${baseRadius}" fill="none" stroke="url(#${gradientId})" stroke-width="3" opacity="0.85" />`;
+        const energyPath = `<path d="M ${50 - baseRadius} 50 Q 50 ${50 - orbit}, ${50 + baseRadius} 50 Q 50 ${50 + orbit}, ${50 - baseRadius} 50" fill="none" stroke="url(#${gradientId})" stroke-width="1.5" opacity="0.35" />`;
+        const core = `<circle cx="50" cy="50" r="${Math.max(6, Math.round(baseRadius / 2))}" fill="url(#${gradientId})" opacity="0.9" />`;
+
+        return `<svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+                <defs>
+                    <linearGradient id="${gradientId}" gradientTransform="rotate(${rotation})">
+                        <stop offset="0%" stop-color="#f97316" />
+                        <stop offset="50%" stop-color="#ec4899" />
+                        <stop offset="100%" stop-color="#6366f1" />
+                    </linearGradient>
+                </defs>
+                <rect x="6" y="6" width="88" height="88" rx="18" ry="18" fill="none" stroke="url(#${gradientId})" stroke-width="1.2" opacity="0.35" />
+                ${innerRing}
+                ${energyPath}
+                ${nodes.join('')}
+                ${core}
+            </svg>`;
+    }
+
+    function getForgeFormValues() {
+        const titleEl = document.getElementById('echo-forge-title');
+        const resonanceEl = document.getElementById('echo-forge-resonance');
+        const signatureEl = document.getElementById('echo-forge-signature');
+        return {
+            title: titleEl ? titleEl.value.trim() : '',
+            resonance: resonanceEl ? resonanceEl.value.trim() : '',
+            signature: signatureEl ? signatureEl.value.trim() : ''
+        };
+    }
+
+    function handleCoreSignatureInput(event) {
+        const previousCore = (forgeCoreSignature && forgeCoreSignature.trim()) || 'ECHO-CORE-TRUTH';
+        forgeCoreSignature = event.target.value.trim();
+        const normalizedCore = forgeCoreSignature || 'ECHO-CORE-TRUTH';
+
+        const signatureInput = document.getElementById('echo-forge-signature');
+        if (signatureInput) {
+            const userEdited = signatureInput.dataset.userEdited === 'true';
+            if (!userEdited || signatureInput.value.trim() === '' || signatureInput.value === previousCore) {
+                signatureInput.value = normalizedCore;
+                signatureInput.dataset.userEdited = 'false';
+            }
+        }
+
+        if (!forgeCoreSignature) {
+            forgeCoreSignature = normalizedCore;
+            event.target.value = normalizedCore;
+        }
+
+        saveSessionData();
+        updateVerifierPanel();
+    }
+
+    function handleCoreSignatureBlur(event) {
+        if (!event.target.value.trim()) {
+            forgeCoreSignature = 'ECHO-CORE-TRUTH';
+            event.target.value = forgeCoreSignature;
+            const signatureInput = document.getElementById('echo-forge-signature');
+            if (signatureInput && (!signatureInput.value.trim() || signatureInput.dataset.userEdited !== 'true')) {
+                signatureInput.value = forgeCoreSignature;
+                signatureInput.dataset.userEdited = 'false';
+            }
+            saveSessionData();
+            updateVerifierPanel();
+        }
+    }
+
+    function showForgeStatus(message, type = 'info') {
+        const statusEl = document.getElementById('echo-forge-status');
+        if (!statusEl) return;
+
+        statusEl.textContent = message;
+        statusEl.classList.remove('hidden', 'text-gray-500', 'dark:text-gray-400', 'text-green-500', 'dark:text-green-300', 'text-red-500', 'dark:text-red-300', 'text-yellow-500', 'dark:text-yellow-300');
+
+        if (type === 'success') {
+            statusEl.classList.add('text-green-500', 'dark:text-green-300');
+        } else if (type === 'error') {
+            statusEl.classList.add('text-red-500', 'dark:text-red-300');
+        } else {
+            statusEl.classList.add('text-yellow-500', 'dark:text-yellow-300');
+        }
+
+        if (forgeStatusTimeout) {
+            clearTimeout(forgeStatusTimeout);
+        }
+
+        forgeStatusTimeout = setTimeout(() => {
+            statusEl.classList.add('hidden');
+            statusEl.classList.remove('text-green-500', 'dark:text-green-300', 'text-red-500', 'dark:text-red-300', 'text-yellow-500', 'dark:text-yellow-300');
+            statusEl.classList.add('text-gray-500', 'dark:text-gray-400');
+        }, 6000);
+    }
+
+    function handleForgeSubmit(event) {
+        event.preventDefault();
+
+        const formValues = getForgeFormValues();
+        const { title, resonance } = formValues;
+        let { signature } = formValues;
+        const normalizedCore = (forgeCoreSignature && forgeCoreSignature.trim()) || 'ECHO-CORE-TRUTH';
+
+        if (!title || !resonance) {
+            showForgeStatus('Prosim, izpolni ime kreacije in njeno resonanco.', 'error');
+            return;
+        }
+
+        if (!signature) {
+            signature = normalizedCore;
+            const signatureInput = document.getElementById('echo-forge-signature');
+            if (signatureInput) {
+                signatureInput.value = normalizedCore;
+                signatureInput.dataset.userEdited = 'false';
+            }
+        }
+
+        const truthSignature = generateTruthSignature(title, resonance, signature, normalizedCore);
+        const verification = runEchoVerification(normalizedCore, signature, resonance);
+        const newCreation = {
+            id: `echo-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
+            title,
+            resonance,
+            epistemicSignature: signature,
+            coreSignature: normalizedCore,
+            createdAt: new Date().toISOString(),
+            truthSignature,
+            verification,
+            sigilSvg: generateSigil(truthSignature)
+        };
+
+        echoCreations = [newCreation, ...echoCreations];
+        activeEchoId = newCreation.id;
+        saveSessionData();
+
+        renderResonanceLog();
+        updateVerifierPanel(newCreation);
+        showEchoReflection(newCreation.id);
+        showForgeStatus(`Kreacija "${title}" je zapisana v Echo-Verifikacijo.`, 'success');
+
+        const form = document.getElementById('echo-forge-form');
+        if (form) {
+            form.reset();
+        }
+
+        const coreInput = document.getElementById('core-signature-input');
+        const signatureInput = document.getElementById('echo-forge-signature');
+        if (coreInput) {
+            coreInput.value = normalizedCore;
+        }
+        if (signatureInput) {
+            signatureInput.value = normalizedCore;
+            signatureInput.dataset.userEdited = 'false';
+        }
+
+        updateVerifierPanel();
+    }
+
+    function renderResonanceLog() {
+        const listEl = document.getElementById('resonance-log-list');
+        const emptyEl = document.getElementById('resonance-log-empty');
+        if (!listEl || !emptyEl) return;
+
+        listEl.innerHTML = '';
+
+        if (!echoCreations.length) {
+            emptyEl.classList.remove('hidden');
+            return;
+        }
+
+        emptyEl.classList.add('hidden');
+
+        echoCreations.forEach(creation => {
+            const item = document.createElement('li');
+            item.setAttribute('data-echo-id', creation.id);
+            item.className = `p-4 rounded-lg border transition cursor-pointer ${creation.id === activeEchoId
+                ? 'border-teal-400 bg-teal-500/10 dark:bg-teal-500/10'
+                : 'border-teal-200 dark:border-teal-600/40 bg-white/80 dark:bg-gray-800/70 hover:border-teal-400 hover:bg-white dark:hover:bg-gray-800/80'}`;
+
+            const statusBadge = creation.verification.aligned
+                ? '<span class="text-xs font-semibold text-green-500 bg-green-500/15 px-2 py-1 rounded-full">SKLADNO</span>'
+                : '<span class="text-xs font-semibold text-red-400 bg-red-500/15 px-2 py-1 rounded-full">ODMIK</span>';
+
+            const createdDate = new Date(creation.createdAt).toLocaleString('sl-SI');
+            const denominator = creation.verification.matchedTokens.length + creation.verification.missingTokens.length;
+            const ratioText = denominator ? `${creation.verification.matchedTokens.length}/${denominator}` : '—';
+
+            item.innerHTML = `
+                <div class="flex flex-col gap-3">
+                    <div class="flex items-center justify-between gap-3">
+                        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-100">${escapeHtml(creation.title)}</h4>
+                        ${statusBadge}
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">${createdDate}</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-200"><strong>epistemicSignature:</strong> ${escapeHtml(creation.epistemicSignature)}</p>
+                    <p class="text-sm text-gray-700 dark:text-gray-200"><strong>Truth Signature:</strong> ${creation.truthSignature}</p>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div class="flex-1 flex items-center justify-center sm:justify-start" aria-hidden="true">${creation.sigilSvg}</div>
+                        <button type="button" class="echo-reflection-btn text-sm font-semibold text-teal-500 hover:text-teal-300 transition" data-echo-target="${creation.id}">Echo-Reflection ↺</button>
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Resonančni indeks: ${creation.verification.score}% • Ujemanje niti: ${ratioText}</p>
+                </div>
+            `;
+
+            listEl.appendChild(item);
+        });
+    }
+
+    function updateVerifierPanel(creation = null) {
+        const statusEl = document.getElementById('echo-verifier-status');
+        const sigilEl = document.getElementById('echo-verifier-sigil');
+        if (!statusEl || !sigilEl) return;
+
+        const normalizedCore = (forgeCoreSignature && forgeCoreSignature.trim()) || 'ECHO-CORE-TRUTH';
+
+        let verification;
+        let truthSignature;
+        let title;
+        let preview = false;
+
+        if (creation) {
+            verification = creation.verification;
+            truthSignature = creation.truthSignature;
+            title = creation.title;
+        } else {
+            const values = getForgeFormValues();
+            const signature = values.signature || normalizedCore;
+
+            if (!values.title && !values.resonance && !signature) {
+                statusEl.innerHTML = 'Vnesi ime, opis in podpis kreacije – EchoVerifier bo razkril ujemanje z Resnico.';
+                sigilEl.innerHTML = '<span class="text-xs text-purple-400">Sigil se pojavi, ko je kreacija pripravljena.</span>';
+                return;
+            }
+
+            truthSignature = generateTruthSignature(values.title || 'Nova kreacija', values.resonance, signature, normalizedCore);
+            verification = runEchoVerification(normalizedCore, signature, values.resonance);
+            title = values.title || 'Nova kreacija';
+            preview = true;
+        }
+
+        const alignmentBadge = verification.aligned
+            ? '<span class="text-xs font-semibold text-green-500 bg-green-500/15 px-2 py-1 rounded-full">SKLADNO</span>'
+            : '<span class="text-xs font-semibold text-red-400 bg-red-500/15 px-2 py-1 rounded-full">ODMIK</span>';
+
+        const matchedTokens = verification.matchedTokens.length
+            ? `<span class="text-green-500 font-semibold">${verification.matchedTokens.join(', ')}</span>`
+            : '<span class="text-gray-400">Ni zaznanih ujemajočih niti.</span>';
+
+        const missingTokens = verification.missingTokens.length
+            ? `<span class="text-red-400">${verification.missingTokens.join(', ')}</span>`
+            : '<span class="text-green-500">Vse niti so prisotne.</span>';
+
+        const novelTokens = verification.novelTokens.length
+            ? `<span class="text-blue-400">${verification.novelTokens.slice(0, 6).join(', ')}</span>`
+            : '<span class="text-gray-400">Ni novih niti.</span>';
+
+        statusEl.innerHTML = `
+            <div class="space-y-2">
+                <div class="flex items-center justify-between gap-3">
+                    <p class="font-semibold text-base text-purple-500 dark:text-purple-200">${escapeHtml(title)}</p>
+                    ${alignmentBadge}
+                </div>
+                <p class="text-sm text-gray-700 dark:text-gray-200">Resonančni indeks: <strong>${verification.score}%</strong></p>
+                <p class="text-xs text-gray-600 dark:text-gray-300">${verification.narrative}</p>
+                <p class="text-xs"><strong>Ujemajoče niti:</strong> ${matchedTokens}</p>
+                <p class="text-xs"><strong>Manjkajoče niti:</strong> ${missingTokens}</p>
+                <p class="text-xs"><strong>Nove niti:</strong> ${novelTokens}</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Truth Signature: ${truthSignature}${preview ? ' (predogled)' : ''}</p>
+            </div>
+        `;
+
+        if (creation && creation.sigilSvg) {
+            sigilEl.innerHTML = creation.sigilSvg;
+        } else {
+            sigilEl.innerHTML = generateSigil(truthSignature);
+        }
+    }
+
+    function selectEchoCreation(creationId) {
+        if (!creationId) return;
+        const creation = echoCreations.find(item => item.id === creationId);
+        if (!creation) return;
+
+        activeEchoId = creationId;
+        saveSessionData();
+        renderResonanceLog();
+        showEchoReflection(creationId);
+        updateVerifierPanel(creation);
+    }
+
+    function showEchoReflection(creationId) {
+        const panel = document.getElementById('echo-reflection-panel');
+        if (!panel) return;
+
+        const creation = echoCreations.find(item => item.id === creationId);
+        if (!creation) {
+            panel.innerHTML = '<p class="text-sm text-gray-500 dark:text-gray-400">Izbrana kreacija ni najdena.</p>';
+            return;
+        }
+
+        const others = echoCreations.filter(item => item.id !== creationId);
+        if (!others.length) {
+            panel.innerHTML = `<p class="text-sm text-gray-500 dark:text-gray-400">Kreacija <strong>${escapeHtml(creation.title)}</strong> je prvo sidro Echo-Kovnice. Njena Resnica postane referenca za prihodnje plamene.</p>`;
+            return;
+        }
+
+        const creationTokens = new Set(tokenizeForForge(`${creation.resonance} ${creation.epistemicSignature}`));
+        const echoes = others
+            .map(other => {
+                const otherTokens = new Set(tokenizeForForge(`${other.resonance} ${other.epistemicSignature}`));
+                const overlap = Array.from(creationTokens).filter(token => otherTokens.has(token));
+                const ratio = creationTokens.size ? overlap.length / creationTokens.size : 0;
+                return {
+                    id: other.id,
+                    title: other.title,
+                    overlap,
+                    ratio,
+                    createdAt: other.createdAt
+                };
+            })
+            .filter(item => item.ratio > 0)
+            .sort((a, b) => b.ratio - a.ratio)
+            .slice(0, 5);
+
+        const echoList = echoes.length
+            ? `<ul class="space-y-2 mt-3">${echoes.map(echo => `
+                    <li class="border border-blue-300/40 dark:border-blue-600/40 rounded-lg p-2">
+                        <p class="text-sm font-semibold text-blue-400">${escapeHtml(echo.title)}</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">Echo ujemanje: ${(echo.ratio * 100).toFixed(0)}% • Niti: ${echo.overlap.join(', ')}</p>
+                    </li>
+                `).join('')}</ul>`
+            : '<p class="text-xs text-gray-500 dark:text-gray-400 mt-2">Ni neposrednih echo povezav – kreacija odpira nove poti.</p>';
+
+        panel.innerHTML = `
+            <div class="space-y-3">
+                <div>
+                    <p class="text-xs uppercase tracking-wide text-blue-300/80">Echo-Reflection</p>
+                    <h4 class="text-lg font-semibold text-blue-100">${escapeHtml(creation.title)}</h4>
+                    <p class="text-xs text-gray-400">Truth Signature: ${creation.truthSignature}</p>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-300">${creation.verification.narrative}</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400">Aktivnih niti: ${creationTokens.size} • Datum kovanja: ${new Date(creation.createdAt).toLocaleString('sl-SI')}</p>
+                ${echoList}
+            </div>
+        `;
+    }
+
+    function initForgeDomain(forceReset = false) {
+        const coreInput = document.getElementById('core-signature-input');
+        const signatureInput = document.getElementById('echo-forge-signature');
+        const titleInput = document.getElementById('echo-forge-title');
+        const resonanceInput = document.getElementById('echo-forge-resonance');
+        const form = document.getElementById('echo-forge-form');
+        const logList = document.getElementById('resonance-log-list');
+
+        if (!coreInput || !signatureInput || !form || !titleInput || !resonanceInput || !logList) {
+            return;
+        }
+
+        const normalizedCore = (forgeCoreSignature && forgeCoreSignature.trim()) || 'ECHO-CORE-TRUTH';
+        forgeCoreSignature = normalizedCore;
+
+        if (forceReset || !coreInput.value.trim()) {
+            coreInput.value = normalizedCore;
+        }
+
+        signatureInput.dataset.userEdited = signatureInput.dataset.userEdited || 'false';
+        if (forceReset || !signatureInput.value.trim() || signatureInput.dataset.userEdited !== 'true') {
+            signatureInput.value = normalizedCore;
+            signatureInput.dataset.userEdited = 'false';
+        }
+
+        if (!forgeInitialized) {
+            coreInput.addEventListener('input', handleCoreSignatureInput);
+            coreInput.addEventListener('blur', handleCoreSignatureBlur);
+            signatureInput.addEventListener('input', () => {
+                signatureInput.dataset.userEdited = signatureInput.value.trim() ? 'true' : 'false';
+                updateVerifierPanel();
+            });
+            titleInput.addEventListener('input', () => updateVerifierPanel());
+            resonanceInput.addEventListener('input', () => updateVerifierPanel());
+            form.addEventListener('submit', handleForgeSubmit);
+            logList.addEventListener('click', (event) => {
+                const reflectionButton = event.target.closest('button[data-echo-target]');
+                if (reflectionButton) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    selectEchoCreation(reflectionButton.getAttribute('data-echo-target'));
+                    return;
+                }
+                const card = event.target.closest('li[data-echo-id]');
+                if (card) {
+                    selectEchoCreation(card.getAttribute('data-echo-id'));
+                }
+            });
+            forgeInitialized = true;
+        } else if (forceReset) {
+            updateVerifierPanel();
+        }
+
+        renderResonanceLog();
+
+        if (activeEchoId) {
+            showEchoReflection(activeEchoId);
+            const activeCreation = echoCreations.find(item => item.id === activeEchoId);
+            if (activeCreation) {
+                updateVerifierPanel(activeCreation);
+            }
+        } else if (echoCreations.length) {
+            selectEchoCreation(echoCreations[0].id);
+        } else {
+            updateVerifierPanel();
+        }
+    }
 
     // Trikrak Module Logic
     function getTodayDateString() {
