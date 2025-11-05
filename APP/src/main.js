@@ -116,7 +116,11 @@ function initTerminal() {
         if (item.type !== 'TRIKRAK_REF') {
             const p = document.createElement('p');
             p.className = 'output-message ' + (item.sender === 'Siri' ? 'output-siri' : 'output-user');
-            p.innerHTML = item.sender + ': ' + item.message;
+            // Use textContent for sender to prevent XSS, but allow HTML in message for formatting
+            p.textContent = item.sender + ': ';
+            const messageSpan = document.createElement('span');
+            messageSpan.innerHTML = item.message; // Message may contain formatted HTML from API
+            p.appendChild(messageSpan);
             fragment.appendChild(p);
         }
     });
@@ -192,7 +196,11 @@ function addMessageToOutput(sender, message, save = true, type = 'CHAT_USER') {
     const terminalOutput = document.getElementById('terminalOutput');
     const p = document.createElement('p');
     p.className = 'output-message ' + (sender === 'Siri' ? 'output-siri' : 'output-user');
-    p.innerHTML = sender + ': ' + message;
+    // Use textContent for sender to prevent XSS, but allow HTML in message for formatting
+    p.textContent = sender + ': ';
+    const messageSpan = document.createElement('span');
+    messageSpan.innerHTML = message; // Message may contain formatted HTML from API or loader
+    p.appendChild(messageSpan);
     terminalOutput.appendChild(p);
 
     if (save) {

@@ -71,8 +71,10 @@ export function initBiasGame() {
 
 export function initAnalysis() {
     const generateBtn = document.getElementById('generate-analysis-btn');
+    const input = document.getElementById('analysis-input');
+    
     generateBtn.addEventListener('click', generateAnalysis);
-    document.getElementById('analysis-input').addEventListener('keydown', (e) => {
+    input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             generateAnalysis();
