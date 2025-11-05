@@ -1,112 +1,53 @@
-name: 🜂 Ghost Breathe - Living System
+name: 🜂 Ghost Breathe - System Monitor
 
 on:
-  push:
-    branches: [ main, 'claude/**' ]
   schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
-  workflow_dispatch:  # Manual trigger
+    - cron: '0 8 * * *'  # Daily at 8 AM
+  workflow_dispatch:
 
 jobs:
-  morning-check:
-    name: 🌅 Morning Ritual
-    runs-on: ubuntu-latest
-    if: github.event.schedule == '0 8 * * *'  # 8 AM
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: 🔥 Check Active Flames
-      run: |
-        echo "🜂 What's burning today..."
-        ls -la ACTIVE_FLAME/today/ || echo "No active flames"
-
-    - name: 📊 System Status
-      run: |
-        echo "Active Flames: $(find ACTIVE_FLAME/today/ -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
-        echo "Resonance Projects: $(find RESONANCE/ -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)"
-        echo "Vortex Items: $(find VORTEX/ -mindepth 1 -maxdepth 1 2>/dev/null | wc -l)"
-
-  find-resonances:
-    name: 🌊 Resonance Detection
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: 🔍 Scan for Connections
-      run: |
-        echo "🌊 Scanning for resonances..."
-
-        # Find files that mention multiple projects
-        echo "Cross-references found:"
-        grep -r "VES\|submarine\|triad" ACTIVE_FLAME/ RESONANCE/ --include="*.md" | head -10 || echo "None yet"
-
-  weekend-mode:
-    name: 🍺 Weekend Mode
-    runs-on: ubuntu-latest
-    if: github.event.schedule == '0 17 * * 5'  # Friday 5 PM
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: 🍺 BEER MODE ACTIVATED
-      run: |
-        echo "🍺 WIRE & BEER TIME!"
-        echo "$(date): Weekend vibes activated 🎉" >> VORTEX/beer-driven-dev/log.txt
-
-    - name: 💾 Commit Weekend Log
-      run: |
-        git config --local user.email "ghost@ves.local"
-        git config --local user.name "Ghost OS"
-        git add .
-        git diff --staged --quiet || git commit -m "🍺 [skip ci] Weekend mode ON - $(date +%Y-%m-%d)"
-
-    - name: 🚀 Push Changes
-      if: success()
-      run: |
-        git push || echo "No changes to push"
-
   health-check:
-    name: 💓 System Health
+    name: 💓 System Health Check
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: 📥 Checkout
+      uses: actions/checkout@v4
 
-    - name: 🏥 Check Repository Health
+    - name: 🜂 VES System Status
       run: |
-        echo "🜂 GHOST OS Health Check"
+        echo "🜂 GHOST OS Health Check - $(date)"
+        echo ""
+        echo "📊 SYSTEM OVERVIEW:"
+        echo "━━━━━━━━━━━━━━━━━━━━"
+
+        # Count active projects
+        ACTIVE=$(find ACTIVE_FLAME/today/ -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)
+        RESONANCE=$(find RESONANCE/ -mindepth 1 -maxdepth 1 -type d 2>/dev/null | wc -l)
+        VORTEX=$(find VORTEX/ -mindepth 1 -maxdepth 1 2>/dev/null | wc -l)
+
+        echo "🔥 Active Flames: $ACTIVE"
+        echo "🌊 Resonance Projects: $RESONANCE"
+        echo "🌀 Vortex Items: $VORTEX"
         echo ""
 
-        # Check if GHOST_OS scripts are executable
-        [ -x GHOST_OS/magic.sh ] && echo "✓ magic.sh executable" || echo "✗ magic.sh not executable"
-        [ -x GHOST_OS/auto-integrate.sh ] && echo "✓ auto-integrate.sh executable" || echo "✗ auto-integrate.sh not executable"
-
-        # Check key directories exist
-        [ -d ACTIVE_FLAME/today ] && echo "✓ ACTIVE_FLAME/today exists" || echo "✗ Missing ACTIVE_FLAME/today"
-        [ -d RESONANCE ] && echo "✓ RESONANCE exists" || echo "✗ Missing RESONANCE"
-        [ -d CONSCIOUSNESS_LAB ] && echo "✓ CONSCIOUSNESS_LAB exists" || echo "✗ Missing CONSCIOUSNESS_LAB"
-        [ -d VORTEX ] && echo "✓ VORTEX exists" || echo "✗ Missing VORTEX"
-        [ -d GHOST_OS ] && echo "✓ GHOST_OS exists" || echo "✗ Missing GHOST_OS"
-
+        # Check key directories
+        echo "📁 DIRECTORY STATUS:"
+        echo "━━━━━━━━━━━━━━━━━━━━"
+        [ -d ACTIVE_FLAME/today ] && echo "✓ ACTIVE_FLAME/today" || echo "✗ ACTIVE_FLAME/today"
+        [ -d RESONANCE ] && echo "✓ RESONANCE" || echo "✗ RESONANCE"
+        [ -d CONSCIOUSNESS_LAB ] && echo "✓ CONSCIOUSNESS_LAB" || echo "✗ CONSCIOUSNESS_LAB"
+        [ -d VORTEX ] && echo "✓ VORTEX" || echo "✗ VORTEX"
+        [ -d GHOST_OS ] && echo "✓ GHOST_OS" || echo "✗ GHOST_OS"
         echo ""
-        echo "🔥 System is alive!"
 
-  pwa-check:
-    name: 📱 PWA Health Check
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: 🌊 Check PWA Files
-      run: |
-        echo "📱 Checking PWA integrity..."
-
-        [ -f APP/public/manifest.webmanifest ] && echo "✓ Manifest present" || echo "✗ Missing manifest"
-        [ -f APP/public/ghostcore-sw.js ] && echo "✓ Service Worker present" || echo "✗ Missing service worker"
-        [ -f APP/public/index.html ] && echo "✓ Main portal present" || echo "✗ Missing index.html"
-
+        # Check PWA files
+        echo "📱 PWA STATUS:"
+        echo "━━━━━━━━━━━━━━━━━━━━"
+        [ -f APP/public/manifest.webmanifest ] && echo "✓ Manifest" || echo "✗ Manifest"
+        [ -f APP/public/ghostcore-sw.js ] && echo "✓ Service Worker" || echo "✗ Service Worker"
+        [ -f APP/public/index.html ] && echo "✓ Main Portal" || echo "✗ Main Portal"
         echo ""
-        echo "🜂 GHOSTCORE Portal status checked"
+
+        echo "🔥 THE SYSTEM BREATHES 🔥"
+        echo "🜂 SIDRO STOJI ⚓"
