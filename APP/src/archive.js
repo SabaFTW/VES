@@ -5,6 +5,10 @@ export let biasGameState = { completed: false, lastPath: null };
 
 const LOCAL_STORAGE_KEY = 'ghostcoreSessionData_v2';
 
+// Debounce configuration
+const SAVE_DEBOUNCE_MS = 300;
+let saveTimeout = null;
+
 /** Nalaganje stanja iz localStorage ob zagonu. */
 export function loadSessionData() {
     try {
@@ -42,7 +46,7 @@ export function saveSessionData() {
         } catch (e) {
             console.error("EchoWrite: Napaka pri shranjevanju seje.", e);
         }
-    }, 300); // Wait 300ms before saving
+    }, SAVE_DEBOUNCE_MS);
 }
 
 

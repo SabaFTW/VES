@@ -6,10 +6,13 @@ import { terminalHistory, saveSessionData } from './archive.js';
 let cachedTodayDate = null;
 let cachedTodayDateTimestamp = 0;
 
+// Date cache duration in milliseconds (1 minute)
+const DATE_CACHE_DURATION_MS = 60000;
+
 function getTodayDateString() {
     const now = Date.now();
     // Cache for 1 minute to avoid repeated Date operations
-    if (!cachedTodayDate || (now - cachedTodayDateTimestamp > 60000)) {
+    if (!cachedTodayDate || (now - cachedTodayDateTimestamp > DATE_CACHE_DURATION_MS)) {
         cachedTodayDate = new Date().toISOString().slice(0, 10);
         cachedTodayDateTimestamp = now;
     }

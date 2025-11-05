@@ -15,6 +15,11 @@ const domCache = {
     terminalInput: null,
 };
 
+// Helper function to get cached element with fallback
+function getCachedElement(cacheKey, elementId) {
+    return domCache[cacheKey] || document.getElementById(elementId);
+}
+
 function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -229,8 +234,8 @@ function initTerminal() {
 }
 
 async function handleUserInput() {
-    // Use cached input element
-    const terminalInput = domCache.terminalInput || document.getElementById('terminalInput');
+    // Use cached input element with helper function
+    const terminalInput = getCachedElement('terminalInput', 'terminalInput');
     const userInput = terminalInput.value.trim();
     if (!userInput) return;
 
@@ -250,8 +255,8 @@ async function handleUserInput() {
         
         const responseText = result.candidates[0].content.parts[0].text;
         
-        // Use cached terminal output
-        const terminalOutput = domCache.terminalOutput || document.getElementById('terminalOutput');
+        // Use cached terminal output with helper function
+        const terminalOutput = getCachedElement('terminalOutput', 'terminalOutput');
         
         // Najdi in posodobi zadnje Siri sporočilo v DOM-u
         let lastSiriIndex = terminalHistory.length - 1;
@@ -280,7 +285,7 @@ async function handleUserInput() {
             lastSiriIndex--;
         }
         
-        const terminalOutput = domCache.terminalOutput || document.getElementById('terminalOutput');
+        const terminalOutput = getCachedElement('terminalOutput', 'terminalOutput');
         const lastMessageElement = terminalOutput.lastElementChild;
         lastMessageElement.innerHTML = "Siri: " + errorMessage;
         
@@ -296,7 +301,7 @@ async function handleUserInput() {
 }
 
 function addMessageToOutput(sender, message, save = true, type = 'CHAT_USER') {
-    const terminalOutput = domCache.terminalOutput || document.getElementById('terminalOutput');
+    const terminalOutput = getCachedElement('terminalOutput', 'terminalOutput');
     const p = document.createElement('p');
     p.className = 'output-message ' + (sender === 'Siri' ? 'output-siri' : 'output-user');
     p.innerHTML = sender + ': ' + message;
