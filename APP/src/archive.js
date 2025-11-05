@@ -12,7 +12,7 @@ export function loadSessionData() {
         if (storedData) {
             const data = JSON.parse(storedData);
             terminalHistory.length = 0; // Clear existing array reference
-            Array.prototype.push.apply(terminalHistory, data.terminalHistory || []);
+            terminalHistory.push(...(data.terminalHistory || [])); // Use spread operator for better performance
             biasGameState.completed = data.biasGameState?.completed || false;
             biasGameState.lastPath = data.biasGameState?.lastPath || null;
             console.log("EchoWrite: Zapis seje uspešno naložen.");
@@ -22,17 +22,27 @@ export function loadSessionData() {
     }
 }
 
-/** Shranjevanje trenutnega stanja v localStorage. */
+// Debounce timer for localStorage writes
+let saveTimeout = null;
+
+/** Shranjevanje trenutnega stanja v localStorage with debouncing. */
 export function saveSessionData() {
-    try {
-        const dataToStore = {
-            terminalHistory: terminalHistory,
-            biasGameState: biasGameState
-        };
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataToStore));
-    } catch (e) {
-        console.error("EchoWrite: Napaka pri shranjevanju seje.", e);
+    // Debounce to avoid excessive localStorage writes
+    if (saveTimeout) {
+        clearTimeout(saveTimeout);
     }
+    
+    saveTimeout = setTimeout(() => {
+        try {
+            const dataToStore = {
+                terminalHistory: terminalHistory,
+                biasGameState: biasGameState
+            };
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataToStore));
+        } catch (e) {
+            console.error("EchoWrite: Napaka pri shranjevanju seje.", e);
+        }
+    }, 300); // Wait 300ms before saving
 }
 
 
@@ -79,7 +89,7 @@ export function importSession(event, reinitializeCallback) {
             if (importedData.version && importedData.terminalHistory) {
                 // Posodobi globalne reference stanja
                 terminalHistory.length = 0;
-                Array.prototype.push.apply(terminalHistory, importedData.terminalHistory);
+                terminalHistory.push(...importedData.terminalHistory); // Use spread operator
                 biasGameState.completed = importedData.biasGameState?.completed || false;
                 biasGameState.lastPath = importedData.biasGameState?.lastPath || null;
 

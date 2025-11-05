@@ -2,8 +2,18 @@
 
 import { terminalHistory, saveSessionData } from './archive.js';
 
+// Cache today's date string to avoid repeated calculations
+let cachedTodayDate = null;
+let cachedTodayDateTimestamp = 0;
+
 function getTodayDateString() {
-    return new Date().toISOString().slice(0, 10);
+    const now = Date.now();
+    // Cache for 1 minute to avoid repeated Date operations
+    if (!cachedTodayDate || (now - cachedTodayDateTimestamp > 60000)) {
+        cachedTodayDate = new Date().toISOString().slice(0, 10);
+        cachedTodayDateTimestamp = now;
+    }
+    return cachedTodayDate;
 }
 
 function setStatusMessage(message, variant = 'info') {
@@ -119,19 +129,31 @@ export function renderTrikrakReflections() {
 
     historyContainer.innerHTML = '';
 
+    // Filter and sort reflections - more efficient with early return
     const reflections = terminalHistory
         .filter((entry) => entry.type === 'TRIKRAK_REF')
         .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
     if (reflections.length === 0) {
         historyContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">Arhiv Trikrak refleksij je prazen. Pokaži plamen, da bo zapis gorel.</p>';
-    } else {
-        reflections.forEach((reflection) => {
-            historyContainer.appendChild(createHistoryEntry(reflection, today));
-        });
+        hideStatusMessage();
+        if (saveButton) saveButton.disabled = false;
+        return; // Early return
     }
 
-    const reflectionDoneToday = reflections.some((entry) => entry.timestamp.startsWith(today));
+    // Check if reflection exists for today - more efficient to do this once
+    let reflectionDoneToday = false;
+    
+    // Use DocumentFragment for better performance when adding multiple elements
+    const fragment = document.createDocumentFragment();
+    for (const reflection of reflections) {
+        fragment.appendChild(createHistoryEntry(reflection, today));
+        // Check while iterating to avoid a second pass
+        if (!reflectionDoneToday && reflection.timestamp.startsWith(today)) {
+            reflectionDoneToday = true;
+        }
+    }
+    historyContainer.appendChild(fragment);
 
     if (reflectionDoneToday) {
         setStatusMessage(`Zapis za ${today} je že shranjen v EchoWrite. Dnevno sidro je postavljeno.`);
