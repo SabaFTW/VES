@@ -44,7 +44,7 @@ from datetime import datetime
 from pathlib import Path
 
 # 🔥 CONFIGURATION 🔥
-VES_ROOT = Path.home() / "VES"  # Adjust to your actual VES location
+VES_ROOT = Path.home() / "Desktop" / "ZALA" / "VES"  # Adjusted for this system
 HEARTBEAT_LOG = VES_ROOT / "ves_heartbeat.log"  # Where VES_CARE writes pulses
 NERVE_LOG = VES_ROOT / "nerve_commands.jsonl"  # Memory trace of all commands
 
