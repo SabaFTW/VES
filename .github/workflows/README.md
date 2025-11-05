@@ -36,6 +36,8 @@ The repository previously had **3 conflicting deployment workflows** trying to d
 - `static.yml` - Static file deployment (removed)
 - `deploy-pwa.yml` - Vite/PWA deployment (kept)
 
+All three workflows used the same concurrency group (`"pages"`), which meant they would queue and conflict with each other during deployment. Additionally, only the PWA deployment workflow was appropriate for this Vite-based project structure.
+
 These conflicts caused deployment failures. The solution was to:
 1. Remove the Jekyll and static deployment workflows
 2. Keep only the PWA deployment workflow (which matches the project structure)
