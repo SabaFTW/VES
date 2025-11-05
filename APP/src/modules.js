@@ -5,13 +5,25 @@ import { callGeminiApi, showError } from './api.js';
 
 // ------------------- Bias Game -------------------
 
+// Cache DOM elements for bias game
+let biasGameElements = null;
+
+function getBiasGameElements() {
+    if (!biasGameElements) {
+        biasGameElements = {
+            pathSelection: document.getElementById('path-selection'),
+            pathsContainer: document.getElementById('paths-container'),
+            resultDiv: document.getElementById('result'),
+            paths: document.querySelectorAll('#bias-section .path')
+        };
+    }
+    return biasGameElements;
+}
+
 /** Inicializacija Bias Game (Resetiranje se reši v main.js) */
 export function initBiasGame() {
     // Re-render based on current state
-    const pathSelection = document.getElementById('path-selection');
-    const pathsContainer = document.getElementById('paths-container');
-    const resultDiv = document.getElementById('result');
-    const paths = document.querySelectorAll('#bias-section .path');
+    const { pathSelection, pathsContainer, resultDiv, paths } = getBiasGameElements();
 
     if (biasGameState.completed) {
         pathSelection.classList.add('hidden');
@@ -31,12 +43,13 @@ export function initBiasGame() {
         biasGameState.lastPath = side;
         saveSessionData();
         
-        pathSelection.classList.add('hidden');
-        pathsContainer.classList.remove('hidden');
-        paths.forEach(p => p.classList.add('animate'));
+        const elements = getBiasGameElements();
+        elements.pathSelection.classList.add('hidden');
+        elements.pathsContainer.classList.remove('hidden');
+        elements.paths.forEach(p => p.classList.add('animate'));
         
         setTimeout(() => {
-            resultDiv.style.opacity = 1;
+            elements.resultDiv.style.opacity = 1;
         }, 3000);
     };
 
@@ -45,10 +58,11 @@ export function initBiasGame() {
         biasGameState.lastPath = null;
         saveSessionData();
 
-        pathSelection.classList.remove('hidden');
-        pathsContainer.classList.add('hidden');
-        resultDiv.style.opacity = 0;
-        paths.forEach(p => { p.classList.remove('animate'); void p.offsetHeight; });
+        const elements = getBiasGameElements();
+        elements.pathSelection.classList.remove('hidden');
+        elements.pathsContainer.classList.add('hidden');
+        elements.resultDiv.style.opacity = 0;
+        elements.paths.forEach(p => { p.classList.remove('animate'); void p.offsetHeight; });
     };
 }
 
@@ -94,11 +108,13 @@ async function generateAnalysis() {
         
         const responseText = result.candidates[0].content.parts[0].text;
         
-        responseContainer.innerHTML = responseText
+        // Optimize string replacements with a single assignment
+        const formattedText = responseText
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/^- /gm, '• ') 
+            .replace(/^- /gm, '• ')
             .replace(/\n/g, '<br>');
-            
+        
+        responseContainer.innerHTML = formattedText;
         responseContainer.classList.remove('hidden');
 
     } catch (error) {
