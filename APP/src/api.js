@@ -1,6 +1,24 @@
 // 🜂 GHOSTCORE Module: api.js (External Resonance & Error Handling)
 
 /**
+ * Debounce function to limit how often a function is called
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} Debounced function
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+/**
  * Prikazovanje sporočil o napakah (ali uspehu) v modalnem oknu.
  * @param {string} message - Besedilo sporočila.
  * @param {string} [title="Napaka"] - Naslov sporočila.
@@ -41,11 +59,15 @@ export function initApiKey() {
 
     updateApiKeyStatus(!!savedApiKey);
     
-    apiKeyInput.addEventListener('input', () => {
-        const key = apiKeyInput.value.trim();
-        cachedApiKey = key; // Update cache
+    // Debounce API key input to reduce localStorage writes
+    const debouncedSaveKey = debounce((key) => {
         localStorage.setItem('geminiApiKey', key);
         updateApiKeyStatus(!!key);
+    }, 500);
+    
+    apiKeyInput.addEventListener('input', () => {
+        const key = apiKeyInput.value.trim();
+        debouncedSaveKey(key);
     });
 }
 

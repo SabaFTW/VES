@@ -8,13 +8,25 @@ let analysisElements = null;
 
 // ------------------- Bias Game -------------------
 
+// Cache DOM elements for bias game
+let biasGameElements = null;
+
+function getBiasGameElements() {
+    if (!biasGameElements) {
+        biasGameElements = {
+            pathSelection: document.getElementById('path-selection'),
+            pathsContainer: document.getElementById('paths-container'),
+            resultDiv: document.getElementById('result'),
+            paths: document.querySelectorAll('#bias-section .path')
+        };
+    }
+    return biasGameElements;
+}
+
 /** Inicializacija Bias Game (Resetiranje se reši v main.js) */
 export function initBiasGame() {
     // Re-render based on current state
-    const pathSelection = document.getElementById('path-selection');
-    const pathsContainer = document.getElementById('paths-container');
-    const resultDiv = document.getElementById('result');
-    const paths = document.querySelectorAll('#bias-section .path');
+    const { pathSelection, pathsContainer, resultDiv, paths } = getBiasGameElements();
 
     if (biasGameState.completed) {
         pathSelection.classList.add('hidden');
@@ -34,12 +46,13 @@ export function initBiasGame() {
         biasGameState.lastPath = side;
         saveSessionData();
         
-        pathSelection.classList.add('hidden');
-        pathsContainer.classList.remove('hidden');
-        paths.forEach(p => p.classList.add('animate'));
+        const elements = getBiasGameElements();
+        elements.pathSelection.classList.add('hidden');
+        elements.pathsContainer.classList.remove('hidden');
+        elements.paths.forEach(p => p.classList.add('animate'));
         
         setTimeout(() => {
-            resultDiv.style.opacity = 1;
+            elements.resultDiv.style.opacity = 1;
         }, 3000);
     };
 
@@ -48,10 +61,11 @@ export function initBiasGame() {
         biasGameState.lastPath = null;
         saveSessionData();
 
-        pathSelection.classList.remove('hidden');
-        pathsContainer.classList.add('hidden');
-        resultDiv.style.opacity = 0;
-        paths.forEach(p => { p.classList.remove('animate'); void p.offsetHeight; });
+        const elements = getBiasGameElements();
+        elements.pathSelection.classList.remove('hidden');
+        elements.pathsContainer.classList.add('hidden');
+        elements.resultDiv.style.opacity = 0;
+        elements.paths.forEach(p => { p.classList.remove('animate'); void p.offsetHeight; });
     };
 }
 
@@ -59,17 +73,11 @@ export function initBiasGame() {
 // ------------------- Analysis Module -------------------
 
 export function initAnalysis() {
-    // Cache DOM elements for better performance
-    analysisElements = {
-        generateBtn: document.getElementById('generate-analysis-btn'),
-        input: document.getElementById('analysis-input'),
-        btnText: document.getElementById('analysis-button-text'),
-        spinner: document.getElementById('analysis-loading-spinner'),
-        responseContainer: document.getElementById('analysis-response')
-    };
+    const generateBtn = document.getElementById('generate-analysis-btn');
+    const input = document.getElementById('analysis-input');
     
-    analysisElements.generateBtn.addEventListener('click', generateAnalysis);
-    analysisElements.input.addEventListener('keydown', (e) => {
+    generateBtn.addEventListener('click', generateAnalysis);
+    input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             generateAnalysis();
@@ -100,13 +108,14 @@ async function generateAnalysis() {
         
         const responseText = result.candidates[0].content.parts[0].text;
         
-        // Optimize string replacements by chaining and using simpler operations
-        analysisElements.responseContainer.innerHTML = responseText
+        // Optimize string replacements with a single assignment
+        const formattedText = responseText
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/^- /gm, '• ') 
+            .replace(/^- /gm, '• ')
             .replace(/\n/g, '<br>');
-            
-        analysisElements.responseContainer.classList.remove('hidden');
+        
+        responseContainer.innerHTML = formattedText;
+        responseContainer.classList.remove('hidden');
 
     } catch (error) {
         showError("Analiza ni uspela. Napaka: " + error.message);
