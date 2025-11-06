@@ -27,7 +27,7 @@ export function loadSessionData() {
         if (storedData) {
             const data = JSON.parse(storedData);
             terminalHistory.length = 0; // Clear existing array reference
-            Array.prototype.push.apply(terminalHistory, data.terminalHistory || []);
+            terminalHistory.push(...(data.terminalHistory || [])); // Use spread operator for better performance
             biasGameState.completed = data.biasGameState?.completed || false;
             biasGameState.lastPath = data.biasGameState?.lastPath || null;
             console.log("EchoWrite: Zapis seje uspešno naložen.");
@@ -48,6 +48,18 @@ function performSave() {
     } catch (e) {
         console.error("EchoWrite: Napaka pri shranjevanju seje.", e);
     }
+    
+    saveTimeout = setTimeout(() => {
+        try {
+            const dataToStore = {
+                terminalHistory: terminalHistory,
+                biasGameState: biasGameState
+            };
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataToStore));
+        } catch (e) {
+            console.error("EchoWrite: Napaka pri shranjevanju seje.", e);
+        }
+    }, SAVE_DEBOUNCE_MS);
 }
 
 /** Debounced version of save to reduce localStorage writes */
@@ -107,7 +119,7 @@ export function importSession(event, reinitializeCallback) {
             if (importedData.version && importedData.terminalHistory) {
                 // Posodobi globalne reference stanja
                 terminalHistory.length = 0;
-                Array.prototype.push.apply(terminalHistory, importedData.terminalHistory);
+                terminalHistory.push(...importedData.terminalHistory); // Use spread operator
                 biasGameState.completed = importedData.biasGameState?.completed || false;
                 biasGameState.lastPath = importedData.biasGameState?.lastPath || null;
 

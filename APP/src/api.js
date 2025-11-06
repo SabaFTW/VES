@@ -34,6 +34,9 @@ document.getElementById('close-error-btn').addEventListener('click', () => {
     document.getElementById('error-modal').classList.add('hidden');
 });
 
+// Cache API key to avoid repeated DOM/localStorage access
+let cachedApiKey = null;
+
 /**
  * Upravljanje z API ključem in vizualno stanje (Always-On Resonance).
  * Avtomatsko naloži ključ iz localStorage.
@@ -51,6 +54,7 @@ export function initApiKey() {
 
     if (savedApiKey) {
         apiKeyInput.value = savedApiKey;
+        cachedApiKey = savedApiKey; // Cache the key
     }
 
     updateApiKeyStatus(!!savedApiKey);
@@ -73,7 +77,9 @@ export function initApiKey() {
  * @returns {Promise<object>} - Odgovor API-ja.
  */
 export async function callGeminiApi(payload) {
-    const apiKey = document.getElementById('api-key-input').value.trim() || 
+    // Use cached API key to avoid repeated DOM/localStorage access
+    const apiKey = cachedApiKey || 
+                   document.getElementById('api-key-input')?.value.trim() || 
                    localStorage.getItem('geminiApiKey');
     
     if (!apiKey) {

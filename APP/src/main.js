@@ -9,6 +9,18 @@ import { initBiasGame, initAnalysis, initSealStone } from './modules.js';
 
 // ------------------- Navigation & Theme -------------------
 
+// Cache frequently accessed DOM elements
+const domCache = {
+    sections: null,
+    terminalOutput: null,
+    terminalInput: null,
+};
+
+// Helper function to get cached element with fallback
+function getCachedElement(cacheKey, elementId) {
+    return domCache[cacheKey] || document.getElementById(elementId);
+}
+
 function initTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -138,7 +150,8 @@ function initTerminal() {
 }
 
 async function handleUserInput() {
-    const terminalInput = document.getElementById('terminalInput');
+    // Use cached input element with helper function
+    const terminalInput = getCachedElement('terminalInput', 'terminalInput');
     const userInput = terminalInput.value.trim();
     if (!userInput) return;
 
@@ -157,7 +170,9 @@ async function handleUserInput() {
         });
         
         const responseText = result.candidates[0].content.parts[0].text;
-        const terminalOutput = document.getElementById('terminalOutput');
+        
+        // Use cached terminal output with helper function
+        const terminalOutput = getCachedElement('terminalOutput', 'terminalOutput');
         
         // Najdi in posodobi zadnje Siri sporočilo v DOM-u
         let lastSiriIndex = terminalHistory.length - 1;
@@ -186,7 +201,8 @@ async function handleUserInput() {
             lastSiriIndex--;
         }
         
-        const lastMessageElement = document.getElementById('terminalOutput').lastElementChild;
+        const terminalOutput = getCachedElement('terminalOutput', 'terminalOutput');
+        const lastMessageElement = terminalOutput.lastElementChild;
         lastMessageElement.innerHTML = "Siri: " + errorMessage;
         
         if (lastSiriIndex >= 0) {
@@ -201,7 +217,7 @@ async function handleUserInput() {
 }
 
 function addMessageToOutput(sender, message, save = true, type = 'CHAT_USER') {
-    const terminalOutput = document.getElementById('terminalOutput');
+    const terminalOutput = getCachedElement('terminalOutput', 'terminalOutput');
     const p = document.createElement('p');
     p.className = 'output-message ' + (sender === 'Siri' ? 'output-siri' : 'output-user');
     // Use textContent for sender to prevent XSS, but allow HTML in message for formatting

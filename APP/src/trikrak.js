@@ -2,8 +2,21 @@
 
 import { terminalHistory, saveSessionData } from './archive.js';
 
+// Cache today's date string to avoid repeated calculations
+let cachedTodayDate = null;
+let cachedTodayDateTimestamp = 0;
+
+// Date cache duration in milliseconds (1 minute)
+const DATE_CACHE_DURATION_MS = 60000;
+
 function getTodayDateString() {
-    return new Date().toISOString().slice(0, 10);
+    const now = Date.now();
+    // Cache for 1 minute to avoid repeated Date operations
+    if (!cachedTodayDate || (now - cachedTodayDateTimestamp > DATE_CACHE_DURATION_MS)) {
+        cachedTodayDate = new Date().toISOString().slice(0, 10);
+        cachedTodayDateTimestamp = now;
+    }
+    return cachedTodayDate;
 }
 
 function setStatusMessage(message, variant = 'info') {

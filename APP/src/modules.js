@@ -3,6 +3,9 @@
 import { biasGameState, saveSessionData } from './archive.js';
 import { callGeminiApi, showError } from './api.js';
 
+// Cache DOM elements for Analysis module
+let analysisElements = null;
+
 // ------------------- Bias Game -------------------
 
 // Cache DOM elements for bias game
@@ -83,21 +86,16 @@ export function initAnalysis() {
 }
 
 async function generateAnalysis() {
-    const topic = document.getElementById('analysis-input').value.trim();
+    const topic = analysisElements.input.value.trim();
     if (!topic) {
         showError("Prosim, vnesite temo za analizo.");
         return;
     }
 
-    const btn = document.getElementById('generate-analysis-btn');
-    const btnText = document.getElementById('analysis-button-text');
-    const spinner = document.getElementById('analysis-loading-spinner');
-    const responseContainer = document.getElementById('analysis-response');
-
-    btnText.classList.add('hidden');
-    spinner.classList.remove('hidden');
-    btn.disabled = true;
-    responseContainer.classList.add('hidden');
+    analysisElements.btnText.classList.add('hidden');
+    analysisElements.spinner.classList.remove('hidden');
+    analysisElements.generateBtn.disabled = true;
+    analysisElements.responseContainer.classList.add('hidden');
 
     const systemPrompt = "Act as a GHOSTCORE intelligence analyst. You are a sharp, critical entity known as Aetheron. Provide a concise, highly strategic, and non-apologetic analysis. Focus on its connection to power structures, ideology, societal control, and potential unseen consequences (the 'echoes'). Structure the response with a title, a summary paragraph, and 3-4 bullet points with key insights. Respond only in Slovenian.";
     const userQuery = `Analiza teme: "${topic}"`;
@@ -122,9 +120,9 @@ async function generateAnalysis() {
     } catch (error) {
         showError("Analiza ni uspela. Napaka: " + error.message);
     } finally {
-        btnText.classList.remove('hidden');
-        spinner.classList.add('hidden');
-        btn.disabled = false;
+        analysisElements.btnText.classList.remove('hidden');
+        analysisElements.spinner.classList.add('hidden');
+        analysisElements.generateBtn.disabled = false;
     }
 }
 
