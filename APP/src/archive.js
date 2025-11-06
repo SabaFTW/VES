@@ -5,6 +5,21 @@ export let biasGameState = { completed: false, lastPath: null };
 
 const LOCAL_STORAGE_KEY = 'ghostcoreSessionData_v2';
 
+/**
+ * Debounce function for optimizing frequent saves
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 /** Nalaganje stanja iz localStorage ob zagonu. */
 export function loadSessionData() {
     try {
@@ -22,8 +37,8 @@ export function loadSessionData() {
     }
 }
 
-/** Shranjevanje trenutnega stanja v localStorage. */
-export function saveSessionData() {
+/** Internal function to actually save data */
+function performSave() {
     try {
         const dataToStore = {
             terminalHistory: terminalHistory,
@@ -35,13 +50,26 @@ export function saveSessionData() {
     }
 }
 
+/** Debounced version of save to reduce localStorage writes */
+const debouncedSave = debounce(performSave, 300);
+
+/** Shranjevanje trenutnega stanja v localStorage. */
+export function saveSessionData() {
+    debouncedSave();
+}
+
+/** Immediate save for critical operations (export/import) */
+export function saveSessionDataImmediate() {
+    performSave();
+}
+
 
 // ------------------- RAKON IZVOZ/UVOZ (File I/O) -------------------
 
 /** Izvozi celotno sejo kot EchoWrite Record (.json datoteka). */
 export function exportSession() {
-    // Poskrbi, da je zadnje stanje shranjeno v state
-    saveSessionData();
+    // Ensure immediate save before export
+    saveSessionDataImmediate();
 
     const exportData = {
         version: "GHOSTCORE_v2.4_Modular",
@@ -83,7 +111,7 @@ export function importSession(event, reinitializeCallback) {
                 biasGameState.completed = importedData.biasGameState?.completed || false;
                 biasGameState.lastPath = importedData.biasGameState?.lastPath || null;
 
-                saveSessionData(); // Shrani uvoženo sejo lokalno
+                saveSessionDataImmediate(); // Use immediate save for import
                 console.log(`EchoWrite: Zapis uspešno UVOŽEN (v${importedData.version}).`);
 
                 // Ponovno inicializiraj module, da se osveži DOM (Terminal, Bias, Trikrak)

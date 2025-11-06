@@ -52,8 +52,16 @@ function initNavigation() {
     document.getElementById('save-trikrak-btn').addEventListener('click', saveTrikrakReflection);
 }
 
+// Cache sections for better performance
+let cachedSections = null;
+
 export function showSection(sectionId) {
-    document.querySelectorAll('main > section').forEach(section => {
+    // Cache sections on first call
+    if (!cachedSections) {
+        cachedSections = document.querySelectorAll('main > section');
+    }
+    
+    cachedSections.forEach(section => {
         section.classList.add('section-hidden');
     });
     
@@ -106,11 +114,26 @@ function initTerminal() {
     });
     
     const terminalOutput = document.getElementById('terminalOutput');
-    terminalOutput.innerHTML = ''; 
-    // Prikaže samo chat sporočila (filtrira TRIKRAK_REF)
-    terminalHistory.filter(item => item.type !== 'TRIKRAK_REF').forEach(item => { 
-        addMessageToOutput(item.sender, item.message, false, item.type); 
+    terminalOutput.innerHTML = '';
+    
+    // Use DocumentFragment for batch DOM updates
+    const fragment = document.createDocumentFragment();
+    
+    // Filter and render in one pass
+    terminalHistory.forEach(item => {
+        if (item.type !== 'TRIKRAK_REF') {
+            const p = document.createElement('p');
+            p.className = 'output-message ' + (item.sender === 'Siri' ? 'output-siri' : 'output-user');
+            // Use textContent for sender to prevent XSS, but allow HTML in message for formatting
+            p.textContent = item.sender + ': ';
+            const messageSpan = document.createElement('span');
+            messageSpan.innerHTML = item.message; // Message may contain formatted HTML from API
+            p.appendChild(messageSpan);
+            fragment.appendChild(p);
+        }
     });
+    
+    terminalOutput.appendChild(fragment);
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
@@ -181,7 +204,11 @@ function addMessageToOutput(sender, message, save = true, type = 'CHAT_USER') {
     const terminalOutput = document.getElementById('terminalOutput');
     const p = document.createElement('p');
     p.className = 'output-message ' + (sender === 'Siri' ? 'output-siri' : 'output-user');
-    p.innerHTML = sender + ': ' + message;
+    // Use textContent for sender to prevent XSS, but allow HTML in message for formatting
+    p.textContent = sender + ': ';
+    const messageSpan = document.createElement('span');
+    messageSpan.innerHTML = message; // Message may contain formatted HTML from API or loader
+    p.appendChild(messageSpan);
     terminalOutput.appendChild(p);
 
     if (save) {

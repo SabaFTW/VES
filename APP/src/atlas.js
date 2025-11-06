@@ -47,16 +47,22 @@ export function initAtlas() {
     const atlasList = document.getElementById('atlas-list');
     atlasList.innerHTML = '';
     
-    atlasEntityData
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .forEach(entity => {
-            const li = document.createElement('li');
-            li.id = `list-item-${entity.id}`;
-            li.className = 'atlas-list-item text-gray-300 dark:text-gray-300';
-            li.innerHTML = `<span class="font-bold">${entity.sigil} ${entity.name}</span> <span class="text-xs text-gray-500">(${entity.type})</span>`;
-            li.onclick = () => selectNode(entity.id);
-            atlasList.appendChild(li);
-        });
+    // Use DocumentFragment for efficient DOM updates
+    const listFragment = document.createDocumentFragment();
+    const sortedEntities = atlasEntityData
+        .slice()
+        .sort((a, b) => a.name.localeCompare(b.name));
+    
+    sortedEntities.forEach(entity => {
+        const li = document.createElement('li');
+        li.id = `list-item-${entity.id}`;
+        li.className = 'atlas-list-item text-gray-300 dark:text-gray-300';
+        li.innerHTML = `<span class="font-bold">${entity.sigil} ${entity.name}</span> <span class="text-xs text-gray-500">(${entity.type})</span>`;
+        li.onclick = () => selectNode(entity.id);
+        listFragment.appendChild(li);
+    });
+    
+    atlasList.appendChild(listFragment);
 
     atlasSimulation = d3.forceSimulation(graphData.nodes)
         .force('link', d3.forceLink(graphData.links).id(d => d.id).distance(120))
