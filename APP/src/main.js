@@ -91,6 +91,14 @@ export function showSection(sectionId) {
 window.showSection = showSection;
 
 
+// ------------------- Bias Game -------------------
+// (Implementation moved to modules.js)
+
+
+// ------------------- Analysis Module -------------------
+// (Implementation moved to modules.js)
+
+
 // ------------------- Terminal Module (SIRI) -------------------
 
 function initTerminal() {
@@ -209,6 +217,10 @@ function addMessageToOutput(sender, message, save = true, type = 'CHAT_USER') {
     }
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
+
+
+// ------------------- Seal Stone Module -------------------
+// (Implementation moved to modules.js)
 
 
 // ------------------- Initialization -------------------
