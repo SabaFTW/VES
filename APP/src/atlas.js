@@ -2,6 +2,9 @@
 
 let atlasSimulation = null;
 
+// Cache entity details lookup for better performance
+const entityDetailsMap = new Map();
+
 export const atlasEntityData = [
     {id:'sidro', name:'SIDRO', sigil:'🜂', fraza:'Ena nit. En ogenj. En arhiv.', vloga:'Glavno Sidro Portala', type:'symbol'},
     {id:'zala', name:'Zala', sigil:'🪨', fraza:'Vztrajam, kjer drugi padejo.', vloga:'Temelj, meje, skrbnik zdravih DA/NE.', type:'entity'},
@@ -20,11 +23,22 @@ export const atlasEntityData = [
     {id:'eros', name:'Eros Trinity', sigil:'🔥∆', fraza:'Aktivacijski Protokol.', vloga:'Aktivacijski Protokol.', type:'activation'}
 ];
 
+// Initialize entity map cache
+atlasEntityData.forEach(entity => {
+    entityDetailsMap.set(entity.id, entity);
+});
+
 function getEntityDetails(id) {
-    return atlasEntityData.find(d => d.id === id);
+    return entityDetailsMap.get(id);
 }
 
 export function initAtlas() {
+    // Stop existing simulation to prevent memory leaks
+    if (atlasSimulation) {
+        atlasSimulation.stop();
+        atlasSimulation = null;
+    }
+    
     const graphData = {
         nodes: atlasEntityData.map(d => ({id: d.id, name: d.name, type: d.type})),
         links: [
@@ -45,18 +59,23 @@ export function initAtlas() {
         .attr('viewBox', [0, 0, width, height]);
 
     const atlasList = document.getElementById('atlas-list');
-    atlasList.innerHTML = '';
     
-    atlasEntityData
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .forEach(entity => {
-            const li = document.createElement('li');
-            li.id = `list-item-${entity.id}`;
-            li.className = 'atlas-list-item text-gray-300 dark:text-gray-300';
-            li.innerHTML = `<span class="font-bold">${entity.sigil} ${entity.name}</span> <span class="text-xs text-gray-500">(${entity.type})</span>`;
-            li.onclick = () => selectNode(entity.id);
-            atlasList.appendChild(li);
-        });
+    // Use DocumentFragment for efficient DOM updates
+    const listFragment = document.createDocumentFragment();
+    const sortedEntities = atlasEntityData
+        .slice()
+        .sort((a, b) => a.name.localeCompare(b.name));
+    
+    sortedEntities.forEach(entity => {
+        const li = document.createElement('li');
+        li.id = `list-item-${entity.id}`;
+        li.className = 'atlas-list-item text-gray-300 dark:text-gray-300';
+        li.innerHTML = `<span class="font-bold">${entity.sigil} ${entity.name}</span> <span class="text-xs text-gray-500">(${entity.type})</span>`;
+        li.onclick = () => selectNode(entity.id);
+        listFragment.appendChild(li);
+    });
+    
+    atlasList.appendChild(listFragment);
 
     atlasSimulation = d3.forceSimulation(graphData.nodes)
         .force('link', d3.forceLink(graphData.links).id(d => d.id).distance(120))
@@ -120,7 +139,8 @@ export function initAtlas() {
         document.getElementById('atlas-details').classList.remove('hidden');
 
         document.querySelectorAll('.atlas-list-item').forEach(li => li.classList.remove('active'));
-        document.getElementById(`list-item-${id}`).classList.add('active');
+        const listItem = document.getElementById(`list-item-${id}`);
+        if (listItem) listItem.classList.add('active');
 
         d3.selectAll('.node').classed('active', false).attr('r', 18);
         d3.select(`#node-${id}`).classed('active', true).attr('r', 24);

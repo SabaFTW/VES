@@ -2,8 +2,21 @@
 
 import { terminalHistory, saveSessionData } from './archive.js';
 
+// Cache today's date string to avoid repeated calculations
+let cachedTodayDate = null;
+let cachedTodayDateTimestamp = 0;
+
+// Date cache duration in milliseconds (1 minute)
+const DATE_CACHE_DURATION_MS = 60000;
+
 function getTodayDateString() {
-    return new Date().toISOString().slice(0, 10);
+    const now = Date.now();
+    // Cache for 1 minute to avoid repeated Date operations
+    if (!cachedTodayDate || (now - cachedTodayDateTimestamp > DATE_CACHE_DURATION_MS)) {
+        cachedTodayDate = new Date().toISOString().slice(0, 10);
+        cachedTodayDateTimestamp = now;
+    }
+    return cachedTodayDate;
 }
 
 function setStatusMessage(message, variant = 'info') {
@@ -117,21 +130,33 @@ export function renderTrikrakReflections() {
     const today = getTodayDateString();
     dateHeader.textContent = `Dnevna Refleksija (${today})`;
 
+    // Clear container once
     historyContainer.innerHTML = '';
 
+    // Filter and sort in a single pass with optimized logic
     const reflections = terminalHistory
         .filter((entry) => entry.type === 'TRIKRAK_REF')
         .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 
     if (reflections.length === 0) {
         historyContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">Arhiv Trikrak refleksij je prazen. Pokaži plamen, da bo zapis gorel.</p>';
-    } else {
-        reflections.forEach((reflection) => {
-            historyContainer.appendChild(createHistoryEntry(reflection, today));
-        });
+        hideStatusMessage();
+        if (saveButton) saveButton.disabled = false;
+        return;
     }
 
-    const reflectionDoneToday = reflections.some((entry) => entry.timestamp.startsWith(today));
+    // Use DocumentFragment for efficient DOM updates
+    const fragment = document.createDocumentFragment();
+    let reflectionDoneToday = false;
+    
+    reflections.forEach((reflection) => {
+        if (!reflectionDoneToday && reflection.timestamp.startsWith(today)) {
+            reflectionDoneToday = true;
+        }
+        fragment.appendChild(createHistoryEntry(reflection, today));
+    });
+    
+    historyContainer.appendChild(fragment);
 
     if (reflectionDoneToday) {
         setStatusMessage(`Zapis za ${today} je že shranjen v EchoWrite. Dnevno sidro je postavljeno.`);

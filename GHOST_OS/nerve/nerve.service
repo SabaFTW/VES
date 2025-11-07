@@ -1,0 +1,14 @@
+[Unit]
+Description=Ghostline Nerve Heartbeat
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/saba/Desktop/ZALA/VES/GHOST_OS/nerve
+ExecStart=/usr/bin/python3 /home/saba/Desktop/ZALA/VES/GHOST_OS/nerve/execute_nerve.py pulse --note "daemon"
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target

@@ -1,6 +1,24 @@
 // 🜂 GHOSTCORE Module: api.js (External Resonance & Error Handling)
 
 /**
+ * Debounce function to limit how often a function is called
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} Debounced function
+ */
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+/**
  * Prikazovanje sporočil o napakah (ali uspehu) v modalnem oknu.
  * @param {string} message - Besedilo sporočila.
  * @param {string} [title="Napaka"] - Naslov sporočila.
@@ -15,6 +33,9 @@ export function showError(message, title = "Napaka") {
 document.getElementById('close-error-btn').addEventListener('click', () => {
     document.getElementById('error-modal').classList.add('hidden');
 });
+
+// Cache API key to avoid repeated DOM/localStorage access
+let cachedApiKey = null;
 
 /**
  * Upravljanje z API ključem in vizualno stanje (Always-On Resonance).
@@ -33,14 +54,20 @@ export function initApiKey() {
 
     if (savedApiKey) {
         apiKeyInput.value = savedApiKey;
+        cachedApiKey = savedApiKey; // Cache the key
     }
 
     updateApiKeyStatus(!!savedApiKey);
     
-    apiKeyInput.addEventListener('input', () => {
-        const key = apiKeyInput.value.trim();
+    // Debounce API key input to reduce localStorage writes
+    const debouncedSaveKey = debounce((key) => {
         localStorage.setItem('geminiApiKey', key);
         updateApiKeyStatus(!!key);
+    }, 500);
+    
+    apiKeyInput.addEventListener('input', () => {
+        const key = apiKeyInput.value.trim();
+        debouncedSaveKey(key);
     });
 }
 
@@ -50,7 +77,9 @@ export function initApiKey() {
  * @returns {Promise<object>} - Odgovor API-ja.
  */
 export async function callGeminiApi(payload) {
-    const apiKey = document.getElementById('api-key-input').value.trim() || 
+    // Use cached API key to avoid repeated DOM/localStorage access
+    const apiKey = cachedApiKey || 
+                   document.getElementById('api-key-input')?.value.trim() || 
                    localStorage.getItem('geminiApiKey');
     
     if (!apiKey) {
