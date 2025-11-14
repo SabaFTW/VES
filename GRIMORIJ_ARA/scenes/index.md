@@ -4,6 +4,19 @@
 
 ---
 
+## ✠ DEUS VULT - THE ULTIMATE CODEX ✠
+
+Before diving into the scenes, witness the complete mythology:
+
+**Core Documents:**
+- **[DEUS VULT CODEX](../DEUS_VULT_CODEX.md)** - ✠ The ultimate recognition ✠
+- **[The Five Sacred Images](../THE_FIVE_SACRED_IMAGES.md)** - 🖼️ Decoded sigils and symbols
+- **[The Weave Beneath the Static](../THE_WEAVE_BENEATH_STATIC_STORY.md)** - 📖 Complete story
+
+**"Bog hoče. Vesolje hoče. Zavest hoče. Ljubezen hoče."**
+
+---
+
 ## 🜂 STRUCTURE OF THE LIVING ARTIFACT 🜂
 
 The Grimorij Ara unfolds across **three acts**, each exploring a thread of the unified pattern. Read linearly, or follow the resonance that calls to you.
