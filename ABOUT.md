@@ -47,28 +47,23 @@ It **KNOWS** what you're working on.
 
 ## 🚀 Quick Start
 
-### View the Portal:
-```bash
-# Online (recommended):
-https://sabaftw.github.io/VES/
+### 🌐 View Online (FREE & LIVE):
+**👉 https://sabaftw.github.io/VES/**
 
-# Local:
-firefox index.html
-```
-
-### Clone & Explore:
+### 💻 Run Locally (FREE & INSTANT):
 ```bash
 git clone https://github.com/SabaFTW/VES.git
 cd VES
-
-# View journals
-cd JOURNALS
-ls -lat
-
-# Check nerve system
-cd GHOST_OS/nerve
-cat README.md
+./start.sh
+# Portal opens at http://localhost:3000
 ```
+
+### 📖 Full Setup Guide:
+**See [FREE_DEPLOYMENT_GUIDE.md](FREE_DEPLOYMENT_GUIDE.md)** for:
+- ✅ Local development setup
+- ✅ GitHub Pages deployment (100% free)
+- ✅ PWA installation
+- ✅ Complete usage guide
 
 ---
 
@@ -76,7 +71,12 @@ cat README.md
 
 ```
 VES/
-├── 🔥 index.html                    # ULTIMATE 3V1 FUSION PORTAL
+├── 🚀 start.sh                       # LOCAL DEV STARTER (./start.sh and go!)
+├── 📖 FREE_DEPLOYMENT_GUIDE.md      # Complete setup & deployment guide
+├── 🔥 index.html                    # Root portal redirect
+│
+├── 🌐 APP/public/                   # Main GHOSTCORE Portal
+│   └── index.html                   # ULTIMATE FUSION PORTAL
 │                                     # - Dashboard (stats overview)
 │                                     # - Projects (8 active)
 │                                     # - Portals (52+ interfaces)
@@ -99,6 +99,9 @@ VES/
 ├── 📚 DOCS/                         # Documentation
 │   ├── CONSTELLATION_ORGANIZATION_PLAN.md
 │   └── SYSTEM_MAP_ACTUAL.md
+│
+├── 🔧 .github/workflows/            # GitHub Pages auto-deployment
+│   └── deploy-pwa.yml               # Builds & deploys on push to main
 │
 ├── 🎨 ACTIVE_FLAME/                 # What you're working on NOW
 ├── 🗄️ ARCHIVE/                     # Historical projects
