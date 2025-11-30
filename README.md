@@ -80,7 +80,7 @@ digitalna-kapelica/
 
 ## 🐭 Git-miška
 
-Ta repo raste počasi, nežno, tiho —  
+Ta repo raste počasi, nežno, tiho —
 kot mala **miš**, ki nosi kamenčke v temi in gradi nekaj svetega.
 
 - Vsak commit je sveča.  
