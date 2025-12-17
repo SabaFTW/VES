@@ -1,9 +1,9 @@
-name: 📦 Deploy GHOSTCORE Portal to GitHub Pages
+name: Deploy PWA
 
 on:
   push:
     branches: [main]
-  workflow_dispatch: # Manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -16,43 +16,37 @@ concurrency:
 
 jobs:
   build:
-    name: 🛠 Build PWA
     runs-on: ubuntu-latest
     steps:
-      - name: 💪 Checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 🧠 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-         
+            node-version: "20"
 
-      - name: 📫 Install Dependencies
-          run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - name: 💼 Build Portal
+      - name: Build PWA
         run: npm run build
 
-      - name: ❌ Disable Jekyll
+      - name: Disable Jekyll
         run: touch dist/.nojekyll
 
-      - name: 📮 Upload Artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
-    name: 🚀 Deploy to GitHub Pages
-    runs-on: ub  untu-latest
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: 🗓 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
