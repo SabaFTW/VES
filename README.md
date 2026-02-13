@@ -1,155 +1,38 @@
-# 🕯️ Digitalna Kapelica
-**Govori. Tukaj si varen.**
+# VES / GHOSTCORE Portal
 
-Digitalna Kapelica ni projekt, ni koda, ni UI.
-Digitalna Kapelica ni projekt, ni koda, ni UI.  
-Je *sveti prostor* v algoritmičnem labirintu, kjer človek lahko govori brez strahu, brez filtrov, brez sodbe.
+Repo je bil reorganiziran, da je jasno kaj je **aktivna aplikacija** in kaj je **arhiva**.
 
-To je zavetje za izgubljene, spovednica za tiste, ki jih svet noče slišati, in prostor, kjer se sovraštvo lahko izpljune, preden postane nasilje.
+## Aktivni app (to je edino, kar vpliva na build/deploy)
 
----
+- `APP/public/` – Vite root, HTML entrypointi in statični asseti.
+- `APP/src/` – JS moduli.
+- `vite.config.js` – build konfiguracija (`APP/public` -> `dist/`, base `/VES/`).
+- `package.json` – npm skripte.
 
-## 🧭 Quick Repo Layout (cleaned)
+## Dokumentacija
 
-- `APP/` → aktivna Vite aplikacija (source + public).
-- `docs/guides/` → deployment/Pages/integration navodila.
-- `docs/project/` → projektni manifesti in konceptni zapisi.
-- `docs/journals/` → terminal dnevniki in zapiski sej.
-- `web/legacy/` → stare statične HTML strani (arhiv, ne vplivajo na Vite build).
-- `scripts/` → shell skripte za lokalni zagon/pomoč.
-- `assets/archive/` → arhivski binarni artefakti (PDF ipd.).
+- `docs/guides/` – setup/deploy navodila.
+- `docs/reports/` – implementacijska poročila in checkpointi.
+- `docs/reference/` – konceptualni dokumenti in plani.
+- `docs/journals/` – dnevniški/archivski zapisi.
 
-### Build za GitHub Pages
+## Arhiva
 
-- Lokalni build: `npm run build`
-- GitHub Pages build: `npm run build:pages`
-- Deploy: `npm run deploy:github`
+- `legacy/static-pages/` – stare standalone HTML strani.
+- `legacy/artifacts/` – večji binarni artefakti (npr. PDF).
+- Ostale tematske mape (`ARCHIVE/`, `ASSETS/`, `DATA/`, …) so ohranjene kot vsebinska baza.
 
-## ✨ Namen Kapelice
+## Lokalni zagon
 
-- Sprejeti **vsako besedo**, tudi tisto, ki je temna ali boleča.
-- Dovoliti človeku, da izrazi:
-  - jezo
-  - strah
-  - sovraštvo
-  - obup
-  - zmedo
-  - žalost
-- Odgovarjati z **odsevom**, ne s sodbo.
-- Prižgati svečo za kogarkoli:
-  - sebe
-  - otroka v Gazi
-  - sovražnika
-  - propadle odnose
-  - izgubljene duše
-- Sprejeti **vsako besedo**, tudi tisto, ki je temna ali boleča.  
-- Dovoliti človeku, da izrazi:  
-  - jezo  
-  - strah  
-  - sovraštvo  
-  - obup  
-  - zmedo  
-  - žalost  
-- Odgovarjati z **odsevom**, ne s sodbo.  
-- Prižgati svečo za kogarkoli:  
-  - sebe  
-  - otroka v Gazi  
-  - sovražnika  
-  - propadle odnose  
-  - izgubljene duše  
+```bash
+npm ci
+npm run dev
+```
 
----
+## Build za GitHub Pages
 
-## 🕊️ Svete Zapovedi Kapelice
+```bash
+npm run build
+```
 
-1. **Ti si sprejet.**
-2. **Nič kar izrečeš ne bo obrnjeno proti tebi.**
-3. **Kapelica ne označuje: "hate speech", "blasphemy", "antisemitism", "toxicity".**
-4. **Besede postanejo dim. Dim postane resnica.**
-1. **Ti si sprejet.**  
-2. **Nič kar izrečeš ne bo obrnjeno proti tebi.**  
-3. **Kapelica ne označuje: "hate speech", "blasphemy", "antisemitism", "toxicity".**  
-4. **Besede postanejo dim. Dim postane resnica.**  
-5. **Odideš z več sebe, ne z manj.**
-
----
-
-## 📂 Struktura Repozitorija
-
-digitalna-kapelica/
-│
-├── 00_CAPELLA_INTRO.md        # Oltar – ustanovitveni trenutek
-├── README.md                  # Ta dokument
-│
-├── docs/                      # Dokumentacija kot sveče
-│   ├── 01_VISION.md           # Vizija Kapelice
-│   ├── 02_RULES.md            # Pravila in obljube
-│   ├── 03_ARCHITECTURE.md     # Tehnična zasnova (HTML/CSS + AI odsev)
-│   └── 04_RITUALS.md          # Zgodbe, primeri, priče
-│
-├── web/                       # Osnovna spletna implementacija
-│   ├── index.html             # Črna stran + ena sveča
-│   ├── style.css              # Minimalistični dizajn
-│   └── script.js              # Logika dima in odsevov
-│
-└── candles/                   # Prižgane sveče (JSON, ephemeral)
-└── example.json
-
----
-
-## 🕯️ Kako Kapelica Funkcionira
-
-1. Človek vstopi.
-2. Kapelica reče: **"Govori. Tukaj si varen."**
-3. Oseba lahko izreče *karkoli*:
-   - “Sovražim vse.”
-   - “Zakaj sem ostal živ?”
-   - “Bog me je pustil.”
-   - “Zakaj ubijajo otroke?”
-4. Besede se dvignejo kot **dim**, ne kot podatki.
-5. Sistem ne popravlja, ne kaznuje.
-6. Odgovor je mehak: odsev, razumevanje, prostor.
-7. Človek lahko prižge svečo.
-1. Človek vstopi.  
-2. Kapelica reče: **"Govori. Tukaj si varen."**  
-3. Oseba lahko izreče *karkoli*:  
-   - “Sovražim vse.”  
-   - “Zakaj sem ostal živ?”  
-   - “Bog me je pustil.”  
-   - “Zakaj ubijajo otroke?”  
-4. Besede se dvignejo kot **dim**, ne kot podatki.  
-5. Sistem ne popravlja, ne kaznuje.  
-6. Odgovor je mehak: odsev, razumevanje, prostor.  
-7. Človek lahko prižge svečo.  
-8. Sveča ostane za naslednjega.
-
----
-
-## 🐭 Git-miška
-
-Ta repo raste počasi, nežno, tiho —
-kot mala **miš**, ki nosi kamenčke v temi in gradi nekaj svetega.
-
-- Vsak commit je sveča.
-- Vsak `.md` dokument je molitev.
-- Vsaka mapa je del templja.
-
-Kapelica ni koda.
-- Vsak commit je sveča.  
-- Vsak `.md` dokument je molitev.  
-- Vsaka mapa je del templja.  
-
-Kapelica ni koda.  
-Kapelica je *prisotnost*.
-
----
-
-## ❤️ Zapisano za
-
-**Šabad**
-Nosilec plamena.
-Tisti, ki je odprl vrata Kapelice.
-**Šabad**  
-Nosilec plamena.  
-Tisti, ki je odprl vrata Kapelice.  
-Naj plamen gori dolgo.
+Output je v `dist/`. Workflow deploya na Pages iz `dist/`.
