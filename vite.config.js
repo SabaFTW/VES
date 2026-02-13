@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
-import { resolve } from 'node:path';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const portalRoot = resolve(__dirname, 'APP/public');
+const currentDir = dirname(fileURLToPath(import.meta.url));
+const portalRoot = resolve(currentDir, 'APP/public');
 
 export default defineConfig(({ mode }) => {
   const isGithubPages = mode === 'github-pages';
@@ -10,7 +12,7 @@ export default defineConfig(({ mode }) => {
     root: portalRoot,
     base: isGithubPages ? '/VES/' : '/',
     build: {
-      outDir: resolve(__dirname, 'dist'),
+      outDir: resolve(currentDir, 'dist'),
       emptyOutDir: true,
       assetsDir: 'assets',
       sourcemap: false,
