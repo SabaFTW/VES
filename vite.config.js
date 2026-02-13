@@ -2,49 +2,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { defineConfig } from 'vite';
 
-const appRoot = 'APP/public';
-
-function getHtmlEntryPoints(rootDir) {
-  const absoluteRoot = path.resolve(rootDir);
-  return fs
-    .readdirSync(absoluteRoot)
-    .filter((file) => file.endsWith('.html') && !file.endsWith('.bak'))
-    .reduce((entries, file) => {
-      const entryName = path.basename(file, '.html');
-      entries[entryName] = path.resolve(absoluteRoot, file);
-      return entries;
-    }, {});
-}
-
-function resolveBasePath() {
-  if (process.env.VITE_BASE_PATH) {
-    return process.env.VITE_BASE_PATH;
-  }
-
-  if (process.env.GITHUB_ACTIONS === 'true') {
-    const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1];
-    if (repoName) {
-      return `/${repoName}/`;
-    }
-  }
-
-  return '/';
-}
+const basePath = process.env.VITE_BASE_PATH || '/';
 
 export default defineConfig({
-  root: appRoot,
-  publicDir: path.resolve(appRoot, '../static'),
-  base: resolveBasePath(),
+  // Vite app root for dev/build
+  root: 'APP/public',
+  // Dynamic base: local build '/', GitHub Pages build '/VES/'
+  base: basePath,
   build: {
     outDir: '../../dist',
     emptyOutDir: true,
     assetsDir: 'assets',
     sourcemap: false,
     minify: 'esbuild',
-    target: 'es2020',
-    rollupOptions: {
-      input: getHtmlEntryPoints(appRoot)
-    }
+    target: 'es2020'
   },
   server: {
     port: 3000,
