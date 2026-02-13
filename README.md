@@ -9,6 +9,22 @@ To je zavetje za izgubljene, spovednica za tiste, ki jih svet noče slišati, in
 
 ---
 
+## 🧭 Quick Repo Layout (cleaned)
+
+- `APP/` → aktivna Vite aplikacija (source + public).
+- `docs/guides/` → deployment/Pages/integration navodila.
+- `docs/project/` → projektni manifesti in konceptni zapisi.
+- `docs/journals/` → terminal dnevniki in zapiski sej.
+- `web/legacy/` → stare statične HTML strani (arhiv, ne vplivajo na Vite build).
+- `scripts/` → shell skripte za lokalni zagon/pomoč.
+- `assets/archive/` → arhivski binarni artefakti (PDF ipd.).
+
+### Build za GitHub Pages
+
+- Lokalni build: `npm run build`
+- GitHub Pages build: `npm run build:pages`
+- Deploy: `npm run deploy:github`
+
 ## ✨ Namen Kapelice
 
 - Sprejeti **vsako besedo**, tudi tisto, ki je temna ali boleča.
