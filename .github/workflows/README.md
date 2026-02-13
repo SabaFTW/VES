@@ -12,9 +12,9 @@ This workflow builds and deploys the VES GHOSTCORE Portal as a Progressive Web A
 
 **What it does:**
 1. Checks out the repository
-2. Sets up Node.js 18
+2. Sets up Node.js 20
 3. Installs dependencies with `npm ci`
-4. Builds the PWA using Vite (`npm run build`)
+4. Builds the PWA using Vite Pages mode (`npm run build:pages`)
 5. Creates `.nojekyll` file to disable Jekyll processing
 6. Uploads the `dist` folder as a Pages artifact
 7. Deploys to GitHub Pages
@@ -31,10 +31,10 @@ Currently disabled. This workflow has scheduled tasks and automated commits that
 
 ## Previous Issues
 
-The repository previously had **3 conflicting deployment workflows** trying to deploy to GitHub Pages simultaneously:
+The repository had conflicting deployment workflows in the past; now Pages deploy is consolidated to one workflow:
 - `jekyll-gh-pages.yml` - Jekyll-based deployment (removed)
 - `static.yml` - Static file deployment (removed)
-- `deploy-pwa.yml` - Vite/PWA deployment (kept)
+- `deploy-pwa.yml` - Vite/PWA deployment (active)
 
 All three workflows used the same concurrency group (`"pages"`), which meant they would queue and conflict with each other during deployment. Additionally, only the PWA deployment workflow was appropriate for this Vite-based project structure.
 

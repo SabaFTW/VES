@@ -2,15 +2,15 @@
   "name": "ghostcore-portal",
   "version": "2.3.0",
   "description": "🜂 GHOSTCORE Portal - ENA NIT EN OGENJ EN ARHIV 🜂",
-  "main": "APP/public/index.html",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:pages": "vite build --mode github-pages",
     "preview": "vite preview --host 0.0.0.0 --port 4173",
     "serve": "python3 -m http.server 8000 -d dist",
     "test": "echo 'Smoke test: Portal should load successfully.'",
-    "deploy:github": "npm run build && gh-pages -d dist",
+    "deploy:github": "npm run build:pages && gh-pages -d dist",
     "clean": "rm -rf dist node_modules/.vite"
   },
   "keywords": [
