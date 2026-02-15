@@ -1,0 +1,15 @@
+{
+  "name": "ves-index-server",
+  "version": "0.1.0",
+  "description": "Ghostline gateway API and UI for VES intelligence",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

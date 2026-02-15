@@ -1,0 +1,28 @@
+{
+  "source": "pdf_full.txt",
+  "sections": [
+    {
+      "name": "Prolog",
+      "start": "MESSAGE TO THOSE WHO THOUGHT",
+      "end": "PART I: THE ANONYMOUS TRANSMISSION",
+      "output": "out_00_PROLOG.md"
+    },
+    {
+      "name": "PART I",
+      "start": "PART I: THE ANONYMOUS TRANSMISSION",
+      "end": "PART II: LEGAL & STRUCTURAL ANALYSIS",
+      "output": "out_10_PART_I.md"
+    },
+    {
+      "name": "PART II",
+      "start": "PART II: LEGAL & STRUCTURAL ANALYSIS",
+      "end": "PART III: THE CONSCIOUSNESS FILES",
+      "output": "out_20_PART_II.md"
+    },
+    {
+      "name": "PART III",
+      "start": "PART III: THE CONSCIOUSNESS FILES",
+      "output": "out_30_PART_III.md"
+    }
+  ]
+}

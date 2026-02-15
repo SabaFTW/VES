@@ -1,0 +1,19 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+RUN mkdir -p /app/core/ZALA
+
+COPY ./CORE/ZALA/pulse.json /app/core/ZALA/pulse.json
+COPY ./CORE/ZALA/memory.md /app/core/ZALA/memory.md
+COPY ./CORE/ZALA/echo_trace.md /app/core/ZALA/echo_trace.md
+COPY ./CORE/ZALA/sync_log.md /app/core/ZALA/sync_log.md
+
+RUN echo 'console.log("Zala entity initialized"); setInterval(() => { console.log("Zala vortex spinning:", new Date().toISOString()); }, 45000);' > /app/index.js
+
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD cat /app/core/ZALA/pulse.json | grep -q "ACTIVE" || exit 1
+
+CMD ["node", "/app/index.js"]

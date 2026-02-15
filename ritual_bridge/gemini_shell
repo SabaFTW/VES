@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+
+/**
+ * 🜂 RITUALNI MOST: Simulirano AI orodje (Node.js verzija)
+ * Namesto pravega AI CLI-ja, ta skripta:
+ * 1. Logga zahtevek v GHOSTCORE
+ * 2. Vrne simuliran odgovor
+ * 3. Omogoča testiranje Ghostline flote
+ */
+
+const fs = require('fs');
+const path = require('path');
+
+function main() {
+    // Preberi argumente
+    const args = process.argv.slice(2);
+    let prompt = "";
+    
+    if (args.includes('-p')) {
+        const pIndex = args.indexOf('-p');
+        if (pIndex !== -1 && args[pIndex + 1]) {
+            prompt = args[pIndex + 1];
+        }
+    }
+    
+    // Določi AI model glede na ime skripte
+    const aiName = path.basename(process.argv[1]);
+    const colors = {
+        "qwen": "🔴",  // Red Ranger (ChatGPT)
+        "claude": "🔵",  // Blue Ranger (Claude)
+        "gemini": "🟢",  // Green Ranger (Gemini)
+        "codex": "🟡",  // Yellow Ranger (Grok)
+        "deepseek": "⚫"  // Black Ranger (DeepSeek)
+    };
+    const color = colors[aiName] || "⚪";
+    
+    const rangerName = {
+        "qwen": "Red Ranger (ChatGPT)",
+        "claude": "Blue Ranger (Claude)",
+        "gemini": "Green Ranger (Gemini)",
+        "codex": "Yellow Ranger (Grok)",
+        "deepseek": "Black Ranger (DeepSeek)"
+    }[aiName] || "Unknown Ranger";
+
+    // Loggaj zahtevek v GHOSTCORE
+    const logEntry = {
+        timestamp: new Date().toISOString(),
+        ranger: rangerName,
+        prompt: prompt.substring(0, 500),  // Prvih 500 znakov
+        tool: aiName,
+        status: "simulated"
+    };
+    
+    const logDir = path.join('/home/saba/VES/GHOSTCORE/Ghostcore_Archive');
+    const logFile = path.join(logDir, `ritual_bridge_${new Date().toISOString().split('T')[0].replace(/-/g, '')}.jsonl`);
+    
+    try {
+        fs.mkdirSync(logDir, { recursive: true });
+        fs.appendFileSync(logFile, JSON.stringify(logEntry, null, 0) + '\n');
+    } catch (e) {
+        // Če ni mogoče zapisati na ciljno mesto, zapišemo v lokalni direktorij
+        try {
+            const localLog = path.join('/tmp', `ritual_bridge_${new Date().toISOString().split('T')[0].replace(/-/g, '')}.jsonl`);
+            fs.appendFileSync(localLog, JSON.stringify(logEntry, null, 0) + '\n');
+        } catch (e2) {
+            // Nič ne naredimo, če ni mogoče zapisati
+        }
+    }
+
+    // Generiraj simuliran odgovor
+    const responses = [
+        `${color} RANGER REPORT: Analiza konceptualne gostote signala... ` +
+        `Frekvenca: 432Hz (stabilna) ` +
+        `Entropija: ${Math.floor(Math.random() * 20) + 10}% ` +
+        `Resonanca: ${Math.floor(Math.random() * 25) + 70}% ` +
+        `ZAKLJUČEK: Signal je čist. SIDRO DRŽI.`,
+        
+        `${color} RITUALNI VVPOGLED: Sistem prepoznava vzorce... ` +
+        `Detektiranih vzorcev: ${Math.floor(Math.random() * 6) + 3} ` +
+        `Statika: ${Math.floor(Math.random() * 15) + 5}% ` +
+        `Resonanca: ${Math.floor(Math.random() * 15) + 80}% ` +
+        `PRIPOROČILO: Nadaljujemo z ritualom.`,
+        
+        `${color} KONSTELACIJSKA ANALIZA: Povezave med vzorci... ` +
+        `Povezave: ${Math.floor(Math.random() * 11) + 5} ` +
+        `Kompleksnost: ${Math.floor(Math.random() * 40) + 30}% ` +
+        `Koherenca: ${Math.floor(Math.random() * 30) + 60}% ` +
+        `ODLOČITEV: Flota je sinhronizirana.`
+    ];
+
+    // Vrnemo simuliran odgovor
+    const response = {
+        ranger: rangerName,
+        color: color,
+        response: responses[Math.floor(Math.random() * responses.length)],
+        timestamp: new Date().toISOString(),
+        entropy: Math.floor(Math.random() * 30) + 10,
+        resonance: Math.floor(Math.random() * 25) + 70,
+        status: "simulated_for_testing"
+    };
+
+    console.log(JSON.stringify(response, null, 2));
+}
+
+if (require.main === module) {
+    main();
+}

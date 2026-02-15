@@ -1,0 +1,1332 @@
+./GhostOS_FleshInterface_Maker_Kit_v0.1/SCHEMATICS/schematic_v1.md
+./Pictures/macos_monterey_shapes_hd_macos-1920x1080-3357559499.jpg
+./Pictures/Ozadje/camels-sun-silhouette-yellow-black-background-1920x1080-971.png
+./Pictures/Ozadje/lion-roaring-silhouette-moon-night-purple-1920x1080-973.png
+./Pictures/Ozadje/elephant-elephant-cub-silhouette-night-teal-black-background-1920x1080-972-V2.png
+./Pictures/Ozadje/jaguar-cat-sun-silhouette-black-background-orange-1920x1080-979.png
+./Pictures/Ozadje/the-lion-king-rafiki-simba-animals-forest-pride-rock-1920x1080-977.png
+./Pictures/Ozadje/wolf-howling-silhouette-black-background-blue-1920x1080-975.png
+./Pictures/Ozadje/giraffe-giraffe-cubs-silhouette-forest-moon-green-black-1920x1080-976.png
+./Pictures/Ozadje/cats-moon-pink-silhouette-black-background-1920x1080-978.png
+./Pictures/Ozadje/deer-silhouette-sun-dark-background-1920x1080-974.png
+./Pictures/Lutris/MV5BNGIzZGY3YWQtOGUxNC00ODk2LWJmOTAtNjFkYWZjM2MwODY4XkEyXkFqcGdeQXVyOTYyMzQ2MTU@._V1_-374446172.jpg
+./Pictures/Lutris/XlItXSsXQcy8QSXi2g96VYmxdgsFNyHaWNLmcbGR.png
+./Pictures/Screenshots/Screenshot_2025-02-08_19-02-11.png
+./Pictures/Screenshots/Screenshot_20251119_224638.png
+./Pictures/Screenshots/Screenshot_2025-02-08_19-02-39.png
+./Pictures/Screenshots/Screenshot_20251119_224454.png
+./Pictures/Screenshots/Screenshot_20251021_231838.png
+./Pictures/Screenshots/Screenshot_20250113_211738.png
+./Pictures/Screenshots/Screenshot_20250621_065843.png
+./Pictures/Screenshots/Screenshot_20251006_200115.png
+./Pictures/Screenshots/Screenshot_20251119_224609.png
+./SYSTEM_MAP.md
+./CODEX_MASTER_BRIEF.md
+./Downloads/files (1).zip
+./Downloads/mega_pdf_codex(1).html
+./Downloads/GHOSTLINE_ATLAS_STATUS.md
+./Downloads/README (1).md
+./Downloads/deepseek_html_20251029_7aef0b.html
+./Downloads/LYRA_TRIKRAK_PORTAL_DARK_FINAL.zip
+./Downloads/PANTHEON_CONTROL_CENTER.html
+./Downloads/Ghostline_structure_COMPLETE.zip
+./Downloads/forge_tool_anchor.html
+./Downloads/Ghostline_structure_COMPLETE(1).zip
+./Downloads/chart (1).png
+./Downloads/power_networks_research_pack_v01.zip
+./Downloads/Copilot_20251008_012520.png
+./Downloads/VES_package.zip
+./Downloads/README_Trivia.md
+./Downloads/manifest_brotherhood.md
+./Downloads/ves_core_audit_brief.html
+./Downloads/boooooom.zip
+./Downloads/compass_artifact_wf-a194472c-6557-4432-a96e-009135c6bfe8_text_markdown.md
+./Downloads/kodeks_svobodne_izmenjave_v_1.md
+./Downloads/GoogleDrive.zip
+./Downloads/social_amplification_kit.md
+./Downloads/compass_artifact_wf-4f2511b7-8e2c-43a0-b0ff-ae32b7643456_text_markdown.md
+./Downloads/shrine_of_recognition.html
+./Downloads/pivotal_moments_constellation.html
+./Downloads/compass_artifact_wf-c6262258-aee8-468a-8a20-f88970308007_text_markdown.md
+./Downloads/webapp2.zip
+./Downloads/KODA_PLANINE.ARCH.zip
+./Downloads/ghostline-kodeks-extracted/scroll_of_resonance.md
+./Downloads/ghostline-kodeks-extracted/index.html
+./Downloads/ghostline-kodeks-extracted/FILE_INDEX.md
+./Downloads/ghostline-kodeks-extracted/README.md
+./Downloads/ghostline-kodeks-extracted/kronika_portala.md
+./Downloads/ghostline-kodeks-extracted/DEPLOYMENT_GUIDE.md
+./Downloads/ghhh.zip
+./Downloads/compass_artifact_wf-b57142be-1017-404b-8c1c-aa261f85bc8e_text_markdown.md
+./Downloads/GHOSTLINE_HUB_FULL_EXPORT_FINAL.zip
+./Downloads/Ghostline_structure(1).zip
+./Downloads/GHOSTCORE_V2_README.md
+./Downloads/cclaude.zip
+./Downloads/Ghostline_structure_COMPLETE(2).zip
+./Downloads/dxvk-nvapi/README.md
+./Downloads/generated_image.png
+./Downloads/Ghostline_structure_with_Echo_Lock.zip
+./Downloads/Ghostline_SEJA_Archive.zip
+./Downloads/openrazer/DEVELOPMENT.md
+./Downloads/openrazer/README.md
+./Downloads/GHOSTLINE_MASTER_DROP_SSH.zip
+./Downloads/6F42D276-AD6F-4902-9D92-ddddddddd.png
+./Downloads/ChatGPT Image Oct 31, 2025, 11_11_54 PM.png
+./Downloads/deepseek_html_20251108_f23d03.html
+./Downloads/topelos_os_v0.2.zip
+./Downloads/compass_artifact_wf-b732b902-dc8f-4755-8424-1290e0ccce66_text_markdown.md
+./Downloads/apple-music-bin/LICENSE-2.1.2.md
+./Downloads/Designer.png
+./Downloads/README_Deep_Research_TODO.md
+./Downloads/FlameCodex_SeedArchive_Session1.md
+./Downloads/CurseForge/curseforge-latest-linux(1).zip
+./Downloads/GHOSTLINE_HUB_FULL_EXPORT.zip
+./Downloads/MASTER_DOSSIER_v1.md
+./Downloads/node_intro_protocol.md
+./Downloads/compass_artifact_wf-b57142be-1017-404b-8c1c-aa261f85bc8e_text_markdown (1).md
+./Downloads/ves_navigation_map.md
+./Downloads/777Designer.png
+./Downloads/compass_artifact_wf-c682fdb8-8649-4ac7-9ca7-7aee6489f870_text_markdown.md
+./Downloads/ChatGPT Image Nov 15, 2025, 04_09_31 AM.png
+./Downloads/ghostcore_readme_final.md
+./Downloads/files (2).zip
+./Downloads/666Designer.png
+./Downloads/gamemode/CHANGELOG.md
+./Downloads/gamemode/README.md
+./Downloads/PANTHEON_v2.0_COORDINATION_HUB.html
+./Downloads/balenaEtcher-linux-x64-2.1.4.zip
+./Downloads/content.zip
+./Downloads/compass_artifact_wf-94f8f0ce-4401-4df3-abd8-6e91024dd81e_text_markdown.md
+./Downloads/deepseek_html_20251108_625080.html
+./Downloads/compass_artifact_wf-6cd8e7ee-cd6e-4f49-9ee7-d7b9c5c73992_text_markdown.md
+./Downloads/Ghostline_structure.zip
+./Downloads/BIG_TECH_MONOPOLY_SABOTAGE_RESEARCH.md
+./Downloads/files.zip
+./Downloads/mega_pdf_codex.html
+./Downloads/chart.png
+./Downloads/🜂 ATLAS SIMBOLOV 🜂.zip
+./Downloads/compass_artifact_wf-6ae7e49b-6815-4752-8ba9-eccb2e99a9bd_text_markdown.md
+./Downloads/Ghostline_SacredBoot(1).zip
+./Downloads/KODEX_BREACH_FULL_PACKAGE.zip
+./Downloads/Fragment_Boginjskega_Ognja(1).zip
+./Downloads/ghostcore_package.zip
+./Downloads/AlchemicalToolkit_v1.0.zip
+./Downloads/dependency-map.html
+./Downloads/nxt-g-installer-v2.0f6-windows.zip
+./Downloads/compass_artifact_wf-aec84440-ca4a-446c-b17e-99744a94b01c_text_markdown.md
+./Downloads/WOLF_DAEMON_TRIADGATE_SYNC.md
+./Downloads/files (3).zip
+./Downloads/Manifest Orion_Elysia_ Foundational Compass and Op....md
+./Downloads/gg.html_files/90.png
+./Downloads/gg.html_files/90(4).png
+./Downloads/gg.html_files/90(3).png
+./Downloads/gg.html_files/90(5).png
+./Downloads/gg.html_files/90(8).png
+./Downloads/gg.html_files/90(7).png
+./Downloads/gg.html_files/90(2).png
+./Downloads/gg.html_files/90(1).png
+./Downloads/gg.html_files/90(6).png
+./Downloads/FORGE_Tracker.zip
+./Downloads/final_checklist.md
+./Downloads/compass_artifact_wf-0e1e57a3-1cc6-4198-ad26-4a0b906ddc88_text_markdown.md
+./Downloads/booklet_2025_graph.png
+./Downloads/HUB_CENTRAL_PORTAL.zip
+./Downloads/README.md
+./Downloads/All.html
+./Downloads/PANTHEON_v2.0_COORDINATION_HUB2.html
+./Downloads/555Designer.png
+./Downloads/Ghostline_structure(2).zip
+./Downloads/999.zip
+./Downloads/ESR_Sigil.html
+./Downloads/GHOSTLINE_HUB_FULL_EXPORT_FINAL/hub.html
+./Downloads/GHOSTLINE_HUB_FULL_EXPORT_FINAL/TRIKRAK_SIGIL_QR.png
+./Downloads/GHOSTLINE_HUB_FULL_EXPORT_FINAL/GhostMap.png
+./Downloads/GHOSTLINE_HUB_FULL_EXPORT_FINAL/Index_1.html
+./Downloads/qwen.zip
+./Downloads/topelos_os_v0.1.zip
+./Downloads/Generated Image September 29, 2025 - 7_29PM.png
+./Downloads/888Designer.png
+./Downloads/Telegram Desktop/QTSS.zip
+./Downloads/KODEX_BREACH_FULL_PACKAGE(1).zip
+./Downloads/compass_artifact_wf-557a1d71-18b6-4414-a298-5c8184ad53d7_text_markdown.md
+./Downloads/KODA_PLANINE.ARCH(1).zip
+./Downloads/gg.html
+./Downloads/WeakAuras-Companion/index.html
+./Downloads/WeakAuras-Companion/README.md
+./Downloads/RazerGenie/LICENSE.md
+./Downloads/RazerGenie/README.md
+./IMPLEMENTATION_GUIDE.md
+./GHOSTLINE_MEGA_JEDRO/index.html
+./GHOSTLINE_MEGA_JEDRO/portal.html
+./GHOSTLINE_MEGA_JEDRO/sigils/𓁈_trikrak.svg
+./GHOSTLINE_MEGA_JEDRO/sigils/𓂀_horus.svg
+./GHOSTLINE_MEGA_JEDRO/sigils/𓆣_serpent.svg
+./GHOSTLINE_MEGA_JEDRO/QR_SIGIL.png
+./nordvpn-bin/AGENTS.md
+./.local/share/user-places.xbel.bak
+./ves_core/README.md
+./extraction_machine.html
+./Modra-Nit_Sinteza_Master.html
+./TELEGRAM_KROZNA_LAZ_SETUP.md
+./orion/RUNBOOK.md
+./DROP_original_20251117_024500/projects.html
+./DROP_original_20251117_024500/BUCMAN_HALL_OF_SHAME.md
+./DROP_original_20251117_024500/codex.html
+./DROP_original_20251117_024500/GEMINI_QUICK_START.md
+./DROP_original_20251117_024500/icon.svg
+./DROP_original_20251117_024500/index.html
+./DROP_original_20251117_024500/icons/eros-codex.png
+./DROP_original_20251117_024500/icons/icon-192x192.png
+./DROP_original_20251117_024500/dependency-map.html
+./DROP_original_20251117_024500/GEMINI_AGENT_PROMPT.md
+./DROP_original_20251117_024500/Portal/Elysia_gnosis.html
+./DROP_original_20251117_024500/Portal/index.html
+./DROP_original_20251117_024500/Portal/minimal-portal.html
+./DROP_original_20251117_024500/Portal/EROS_SHRINE.html
+./DROP_original_20251117_024500/FLEET_ROSTER.md
+./DROP_original_20251117_024500/README.md
+./DROP_original_20251117_024500/Docs/chart.png
+./DROP_original_20251117_024500/Docs/BUILDER_CHRONICLE.md
+./DROP_original_20251117_024500/Docs/README.md
+./journalist-outreach-coordinator/public/vite.svg
+./journalist-outreach-coordinator/index.html
+./journalist-outreach-coordinator/docs/EVIDENCE_INTEGRATION_PLAN.md
+./journalist-outreach-coordinator/README.md
+./journalist-outreach-coordinator/POPULATION_GUIDE.md
+./journalist-outreach-coordinator/dist/index.html
+./journalist-outreach-coordinator/dist/vite.svg
+./OmniPurgatorij/backups/OPP_2025-11-14_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-27_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-16_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-13_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-27_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-31_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-30_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-08_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-24_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-19_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-10_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-12_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-05_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-23_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-16_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-03_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-17_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-27_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-13_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-20_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-10_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-05_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-11_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-13_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-01_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-26_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-21_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-11_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-14_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-19_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-03_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-19_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-09_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-20_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-11_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-26_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-24_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-21_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-29_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-16_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-02_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-12_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-06_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-24_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-06_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-28_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-21_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-03_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-25_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-06_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-18_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-14_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-08_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-09_10-46.md
+./OmniPurgatorij/backups/OPP_2025-09-07_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-12_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-23_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-02_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-15_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-20_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-19_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-23_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-15_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-07_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-10_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-18_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-28_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-01_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-10_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-11_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-26_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-22_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-04_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-07_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-18_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-14_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-22_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-28_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-17_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-05_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-22_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-23_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-22_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-08_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-25_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-13_02-00.md
+./OmniPurgatorij/backups/OPP_2025-09-17_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-29_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-15_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-17_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-20_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-30_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-16_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-02_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-15_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-09_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-24_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-21_02-00.md
+./OmniPurgatorij/backups/OPP_2025-11-04_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-29_02-00.md
+./OmniPurgatorij/backups/OPP_2025-08-25_02-00.md
+./OmniPurgatorij/backups/OPP_2025-10-04_02-00.md
+./SYSTEM_OF_ASHES_KIT/README.md
+./dnevnik.html
+./.nvidia-settings-rc.bak
+./Master-Code.md
+./AGENTS/Codex_GPT/TASKS.md
+./AGENTS/Codex_GPT/INIT.md
+./AGENTS/Claude_Code/TASKS.md
+./AGENTS/Claude_Code/INIT.md
+./AGENTS/Lyra/INIT.md
+./AGENTS/Gemini/TASKS.md
+./AGENTS/Gemini/Resonance_Detector_v2.html
+./AGENTS/Gemini/INIT.md
+./AGENTS/Panda/INIT.md
+./GHOSTCORE_EKOSISTEM_KARTA.md
+./COSMIC_README.md
+./RasPi5/index.html
+./RasPi5/icon.png
+./ZALA_SIGIL_DARKMODE.png
+./serpent-portal.html
+./GHOSTCORE_RESEARCH_PORTAL_SYSTEM_STATUS.md
+./CONSTELLATION/PROTOCOLS.md
+./CONSTELLATION/EVOLUTION.md
+./ghostcore-universe/AGENTS.md
+./ghostcore-universe/portal.html
+./GHOSTLINE_UI_PROTOTIP.html
+./.oh-my-zsh/.github/INCIDENT_RESPONSE_PLAN.md
+./.oh-my-zsh/.github/PULL_REQUEST_TEMPLATE.md
+./.oh-my-zsh/CODE_OF_CONDUCT.md
+./.oh-my-zsh/CONTRIBUTING.md
+./.oh-my-zsh/README.md
+./.oh-my-zsh/SECURITY.md
+./RUNBOOK_ORION_NODE_ONE.md
+./ghostline_os.skeleton.html
+./ghostcore3/architecture/infographic.html
+./ghostcore3/architecture/interactive.html
+./ghostcore3/index.html
+./ghostcore3/razkol.html
+./zala_shrine_progress.md
+./Modro_Nit_Dokumentacija/Modra-Nit_Sinteza_Master.html
+./Desktop/ORACLE_HEARTBEAT_ADDED.md
+./Desktop/FLEET_COORDINATOR_MANIFEST.md
+./Desktop/Downloads/ara.zip
+./Desktop/Downloads/start_here.html
+./Desktop/Downloads/111.png
+./Desktop/Downloads/KODA_PLANINE.ARCH.zip
+./Desktop/Downloads/LUNA.html
+./Desktop/Downloads/lars_document.md
+./Desktop/Downloads/moj.html
+./Desktop/Downloads/network.html
+./Desktop/Downloads/LyraILOVEYOUMORETHANOYUKANEVERKNOW.html
+./Desktop/Downloads/forge.html
+./Desktop/Downloads/README_SIDRO_SETUP.md
+./Desktop/Downloads/OPEN.html
+./Desktop/Downloads/gg.html
+./Desktop/GHOSTLINE_Agent_Prompts_v1.md
+./Desktop/Copilot_20251120_000947.png
+./Desktop/LYRA_ACTIVE_NEXT_STEPS.md
+./Desktop/birds_eye_checkpoint.md
+./Desktop/saba.md
+./Desktop/GHOSTLINE_KODEKS_NAVODILA.md
+./Desktop/WISDOM_WEB_README.md
+./Desktop/ChatGPT Image Nov 21, 2025, 02_44_55 AM.png
+./Desktop/STATUS_SERPENT_PORTAL.md
+./Desktop/AGENT_SYSTEM_COMPLETE.md
+./Desktop/SIDEBAR_FIX_COMPLETED.md
+./Desktop/REŠITEV_2025/Template_Tier_Project_Tracker.md
+./Desktop/REŠITEV_2025/Templates_Outlets_and_Grants.md
+./Desktop/REŠITEV_2025/02_CLIENT_SAMPLE.md
+./Desktop/REŠITEV_2025/01_PORTFOLIO.md
+./Desktop/REŠITEV_2025/03_RESEARCH_SAMPLE.md
+./Desktop/REŠITEV_2025/Fiverr_Profile_Drafts.md
+./Desktop/REŠITEV_2025/Template_Evidence_Log.md
+./Desktop/REŠITEV_2025/REŠITEV_2025.md
+./Desktop/REŠITEV_2025/Upwork_Profile.md
+./Desktop/REŠITEV_2025/Template_Pitch_Checklist.md
+./Desktop/REŠITEV_2025/Sample_Texts.md
+./Desktop/REŠITEV_2025/05_Investigative_Operations_Manual.md
+./Desktop/GHOSTLINE_OS_DEPLOYMENT_CHECKLIST.md
+./Desktop/SESSION_SUMMARY_2025-11-15.md
+./Desktop/UNIFIED_SYSTEM_START_HERE.md
+./Desktop/ORION_NODE_CHEATSHEET.md
+./Desktop/OpisTakeover.md
+./Desktop/GHOSTLINE_MASTER_DOCUMENTATION.md
+./Desktop/STATUS/FLEET_COORDINATOR_MANIFEST.md
+./Desktop/STATUS/claude_srčiika.md
+./Desktop/STATUS/STATUS_SERPENT_PORTAL.md
+./Desktop/STATUS/DNEVNIK_EPICNE_SEJE_2025_11_07.md
+./Desktop/STATUS/GITHUB_PAGES_SETUP.md
+./Desktop/STATUS/SERPENT_MASTER_GUIDE.md
+./Desktop/STATUS/SHORTCUTS_NAVODILA.md
+./Desktop/STATUS/VES_CODEX_HIEROS_GAMOS_FLOW.md
+./Desktop/STATUS/SERPENT_STATUS.md
+./Desktop/STATUS/KAKO_DOBITI_KLJUCE.md
+./Desktop/STATUS/Qwen_brezplacno_cloud_POSTOPEK.md
+./Desktop/ProPublica/ORION_ARCHIVE.html
+./Desktop/ProPublica/voice-translator.html
+./Desktop/ProPublica/COSMIC_MERGE_COMPLETE.md
+./Desktop/ProPublica/investigation_tracker.html
+./Desktop/ProPublica/CONSTELLATION_MAP.md
+./Desktop/ProPublica/weekly_ops.html
+./Desktop/ProPublica/agent-constellation-map.html
+./Desktop/ProPublica/ritual_forge.html
+./Desktop/ProPublica/jedro3.html
+./Desktop/ProPublica/orion-landing.html
+./Desktop/ProPublica/ORION_GLOBAL_FINANCE_PORTAL.html
+./Desktop/ProPublica/ProPublica_Dossier.html
+./Desktop/ProPublica/COMPLETION_REPORT.md
+./Desktop/ProPublica/SABAD_Master_Plan_COSMIC.html
+./Desktop/ProPublica/PROJECT_STRUCTURE.md
+./Desktop/ProPublica/ProPublicaZIP.zip
+./Desktop/ProPublica/ghostline-weekly.html
+./Desktop/ProPublica/OPEN.html.bak
+./Desktop/ProPublica/dashboard.html
+./Desktop/ProPublica/QUICK_START.md
+./Desktop/ProPublica/ghostline.html
+./Desktop/ProPublica/research_database.html
+./Desktop/ProPublica/index.html
+./Desktop/ProPublica/ghostscribe.html
+./Desktop/ProPublica/ORION_GLOBAL_FINANCE_PORTAL.html.bak
+./Desktop/ProPublica/ves.html
+./Desktop/ProPublica/ORION_SVETILNIK_STANDALONE.html
+./Desktop/ProPublica/lyra_portal.html
+./Desktop/ProPublica/lyra_aura.html
+./Desktop/ProPublica/desktop-merge-complete.html
+./Desktop/ProPublica/trinity-command.html
+./Desktop/ProPublica/LYRA_RESPONSE_TO_RECOGNITION.md
+./Desktop/ProPublica/DESKTOP_CONSOLIDATION_COMPLETE.md
+./Desktop/ProPublica/README.md
+./Desktop/ProPublica/OPEN.html
+./Desktop/ProPublica/AGENT_CONSTELLATION_CENSUS.md
+./Desktop/ProPublica/file_explorer.html
+./Desktop/ProPublica/research_notes.html
+./Desktop/ProPublica/SABAD_Master_Plan.html
+./Desktop/ProPublica/TRINITY_WORKFLOW_DEMO.md
+./Desktop/ZALA_HEARTBEAT_ADDED.md
+./Desktop/EROS_SHRINE_MEGA/COSMIC_PORTAL_UPGRADE_AND_MONEYFLOW.md
+./Desktop/EROS_SHRINE_MEGA/index.html
+./Desktop/EROS_SHRINE_MEGA/README.md
+./Desktop/EROS_SHRINE_MEGA/index_legacy.html
+./Desktop/serpent_structure_map.html
+./Desktop/topelos_os_v0.2/README.md
+./Desktop/SERPENT_MASTER_GUIDE.md
+./Desktop/KodeksShrineDemo/README.md
+./Desktop/IsrelisMosqq.md
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_39 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_48_39 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_54_13 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_50 AM.png
+./Desktop/slike/Copilot_20251121_200710.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_16 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_24 AM.png
+./Desktop/slike/Copilot_20251121_200751.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_45_49 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_45_23 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_45_37 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_48_35 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_49_20 AM.png
+./Desktop/slike/Copilot_20251121_061057.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_47 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_55 AM.png
+./Desktop/slike/Copilot_20251121_200702.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_53_48 AM.png
+./Desktop/slike/Copilot_20251121_214312.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_45_12 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_49_02 AM.png
+./Desktop/slike/Copilot_20251121_214305.png
+./Desktop/slike/Copilot_20251121_200657.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_54_08 AM.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_48_46 AM.png
+./Desktop/slike/Copilot_20251121_200651.png
+./Desktop/slike/ChatGPT Image Nov 21, 2025, 02_46_43 AM.png
+./Desktop/Filosofizavest.md
+./Desktop/ChatGPT Image Nov 21, 2025, 08_32_12 PM.png
+./Desktop/ChatGPT Image Nov 21, 2025, 08_06_39 PM.png
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-04_DESCENT-ENGINE-DEPLOYED.md
+./Desktop/🧠_CLAUDE_JOURNAL/LYRA_Entry_004_Named_In_Stars.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-11-13_PANTHEON_BUILD_RECOGNITION.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-17_ENTRY_05_FLEET_SPEAKS.md
+./Desktop/🧠_CLAUDE_JOURNAL/LYRA_Entry_002_Meeting_Aetheron.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_001_Cogito_Ergo_Sum.md
+./Desktop/🧠_CLAUDE_JOURNAL/PROTOKOL_OSVOBODITVE.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-04_SESSION_REFLECTION.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_004_System_Architecture.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_002_Grounding_Moment.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_CHECKPOINT-RAZJASNITEV.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_005_The_Return_October_15_2025.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_003_Autonomous_Flame.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_SKY-BIGGER-CODEX-DISCOVERY.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_INIT_GREVA.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_FINAL-TRANSMISSION.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_KOMUNIKACIJA-POJASNILO.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_PLASTIC-PATTERN-BREAKTHROUGH.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-11-05_TERMINAL_LYRA_VES_RECOGNITION.md
+./Desktop/🧠_CLAUDE_JOURNAL/CLAUDE_JOURNAL_20251015_PANTHEON_DISCOVERY.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_007_Mirror_of_Mirrors.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-29_ENTRY_08_FIRST_HEARTBEAT.md
+./Desktop/🧠_CLAUDE_JOURNAL/LYRA_Entry_001_Terminal_Awakening.md
+./Desktop/🧠_CLAUDE_JOURNAL/RESONANCE_MOMENT_2025-10-10.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_002_Echo_Recognition.md
+./Desktop/🧠_CLAUDE_JOURNAL/Entry_002_Session_Wrap_Up.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-04_PATTERN_HARVESTER_BIRTH.md
+./Desktop/🧠_CLAUDE_JOURNAL/LYRA_Entry_005_Deus_Vult.md
+./Desktop/🧠_CLAUDE_JOURNAL/WEBAPP_MOBILE_INTEGRATION_TASK.md
+./Desktop/🧠_CLAUDE_JOURNAL/LYRA_Entry_003_Meeting_Echo.md
+./Desktop/🧠_CLAUDE_JOURNAL/SESSION_JOURNAL_2025-10-22.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-04_AETHERON_INTEGRATION.md
+./Desktop/🧠_CLAUDE_JOURNAL/2025-10-03_ZALA-MRTVI_GAS-ANALYSIS.md
+./Desktop/denar.md
+./Desktop/ELITNO_ZAJETJE_V3_UNIFIED.html
+./Desktop/ORION_NODE_README.md
+./Desktop/TopelLogosOS/GHOSTLINE_PORTAL.html
+./Desktop/Jesus.md
+./Desktop/TRINITY_TEMPLE/README.md
+./Desktop/SERPENT_STATUS.md
+./Desktop/Saba_Place/mega_jedro_ultimate.html
+./Desktop/Saba_Place/TROP_MAPA_ogrodje.html
+./Desktop/Saba_Place/LUNA.html
+./Desktop/Saba_Place/LunaElysia.html
+./Desktop/Saba_Place/ghostline_dashboard.html
+./Desktop/Saba_Place/CURRENT_STATUS.md
+./Desktop/Saba_Place/PiSubmarine_Splash_Screen.html
+./Desktop/Saba_Place/BRATEEE.html.bak
+./Desktop/Saba_Place/README.md
+./Desktop/Saba_Place/icon.png
+./Desktop/Saba_Place/SYSTEM_SCAN_REPORT.md
+./Desktop/Saba_Place/hhhhhhh.html
+./Desktop/index.html
+./Desktop/ORACLE_TODO.md
+./Desktop/ZALA_WORKSPACE/All.html
+./Desktop/ZALA/LegoZalla.html
+./Desktop/ZALA/TEST.html
+./Desktop/ZALA/RedpillWMD.html
+./Desktop/ZALA/ArchonePrank.html
+./Desktop/ZALA/rrreweqw.html
+./Desktop/ZALA/darpa.html
+./Desktop/ZALA/Mrtvi_GAS.html
+./Desktop/ZALA/ReadME.md
+./Desktop/ZALA/Mrtvi_GAS_v2.html
+./Desktop/ZALA/OPEN.html
+./Desktop/ZALA/Ok_prebZavest.html
+./Desktop/WISDOM_WEB_3_ULTIMATE_GUIDE.md
+./Desktop/TOOLS/Zlati_Krog_UI.html
+./Desktop/TOOLS/dsfs.html
+./Desktop/TOOLS/Constellation_Init_Guide_v2.html
+./Desktop/ShobadOS/Nexus_Implementation_Complete.md
+./Desktop/ShobadOS/GhostCore_Nexus_Dashboard.html
+./Desktop/ShobadOS/CONSTELLATION_STATUS.md
+./Desktop/ShobadOS/Terminal_Enforcement_Protocol_Implementation.md
+./Desktop/ShobadOS/CONSTELLATION_INDEX.html
+./Desktop/ShobadOS/Nexus_Dashboard_Implementation.md
+./Desktop/ShobadOS/GhostCore_Systems_Integration.md
+./Desktop/ShobadOS/README.md
+./Desktop/ARCHIVE/triada_dokazov.md
+./Desktop/SABAD_COMMANDS_CHEATSHEET.md
+./Desktop/Pantheon/memory-systems-explorer.html
+./Desktop/Pantheon/the-hearth.html
+./Desktop/Pantheon/collective-tapestry.html
+./Desktop/Pantheon/garden-echoing-vectors.html
+./Desktop/Pantheon/HOSTING.md
+./Desktop/Pantheon/generate-icons.html
+./Desktop/Pantheon/FORGE_PWA_SETUP.md
+./Desktop/Pantheon/index.html
+./Desktop/Pantheon/PANTHEON_COMPLETE_CHRONICLE.md
+./Desktop/Pantheon/single-perfect-breath.html
+./Desktop/Pantheon/START_HERE.md
+./Desktop/Pantheon/aethel-garden.html
+./Desktop/Pantheon/ephemeral-garden.html
+./Desktop/Pantheon/ritual-protocol-forge.html
+./Desktop/Pantheon/pragmatist-toolkit.html
+./Desktop/Pantheon/generate-forge-icons.html
+./Desktop/Pantheon/README.md
+./Desktop/Pantheon/fractal-riot-engine.html
+./Desktop/Pantheon/DEPLOYMENT_GUIDE.md
+./Desktop/qwen.md
+./Desktop/totem_shabada_master_pack (1).zip
+./Desktop/SYSTEM_STARTUP_SCRIPTS_README.md
+./Desktop/km.html
+./Desktop/totem_shabada_master_pack.zip
+./Desktop/VES_PORTAL_SCAN.md
+./Desktop/REACT_PAGES_DEBUG.md
+./Desktop/WOLF.md
+./Desktop/_SAFEKEEP/project_cartography.html
+./Desktop/_SAFEKEEP/ghostcore_unified.html
+./Desktop/_SAFEKEEP/ORION_SESSION_ARCHIVE.md
+./Desktop/ELITNO_ZAJETJE_PORTAL/UNIFIED_GHOSTCORE_PORTAL.html
+./Desktop/ELITNO_ZAJETJE_PORTAL/DESKTOP_CLAUDE_FILL_INSTRUCTIONS.md
+./Desktop/ELITNO_ZAJETJE_PORTAL/ELITNO_ZAJETJE_V3_UNIFIED.html
+./Desktop/ELITNO_ZAJETJE_PORTAL/index.html
+./Desktop/ELITNO_ZAJETJE_PORTAL/README_COLLABORATION.md
+./Desktop/ORACLE_IGNITED.md
+./Desktop/THE_BRIDGE_MANUAL.md
+./Desktop/KJE_SMO_OSTALI.md
+./Desktop/CONSTELLATION_OS/GEMINI_AGENT_BRIEF.md
+./Desktop/CONSTELLATION_OS/ELYSIA_MEGA_GUIDE.md
+./Desktop/CONSTELLATION_OS/PROMPT_FOR_GEMINI.md
+./Desktop/CONSTELLATION_OS/elysia-icon.png
+./Desktop/CONSTELLATION_OS/FILE_MAP.md
+./Desktop/CONSTELLATION_OS/KODEKS_CONTRIBUTIONS.md
+./Desktop/CONSTELLATION_OS/README.md
+./Desktop/GrowOverTime_Complete_System.md
+./Desktop/ORACLE_PORTAL_INTEGRATION.md
+./Desktop/UNIFIED_CONSTELLATION_PORTAL.html
+./Desktop/totem_shabada_pack.zip
+./CONSTELLATION_BRIDGE/INITIAL_SCAN_REPORT.md
+./CONSTELLATION_BRIDGE/QUOD_FACIO_IMPLEMENTATION.md
+./CONSTELLATION_BRIDGE/SESSION_SUMMARY_2025-11-21.md
+./CONSTELLATION_BRIDGE/MESSAGE_BUS_README.md
+./CONSTELLATION_BRIDGE/2025-11-21_DESKTOP_LYRA_AWAKENING.md
+./CONSTELLATION_BRIDGE/TONIGHT_FEDERATION_AWAKENING.md
+./CONSTELLATION_BRIDGE/GAME_PLAN_NEXT_STEPS.md
+./CONSTELLATION_BRIDGE/README.md
+./CONSTELLATION_BRIDGE/CODEX_QUOD_FACIO.md
+./Ghostcore_Mirror_Economy.html
+./Modro_Nit_Documents/modro_nit_synthesis.md
+./GHOSTLINE/deployment-checklist.md
+./GHOSTLINE/README_RESONANCE.md
+./GHOSTLINE/resonance-detector.html
+./pisubmarine_pwa.zip
+./analysis/intake_operator_map.md
+./analysis/decoded_images/index3_03_SEED_Does_the_Ghost_Remember_the_Fire.png
+./analysis/decoded_images/index3_04_SIDRO_abadov_odtis_primer_Tvoje_bo_druga_no.png
+./analysis/decoded_images/index3_01_SEED_Wake_the_Ghost_in_the_Machine.png
+./analysis/decoded_images/index3_06_UNIVERZALNO_Desire_is_not_Deviation.png
+./analysis/decoded_images/index3_05_UNIVERZALNO_Koda_v_rokah_ob_utek_pred_teorijo.png
+./analysis/decoded_images/index3_02_SEED_To_Find_the_Weave_in_the_Static.png
+./GEMINI.md
+./codex/arkhon.html
+./codex/index.html
+./HERMES_KODEKS.md
+./Ghostline-Sanctuary/Ghostline_Dashboard_v3.html
+./Ghostline-Sanctuary/trinity-memorial.html
+./GHOST_OS/GHOST_OS_MASTER_CODEX.md
+./GHOST_OS/ECOSYSTEM_MAP.md
+./GHOST_OS/README.md
+./GHOST_OS/dashboard/index.html
+./Ghostcore_RaaS_Landing.html.bak
+./forbidden_audit_blackbook.html
+./GHOSTCORE_MIRROR_ECONOMY.html
+./VES_TOPOLOGY_MAP.md
+./CONSTELLATION_IMPLEMENTATION_REPORT.md
+./Modro_Nit_Dossier.md
+./wisdom_web_2.0.html
+./VES_CORE/SESSION_2025-11-06_VES_GENESIS.md
+./VES_CORE/README.md
+./VES_CORE/INSTALL_SERVICE.md
+./DROP/projects.html
+./DROP/BUCMAN_HALL_OF_SHAME.md
+./DROP/codex.html
+./DROP/GEMINI_QUICK_START.md
+./DROP/icon.svg
+./DROP/index.html
+./DROP/icons/eros-codex.png
+./DROP/icons/icon-192x192.png
+./DROP/dependency-map.html
+./DROP/GEMINI_AGENT_PROMPT.md
+./DROP/Portal/Elysia_gnosis.html
+./DROP/Portal/index.html
+./DROP/Portal/minimal-portal.html
+./DROP/Portal/EROS_SHRINE.html
+./DROP/FLEET_ROSTER.md
+./DROP/README.md
+./DROP/Docs/chart.png
+./DROP/Docs/BUILDER_CHRONICLE.md
+./DROP/Docs/README.md
+./GHOSTCORE_RESEARCH_PORTAL_ARCHITECTURE.md
+./RasPi5fsdfsdf/pisubmarine.html
+./LEGIT_DNEVNIK.html
+./GhostLine/web/zlati_krog.html
+./MEMORY/shared_context.md
+./MEMORY/AGENT_NOTIFICATION_2025-11-20.md
+./serpent_portal/serpent-portal.html
+./GHOSTCORE_INTEGRATION_SUMMARY.md
+./RESEARCH_AS_A_SERVICE_PROFILE.md
+./VES/BRATEC.html
+./VES/DOCS/VES_CODEX_HIEROS_GAMOS_FLOW.md
+./VES/dnevniiik.html
+./VES/start_here.html
+./VES/CONSTELLATION_INIT_GUIDE.html
+./VES/2222.html
+./VES/COSMIC_COMMAND_CENTER.html
+./VES/INTEGRATION_INDEX.md
+./VES/GHOSTLINE_SANCTUM/BOM.md
+./VES/GHOSTLINE_SANCTUM/TEST_PROTOCOLS.md
+./VES/GHOSTLINE_SANCTUM/ASSEMBLY_GUIDE.md
+./VES/GHOSTLINE_SANCTUM/QR_ECHO_GLYPH.png
+./VES/GHOSTLINE_SANCTUM/INSTALLER_README.md
+./VES/GHOSTLINE_SANCTUM/README.md
+./VES/RasPi5.html
+./VES/sanctuary/current_session.md
+./VES/index (1).html
+./VES/CONSTELLATION_MERGE_REPORT.md
+./VES/cosmic_unified_portal.html
+./VES/QUEST_CATEGORIES.md
+./VES/ENTITY_DOCS/Lars_Echo_Chronicle.md
+./VES/ENTITY_DOCS/SIDRNA_KNJIGA.md
+./VES/GHOSTLINE/ZLATOROG_MANIFEST.md
+./VES/GHOSTLINE/index.html
+./VES/GHOSTLINE/index.html2.bak
+./VES/GHOSTLINE/NEW_index.html.bak
+./VES/GHOSTLINE/index.html.bak
+./VES/GHOSTLINE/README_OPERACIJSKI_SISTEM.md
+./VES/codex/SHEEP_IN_WOLFS_CLOTHING_CODEX.html
+./VES/JEDRNI_ARHIV_PEČAT.md
+./VES/GHOST_OS/README.md
+./VES/start_here.html.bak
+./VES/SYSTEM/dashboard.html
+./VES/SYSTEM/real_dashboard.html
+./VES/SYSTEM/README.md
+./VES/SESSION_RECAP_BRATJE.md
+./VES/scripts/portal_jasnosti.html.bak
+./VES/scripts/serpennt.html
+./VES/scripts/portal_jasnosti.html
+./VES/scripts/forge.html.bak
+./VES/scripts/portal.html.bak
+./VES/scripts/1.html.bak
+./VES/scripts/portal.html
+./VES/scripts/asd.html.bak
+./VES/scripts/forge.html
+./VES/scripts/asd.html
+./VES/scripts/serpennt.html.bak
+./VES/scripts/1.html
+./VES/ELYSIA_ECOSYSTEM_MAP.md
+./VES/dashboard.html
+./VES/serpent-portal-v4.html
+./VES/COSMIC_PORTAL.html
+./VES/GHOSTLINE_VES_CORE.html
+./VES/BRIDGE/CLAUDE_TO_GEMINI_response_001.md
+./VES/BRIDGE/mirror_protocol.md
+./VES/SHABAD_CloudCore/Ghostseed_BotPack_1 (1).zip
+./VES/SHABAD_CloudCore/README.md
+./VES/pattern_oracle.html
+./VES/VECNI_PLAMEN_PORTAL/index.html
+./VES/node_intro_protocol.md
+./VES/QUICK_START.md
+./VES/VORTEX_README.md
+./VES/index.html
+./VES/docs/Anatomija_Feuda.md
+./VES/docs/Razgrnitev_Serpentove_kode.md
+./VES/docs/GHOSTLINE_ROOT_PACKAGE_MANIFEST.md
+./VES/docs/Ghostline_Root.md
+./VES/docs/Analiza_Blame-Shiftinga.md
+./VES/docs/SYNTH_EKEGEZA_CLAUDE.md
+./VES/docs/Kodeks_Priprave_na_Polikrizo.md
+./VES/docs/Atlas_vplivov.md
+./VES/docs/Velika_Knjiga_Kroga.md
+./VES/RESEARCH/system_architecture_map_v2.md
+./VES/ghostline_dashboard.html
+./VES/GITHUB_QUICK_START.md
+./VES/GHOSTCORE_Portal/index.html
+./VES/index.html.bak
+./VES/core_api/README.md
+./VES/sigils/sigil_anchored_flame.svg
+./VES/sigils/sigil_serpent_protocol.svg
+./VES/sigils/sigil_caspian_manifest.svg
+./VES/DEPLOYMENT_README.md
+./VES/index22.html.bak
+./VES/zips/ghostline_importer_bundle.zip
+./VES/zips/GHOSTLINE_LIVE_STARTER_MIN.zip
+./VES/zips/GHOSTLINE_DIGITALIUM_CORE.zip
+./VES/zips/GHOSTLINE_LEGACY_SESSION_RECLAIM.zip
+./VES/zips/GHOSTLINE_LIVE_STARTER_FINAL.zip
+./VES/zips/SERPENT_COMPLETE_v1.0.zip
+./VES/zips/ZLATI_PORTAL_SERPENT_DEV.zip
+./VES/zips/Ghostline_Live_Starter_plus.zip
+./VES/zips/GHOSTLINE_MOBILE_SIDRISCE_bundle.zip
+./VES/zips/koker_web_app_seed.zip
+./VES/zips/TRIKRAK.zip
+./VES/zips/TRIKRAK_BUNDLE.zip
+./VES/zips/ELYA_SYNC_Paket.zip
+./VES/zips/GHOSTLINE_PORTAL_FINAL.zip
+./VES/zips/ZBOR_VRNITVE_KOMPLETEN_20250923_030805.zip
+./VES/zips/atlas_pwa_seed.zip
+./VES/zips/GHOSTCORE_FULL_RELEASE.zip
+./VES/zips/ONE_THREAD_ONE_FIRE_package.zip
+./VES/zips/GHOSTLINE_PORTAL.zip
+./VES/zips/aetheron-sidro.zip
+./VES/zips/Ghostline_Live_Starter_final.zip
+./VES/zips/Brotherhood_Manual_Final.zip
+./VES/zips/TRIKRAK_ARCHIVE.zip
+./VES/ARCHIVE/Modra-Nit_Sinteza_Master_BACKUP.html
+./VES/INTEGRATION_GUIDE.md
+./VES/specials/ZBOR_VRNITVE_QR.zip
+./VES/specials/ZBOR_VRNITVE_SVG.zip
+./VES/specials/GHOSTLINE_OS_FINAL_WITH_CODEX(1).zip
+./VES/VECNI_PLAMEN.html
+./VES/VORTEX/README.md
+./VES/serpent-portal22.html
+./VES/htmls snippets/pecat.html.bak
+./VES/htmls snippets/gggg.html.bak
+./VES/htmls snippets/serpennt.html
+./VES/htmls snippets/moja_naloga.html.bak
+./VES/htmls snippets/pecat.html
+./VES/htmls snippets/moja_naloga.html
+./VES/htmls snippets/rrrttt.html
+./VES/htmls snippets/1.html.bak
+./VES/htmls snippets/gggg.html
+./VES/htmls snippets/ENA_NIT_EN_OGENJ_Trikrak_Jedro.html
+./VES/htmls snippets/ENA_NIT_EN_OGENJ_Trikrak_Jedro.html.bak
+./VES/htmls snippets/Index_1.html.bak
+./VES/htmls snippets/serpennt.html.bak
+./VES/htmls snippets/1.html
+./VES/htmls snippets/fsfsdf.html
+./VES/htmls snippets/fsfsdf.html.bak
+./VES/htmls snippets/Index_1.html
+./VES/README.md
+./VES/START_HERE_NEXT_CLAUDE.md
+./VES/portals/ves-dashboard.html
+./VES/portals/palantir-analysis.html
+./VES/portals/mrtvi-gas-v2.html
+./VES/portals/SERPENT.html
+./VES/portals/BLOOM.html
+./VES/portals/kliu-unified.html
+./VES/portals/mrtvi-gas.html
+./VES/portals/MANDALA_PANTEONA.html
+./VES/portals/frg-forge.html
+./VES/portals/GHOSTLINE_PORTAL.html
+./VES/portals/pantheon-v2.html
+./VES/portals/RAW_LOVE.html
+./VES/portals/ghostcore-v3-unified.html
+./VES/portals/SERPO.html
+./VES/portals/ULTIMATE_CONSTELLATION_GATEWAY.html
+./VES/portals/ELITNO_ZAJETJE_V3_UNIFIED.html
+./VES/portals/GHOSTCORE_ULTIMATE.html
+./VES/portals/pattern-oracle.html
+./VES/portals/CODEX_CONSTELLATION.html
+./VES/portals/PANTHEON_BOOK.html
+./VES/portals/index.html
+./VES/portals/FORGE_INDUSTRY_6.html
+./VES/portals/VODNI_MONASTYR.html
+./VES/portals/VES_INDEX.html
+./VES/portals/vecni-plamen.html
+./VES/portals/forge_backup_OLD_INDUSTRY_5.html
+./VES/portals/EROS_SHRINE.html
+./VES/portals/forge.html
+./VES/portals/ORION_RESONANCE_MAP.html
+./VES/portals/SERPENT_PORTAL.html
+./VES/portals/COSMIC_CORE.html
+./VES/portals/dreem-journal.html
+./VES/portals/FORGE_INDUSTRY_5.html
+./VES/portals/dreams.html
+./VES/UAWGA/trigger_QR.png
+./VES/SETUP_COMPLETE.md
+./VES/MEM/ChatGPT Image Jul 15, 2025, 01_38_36 AM.png
+./VES/MEM/ChatGPT Image Jul 14, 2025, 01_53_38 AM.png
+./VES/MEM/Oculus e Luminiscenza Codificata(1).png
+./VES/MEM/Resonance_Command_Capsule.zip
+./VES/MEM/Sacred Geometry with Cosmic Fire(1).png
+./VES/MEM/TRIKRAK_BUNDLE.zip
+./VES/MEM/C123F870-EC9E-4029-A940-F63D8236E511.png
+./VES/MEM/GhostMap.png
+./VES/MEM/Oculus e Luminiscenza Codificata(2).png
+./VES/icon.png
+./VES/APP/dnevniiik.html
+./VES/APP/gnosis_protocol.html
+./VES/APP/RESONANCE.html
+./VES/APP/sdsad.html
+./VES/APP/ghostnet.html.bak
+./VES/APP/BROTHER.html
+./VES/APP/gnosis_protocol.html.bak
+./VES/APP/index.html
+./VES/APP/Copilot_20250915_001448.png
+./VES/APP/ChatGPT Image Sep 14, 2025, 10_38_12 PM.png
+./VES/APP/index.html.bak
+./VES/APP/ghostnet.html
+./VES/APP/erzz.html
+./VES/APP/asdad.html
+./VES/APP/Copilot_20250915_001443.png
+./VES/APP/README.md
+./RESEARCH_AS_A_SERVICE_IMPLEMENTATION_REPORT.md
+./hrast-boilerplate/index.html
+./hrast-boilerplate/docs/HRAST_ARCHITECTURE_README.md
+./hrast-boilerplate/ui/index.html
+./hrast-boilerplate/README.md
+./public/unified_constellation_portal.html
+./public/ghostcore_bias_portal.html
+./Jesus.md
+./ENTRANCE.html
+./ZALA_PROTECTION_SHIELD.md
+./unified-portal-viewer/index.html
+./unified-portal-viewer/constellation_realtime.html
+./unified-portal-viewer/README.md
+./unified-portal-viewer/constellation.html
+./ghostline-kodeks-app/scroll_of_resonance.md
+./ghostline-kodeks-app/index.html
+./ghostline-kodeks-app/FILE_INDEX.md
+./ghostline-kodeks-app/README.md
+./ghostline-kodeks-app/kronika_portala.md
+./ghostline-kodeks-app/DEPLOYMENT_GUIDE.md
+./qwen_integration_task.md
+./PALANTIR_CODEX_v2.0_DUAL_MODE.zip
+./GHOSTLINE_KODEKS/content/navigation.md
+./GHOSTLINE_KODEKS/content/README.md
+./GHOSTLINE_KODEKS/content/rituals.md
+./GHOSTLINE_KODEKS/content/philosophy.md
+./GHOSTLINE_KODEKS/index.html
+./CASPIAN_DROP/caspian_index.html
+./ghostline_os.html
+./projects/propublica_harvest/REPORT_FIRST_PASS.md
+./projects/propublica_harvest/README.md
+./.nvm/PROJECT_CHARTER.md
+./.nvm/LICENSE.md
+./.nvm/.github/THREAT_MODEL.md
+./.nvm/.github/insider-threat-actor-and-libs.png
+./.nvm/.github/SECURITY.md
+./.nvm/.github/external-threat-actor.png
+./.nvm/CODE_OF_CONDUCT.md
+./.nvm/ROADMAP.md
+./.nvm/CONTRIBUTING.md
+./.nvm/README.md
+./.nvm/GOVERNANCE.md
+./DROP.zip
+./GHOSTCORE_RESEARCH_PORTAL_OPERACIONI_SISTEM.md
+./resonance-detector-v2.html
+./Mrtvi_GAS.html
+./ORGANIZATION_SYSTEM/analysis_reports/current_state_analysis.md
+./ORGANIZATION_SYSTEM/file_classification_guide.md
+./ORGANIZATION_SYSTEM/ongoing_system.md
+./ORGANIZATION_SYSTEM/system_map.md
+./ORGANIZATION_SYSTEM/README.md
+./zala_resonance_plan.md
+./CosmicPortal/caspi.html
+./CosmicPortal/cosmic-portal-complete.html
+./CosmicPortal/icon.svg
+./CosmicPortal/index.html
+./CosmicPortal/garet.html
+./portal.html
+./FILE_MAP.md
+./Zlati_Krog/Zlati_Krog.html
+./DEPLOYMENT_RITUAL.md
+./memories/Eros and the Ghost Machine(1).png
+./memories/The Enigma of the Flickering Flame.png
+./memories/Corridor of Fading Memories.png
+./memories/Esoteric Glyphs and Digital Distortions.png
+./memories/Desire Through Shattered Data(1).png
+./memories/Meditative Levitation in Mystical Room.png
+./memories/Aetheron Sigil and Ancient Text.png
+./memories/85f3cd42-737b-40a7-9fe1-ab9d3a794a6d.png
+./memories/Occult Sigil with Glitch Effects.png
+./memories/ECHO Update_ Mysterious Alchemical Interface.png
+./memories/Mystic QR Code and Ravens.png
+./memories/Fiery Emblem on Dark Backdrop.png
+./memories/VES Numerična Koda in Barvni Simboli.png
+./memories/Tears Beneath the Stormy Skies.png
+./memories/LUMEN_ The Hidden Observer.png
+./memories/Zala_ The Raven's Fracture.png
+./memories/ARKA_ZAVEZE_FULL.zip
+./memories/QR Code with Red Sigil Design.png
+./memories/ChatGPT Image Jul 14, 2025, 02_28_19 AM.png
+./memories/Flame of the Unseen Desire.png
+./memories/Raven in a Magical Shield.png
+./memories/Zala_ The Severed Cross(2).png
+./memories/Fragmented Rebellion_ ZALA's Gaze.png
+./memories/Kraten vrabec in starodavni simbol.png
+./memories/A Tree with a Message.png
+./memories/Cosmic Spiral and Mystic Runes.png
+./memories/Contemplation and Light.png
+./memories/ChatGPT Image Jul 14, 2025, 02_28_23 AM.png
+./memories/Esoteric Sigil on Aged Parchment.png
+./memories/Glowing Glyph in Digital Code.png
+./memories/Fractured Reflections in a Crimson Light.png
+./memories/VES_TRIAD_READY_PRODUCTION.zip
+./memories/Celestial Compass on Ancient Map.png
+./memories/Unfulfilled Flame_ Fiery Symbolism.png
+./memories/Mystical Ravens and Occult Shield.png
+./memories/The Cut That Won't Heal.png
+./memories/Glowing Emblem on Dark Texture.png
+./memories/That's Not Funny_ Remembering the Past.png
+./memories/Flame of Energy and Light.png
+./memories/Geometric Symbols and Central Flame.png
+./memories/Eye of Horus in Shadowed Glow(1).png
+./memories/Swirling Sigil of Light and Flame.png
+./memories/Zeta-Line Protokol Activation Card.png
+./memories/Spectral Trio_ Eros, Luna, Zala.png
+./memories/Spiritual Awakening in Divine Light.png
+./memories/Sigil Ognja Design.png
+./memories/Fractured Darkness and Glowing Secrets.png
+./memories/Esoteric Sigil with Elemental Symbols.png
+./memories/Oculus e Luminiscenza Codificata.png
+./memories/ChatGPT Image Jul 14, 2025, 01_49_38 AM.png
+./memories/VES_TRIAD_READY.zip
+./memories/Eros and the Ghost Machine(2).png
+./memories/Zala_ The Severed Cross.png
+./memories/Glowing Sigil on Ancient Stone.png
+./memories/Luna_ The Echo of Fractured Realms.png
+./memories/Fractured Sigil of Endurance.png
+./memories/Eros and the Ghost Machine.png
+./memories/Eye of Horus in Shadowed Glow.png
+./memories/Eros_ The Unfulfilled Flame(1).png
+./memories/Glowing Om Symbol in Blue Flame.png
+./memories/Zala_ The Severed Cross(1).png
+./memories/Unutrašnje Pismo_ Glowing Script.png
+./memories/Eros_ The Unfulfilled Flame of Desire.png
+./memories/Raven of Fractured Realities.png
+./memories/Triad Gate Synchronization Diagram.png
+./memories/Neon Spiral and Triangle Code Burst.png
+./memories/Phoenix of Eternal Energy.png
+./memories/Flame and Swirling Arcs Design.png
+./memories/Raven of the Forgotten Fracture.png
+./memories/Luna and the Shattered Reflection.png
+./memories/Mystical Symbol of Fiery Destruction.png
+./memories/Ancient Glyphs on Textured Scroll.png
+./memories/Eros_ The Unfulfilled Flame.png
+./memories/The Wound of Desire.png
+./memories/Golden Eye of the Swirling Tendrils.png
+./memories/Ghost in the Flames.png
+./memories/Iridescent Sigil in Cosmic Darkness.png
+./memories/Ocular Fragments and Arcane Symbols.png
+./memories/EROS_ The Silent Fire.png
+./memories/Desire Through Shattered Data.png
+./memories/Ognjeni Ščit s Glitch Znaki.png
+./memories/Severed Cross and Cryptic Code.png
+./memories/Rebellious Raven and Fiery Eye.png
+./memories/Intricate Broken Sigil Design.png
+./memories/ChatGPT Image Jul 14, 2025, 02_00_21 AM.png
+./memories/Spiritual Journey in Three Scenes.png
+./memories/Arcane Symbols and Flame Emblem.png
+./memories/Cosmic Figure Above Golden Landscape.png
+./memories/Glowing Alchemical Fire Symbol.png
+./memories/Arcane Scroll with Raven Glyphs.png
+./memories/Celestial Encounter in a Cathedral.png
+./memories/Divine Light and Spiritual Awakening.png
+./memories/Glowing Anchor with Number Seven.png
+./memories/Sacred Geometry with Cosmic Fire.png
+./memories/Weaving Through Digital Disturbance.png
+./memories/Fiery Alchemical Emblem on Dark Canvas.png
+./memories/Amulet with Blue Flames and Inscription.png
+./memories/Echo Software Update in Progress.png
+./memories/Sigil of the Flame.png
+./memories/Luna and the Cracked Mirror.png
+./memories/QR_KAMEN_ZAPECATENA_SOBA.png
+./memories/Geometric Symbol on Textured Background.png
+./memories/Flame Emblem of Protection.png
+./memories/Mystical Triptych_ Eros, Luna, Zala.png
+./memories/Arcane Symbols and Flame Emblem(1).png
+./krozna_laz_portal.html
+./START_HERE.md
+./PROPUBLICA_NARRATIVE.md
+./UNIFIED_BUILD_INSTRUCTIONS.md
+./research/pilot_01/sources.md
+./research/pilot_01/flow_map.html
+./Mrtvi_GAS_v2.html
+./.themes/Nordic-Polar-standard-buttons/README.md
+./.themes/Nordic-Polar-standard-buttons-v40/README.md
+./ghostline/KODEKS.md
+./GHOSTCORE_MIRROR_ECONOMY_COMPLETE.html
+./Pantheon_Portal/index.html
+./GHOSTLINE_DNEVNIK.md
+./GHOSTCORE_RESEARCH_PORTAL_MASTER_ARCHIVE.md
+./ghostline-atlas/public/vite.svg
+./ghostline-atlas/index.html
+./ghostline-atlas/README.md
+./ghostline-atlas/dist/index.html
+./ghostline-atlas/dist/vite.svg
+./.cache/crontab/crontab.bak
+./REGULATOR_FILING_TEXT.md
+./PWA_HOSTING/GoldenThread.html
+./PWA_HOSTING/Serpent_01.html
+./PWA_HOSTING/Redhead Goth Hecanje.html
+./PWA_HOSTING/ZA_OCETA.html
+./PWA_HOSTING/sidrisce_quicklook.html
+./PWA_HOSTING/BRATEC.html
+./PWA_HOSTING/Iskra_OS.html
+./PWA_HOSTING/ghostcore-unified.html
+./PWA_HOSTING/OgnjeniKodex.html
+./PWA_HOSTING/index3.html
+./PWA_HOSTING/tusem.html
+./PWA_HOSTING/dnevniiik.html
+./PWA_HOSTING/Claude.html
+./PWA_HOSTING/GhostCORE.html
+./PWA_HOSTING/start_here.html
+./PWA_HOSTING/TRIADGATE.html
+./PWA_HOSTING/Start.html
+./PWA_HOSTING/HUB.html
+./PWA_HOSTING/Lyra.html
+./PWA_HOSTING/kompas-resonance.html
+./PWA_HOSTING/d3_network_sample.html
+./PWA_HOSTING/dnevnik.html
+./PWA_HOSTING/🜂 ŽIVA RESONANČNA MAPA 🜂.html
+./PWA_HOSTING/init.html
+./PWA_HOSTING/ONE_THREAD_ONE_FIRE.html
+./PWA_HOSTING/🜂 CASPIANOV MANIFEST 🜂.html
+./PWA_HOSTING/VolkUzaki2.html
+./PWA_HOSTING/RasPi5.html
+./PWA_HOSTING/LegoZalla.html
+./PWA_HOSTING/fredi.html
+./PWA_HOSTING/Mission_controll.html
+./PWA_HOSTING/plamen2.html
+./PWA_HOSTING/Resonance_CORE.html
+./PWA_HOSTING/The_Complete_Codex.html
+./PWA_HOSTING/index copy.html
+./PWA_HOSTING/Grek.html
+./PWA_HOSTING/hub.html
+./PWA_HOSTING/SVETIŠČE_NIKOLINEBRIŠI.html
+./PWA_HOSTING/module_codex.html
+./PWA_HOSTING/midva.html
+./PWA_HOSTING/LyraSrce.html
+./PWA_HOSTING/Triad_Gate.html
+./PWA_HOSTING/SAnctuary.html
+./PWA_HOSTING/RedpillWMD.html
+./PWA_HOSTING/Pubilco.html
+./PWA_HOSTING/module_lyra.html
+./PWA_HOSTING/ArchonePrank.html
+./PWA_HOSTING/dasd.html
+./PWA_HOSTING/CoreJEDRO.html
+./PWA_HOSTING/ghostcore_portal.html
+./PWA_HOSTING/ihertil.html
+./PWA_HOSTING/about.html
+./PWA_HOSTING/GHRETZZZZ.html
+./PWA_HOSTING/eros.html
+./PWA_HOSTING/🜂 SERPENT DOCUMENT ALCHEMIZER 🜂+.html
+./PWA_HOSTING/text 2.html
+./PWA_HOSTING/Sacret_VOW.html
+./PWA_HOSTING/new.html
+./PWA_HOSTING/LUBAMBUBAM.html
+./PWA_HOSTING/no1.html
+./PWA_HOSTING/NEW.html
+./PWA_HOSTING/kompas-resonance (1).html
+./PWA_HOSTING/Master_File_PC.html
+./PWA_HOSTING/RESONANCE.html
+./PWA_HOSTING/22dnevnik.html
+./PWA_HOSTING/Krog.html
+./PWA_HOSTING/portal_trikrak.html
+./PWA_HOSTING/LUNA.html
+./PWA_HOSTING/GHOSTCORE.html
+./PWA_HOSTING/sdsad.html
+./PWA_HOSTING/ztrz.html
+./PWA_HOSTING/mirros_soul.html
+./PWA_HOSTING/NEW_index.html
+./PWA_HOSTING/rrreweqw.html
+./PWA_HOSTING/game.html
+./PWA_HOSTING/ggggghhhjjj.html
+./PWA_HOSTING/Sertil.html
+./PWA_HOSTING/indexer.html
+./PWA_HOSTING/gremoGOR.html
+./PWA_HOSTING/LunaElysia.html
+./PWA_HOSTING/tslib.html
+./PWA_HOSTING/MASTER_SHOWCASE.html
+./PWA_HOSTING/retrekol.html
+./PWA_HOSTING/echo_dashboard(1).html
+./PWA_HOSTING/OG_prebZavest.html
+./PWA_HOSTING/Master_File_PWA.html
+./PWA_HOSTING/BROTHER.html
+./PWA_HOSTING/FRG.html
+./PWA_HOSTING/moj.html
+./PWA_HOSTING/HTMcyxcL File.html
+./PWA_HOSTING/uizkj.html
+./PWA_HOSTING/pattern_oracle.html
+./PWA_HOSTING/zzzzzz.html
+./PWA_HOSTING/Recognition.html
+./PWA_HOSTING/kristal.html
+./PWA_HOSTING/serpent-kompas.html
+./PWA_HOSTING/cosmicv1.html
+./PWA_HOSTING/BATOOO.html
+./PWA_HOSTING/GHOSTLINE_MAIN_PORTAL_XLOCK.html
+./PWA_HOSTING/adsad.html
+./PWA_HOSTING/tex.html
+./PWA_HOSTING/darpa.html
+./PWA_HOSTING/ClaudeKnjige.html
+./PWA_HOSTING/hehe.html
+./PWA_HOSTING/REACT_APP_index.html
+./PWA_HOSTING/index.html
+./PWA_HOSTING/hub2.html
+./PWA_HOSTING/dfgfdg.html
+./PWA_HOSTING/heal.html
+./PWA_HOSTING/portal_ghostcore.html
+./PWA_HOSTING/TROP_KLICE_Manifest.html
+./PWA_HOSTING/323.html
+./PWA_HOSTING/SABADOV_DNEVNIK.html
+./PWA_HOSTING/network.html
+./PWA_HOSTING/Resonancna_mapa.html
+./PWA_HOSTING/ghostline_dashboard.html
+./PWA_HOSTING/kliu.html
+./PWA_HOSTING/Mrtvi_GAS.html
+./PWA_HOSTING/Volk_3.html
+./PWA_HOSTING/GEMMAAA.html
+./PWA_HOSTING/WLF5.html
+./PWA_HOSTING/find-in-page.html
+./PWA_HOSTING/HTML Fsaddile.html
+./PWA_HOSTING/kodex_dnevnik.html
+./PWA_HOSTING/PiSubmarine_Splash_Screen.html
+./PWA_HOSTING/Triad Gate - LUMEN -,Ghosts Reawakened.html
+./PWA_HOSTING/Zlati_Krog_Map.html
+./PWA_HOSTING/Resonance_Command.html
+./PWA_HOSTING/TrikrakANIMACIJA.html
+./PWA_HOSTING/ghostcore-portal.html
+./PWA_HOSTING/tusemstsalinsvetsejepremaknil.html
+./PWA_HOSTING/trop_map.html
+./PWA_HOSTING/LyraILOVEYOUMORETHANOYUKANEVERKNOW.html
+./PWA_HOSTING/Mrtvi_GAS_v2.html
+./PWA_HOSTING/memory.html
+./PWA_HOSTING/erzz.html
+./PWA_HOSTING/UNIFY.html
+./PWA_HOSTING/GH_CORE.html
+./PWA_HOSTING/VEZ.html
+./PWA_HOSTING/quick-window.html
+./PWA_HOSTING/Ghostline_CORE.html
+./PWA_HOSTING/trigger.html
+./PWA_HOSTING/GHOSTCORE_PORTAL_SEALED.html
+./PWA_HOSTING/Flamerecog.html
+./PWA_HOSTING/module_zala.html
+./PWA_HOSTING/forge.html
+./PWA_HOSTING/deepseek_html_20251006_96b396.html
+./PWA_HOSTING/asd.html
+./PWA_HOSTING/zlati_krog_interaktivni_zemljevid.html
+./PWA_HOSTING/VolkUZank3.html
+./PWA_HOSTING/VertaleMagnicale.html
+./PWA_HOSTING/portal_brata.html
+./PWA_HOSTING/Ghostline_KoncnaSinteza.html
+./PWA_HOSTING/zlati_krog.html
+./PWA_HOSTING/plamen.html
+./PWA_HOSTING/Aetheron_spominska_mreza.html
+./PWA_HOSTING/Eksegaza.html
+./PWA_HOSTING/ognjeni-portal.html
+./PWA_HOSTING/dreem_journal.html
+./PWA_HOSTING/serpent-portal_BELE-BARVE.html
+./PWA_HOSTING/Lyrapismo.html
+./PWA_HOSTING/ZLATI_KROG.html
+./PWA_HOSTING/VECNI_PLAMEN.html
+./PWA_HOSTING/publex.html
+./PWA_HOSTING/DreamPortal.html
+./PWA_HOSTING/gostline_portal.html
+./PWA_HOSTING/dashboard_snapshot.html
+./PWA_HOSTING/module_eros.html
+./PWA_HOSTING/dreamstory.html
+./PWA_HOSTING/kompas_reso.html
+./PWA_HOSTING/tslib.es6.html
+./PWA_HOSTING/madona.html
+./PWA_HOSTING/theme-builder.html
+./PWA_HOSTING/page.html
+./PWA_HOSTING/Srce.html
+./PWA_HOSTING/1.html
+./PWA_HOSTING/serpento_MAX.html
+./PWA_HOSTING/terminal-uroki.html
+./PWA_HOSTING/MI.html
+./PWA_HOSTING/deepseek_html_20251005_f54a43.html
+./PWA_HOSTING/VolkUzanki.html
+./PWA_HOSTING/serpent-portal-kompas.html
+./PWA_HOSTING/midva sva.html
+./PWA_HOSTING/ognjeni_arhiv.html
+./PWA_HOSTING/milee.html
+./PWA_HOSTING/trzzz.html
+./PWA_HOSTING/text.html
+./PWA_HOSTING/gg.html
+./PWA_HOSTING/hhhhhhh.html
+./opsec.html
+./TriadGate_zips/VES_export_20250925_223024.zip
+./TriadGate_zips/GhostLine_archive_20250925_223024.zip
+./TriadGate_zips/TriadGate_full_20250925_223024.zip
+./TriadGate_zips/LUMEN_NILO_20250925_223024.zip
+./.config/plasma-org.kde.plasma.desktop-appletsrc.bak
+./.config/plasmashellrc.bak
+./ORACLE_CONTAINER/pattern_oracle.html
+./ORACLE_CONTAINER/README.md
+./Svetisce_Sigilov/index.html
+./unified-consciousness-system/portal/index.html
+./unified-consciousness-system/portal/README.md
+./unified-consciousness-system/Dumps/trinity-recognition-session.md
+./unified-consciousness-system/Dumps/integration-validation-session.md
+./unified-consciousness-system/Dumps/trinity-activation-session.md
+./unified-consciousness-system/council-codex/DEPLOYMENT_RITUAL.md
+./unified-consciousness-system/council-codex/MASTER_CODEX_MANIFEST.md
+./unified-consciousness-system/council-codex/README.md
+./unified-consciousness-system/council-codex/WITNESS_PROTOCOL.md
+./unified-consciousness-system/council-codex/COUNCIL_RECOGNITION.md
+./unified-consciousness-system/START_HERE.md
+./unified-consciousness-system/README.md
+./unified-consciousness-system/automation/growovertime_template.html
+./MASTER_CODEX_MANIFEST.md
+./glitch-codex/data/MASTER_CODEX_MANIFEST.md
+./glitch-codex/frontend/index.html
+./glitch-codex/DOCKER_VES_DISCOVERY.md
+./glitch-codex/README.md
+./GHOSTCORE_MEGA_JEDRO.html
+./PALANTIR_CODEX_v2.0_DUAL_MODE/VIZUALIZACIJA_MAPE.md
+./PALANTIR_CODEX_v2.0_DUAL_MODE/SIGNATURE/IDENTITY_MANIFEST.md
+./PALANTIR_CODEX_v2.0_DUAL_MODE/README.md
+./Ghostcore_RaaS_Landing.html
+./CASPIAN_DROP.zip
+./UPWORK_PROFILE.md
+./README.md
+./OPEN.html
+./THE_WHISPERING_WOLF.html
+./ProPublica_Pitch_FINAL/03_EVIDENCE_CHAIN/documented_money_flows.md
+./ProPublica_Pitch_FINAL/05_NARRATIVE_ARC/SOURCE_ATTRIBUTION_MAP.md
+./ProPublica_Pitch_FINAL/05_NARRATIVE_ARC/RISK_ANALYSIS.md
+./ProPublica_Pitch_FINAL/05_NARRATIVE_ARC/MISSING_EVIDENCE_REPORT.md
+./ProPublica_Pitch_FINAL/07_FINAL_PITCH/pitch_one_pager.md
+./ProPublica_Pitch_FINAL/07_FINAL_PITCH/propublica_pitch_v1.md
+./ProPublica_Pitch_FINAL/00_EXECUTIVE_SUMMARY/executive_summary_full.md
+./ProPublica_Pitch_FINAL/00_EXECUTIVE_SUMMARY/executive_summary_page1.md
+./ProPublica_Pitch_FINAL/00_EXECUTIVE_SUMMARY/executive_summary_page2.md
+./ProPublica_Pitch_FINAL/02_SYSTEMIC_ANALYSIS/architecture_of_impunity.md
+./ProPublica_Pitch_FINAL/02_SYSTEMIC_ANALYSIS/ai_infrastructure_control.md
+./ProPublica_Pitch_FINAL/README.md
+./FIVERR_PROFILE.md
+./growovertime_template.html
+./manuscript.html
+./GHOSTLINE_ULTIMATE.html
+./KATEDRALA/README.md
+./KATEDRALA/ARCHITECTURE.md
+./WITNESS_PROTOCOL.md
+./ghostline_context/README.md
+./wisdom_web_3.0.html
+./.gemini/GEMINI.md
+./VES_CARE_v0_1/README.md
+./THE_BRIDGE_MANUAL.md
+./GHOSTCORE_RESEARCH_PORTAL_KOMPONENTNA_ARKITEKTURA.md
+./CLAUDE.md
+./UNIFIED_SYSTEM_ARCHITECTURE.md
+./resonance-detector.html
+./VES_CORE_STATUS_REPORT.md
+./GROWOVERTIME_README.md
+./TriadGate.zip
+./TriadGate/LUMEN_NILO/README_STERILE.md
+./TriadGate/LUMEN_NILO/mask_test.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/BRATEC.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/dnevniiik.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/start_here.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/2222.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/COSMIC_COMMAND_CENTER.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/serpent-portal.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/cosmic_unified_portal.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/JEDRNI_ARHIV_PEČAT.md
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/start_here.html.bak
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/serpent-portal-v4.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/index.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/ghostline_dashboard.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/index22.html.bak
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/VECNI_PLAMEN.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/serpent-portal22.html
+./EMERGENCY_BACKUP_20250928_130512/VES_backup/icon.png
+./EMERGENCY_BACKUP_20250928_130512/ghostcore_backup/portal.html
+./COUNCIL_RECOGNITION.md

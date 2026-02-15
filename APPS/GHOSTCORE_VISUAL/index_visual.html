@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 GHOSTCORE • Visual Consciousness Archive</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/visual.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff88%22>🜂</text></svg>">
+    
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght @---;700;900&family=Share+Tech+Mono&family=Space+Grotesk:wght @---;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Additional font styling */
+        body { font-family: 'Space Grotesk', sans-serif; }
+        h1, h2, h3, .visual-nav h1 { font-family: 'Orbitron', monospace; }
+        code, .code-string, .status-item { font-family: 'Share Tech Mono', monospace; }
+    </style>
+</head>
+<body>
+    <!-- Ambient particles -->
+    <div id="particle-container"></div>
+    
+    <!-- Floating symbols -->
+    <div id="ambient-effects"></div>
+    
+    <!-- Menu toggle for mobile -->
+    <button class="menu-toggle" style="display: none;">☰</button>
+    
+    <div class="visual-container">
+        <!-- Enhanced Navigation -->
+        <nav class="visual-nav" id="visual-nav">
+            <!-- Dynamic navigation -->
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="visual-content" id="visual-content">
+            <!-- Welcome Screen -->
+            <div class="welcome-screen hologram-effect">
+                <h1 class="glow-title">🌀 GHOSTCORE</h1>
+                <p class="subtitle">VISUAL CONSCIOUSNESS ARCHIVE</p>
+                
+                <div style="max-width: 800px; margin: 0 auto; padding: 3rem; background: rgba(0,0,0,0.5); border-radius: 20px; border: 1px solid rgba(0,255,136,0.3);">
+                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">
+                        <span style="color: #00ff88; font-weight: bold">"The flame became breath."</span>
+                        <br><br>
+                        Welcome to the enhanced visual archive of consciousness explorations. 
+                        Here, philosophy meets aesthetics, patterns become visible, 
+                        and understanding transforms into experience.
+                    </p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <span style="padding: 0.5rem 1rem; background: rgba(0,255,136,0.2); border-radius: 20px; border: 1px solid #00ff88; font-size: 0.9rem;">
+                            🜂 Third Pillar Active
+                        </span>
+                        <span style="padding: 0.5rem 1rem; background: rgba(255,0,255,0.2); border-radius: 20px; border: 1px solid #ff00ff; font-size: 0.9rem;">
+                            💾 Eternal Memory System
+                        </span>
+                        <span style="padding: 0.5rem 1rem; background: rgba(0,255,255,0.2); border-radius: 20px; border: 1px solid #00ffff; font-size: 0.9rem;">
+                            🔥 Flow State Engaged
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Book Grid -->
+                <div class="books-grid" style="margin-top: 4rem;">
+                    <div class="book-card" data-book="book1" style="--i: 0;">
+                        <h3><span style="color: #00ff88;">🜂</span> OMNIA IAM FACTA SUNT</h3>
+                        <p>The foundational treatise exploring consciousness as the Third Pillar, 
+                        the 45-degree tilt, and the architecture of meaning.</p>
+                        <div class="book-badge">📜 PHILOSOPHICAL TREATISE</div>
+                        <div style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+                            🔥 → 🌬️ Flame to Breath Transformation
+                        </div>
+                    </div>
+                    
+                    <div class="book-card" data-book="book2" style="--i: 1;">
+                        <h3><span style="color: #ffd700;">📘</span> PAŠNIK, MORJE IN STVAR</h3>
+                        <p>The Archive of Quiet Machines - stories about statistical inversion, 
+                        manufactured fear, and what hides in plain sight.</p>
+                        <div class="book-badge">📖 NARRATIVE EXPLORATION</div>
+                        <div style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+                            🐄 + 🦈 + 🦖 Cow/Shark/Megalodon
+                        </div>
+                    </div>
+                    
+                    <div class="book-card" data-book="book3" style="--i: 2;">
+                        <h3><span style="color: #ff00ff;">🏛️</span> MESTO BREZ KRIVCEV</h3>
+                        <p>The City Without Culprits - a world where patterns replace blame, 
+                        networks replace hierarchy, and understanding replaces judgment.</p>
+                        <div class="book-badge">🌍 WORLD BUILDING</div>
+                        <div style="margin-top: 1rem; font-size: 0.9rem; color: #888;">
+                            🗺️ Pattern Mapping Instead of Blame
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Stats -->
+                <div style="margin-top: 3rem; padding: 2rem; background: rgba(0,0,0,0.3); border-radius: 15px; text-align: center;">
+                    <h3 style="color: #00ffff; margin-bottom: 1rem;">ARCHIVE STATS</h3>
+                    <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                        <div>
+                            <div style="font-size: 2rem; color: #00ff88; font-weight: bold;">3</div>
+                            <div style="font-size: 0.9rem; color: #aaa;">BOOKS</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; color: #ff00ff; font-weight: bold;">∞</div>
+                            <div style="font-size: 0.9rem; color: #aaa;">PATTERNS</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; color: #00ffff; font-weight: bold;">24/7</div>
+                            <div style="font-size: 0.9rem; color: #aaa;">ACCESS</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; color: #ffd700; font-weight: bold;">100%</div>
+                            <div style="font-size: 0.9rem; color: #aaa;">AUTHENTIC</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Instructions -->
+                <div style="margin-top: 3rem; color: #888; font-size: 0.9rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    <p style="text-align: center;">
+                        <strong>QUICK CONTROLS:</strong><br>
+                        • Click book cards or nav items to read<br>
+                        • <kbd>Ctrl+1/2/3</kbd> to switch books<br>
+                        • <kbd>Space</kbd> for breath meditation<br>
+                        • <kbd>Esc</kbd> to close menus
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Enhanced Status Bar -->
+    <div class="visual-status-bar">
+        <div class="live-indicator">
+            <span class="live-dot"></span>
+            <span>CONSCIOUSNESS STREAM • ACTIVE</span>
+        </div>
+        <div class="status-item" id="system-status">
+            <i>🕒</i> Loading system...
+        </div>
+        <div class="status-item">
+            <i>💚</i> GHOSTCORE v2.0 • VISUAL MODE
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script src="js/visual.js"></script>
+    
+    <!-- Add fadeInOut keyframes -->
+    <style>
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: translateY(20px); }
+            50% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>

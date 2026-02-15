@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krožna Laž: Interaktivna Analiza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --font-main: 'Inter', sans-serif;
+        }
+        body {
+            font-family: var(--font-main);
+            background-color: #f8fafc;
+            color: #1f2937;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .active-nav {
+            color: #0891b2;
+            font-weight: 600;
+            border-bottom: 2px solid #0891b2;
+        }
+        .node {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .node:hover {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transform: translateY(-2px);
+            border-color: #0891b2;
+        }
+        .arrow {
+            font-size: 1.5rem;
+            color: #64748b;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .arrow-label {
+            font-size: 0.75rem;
+            color: #475569;
+            text-align: center;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 w-full bg-white/95 shadow-sm backdrop-blur-sm">
+        <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <h1 class="text-xl font-bold text-gray-800">
+                        <span class="text-amber-600">🜂</span> Analiza Moči
+                    </h1>
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <a href="#home" data-nav="home" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-cyan-700">Domov</a>
+                        <a href="#big-three" data-nav="big-three" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-cyan-700">Velika Trojica</a>
+                        <a href="#network" data-nav="network" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-cyan-700">Mreža</a>
+                        <a href="#immunity" data-nav="immunity" class="nav-link px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-cyan-700">Imuniteta</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- ===== DOMOV / UVOD ===== -->
+        <section id="home" data-section="home" class="mb-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Krožna Laž: Interaktivna Analiza</h2>
+            <p class="mt-4 text-lg text-gray-600">
+                Ta aplikacija vizualizira in raziskuje trditve iz obsežnega poročila o lastništvu, vplivu in domnevnih povezavah med glavnimi finančnimi institucijami. Namesto linearnega branja vam ta nadzorna plošča omogoča interaktivno raziskovanje ključnih trditev, od krožnega lastništva "Velike Trojice" do kompleksnih mrež, ki naj bi povezovale finance, tehnologijo in politiko.
+            </p>
+            <div class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <span class="text-3xl">🏛️</span>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Sredstva "Velike Trojice" (ocena)</dt>
+                                    <dd class="text-2xl font-bold text-gray-900">~24.5 Bilijonov $</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <span class="text-3xl">📈</span>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Nadzor nad S&P 500 (trditev)</dt>
+                                    <dd class="text-2xl font-bold text-gray-900">88%</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="bg-white overflow-hidden shadow rounded-lg">
+                    <div class="p-5">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0">
+                                <span class="text-3xl">🛡️</span>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <dl>
+                                    <dt class="text-sm font-medium text-gray-500 truncate">Rast obrambnih delnic (2022-25)</dt>
+                                    <dd class="text-2xl font-bold text-red-600">+90%</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== VELIKA TROJICA ===== -->
+        <section id="big-three" data-section="big-three" class="mb-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-gray-900">Velika Trojica: BlackRock & Vanguard</h2>
+            <p class="mt-4 text-lg text-gray-600">
+                Ta oddelek raziskuje trditve o "krožnem lastništvu" med BlackRockom, Vanguardom in State Street. Poročilo trdi, da čeprav so te družbe tehnično konkurenti, njihovo medsebojno lastništvo in ogromni deleži v ključnih sektorjih ustvarjajo koncentriran blok moči, ki vpliva na vse, od glasovanja o ESG do dobičkov iz vojne.
+            </p>
+
+            <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- BlackRock -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900">BlackRock (BLK): Struktura Lastništva</h3>
+                    <p class="mt-2 text-gray-600">
+                        Poročilo poudarja, da medtem ko je BLK javno podjetje, institucionalni vlagatelji (vključno z njegovimi največjimi konkurenti) obvladujejo veliko večino delnic (79-83%). Nasprotno pa imajo posamezniki, kot je direktor Larry Fink, minimalen osebni delež (0.27%).
+                    </p>
+                    <div class="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-medium text-center text-gray-700">Delež Institucij vs. Ostali</h4>
+                            <div class="chart-container" style="height: 250px; max-height: 300px;">
+                                <canvas id="blkOwnershipChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-medium text-center text-gray-700">Top Institucionalni Lastniki (ocena)</h4>
+                             <div class="chart-container" style="height: 250px; max-height: 300px;">
+                                <canvas id="blkTopHoldersChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vanguard -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900">Vanguard: Naložbe v Obrambo</h3>
+                    <p class="mt-2 text-gray-600">
+                        Vanguard je opisan kot "tihi pajek" z edinstveno strukturo. Poročilo se osredotoča na njegove ogromne deleže v ključnih obrambnih in tehnoloških podjetjih, ki naj bi imela koristi od konfliktov v Ukrajini in Gazi, kar je povzročilo več kot 90% rast nekaterih delnic.
+                    </p>
+                    <div class="mt-6 grid grid-cols-1 xl:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="text-lg font-medium text-center text-gray-700">Deleži v Obrambi/Tehnologiji (2025)</h4>
+                            <div class="chart-container" style="height: 250px; max-height: 300px;">
+                                <canvas id="vanguardDefenseChart"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-medium text-center text-gray-700">Rast Obrambnih Delnic (2022-25)</h4>
+                            <div class="chart-container" style="height: 250px; max-height: 300px;">
+                                <canvas id="defenseGrowthChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MREŽA ===== -->
+        <section id="network" data-section="network" class="mb-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-gray-900">Mreža: Povezovanje Pik</h2>
+            <p class="mt-4 text-lg text-gray-600">
+                To je najbolj zapleten del poročila, ki trdi, da obstaja mreža povezav med financami (BlackRock), obrambno tehnologijo (Palantir), nadzorom (Carbyne), obveščevalnimi službami (Unit 8200) in posamezniki, kot so Peter Thiel, Ehud Barak, Jeffrey Epstein in Viktor Vekselberg. <strong class="text-cyan-700">Kliknite na posamezno vozlišče</strong>, da raziščete trditve.
+            </p>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+
+                <!-- Diagram Flow -->
+                <div class="space-y-4">
+                    <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="blk">BlackRock</div>
+                        <div class="arrow-label text-center">→<br>(8.6% delež)</div>
+                        <div class="node" data-node="palantir">Palantir (Thiel)</div>
+                    </div>
+                     <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="palantir-gaza">Palantir</div>
+                        <div class="arrow-label text-center">→<br>(150M$ pogodba)</div>
+                        <div class="node" data-node="gaza">Gaza (IDF AI)</div>
+                    </div>
+                     <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="thiel">Thiel (Founders Fund)</div>
+                        <div class="arrow-label text-center">→<br>(Investitor)</div>
+                        <div class="node" data-node="carbyne">Carbyne</div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="carbyne-us">Carbyne</div>
+                        <div class="arrow-label text-center">→<br>(500M$ pogodbe)</div>
+                        <div class="node" data-node="us-cities">100+ mest v ZDA</div>
+                    </div>
+                     <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="epstein">Jeffrey Epstein</div>
+                        <div class="arrow-label text-center">→<br>(1.5M$ vložek 2015)</div>
+                        <div class="node" data-node="carbyne-epstein">Carbyne</div>
+                    </div>
+                     <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="barak">Ehud Barak (Unit 8200)</div>
+                        <div class="arrow-label text-center">→<br>(Predsednik)</div>
+                        <div class="node" data-node="carbyne-barak">Carbyne</div>
+                    </div>
+                     <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="epstein-vek">Jeffrey Epstein</div>
+                        <div class="arrow-label text-center">→<br>(Koordinacija 2016)</div>
+                        <div class="node" data-node="vekselberg">V. Vekselberg (Renova)</div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="vekselberg-rus">Vekselberg</div>
+                        <div class="arrow-label text-center">→<br>(Deleži)</div>
+                        <div class="node" data-node="rus-energy">Ruska Energija</div>
+                    </div>
+                     <div class="grid grid-cols-3 gap-2 items-center">
+                        <div class="node" data-node="rus-energy-funds">Ruska Energija</div>
+                        <div class="arrow-label text-center">→<br>(Sankcijske luknje)</div>
+                        <div class="node" data-node="blk-vg-rus">BlackRock / Vanguard</div>
+                    </div>
+                </div>
+
+                <!-- Details Panel -->
+                <div class="bg-white p-6 rounded-lg shadow-lg sticky top-24" style="min-height: 400px;">
+                    <h3 class="text-xl font-semibold text-gray-900">Podrobnosti Vozlišča</h3>
+                    <div id="network-details" class="mt-4 text-gray-700">
+                        <p class="text-gray-500">Kliknite na element na levi za prikaz podrobnosti o trditvi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== IMUNITETA ===== -->
+        <section id="immunity" data-section="immunity" class="mb-16 scroll-mt-16">
+            <h2 class="text-3xl font-bold text-gray-900">Imuniteta: Zaščitena Elita?</h2>
+            <p class="mt-4 text-lg text-gray-600">
+                Zadnji del poročila trdi, da ista elita, ki je vključena v te mreže, uživa obliko imunitete pred pravnimi posledicami. Poročilo navaja primere, kot sta poravnava JPMorgana v zvezi z Madoffom in dogovor o priznanju krivde Jeffreyja Epsteina, kot dokaz dvotirnega pravnega sistema.
+            </p>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900">JPMorgan & Madoff</h3>
+                    <p class="mt-2 text-gray-600">
+                        <strong class="block">Trditev:</strong> JPMorgan je bil kaznovan z 2.6 milijarde $ (2014) zaradi neuspešnega poročanja o sumljivih dejavnostih Madoffa, vendar noben vodilni ni bil kazensko odgovoren.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900">Acosta & Epstein (2008)</h3>
+                    <p class="mt-2 text-gray-600">
+                        <strong class="block">Trditev:</strong> Dogovor o priznanju krivde, ki ga je sklenil Acosta, ni zaščitil le Epsteina, ampak tudi njegove imenovane (in neimenovane) sozarotnike pred nadaljnjim pregonom.
+                    </p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold text-gray-900">SDNY Zaustavitev (2025)</h3>
+                    <p class="mt-2 text-gray-600">
+                        <strong class="block">Trditev:</strong> Domnevna zaustavitev objave dokumentov o Epsteinovi veliki poroti s strani DOJ, z utemeljitvijo "nacionalne varnosti" za zaščito neobtoženih elit.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <p class="text-center text-sm text-gray-400">
+                Ta aplikacija je ustvarjena izključno za namene vizualizacije informacij na podlagi posredovanega poročila. Predstavljene trditve in podatki izvirajo iz tega vira in ne predstavljajo neodvisne analize.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Chart.js charts
+            const blkOwnershipCtx = document.getElementById('blkOwnershipChart');
+            if (blkOwnershipCtx) {
+                new Chart(blkOwnershipCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Institucije', 'Ostali (Retail, Insiderji)'],
+                        datasets: [{
+                            data: [81, 19],
+                            backgroundColor: ['#0891b2', '#bae6fd'],
+                            borderColor: ['#0e7490', '#7dd3fc'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            }
+                        }
+                    }
+                });
+            }
+
+            const blkTopHoldersCtx = document.getElementById('blkTopHoldersChart');
+            if (blkTopHoldersCtx) {
+                new Chart(blkTopHoldersCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Vanguard', 'BlackRock (Skladi)', 'State Street', 'Temasek', 'BofA/Merrill'],
+                        datasets: [{
+                            label: '% Delež v BLK',
+                            data: [8.9, 6.5, 5.8, 3.3, 3.5],
+                            backgroundColor: '#0891b2',
+                            borderColor: '#0e7490',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false,
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const vanguardDefenseCtx = document.getElementById('vanguardDefenseChart');
+            if (vanguardDefenseCtx) {
+                new Chart(vanguardDefenseCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Lockheed Martin', 'Palantir', 'RTX', 'Northrop'],
+                        datasets: [{
+                            label: '% Delež v lasti Vanguarda',
+                            data: [9.43, 8.6, 7.5, 7.5],
+                            backgroundColor: '#be123c',
+                            borderColor: '#9f1239',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: false,
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const defenseGrowthCtx = document.getElementById('defenseGrowthChart');
+            if (defenseGrowthCtx) {
+                new Chart(defenseGrowthCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Začetek 2022', '2023', '2024', '2025'],
+                        datasets: [{
+                            label: 'Lockheed Martin (+90%)',
+                            data: [100, 130, 160, 190],
+                            borderColor: '#be123c',
+                            backgroundColor: '#be123c',
+                            fill: false,
+                            tension: 0.1
+                        }, {
+                            label: 'RTX (+85%)',
+                            data: [100, 125, 155, 185],
+                            borderColor: '#9a3412',
+                            backgroundColor: '#9a3412',
+                            fill: false,
+                            tension: 0.1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            }
+                        },
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Indeksirana Rast (Začetek 2022 = 100)'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const NETWORK_DESCRIPTIONS = {
+                'blk': '<strong>BlackRock:</strong> Poročilo trdi, da je BLK drugi največji institucionalni vlagatelj v Palantir z 8.6% deležem v vrednosti več kot 5 milijard $. Hkrati drži deleže v ruskih energetskih podjetjih.',
+                'palantir': '<strong>Palantir (Thiel):</strong> Ustanovil Peter Thiel. Poročilo trdi, da dobavlja AI tehnologijo (Lavender) za identifikacijo tarč v Gazi (pogodba 150M$) in hkrati v Ukrajini. Thielov Founders Fund je vložil v Carbyne.',
+                'palantir-gaza': '<strong>Palantir (Thiel):</strong> Ustanovil Peter Thiel. Poročilo trdi, da dobavlja AI tehnologijo (Lavender) za identifikacijo tarč v Gazi (pogodba 150M$) in hkrati v Ukrajini. Thielov Founders Fund je vložil v Carbyne.',
+                'gaza': '<strong>Gaza (IDF AI):</strong> Nanaša se na domnevno uporabo sistema Palantir "Lavender" s strani izraelskih obrambnih sil (IDF) za identifikacijo tarč v Gazi, kar naj bi bilo del pogodbe vredne 150 milijonov $.',
+                'thiel': '<strong>Peter Thiel (Founders Fund):</strong> Soustanovitelj Palantirja. Njegov sklad tveganega kapitala, Founders Fund, naj bi vložil v izraelsko nadzorno podjetje Carbyne, ki ga povezujejo z Epsteinom in Barakom.',
+                'carbyne': '<strong>Carbyne:</strong> Izraelsko nadzorno tehnološko podjetje (prej Reporty), ki ga vodijo veterani Unit 8200. Poročilo trdi, da je prejelo 1.5M$ vložka od Jeffreyja Epsteina (2015) in da mu predseduje Ehud Barak.',
+                'carbyne-us': '<strong>Carbyne:</strong> Izraelsko nadzorno tehnološko podjetje (prej Reporty), ki ga vodijo veterani Unit 8200. Poročilo trdi, da je prejelo 1.5M$ vložka od Jeffreyja Epsteina (2015) in da mu predseduje Ehud Barak.',
+                'us-cities': '<strong>100+ mest v ZDA:</strong> Poročilo trdi, da se tehnologija Carbyne uporablja v 911 klicnih centrih v več kot 100 mestih v ZDA (npr. NYC, LA) prek pogodb v skupni vrednosti 500 milijonov $.',
+                'epstein': '<strong>Jeffrey Epstein:</strong> Poročilo trdi, da je Epstein leta 2015 v Carbyne vložil 1.5 milijona $. Povezujejo ga tudi s koordinacijo poslov za ruskega oligarha Viktorja Vekselberga (Mongolija, 2016).',
+                'carbyne-epstein': '<strong>Carbyne:</strong> Izraelsko nadzorno tehnološko podjetje (prej Reporty), ki ga vodijo veterani Unit 8200. Poročilo trdi, da je prejelo 1.5M$ vložka od Jeffreyja Epsteina (2015) in da mu predseduje Ehud Barak.',
+                'barak': '<strong>Ehud Barak (Unit 8200):</strong> Nekdanji izraelski premier in veteran Unit 8200. Poročilo trdi, da je predsednik podjetja Carbyne in da je bil povezan z Epsteinom.',
+                'carbyne-barak': '<strong>Carbyne:</strong> Izraelsko nadzorno tehnološko podjetje (prej Reporty), ki ga vodijo veterani Unit 8200. Poročilo trdi, da je prejelo 1.5M$ vložka od Jeffreyja Epsteina (2015) in da mu predseduje Ehud Barak.',
+                'epstein-vek': '<strong>Jeffrey Epstein:</strong> Poročilo trdi, da je Epstein leta 2015 v Carbyne vložil 1.5 milijona $. Povezujejo ga tudi s koordinacijo poslov za ruskega oligarha Viktorja Vekselberga (Mongolija, 2016).',
+                'vekselberg': '<strong>Viktor Vekselberg (Renova):</strong> Ruski oligarh. Poročilo trdi, da je Epstein koordiniral varnostni posel v Mongoliji zanj (2016) in da njegova skupina Renova drži deleže v ruskih energetskih velikanih (npr. Surgutneftegas).',
+                'vekselberg-rus': '<strong>Viktor Vekselberg (Renova):</strong> Ruski oligarh. Poročilo trdi, da je Epstein koordiniral varnostni posel v Mongoliji zanj (2016) in da njegova skupina Renova drži deleže v ruskih energetskih velikanih (npr. Surgutneftegas).',
+                'rus-energy': '<strong>Ruska Energija:</strong> Nanaša se na podjetja, kot so Lukoil, Rosneft in Gazprom, v katerih naj bi imel Vekselberg deleže. Poročilo trdi, da BlackRock in Vanguard držita deleže v teh podjetjih kljub sankcijam.',
+                'rus-energy-funds': '<strong>Ruska Energija:</strong> Nanaša se na podjetja, kot so Lukoil, Rosneft in Gazprom, v katerih naj bi imel Vekselberg deleže. Poročilo trdi, da BlackRock in Vanguard držita deleže v teh podjetjih kljub sankcijam.',
+                'blk-vg-rus': '<strong>BlackRock / Vanguard:</strong> Poročilo trdi, da "Velika Trojica" prek svojih indeksnih skladov še vedno drži za milijarde dolarjev deležev v ruskih energetskih podjetjih, kljub sankcijam, s čimer se ustvari "krožna laž" financiranja obeh strani konflikta.'
+            };
+
+            const networkNodes = document.querySelectorAll('.node');
+            const detailsPanel = document.getElementById('network-details');
+
+            networkNodes.forEach(node => {
+                node.addEventListener('click', () => {
+                    const nodeId = node.dataset.node;
+                    if (nodeId && NETWORK_DESCRIPTIONS[nodeId]) {
+                        detailsPanel.innerHTML = `<p>${NETWORK_DESCRIPTIONS[nodeId]}</p>`;
+                    } else {
+                        detailsPanel.innerHTML = '<p class="text-gray-500">Za to vozlišče ni na voljo podrobnosti.</p>';
+                    }
+                });
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('[data-section]');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.6
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.dataset.section;
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active-nav', link.dataset.nav === id);
+                            link.classList.toggle('text-gray-700', link.dataset.nav !== id);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

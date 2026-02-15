@@ -1,0 +1,43 @@
+# Exclude large media and assets
+*.m4a
+*.mp4
+*.zip
+*.tar.gz
+*.iso
+*.dmg
+
+# Exclude large backups and archives
+GHOSTCORE/Ghostcore_BACKUP_*
+GHOSTCORE/Ghostcore_Archive
+SHABAD_CloudCore/💻_CODE_SANDBOX
+
+# Exclude dependencies
+node_modules/
+dist/
+build/
+.next/
+
+# Exclude environment files
+.env
+*.local
+
+# Exclude OS-specific files
+.DS_Store
+Thumbs.db
+
+# Exclude Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# Exclude logs
+*.log
+logs/
+
+# Exclude Docker volumes/data if any
+DOCKER/volumes/
+
+# Include built distribution for Ghostline Mobile
+!APPS/GHOSTLINE_MOBILE/dist/

@@ -1,0 +1,13 @@
+[Unit]
+Description=GHOSTLINE OS Living Webapp
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/home/saba/ghostline_autostart.sh
+Restart=always
+RestartSec=10
+User=saba
+
+[Install]
+WantedBy=default.target

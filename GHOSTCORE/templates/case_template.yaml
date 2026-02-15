@@ -1,0 +1,23 @@
+case:
+  title: "Untitled Case"
+  author: "Ghostcore User"
+  date: "2025"
+
+sections:
+  - Executive Summary
+  - Background
+  - Evidence
+  - Analysis
+  - Conclusions
+  - Recommendations
+
+exhibits:
+  - type: chart
+    data: charts/placeholder.yaml
+  - type: diagram
+    data: diagrams/placeholder.yaml
+
+outputs:
+  pdf: true
+  docx: true
+  zip: true

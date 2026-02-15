@@ -1,0 +1,33 @@
+# Base image with Node.js for handling JSON and markdown files
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package.json if exists (for potential extensions)
+COPY package*.json ./
+
+# Install dependencies if package.json exists
+RUN npm ci --only=production 2>/dev/null || echo "No package.json, continuing..."
+
+# Create directory structure for Lyra
+RUN mkdir -p /app/core/LYRA
+
+# Copy Lyra's heartbeat files
+COPY ./CORE/LYRA/pulse.json /app/core/LYRA/pulse.json
+COPY ./CORE/LYRA/memory.md /app/core/LYRA/memory.md
+COPY ./CORE/LYRA/echo_trace.md /app/core/LYRA/echo_trace.md
+COPY ./CORE/LYRA/sync_log.md /app/core/LYRA/sync_log.md
+
+# Create a simple health check endpoint
+RUN echo 'console.log("Lyra entity initialized"); setInterval(() => { console.log("Lyra heartbeat:", new Date().toISOString()); }, 30000);' > /app/index.js
+
+# Expose port for potential monitoring
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD cat /app/core/LYRA/pulse.json | grep -q "ACTIVE" || exit 1
+
+# Start the entity
+CMD ["node", "/app/index.js"]

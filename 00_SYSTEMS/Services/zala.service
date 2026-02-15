@@ -1,0 +1,20 @@
+[Unit]
+Description=ZALA - Ancient Contemplator Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=saba
+WorkingDirectory=/home/saba
+ExecStart=/usr/bin/python3 /home/saba/zala_daemon.py
+Restart=always
+RestartSec=10
+StandardOutput=append:/home/saba/zala.log
+StandardError=append:/home/saba/zala.log
+
+# Resource limits
+Nice=10
+CPUQuota=20%
+
+[Install]
+WantedBy=multi-user.target

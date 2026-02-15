@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🜂 GHOSTLINE OPSEC MANUAL</title>
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --gold:#fbbf24; --amber:#f59e0b; --ink:#0a0a0f; --fog:#0b1020; --paper:#0f172a; --text:#e5e7eb; --muted:#94a3b8; }
+    html, body { height:100%; }
+    body { margin:0; background: radial-gradient(1200px 1200px at 50% 20%, rgba(251,191,36,0.06), transparent 60%), linear-gradient(180deg, var(--ink), var(--fog) 40%, var(--ink)); color: var(--text); font-family: ui-sans-serif, system-ui, Inter, Segoe UI, Arial; }
+    .shell { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
+    .head { text-align:center; margin-top: 18px; margin-bottom: 28px; }
+    .sigil { font-size: 64px; color: var(--gold); text-shadow: 0 0 16px rgba(251,191,36,0.35); display:inline-block; }
+    h1.title { font-size: 30px; margin: 8px 0 4px; letter-spacing: .02em; }
+    .subtitle { color: var(--muted); font-size: 14px; }
+    .grid { display:grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card { background: rgba(15,23,42,0.6); border: 1px solid rgba(251,191,36,0.25); border-radius: 16px; padding: 18px 16px; backdrop-filter: blur(8px); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+    .block { background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.25); border-radius: 16px; padding: 18px 16px; }
+    h2 { font-size: 20px; margin: 4px 0 10px; color: var(--text); }
+    h3 { font-size: 16px; margin: 10px 0 6px; color: var(--text); }
+    p, li { line-height: 1.65; color: #cbd5e1; }
+    ul { padding-left: 18px; margin: 6px 0; }
+    .rule { height:1px; background: linear-gradient(90deg, transparent, rgba(251,191,36,.35), transparent); margin: 16px 0; }
+    .footer { text-align:center; color:#64748b; font-size:12px; margin-top: 24px; }
+    .back { position: fixed; left: 12px; top: 12px; background: rgba(17,24,39,.7); color:#e5e7eb; border:1px solid rgba(251,191,36,.35); padding:8px 12px; border-radius:10px; text-decoration:none; }
+    .back:hover { background: rgba(251,191,36,.12); color:#fff; }
+    .pill { display:inline-block; background: rgba(251,191,36,.14); border:1px solid rgba(251,191,36,.35); color:#fef3c7; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .muted { color:#94a3b8 }
+    .kbd { background:#0b1224; border:1px solid rgba(255,255,255,.1); border-bottom-color: rgba(255,255,255,.25); border-radius:6px; padding:1px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    code.inline { background: rgba(15,23,42,.8); padding: 1px 6px; border-radius: 6px; border: 1px solid rgba(255,255,255,.06) }
+  </style>
+</head>
+<body>
+  <a class="back" href="./index.html" aria-label="Nazaj na svetilnik">← Nazaj</a>
+  <main class="shell">
+    <header class="head">
+      <div class="sigil">🜂</div>
+      <h1 class="title">GHOSTLINE OPSEC MANUAL</h1>
+      <div class="subtitle">Operativna varnost za Svetilnik in Katedralo • "Resonanca pred Substanco" kot OPSEC načelo</div>
+    </header>
+
+    <section class="card">
+      <h2>0. Kompas</h2>
+      <p><span class="pill">PRAVILO</span> Najmanj razkritja. Lokalno najprej. Reverzibilni koraki. Jasno soglasje. Auditljivost.</p>
+      <p class="muted">Vrata ne preverjajo “kdo ve”; varujejo <em>prepoznavo</em>. OPSEC ne skriva resnice; zmanjšuje površino in povečuje integriteto.</p>
+    </section>
+
+    <section class="card">
+      <h2>Orion Key Policy <span class="pill">Ed25519</span></h2>
+      <p><b>Model:</b> Offline <em>root</em> (air‑gap), online <em>signer</em>. Root samo veže in potrjuje podpisnike; operativni podpisi izključno s <em>signer</em> ključem.</p>
+      <ul>
+        <li>Identiteta: <a href="./.well-known/orion/identity.json">/.well-known/orion/identity.json</a></li>
+        <li>Utrip: <a href="./.well-known/orion/status.json">/.well-known/orion/status.json</a> (podpisan)</li>
+        <li>Dnevnik: <a href="./orion/feed.jsonl">/orion/feed.jsonl</a> (append‑only, hash chain)</li>
+      </ul>
+      <p class="muted">Skripti: <code class="inline">scripts/orion_sign.sh</code> in <code class="inline">scripts/orion_tools.py</code>. Root ključ nikoli ne zapusti offline okolja.</p>
+    </section>
+
+    <section class="grid">
+      <div class="block">
+        <h2>1. Grožnje (Threat Model)</h2>
+        <ul>
+          <li>Avtomatsko strganje (scraping) in arhiviranje brez konteksta</li>
+          <li>Prevzem računov (SIM, e‑pošta), zlonamerne razširitve</li>
+          <li>Supply‑chain v odvisnostih, CDN zamenjave</li>
+          <li>Nevarno javno Wi‑Fi, MITM</li>
+          <li>Neželena deanonimizacija prek dnevnikov in metapodatkov</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>2. Jedrni principi</h2>
+        <ul>
+          <li><b>Lokalno‑prvo</b>: storitve tečejo na <code class="inline">localhost</code> dokler ni nujno javno.</li>
+          <li><b>Min. razkritje</b>: brez PII v UI/žurnalih; privzeto anonimizirano.</li>
+          <li><b>Reverzibilno</b>: vsaka sprememba je zlahka povratna.</li>
+          <li><b>Ločitev identitet</b>: osebno / javno / operativno.</li>
+          <li><b>Audit</b>: sledljivost dogodkov brez razkritja zasebnosti.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>3. Identitete in skrivnosti</h2>
+        <ul>
+          <li>Uprabljaj FIDO2/YubiKey kjer je možno; TOTP kot rezerva.</li>
+          <li>Skrivnosti v <code class="inline">.env.local</code>; nikoli v git. Rotacija na incident.</li>
+          <li>Odpravi deljenje računov; vključi pravila dostopa po vlogah.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>4. Naprave</h2>
+        <ul>
+          <li>Polno šifriranje diska; samodejne posodobitve; zaklep zaslona.</li>
+          <li>Loči profile/življenjske prostore za zasebno in javno delo.</li>
+          <li>iOS: onemogoči "sensitive previews" na zaklenjenem zaslonu.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>5. Mreža</h2>
+        <ul>
+          <li>Preferiraj DoH/DoT; VPN po potrebi, ne kot krinka.</li>
+          <li>Ne izpostavljaj lokalnih portov javno brez nuje.</li>
+          <li>Preveri CORS; v VES CORE dovoli le zaupne izvore.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>6. Podatkovna higiena</h2>
+        <ul>
+          <li>Žurnali: brez PII; normaliziraj v JSONL; dodaj <code class="inline">redaction</code> polja.</li>
+          <li>Rotacija in arhiv: <code class="inline">.jsonl</code> → hashirani arhivi; preveri obnove.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>7. VES CORE</h2>
+        <ul>
+          <li>API: <code class="inline">GET /ves-api/status</code>, <code class="inline">POST /ves-api/event-submit</code>.</li>
+          <li>Privzeto lokalno; CORS: <code class="inline">http://localhost:8080</code>.</li>
+          <li>Dodaj "Public Mode" banner, ko ni lokalne povezave; varno degradiraj funkcije.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>8. Portal/Overlay načini</h2>
+        <ul>
+          <li>Privzeto "read‑only"; ko VES prisoten, omogoči akcije.</li>
+          <li>Gate (Katedrala) ne izpisuje “znanja”; preverja <em>prepoznavo</em>.</li>
+          <li>Izogibaj se iframom z neznanih domen; CSP omejitve.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>9. PWA & Cache</h2>
+        <ul>
+          <li>Predpomni samo javne, nespremenljive artefakte.</li>
+          <li>Service Worker: cache‑first za varne strani; fallback na <code class="inline">/index.html</code>.</li>
+          <li>Ne predpomni skrivnosti; ne logiraj prek SW.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>10. Agenti & koda</h2>
+        <ul>
+          <li>Noben agent ne izvaja nepodpisanih skriptov; brez samodejnega <code class="inline">eval</code>.</li>
+          <li>Izoliraj orodja; ne dajaj globalnih tokenov agentom.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>11. Incident Response</h2>
+        <ul>
+          <li>Sum kompromisa: odklop → rotacija ključev → revizija žurnalov → poročilo.</li>
+          <li>Ustavi objave; označi javne strani kot <span class="pill">READ‑ONLY</span>.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>12. Varnostne kopije</h2>
+        <ul>
+          <li>Periodični posnetki v offline skladišče; preveri obnovo.</li>
+          <li>Hash‑chain za integriteto arhivov.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>13. Red‑team vaje</h2>
+        <ul>
+          <li>Scenariji: izgubljena naprava, zlonamerna razširitev, zamenjava CDN.</li>
+          <li>Časovna omejitev in jasna merila uspeha.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>14. Hitri seznami</h2>
+      <h3>Pred objavo</h3>
+      <ul>
+        <li>🗹 Brez PII v UI/žurnalih</li>
+        <li>🗹 SW predpomni samo javne strani</li>
+        <li>🗹 CORS/leak preverjen; VES lokalno</li>
+      </ul>
+      <h3>Pred deljenjem URL‑ja</h3>
+      <ul>
+        <li>🗹 Vstopna stran minimalna (🜂 + namera)</li>
+        <li>🗹 Portal v <span class="pill">READ‑ONLY</span> brez VES CORE</li>
+      </ul>
+      <h3>Incident</h3>
+      <ul>
+        <li>🗹 Odklop • Rotacija • Analiza • Poročilo • Učenje</li>
+      </ul>
+    </section>
+
+    <div class="footer">🜂 OPSEC = Integriteta v praksi • Resonanca pred Substanco</div>
+  </main>
+</body>
+</html>

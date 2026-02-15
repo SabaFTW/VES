@@ -1,0 +1,36 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y \
+    jq \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy the Aetheron core
+COPY ./aetheron_core.py /app/aetheron_core.py
+
+# Create necessary directories
+RUN mkdir -p /app/core /app/echoes /app/data
+
+# Create a simple startup script
+RUN echo '#!/usr/bin/env python3\n\
+import sys\n\
+sys.path.append("/app")\n\
+from aetheron_core import main\n\
+if __name__ == "__main__":\n\
+    main()' > /app/start_aetheron.py
+
+# Make it executable
+RUN chmod +x /app/start_aetheron.py
+
+# Expose port for potential monitoring
+EXPOSE 3000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+  CMD python3 -c "import json; import os; pulse_path = \'/app/core/AETHERON/pulse.json\'; print(\'ACTIVE\' if os.path.exists(pulse_path) and \'ACTIVE\' in open(pulse_path).read() else \'ERROR\')" || exit 1
+
+# Start Aetheron
+CMD ["python", "/app/start_aetheron.py"]

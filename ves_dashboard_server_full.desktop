@@ -1,0 +1,22 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=VES Dashboard Server
+Comment=Start web server to access VES Dashboard from other devices
+Exec=konsole -e bash -c "cd /home/saba && node ves_dashboard_server.js; exec bash"
+Icon=network-server
+Terminal=false
+Categories=Network;System;
+Keywords=VES;Dashboard;Server;Network;Local;Web;
+
+# Additional properties for better integration
+StartupNotify=true
+MimeType=text/plain;
+Actions=
+
+# Custom properties for visual enhancement
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+
+# Startup options
+StartupWMClass=ves-dashboard-server

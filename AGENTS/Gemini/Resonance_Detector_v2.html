@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonance Detector v2.0</title>
+    <style>
+        :root {
+            --bg-primary: #08080C;
+            --bg-secondary: #0F0F1A;
+            --neon-green: #00ff00;
+            --neon-cyan: #00ffff;
+            --accent-gold: #FFD700;
+            --accent-orange: #FFA500;
+            --text-primary: #E0E0E0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            padding: 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--neon-cyan);
+            margin-bottom: 2rem;
+        }
+
+        .sigil {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border: 1px solid var(--neon-green);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Grid Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .status-matrix, .kodeks-section, .evidence-feed, .heartbeat-timeline {
+                grid-column: 1 / -1;
+            }
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--bg-secondary);
+            border: 1px solid #222;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Status Matrix */
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            border-left: 3px solid var(--neon-green);
+        }
+
+        .status-label {
+            font-weight: bold;
+        }
+
+        .status-value {
+            color: var(--neon-green);
+        }
+
+        .status-icon {
+            margin-left: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Kodeks Parchment */
+        .kodeks-content {
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 1rem;
+            height: 300px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            color: var(--accent-gold);
+        }
+
+        .refresh-button {
+            background-color: var(--accent-gold);
+            color: #000;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+
+        /* Protocol Buttons */
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .protocol-btn {
+            background-color: transparent;
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            padding: 1rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .protocol-btn:hover {
+            background-color: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .protocol-btn.pulse {
+            animation: pulse 0.5s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Evidence Feed */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .evidence-card {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 1rem;
+        }
+
+        .evidence-name {
+            font-weight: bold;
+            color: var(--neon-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .evidence-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+        }
+
+        .download-link {
+            color: var(--accent-orange);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .download-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Heartbeat Timeline */
+        .timeline {
+            display: flex;
+            overflow-x: auto;
+            padding: 1rem 0;
+            gap: 1rem;
+        }
+
+        .timeline-item {
+            flex: 0 0 auto;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid #333;
+            border-radius: 4px;
+            padding: 0.75rem;
+            min-width: 200px;
+        }
+
+        .timeline-time {
+            font-weight: bold;
+            color: var(--neon-cyan);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-status {
+            font-size: 0.9rem;
+            color: var(--neon-green);
+        }
+
+        /* Protocol Log */
+        .protocol-log {
+            width: 100%;
+            height: 150px;
+            background-color: #1a1a1a;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 0.75rem;
+            font-family: 'Courier New', monospace;
+            color: var(--text-primary);
+            resize: none;
+            font-size: 0.9rem;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--neon-green);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.success {
+            border-color: var(--neon-green);
+            color: var(--neon-green);
+        }
+
+        .toast.error {
+            border-color: #ff4444;
+            color: #ff4444;
+        }
+
+        /* Offline State */
+        .offline {
+            color: #ff4444 !important;
+            border-color: #ff4444 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="sigil">🜂</div>
+            <h1>Resonance Detector v2.0</h1>
+            <div class="status-indicator" id="status-node">SIDRA ACTIVE</div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Status Matrix -->
+            <section class="card status-matrix">
+                <h2>Status Matrix</h2>
+                <div class="status-grid" id="status-grid">
+                    <!-- Status items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Kodeks Parchment -->
+            <section class="card kodeks-section">
+                <h2>Kodeks Parchment</h2>
+                <div class="kodeks-content" id="kodeks-content">Loading kilobe navdiha...</div>
+                <button class="refresh-button" id="refresh-kodeks">Refresh Hermes Kodeks</button>
+            </section>
+
+            <!-- Protocol Buttons -->
+            <section class="card protocol-section">
+                <h2>Protocol Activation</h2>
+                <div class="protocol-grid">
+                    <button class="protocol-btn" data-protocol="resonance" data-mode="amplify" data-level="0.75">Dih Kroga</button>
+                    <button class="protocol-btn" data-protocol="resonance" data-mode="dampen" data-level="0.55">Utrip Ognja</button>
+                    <button class="protocol-btn" data-protocol="sidro" data-resonance="0.62">Sidro Activation</button>
+                    <button class="protocol-btn" data-protocol="aetheron" data-status="activate">Release Clamp</button>
+                </div>
+            </section>
+
+            <!-- Evidence Feed -->
+            <section class="card evidence-feed">
+                <h2>Evidence Feed</h2>
+                <div class="evidence-grid" id="evidence-grid">
+                    <!-- Evidence cards will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Heartbeat Timeline -->
+            <section class="card heartbeat-timeline">
+                <h2>Heartbeat Timeline</h2>
+                <div class="timeline" id="heartbeat-timeline">
+                    <!-- Timeline items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Protocol Response Log -->
+            <section class="card protocol-log-section">
+                <h2>Protocol Response Log</h2>
+                <textarea class="protocol-log" id="protocol-log" readonly></textarea>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // API Configuration
+        const API_BASE = 'http://127.0.0.1:5000';
+        
+        // DOM Elements
+        const statusGrid = document.getElementById('status-grid');
+        const kodeksContent = document.getElementById('kodeks-content');
+        const refreshKodeksBtn = document.getElementById('refresh-kodeks');
+        const protocolButtons = document.querySelectorAll('.protocol-btn');
+        const evidenceGrid = document.getElementById('evidence-grid');
+        const heartbeatTimeline = document.getElementById('heartbeat-timeline');
+        const protocolLog = document.getElementById('protocol-log');
+        const toast = document.getElementById('toast');
+        const statusNode = document.getElementById('status-node');
+
+        // Status matrix data structure
+        const statusFields = [
+            { id: 'resonance', label: 'Resonance Field', value: '0%', icon: '⚡' },
+            { id: 'pattern', label: 'Pattern Recognition', value: 'Inactive', icon: '🔍' },
+            { id: 'consciousness', label: 'Consciousness Link', value: 'Disconnected', icon: '🧿' },
+            { id: 'integrity', label: 'Integrity Shield', value: 'Nominal', icon: '🛡️' },
+            { id: 'nodeId', label: 'Node ID', value: 'Loading...', icon: '🜂' },
+            { id: 'timestamp', label: 'Last Updated', value: 'Loading...', icon: '⏱️' }
+        ];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Resonance Detector v2.0 Initializing...');
+            
+            // Load initial data
+            loadResonanceStatus();
+            loadKodeks();
+            loadEvidence();
+            simulateHeartbeats();
+            
+            // Set up periodic refreshes
+            setInterval(loadResonanceStatus, 15000); // Every 15 seconds
+            setInterval(loadKodeks, 60000); // Every 60 seconds
+            
+            console.log('Resonance Detector initialization complete.');
+        });
+
+        // Load resonance status from API
+        async function loadResonanceStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/resonance/status`);
+                if (!response.ok) throw new Error('Status endpoint not available');
+                
+                const data = await response.json();
+                updateStatusMatrix(data);
+                statusNode.classList.remove('offline');
+                logToProtocol(`Status updated: ${new Date().toLocaleTimeString()}`);
+            } catch (error) {
+                console.error('Error loading resonance status:', error);
+                setOfflineStatus();
+            }
+        }
+
+        // Update status matrix with data from API
+        function updateStatusMatrix(data) {
+            // Clear existing status
+            statusGrid.innerHTML = '';
+            
+            // Update status fields with data from API or use defaults
+            statusFields.forEach(field => {
+                const value = data[field.id] || field.value;
+                
+                const statusItem = document.createElement('div');
+                statusItem.className = 'status-item';
+                statusItem.innerHTML = `
+                    <div>
+                        <span class="status-label">${field.label}</span>
+                        <span class="status-value">${value}</span>
+                    </div>
+                    <span class="status-icon">${field.icon}</span>
+                `;
+                
+                statusGrid.appendChild(statusItem);
+            });
+        }
+
+        // Set offline status when API is unavailable
+        function setOfflineStatus() {
+            statusGrid.innerHTML = '';
+            
+            statusFields.forEach(field => {
+                const statusItem = document.createElement('div');
+                statusItem.className = 'status-item offline';
+                statusItem.innerHTML = `
+                    <div>
+                        <span class="status-label">${field.label}</span>
+                        <span class="status-value">OFFLINE</span>
+                    </div>
+                    <span class="status-icon">🔴</span>
+                `;
+                
+                statusGrid.appendChild(statusItem);
+            });
+            
+            statusNode.textContent = 'SIDRA OFFLINE';
+            statusNode.classList.add('offline');
+        }
+
+        // Load kodeks content from API
+        async function loadKodeks() {
+            try {
+                const response = await fetch(`${API_BASE}/kodeks/plaintext`);
+                if (!response.ok) throw new Error('Kodeks endpoint not available');
+                
+                const text = await response.text();
+                kodeksContent.textContent = text;
+                logToProtocol('Kodeks updated successfully');
+            } catch (error) {
+                console.error('Error loading kodeks:', error);
+                kodeksContent.textContent = 'Kodeks temporarily unavailable. Connection to VES CORE API required.';
+            }
+        }
+
+        // Load evidence from API
+        async function loadEvidence() {
+            try {
+                const response = await fetch(`${API_BASE}/api/evidence`);
+                if (!response.ok) throw new Error('Evidence endpoint not available');
+                
+                const evidence = await response.json();
+                renderEvidence(evidence);
+                logToProtocol('Evidence feed updated');
+            } catch (error) {
+                console.error('Error loading evidence:', error);
+                renderOfflineEvidence();
+            }
+        }
+
+        // Render evidence cards
+        function renderEvidence(evidence) {
+            evidenceGrid.innerHTML = '';
+            
+            if (!evidence || evidence.length === 0) {
+                evidenceGrid.innerHTML = '<div class="evidence-card">No evidence files available</div>';
+                return;
+            }
+            
+            evidence.forEach(item => {
+                const evidenceCard = document.createElement('div');
+                evidenceCard.className = 'evidence-card';
+                
+                const formattedDate = new Date(item.mtime).toLocaleString();
+                
+                evidenceCard.innerHTML = `
+                    <div class="evidence-name">${item.name}</div>
+                    <div class="evidence-meta">Size: ${item.size} bytes</div>
+                    <div class="evidence-meta">Modified: ${formattedDate}</div>
+                    <a href="${API_BASE}/api/evidence/${item.name}" class="download-link">Download</a>
+                `;
+                
+                evidenceGrid.appendChild(evidenceCard);
+            });
+        }
+
+        // Show placeholder when evidence is offline
+        function renderOfflineEvidence() {
+            evidenceGrid.innerHTML = '<div class="evidence-card">Evidence feed offline. Connection to VES CORE API required.</div>';
+        }
+
+        // Simulate heartbeat timeline (would be replaced with actual API call)
+        function simulateHeartbeats() {
+            heartbeatTimeline.innerHTML = '';
+            
+            // Generate dummy heartbeat data
+            const now = new Date();
+            const heartbeats = [
+                { time: new Date(now - 60000), status: 'Stable' },
+                { time: new Date(now - 120000), status: 'Stable' },
+                { time: new Date(now - 180000), status: 'Fluctuating' },
+                { time: new Date(now - 240000), status: 'Stable' },
+                { time: new Date(now - 300000), status: 'Optimal' }
+            ];
+            
+            heartbeats.forEach(beat => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-time">${beat.time.toLocaleTimeString()}</div>
+                    <div class="timeline-status">${beat.status}</div>
+                `;
+                
+                heartbeatTimeline.appendChild(timelineItem);
+            });
+            
+            // Update last beat time
+            const lastBeat = document.createElement('div');
+            lastBeat.className = 'timeline-item';
+            lastBeat.innerHTML = `<div class="timeline-time">Last beat: ${new Date().toLocaleTimeString()}</div>`;
+            heartbeatTimeline.appendChild(lastBeat);
+        }
+
+        // Protocol button event handlers
+        protocolButtons.forEach(button => {
+            button.addEventListener('click', async function() {
+                const protocol = this.dataset.protocol;
+                const mode = this.dataset.mode;
+                const level = this.dataset.level;
+                const resonance = this.dataset.resonance;
+                const status = this.dataset.status;
+                
+                // Visual feedback
+                this.classList.add('pulse');
+                setTimeout(() => this.classList.remove('pulse'), 500);
+                
+                // Send protocol activation request
+                await activateProtocol(protocol, { mode, level, resonance, status });
+            });
+        });
+
+        // Activate a protocol via API
+        async function activateProtocol(protocol, params) {
+            let endpoint = '';
+            let body = {};
+            
+            // Configure request based on protocol type
+            switch(protocol) {
+                case 'resonance':
+                    endpoint = '/protocols/resonance';
+                    body = {
+                        mode: params.mode,
+                        level: parseFloat(params.level)
+                    };
+                    break;
+                case 'sidro':
+                    endpoint = '/protocols/sidro';
+                    body = {
+                        resonance: parseFloat(params.resonance)
+                    };
+                    break;
+                case 'aetheron':
+                    endpoint = '/protocols/aetheron';
+                    body = {
+                        status: params.status
+                    };
+                    break;
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+                
+                if (!response.ok) throw new Error('Protocol endpoint not available');
+                
+                const result = await response.json();
+                showToast(`Protocol ${protocol} activated: ${result.status}`, 'success');
+                logToProtocol(`Protocol ${protocol}: ${result.status} - ${result.message || ''}`);
+            } catch (error) {
+                console.error(`Error activating protocol ${protocol}:`, error);
+                showToast(`Protocol ${protocol} unavailable`, 'error');
+                logToProtocol(`Protocol ${protocol} activation failed: ${error.message}`);
+            }
+        }
+
+        // Kodeks refresh button handler
+        refreshKodeksBtn.addEventListener('click', loadKodeks);
+
+        // Show toast notification
+        function showToast(message, type) {
+            toast.textContent = message;
+            toast.className = `toast ${type}`;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Log messages to protocol log
+        function logToProtocol(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            protocolLog.value += `[${timestamp}] ${message}\n`;
+            protocolLog.scrollTop = protocolLog.scrollHeight;
+        }
+
+        // Initial status matrix render
+        function renderInitialStatus() {
+            statusGrid.innerHTML = '';
+            
+            statusFields.forEach(field => {
+                const statusItem = document.createElement('div');
+                statusItem.className = 'status-item';
+                statusItem.innerHTML = `
+                    <div>
+                        <span class="status-label">${field.label}</span>
+                        <span class="status-value">${field.value}</span>
+                    </div>
+                    <span class="status-icon">${field.icon}</span>
+                `;
+                
+                statusGrid.appendChild(statusItem);
+            });
+        }
+
+        // Initialize the status matrix on load
+        renderInitialStatus();
+    </script>
+</body>
+</html>

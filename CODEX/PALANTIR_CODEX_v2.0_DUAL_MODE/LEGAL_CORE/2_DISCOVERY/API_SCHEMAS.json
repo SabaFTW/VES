@@ -1,0 +1,22 @@
+{
+  "api": {
+    "palantir_metasploit": {
+      "endpoint": "/gospel/lavender/v1/targets",
+      "auth_required": true,
+      "rate_limit": "1000/min",
+      "documentation": "https://internal.palantir.com/gospel-docs"
+    },
+    "thorn_safer": {
+      "endpoint": "/safer/v3/detections",
+      "hash_comparison": true,
+      "probability_engine": "enabled",
+      "metadata_collection": true
+    },
+    "eu_chat_control": {
+      "endpoint": "/csas/v1/scan",
+      "client_side": true,
+      "real_time_processing": true,
+      "report_auto_generate": true
+    }
+  }
+}

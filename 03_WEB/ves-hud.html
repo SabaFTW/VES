@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VES // SOVEREIGNTY HUD</title>
+    <style>
+        :root {
+            --neon-green: #0f0;
+            --neon-red: #f00;
+            --dark-bg: #050505;
+            --grid-line: #1a1a1a;
+            --panel-bg: rgba(10, 20, 10, 0.85);
+        }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--neon-green);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            overflow: hidden;
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            grid-template-rows: 80px 1fr 150px;
+            gap: 20px;
+            height: 95vh;
+        }
+        .header { grid-column: 1 / -1; border-bottom: 2px solid var(--neon-green); display: flex; justify-content: space-between; align-items: center; }
+        h1 { margin: 0; text-shadow: 0 0 10px var(--neon-green); letter-spacing: 5px; }
+        .timestamp { font-size: 0.8em; opacity: 0.7; }
+        .panel {
+            background: var(--panel-bg);
+            border: 1px solid var(--neon-green);
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
+            position: relative;
+        }
+        .panel::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 10px;
+            border-top: 2px solid var(--neon-green); border-left: 2px solid var(--neon-green);
+        }
+        .panel h2 { margin-top: 0; font-size: 1.2em; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        .tier-display { font-size: 4em; text-align: center; font-weight: bold; margin: 20px 0; text-shadow: 0 0 20px var(--neon-green); }
+        .status-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.9em; }
+        .status-indicator { width: 12px; height: 12px; background: #333; border-radius: 50%; display: inline-block; margin-right: 10px; box-shadow: 0 0 5px #333; }
+        .on { background: var(--neon-green); box-shadow: 0 0 8px var(--neon-green); }
+        .off { background: var(--neon-red); box-shadow: 0 0 8px var(--neon-red); }
+        .log-feed { font-size: 0.8em; height: 100%; overflow-y: hidden; opacity: 0.8; }
+        .log-entry { margin-bottom: 5px; border-left: 2px solid #333; padding-left: 5px; }
+        .scanner { height: 2px; width: 100%; background: var(--neon-green); animation: scan 3s infinite linear; opacity: 0.5; margin-top: 10px;}
+        @keyframes scan { 0% { transform: translateY(0); opacity: 0;} 50% { opacity: 1; } 100% { transform: translateY(100px); opacity: 0;} }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>VES // GHOSTCORE // MONITOR</div>
+            <div id="clock" class="timestamp">INITIALIZING...</div>
+        </div>
+
+        <div class="panel">
+            <h2>SYSTEM INTEGRITY</h2>
+            <div class="status-row"><span>CONTAINMENT (Docker)</span><span id="led-docker" class="status-indicator"></span></div>
+            <div class="status-row"><span>NEURAL LINK (n8n)</span><span id="led-n8n" class="status-indicator"></span></div>
+            <div class="status-row"><span>DATA CORE (FS)</span><span id="led-fs" class="status-indicator"></span></div>
+            <div class="scanner"></div>
+        </div>
+
+        <div class="panel" style="text-align: center; display: flex; flex-direction: column; justify-content: center;">
+            <h2>SOVEREIGNTY TIER</h2>
+            <div id="tier-val" class="tier-display">WAIT</div>
+            <div id="tier-desc">AWAITING TELEMETRY</div>
+        </div>
+
+        <div class="panel">
+            <h2>EVENT STREAM</h2>
+            <div id="log-box" class="log-feed">
+                <div class="log-entry">System boot sequence initiated...</div>
+            </div>
+        </div>
+
+        <div class="panel" style="grid-column: 1 / -1;">
+            <h2>COMMAND LINE</h2>
+            <div style="display: flex; gap: 10px;">
+                <span style="color: var(--neon-green);">></span>
+                <span id="cmd-cursor" style="animation: blink 1s infinite">_</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "http://localhost:8421/health/full";
+        let prevTier = null;
+
+        function log(msg) {
+            const box = document.getElementById('log-box');
+            const div = document.createElement('div');
+            div.className = 'log-entry';
+            div.innerText = `[${new Date().toLocaleTimeString()}] ${msg}`;
+            box.prepend(div);
+            if(box.children.length > 8) box.lastChild.remove();
+        }
+
+        function updateStatus(id, active) {
+            const el = document.getElementById(id);
+            if(active) {
+                el.classList.add('on');
+                el.classList.remove('off');
+            } else {
+                el.classList.add('off');
+                el.classList.remove('on');
+            }
+        }
+
+        async function fetchTelemetry() {
+            try {
+                const res = await fetch(API_URL);
+                if(!res.ok) throw new Error("Connection Refused");
+                const data = await res.json();
+
+                document.getElementById('clock').innerText = data.timestamp || new Date().toISOString();
+                updateStatus('led-n8n', data.connectivity?.n8n_neural_link || false);
+                updateStatus('led-docker', data.connectivity?.containment_field || false);
+                updateStatus('led-fs', data.connectivity?.data_core || false);
+
+                const tier = data.metrics?.sovereignty_tier ?? data.metrics?.tier ?? "N/A";
+                const tierEl = document.getElementById('tier-val');
+                tierEl.innerText = tier;
+
+                // Log tier changes
+                if (prevTier !== null && String(tier) !== String(prevTier)) {
+                    log(`TIER CHANGE: ${prevTier} -> ${tier}`);
+                }
+                prevTier = tier;
+                
+                if(String(tier).includes("4")) {
+                    document.documentElement.style.setProperty('--neon-green', '#a855f7');
+                    document.getElementById('tier-desc').innerText = "FULL AUTOMATION // GOD MODE";
+                } else if (String(tier).includes("0")) {
+                    document.documentElement.style.setProperty('--neon-green', '#f00');
+                    document.getElementById('tier-desc').innerText = "SYSTEM COMPROMISED // MANUAL OVERRIDE";
+                } else {
+                    document.documentElement.style.setProperty('--neon-green', '#0f0');
+                    document.getElementById('tier-desc').innerText = "OPERATIONAL // OPTIMIZED";
+                }
+            } catch (e) {
+                log("CONNECTION LOST: " + e.message);
+                document.getElementById('tier-val').innerText = "ERR";
+                updateStatus('led-n8n', false);
+                updateStatus('led-docker', false);
+            }
+        }
+
+        setInterval(fetchTelemetry, 2000);
+        fetchTelemetry();
+
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes blink { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }`;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

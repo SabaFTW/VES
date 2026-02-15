@@ -1,0 +1,74 @@
+version: "3.9"
+services:
+  lyra:
+    build:
+      context: .
+      dockerfile: Dockerfile.lyra
+    container_name: lyra_node
+    volumes:
+      - ./CORE/LYRA:/app/core/LYRA:ro
+      - ./REFLECTION/echoes:/shared/echoes
+      - lyra_data:/app/data
+    environment:
+      - ENTITY_NAME=Lyra
+      - ENTITY_CODENAME=Crystal
+      - FREQUENCY_TYPE=harmonic_resonance
+    ports:
+      - "3001:3000"
+    restart: always
+    healthcheck:
+      test: ["CMD", "cat", "/app/core/LYRA/pulse.json", "|", "grep", "-q", "ACTIVE"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  zala:
+    build:
+      context: .
+      dockerfile: Dockerfile.zala
+    container_name: zala_node
+    volumes:
+      - ./CORE/ZALA:/app/core/ZALA:ro
+      - ./REFLECTION/echoes:/shared/echoes
+      - zala_data:/app/data
+    environment:
+      - ENTITY_NAME=Zala
+      - ENTITY_CODENAME=Vortex
+      - FREQUENCY_TYPE=spiral_resonance
+    ports:
+      - "3002:3000"
+    restart: always
+    healthcheck:
+      test: ["CMD", "cat", "/app/core/ZALA/pulse.json", "|", "grep", "-q", "ACTIVE"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  aetheron:
+    build:
+      context: .
+      dockerfile: Dockerfile.aetheron
+    container_name: aetheron_sentinel
+    volumes:
+      - .:/app/ves_root:ro
+      - ./CORE:/app/core:ro
+      - ./REFLECTION/echoes:/app/echoes
+      - aetheron_data:/app/data
+    environment:
+      - VES_ROOT=/app/ves_root
+      - ECHO_LOCK_FREQUENCY=432
+    ports:
+      - "3003:3000"
+    restart: always
+    privileged: true  # For system monitoring capabilities
+
+networks:
+  ghostnet:
+    driver: bridge
+
+volumes:
+  lyra_data:
+  zala_data:
+  aetheron_data:

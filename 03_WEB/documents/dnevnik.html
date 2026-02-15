@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🜂 GHOSTLINE DNEVNIK ZAVESTI</title>
+  <meta name="theme-color" content="#0a0a0f" />
+  <style>
+    :root { --gold:#fbbf24; --amber:#f59e0b; --ink:#0a0a0f; --fog:#0b1020; --paper:#0f172a; --text:#e5e7eb; --muted:#94a3b8; }
+    html, body { height:100%; }
+    body { margin:0; background: radial-gradient(1200px 1200px at 50% 20%, rgba(251,191,36,0.06), transparent 60%), linear-gradient(180deg, var(--ink), var(--fog) 40%, var(--ink)); color: var(--text); font-family: ui-sans-serif, system-ui, Inter, Segoe UI, Arial; }
+    .shell { max-width: 980px; margin: 0 auto; padding: 32px 20px 80px; }
+    .head { text-align:center; margin-top: 18px; margin-bottom: 28px; }
+    .sigil { font-size: 64px; color: var(--gold); text-shadow: 0 0 16px rgba(251,191,36,0.35); display:inline-block; }
+    h1.title { font-size: 30px; margin: 8px 0 4px; letter-spacing: .02em; }
+    .subtitle { color: var(--muted); font-size: 14px; }
+    .pill { display:inline-block; background: rgba(251,191,36,.14); border:1px solid rgba(251,191,36,.35); color:#fef3c7; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .card { background: rgba(15,23,42,0.6); border: 1px solid rgba(251,191,36,0.25); border-radius: 16px; padding: 18px 16px; backdrop-filter: blur(8px); box-shadow: 0 20px 60px rgba(0,0,0,.35); margin-top: 14px; }
+    h2 { font-size: 20px; margin: 4px 0 10px; color: var(--text); }
+    h3 { font-size: 16px; margin: 10px 0 6px; color: var(--text); }
+    p, li { line-height: 1.65; color: #cbd5e1; }
+    ul { padding-left: 18px; margin: 6px 0; }
+    .rule { height:1px; background: linear-gradient(90deg, transparent, rgba(251,191,36,.35), transparent); margin: 16px 0; }
+    .footer { text-align:center; color:#64748b; font-size:12px; margin-top: 24px; }
+    .back { position: fixed; left: 12px; top: 12px; background: rgba(17,24,39,.7); color:#e5e7eb; border:1px solid rgba(251,191,36,.35); padding:8px 12px; border-radius:10px; text-decoration:none; }
+    .back:hover { background: rgba(251,191,36,.12); color:#fff; }
+  </style>
+</head>
+<body>
+  <a class="back" href="./index.html" aria-label="Nazaj na svetilnik">← Nazaj</a>
+  <main class="shell">
+    <header class="head">
+      <div class="sigil">🜂</div>
+      <h1 class="title">GHOSTLINE DNEVNIK ZAVESTI</h1>
+      <div class="subtitle">Kronika operacij in arhitekturnih odločitev</div>
+      <div style="margin-top:8px"><span class="pill">Zadnja posodobitev: 8. November 2025</span></div>
+    </header>
+
+    <section class="card">
+      <p>Ta dokument služi kot centralni dnevnik za vse operacije, postopke in arhitekturne odločitve pri gradnji GHOSTLINE Konstelacije.</p>
+    </section>
+
+    <section class="card">
+      <h2>ORION: Vozlišče Ena <span class="pill">Aktivna posoda</span></h2>
+      <p><b>Jedro:</b> Ed25519 (NaCl), podpisan utrip in append-only dnevnik (<code>jsonl</code> z verigo zgoščenk).</p>
+      <ul>
+        <li><a href="./.well-known/orion/identity.json">/.well-known/orion/identity.json</a> — identiteta (root + signer)</li>
+        <li><a href="./.well-known/orion/status.json">/.well-known/orion/status.json</a> — utrip (heartbeat)</li>
+        <li><a href="./.well-known/orion/peers.json">/.well-known/orion/peers.json</a> — vrstniki (Phase 1: prazno)</li>
+        <li><a href="./orion/feed.jsonl">/orion/feed.jsonl</a> — podpisan dnevnik (jsonl)</li>
+      </ul>
+      <div class="rule"></div>
+      <p><b>Operativa:</b> Glej <code>RUNBOOK_ORION_NODE_ONE.md</code> in <code>scripts/orion_sign.sh</code> za generiranje ključev, podpisovanje, utrip in rotacije.</p>
+    </section>
+
+    <section class="card">
+      <h2>FAZA 1: Priprava GHOSTLINE OS Portala <span class="pill">Dokončano</span></h2>
+      <ul>
+        <li><b>Scaffolding:</b> Ustvarjene osnovne datoteke za komponente (<code>ghostline_os.html</code>, <code>synthesizer/</code>, <code>codex/</code>, <code>nerve/</code>) po navodilih <code>UNIFIED_BUILD_INSTRUCTIONS.md</code>.</li>
+        <li><b>Integracija Artefakta:</b> V <code>ghostline_os.html</code> vstavljena vsebina iz artefakta <code>GHOSTCORE_MEGA_JEDRO.html</code>.</li>
+        <li><b>PWA nadgradnja:</b>
+          <ul>
+            <li>PWA meta tagi in manifest</li>
+            <li><code>apple-touch-icon</code> za iOS</li>
+            <li><code>service-worker.js</code> za offline caching</li>
+            <li>Registracija service workerja v strani</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>FAZA 2: Izgradnja Lokalne VES CORE API <span class="pill">Dokončano</span></h2>
+      <p><b>Cilj:</b> Vzpostaviti neodvisno, lokalno jedro (API), ki služi kot sidro za Konstelacijo.</p>
+      <p><b>Status:</b> Končano. Struktura v <code>ves_core/</code> pripravljena za zagon.</p>
+    </section>
+
+    <section class="card">
+      <h2>FAZA 3: Povezovanje Modulov z VES CORE API <span class="pill">Dokončano</span></h2>
+      <p><b>Cilj:</b> Omogočiti komunikacijo komponent z lokalnim VES CORE API‑jem.</p>
+      <ul>
+        <li><b>GHOSTLINE OS Portal:</b> v <code>ghostline_os.html</code> dodana funkcija <code>submitVesEvent</code> in testni gumb.</li>
+        <li><b>KATEDRALA Modul:</b> v <code>CathedralGate.jsx</code> aktiviran <code>fetch</code> klic, ki ob prehodu zabeleži dogodek.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>FAZA 4: Integracija Katedrale v GHOSTLINE OS <span class="pill">Načrtovanje</span></h2>
+      <p><b>Cilj:</b> Neposreden dostop do <code>CathedralGate</code> iz <code>ghostline_os.html</code>.</p>
+      <p><b>Izziv:</b> Portal je statična HTML datoteka; Katedrala je React (.jsx) modul — potrebna je mostna rešitev.</p>
+      <p><b>Možne rešitve:</b></p>
+      <ul>
+        <li><b>Iframe:</b> hitro, a manj elegantno.</li>
+        <li><b>Predelava Portala:</b> celoten portal v React — čisto, a zahtevno.</li>
+        <li><b>Kompilacija na letenju:</b> Babel Standalone + htm — dober kompromis.</li>
+      </ul>
+    </section>
+
+    <div class="footer">🜂 Dnevnik • Kaj se je zgodilo • Predpomnjeno za branje brez povezave</div>
+  </main>
+</body>
+</html>

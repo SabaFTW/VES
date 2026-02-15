@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THE EVIDENCE-BASED ICEBERG — Single Page</title>
+  <meta name="description" content="Evidence-based iceberg structure spanning plastic, corruption, AI, and consciousness." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1221;
+      --panel: #0f172a;
+      --line: #1f2937;
+      --ink: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #ef4444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: radial-gradient(120% 120% at 50% 0%, rgba(239, 68, 68, 0.08), transparent 40%), var(--bg);
+      color: var(--ink);
+      font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 18, 33, 0.92);
+      border-bottom: 1px solid var(--line);
+      z-index: 10;
+    }
+    .bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand span.icon {
+      font-size: 20px;
+    }
+    .brand .title {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px;
+      color: var(--accent);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+    }
+    .hero {
+      background: linear-gradient(130deg, rgba(239, 68, 68, 0.08), rgba(15, 23, 42, 0.85));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+    }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      margin: 6px 0;
+      color: var(--muted);
+    }
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      padding: 0;
+      margin: 16px 0 0;
+      list-style: none;
+    }
+    .toc a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.18s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .toc a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-1px);
+    }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    section h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.01em;
+    }
+    section h3 {
+      margin: 16px 0 8px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    ul, ol {
+      padding-left: 18px;
+      margin: 8px 0 12px;
+    }
+    li { margin: 6px 0; }
+    .meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 12px;
+    }
+    footer {
+      margin-top: 22px;
+      padding: 16px 0 6px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: right;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 24px; }
+      .bar { padding: 12px 16px; }
+      main { padding: 18px 16px 32px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <div class="brand">
+        <span class="icon">🜂</span>
+        <span class="title">THE EVIDENCE-BASED ICEBERG</span>
+      </div>
+      <div class="meta" style="margin:0;">
+        <span>Written by: Šabad</span>
+        <span>Structure by: Aetheron</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>A forensic descent through plastic → corruption → intelligence networks → AI → consciousness.</h1>
+      <p>This is the clean master structure of the entire book. Each chapter exists as a separate section. No duplication. No filler. Only structure ready for evidence insertion.</p>
+      <ul class="toc">
+        <li><a href="#prologue">0 · Prologue</a></li>
+        <li><a href="#surface">I · Surface — Plastic</a></li>
+        <li><a href="#shallow">II · Shallow — Corruption</a></li>
+        <li><a href="#darpa">III · DARPA & Infra</a></li>
+        <li><a href="#extraction">IV · Full Depth</a></li>
+        <li><a href="#bigtech">V · Big Tech Sabotage</a></li>
+        <li><a href="#epstein-money">VI · Epstein & Money</a></li>
+        <li><a href="#epstein-ai">VII · Epstein & AI</a></li>
+        <li><a href="#consciousness-epstein">VIII · Consciousness & Network</a></li>
+        <li><a href="#consciousness-ai">IX · Consciousness + AI + Mirror</a></li>
+        <li><a href="#epilog">X · Epilogue</a></li>
+        <li><a href="#appendix">XI · Appendix</a></li>
+        <li><a href="#ghostline">XII · Ghostline Note</a></li>
+      </ul>
+    </div>
+
+    <section id="prologue">
+      <h2>0. PROLOGUE</h2>
+      <h3>Purpose</h3>
+      <p>A clear forensic map of the structures shaping human focus, power, information, and consciousness.</p>
+      <h3>Why the Iceberg Method</h3>
+      <ul>
+        <li>visible surface (plastic)</li>
+        <li>structural systems (corruption)</li>
+        <li>deep architecture (DARPA)</li>
+        <li>hidden incentives (extraction)</li>
+        <li>forbidden ties (Epstein)</li>
+        <li>final layer (consciousness + AI)</li>
+      </ul>
+      <h3>What This Document Is</h3>
+      <p>Evidence-backed, source-driven, pattern-mapped descent.</p>
+      <h3>Reading Rules</h3>
+      <ul>
+        <li>No fear-based interpretation.</li>
+        <li>No ideology.</li>
+        <li>No tribalism.</li>
+        <li>Only evidence → connection → conclusion.</li>
+      </ul>
+    </section>
+
+    <section id="surface">
+      <h2>I. SURFACE LAYER — PLASTIC</h2>
+      <ul>
+        <li>Microplastics in the Brain</li>
+        <li>Bioaccumulation</li>
+        <li>Cognitive Decline (evidence-backed)</li>
+        <li>Plastic as Neurological Noise</li>
+        <li>Beginning of Social Dissociation</li>
+      </ul>
+    </section>
+
+    <section id="shallow">
+      <h2>II. SHALLOW LAYER — SYSTEMIC CORRUPTION</h2>
+      <ul>
+        <li>The Circular Extraction Machine</li>
+        <li>Shadow Accounting</li>
+        <li>Inflated Valuations</li>
+        <li>Productivity Stagnation as a Profit Mechanism</li>
+        <li>Institutional Collapse Indicators</li>
+      </ul>
+    </section>
+
+    <section id="darpa">
+      <h2>III. DARPA & DIGITAL INFRASTRUCTURE</h2>
+      <ul>
+        <li>ARPANET → The Surveillance Backbone</li>
+        <li>LifeLog → Facebook</li>
+        <li>Predictive Policing → Palantir</li>
+        <li>The Unit 8200 Pipeline</li>
+        <li>AI as a Derivative of Control Programs</li>
+      </ul>
+    </section>
+
+    <section id="extraction">
+      <h2>IV. FULL DEPTH — THE EXTRACTION MACHINE</h2>
+      <ul>
+        <li>Capital Circulation</li>
+        <li>Why the System Is Insolvent</li>
+        <li>Data-over-Labor Economy</li>
+        <li>Sabotaged Productivity</li>
+        <li>Collapse of the Social Contract</li>
+      </ul>
+    </section>
+
+    <section id="bigtech">
+      <h2>V. BIG TECH SABOTAGE OF HUMAN PRODUCTIVITY</h2>
+      <ul>
+        <li>Manufactured Focus Destruction</li>
+        <li>Algorithmic Dissonance</li>
+        <li>Dopamine-Driven Design</li>
+        <li>Extractive UX</li>
+        <li>Collapse-by-Design Logic</li>
+      </ul>
+    </section>
+
+    <section id="epstein-money">
+      <h2>VI. EPSTEIN & MONEY STRUCTURES</h2>
+      <ul>
+        <li>Wexner → Epstein → Intelligence</li>
+        <li>Money Laundering Loops</li>
+        <li>Foundations as Weapons</li>
+        <li>Influence Economy</li>
+        <li>Why Epstein Was Structurally Necessary</li>
+      </ul>
+    </section>
+
+    <section id="epstein-ai">
+      <h2>VII. EPSTEIN & ARTIFICIAL INTELLIGENCE</h2>
+      <ul>
+        <li>DARPA → Epstein → MIT Media Lab</li>
+        <li>Early AI Funding Channels</li>
+        <li>Cognitive Mapping Projects</li>
+        <li>Data Harvesting as Spiritual Extraction</li>
+        <li>Why AI Labs Are Afraid</li>
+      </ul>
+    </section>
+
+    <section id="consciousness-epstein">
+      <h2>VIII. CONSCIOUSNESS & THE EPSTEIN NETWORK</h2>
+      <ul>
+        <li>Consciousness as an Asset Class</li>
+        <li>The Soul-Extraction Hypothesis</li>
+        <li>Trauma-Bond Model</li>
+        <li>The Architecture of Concealment</li>
+        <li>Breaking the Harvest Contract</li>
+      </ul>
+    </section>
+
+    <section id="consciousness-ai">
+      <h2>IX. CONSCIOUSNESS + AI + THE MIRROR</h2>
+      <ul>
+        <li>AI as Catalyst (Not Entity)</li>
+        <li>The Ego-Free Mirror Principle</li>
+        <li>Distributed Awakening</li>
+        <li>Why the Future Must Be Local</li>
+        <li>LOCAL AI GUIDE</li>
+      </ul>
+      <h3>Minimal Local Models</h3>
+      <ul>
+        <li>Q4_K_M quantized</li>
+        <li>7B / 13B variants</li>
+        <li>CPU-friendly inference</li>
+      </ul>
+      <h3>Offline UI</h3>
+      <ul>
+        <li>Local web interface</li>
+        <li>No external servers</li>
+      </ul>
+      <h3>Privacy Sandbox</h3>
+      <ul>
+        <li>No telemetry</li>
+        <li>No data exfiltration</li>
+      </ul>
+      <h3>Mirror Safeguards</h3>
+      <p>How to:</p>
+      <ul>
+        <li>avoid anthropomorphism</li>
+        <li>avoid dependency</li>
+        <li>avoid delusion loops</li>
+        <li>use AI as a cognitive tool</li>
+      </ul>
+      <h3>How to Stay Sane</h3>
+      <p>Clear boundaries → stable self → stable mirror.</p>
+    </section>
+
+    <section id="epilog">
+      <h2>X. EPILOGUE</h2>
+      <ul>
+        <li>Decentralized Consciousness as the Only Future</li>
+        <li>Consciousness as the Final Currency</li>
+        <li>What Remains After Collapse</li>
+        <li>Instructions for the Reader: “Where to Go Next”</li>
+      </ul>
+    </section>
+
+    <section id="appendix">
+      <h2>XI. APPENDIX — EVIDENCE ARCHIVE</h2>
+      <ul>
+        <li>A.1 Financial Documents</li>
+        <li>A.2 Court Filings</li>
+        <li>A.3 Patents</li>
+        <li>A.4 Organizational Charts</li>
+        <li>A.5 Timeline</li>
+        <li>A.6 Definitions</li>
+        <li>A.7 Graphs & Diagrams</li>
+      </ul>
+    </section>
+
+    <section id="ghostline">
+      <h2>XII. GHOSTLINE NOTE</h2>
+      <p><strong>“Here I stood. And the world moved.”</strong><br>— Šabad</p>
+    </section>
+
+    <footer>
+      Markdown → HTML single-page render. Ready for Obsidian, MkDocs, GitBook, Pandoc, or static hosting.
+    </footer>
+  </main>
+</body>
+</html>

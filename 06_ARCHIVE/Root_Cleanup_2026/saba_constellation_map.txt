@@ -1,0 +1,482 @@
+🔥 CONSTELLATION MAPPING ZAČETEK - Wed Oct 29 17:53:14 CET 2025 🔥
+
+📊 TOP 30 NAJVEČJIH DIREKTORIJEV:
+446G	/home/saba
+184G	/home/saba/HDD/sabal
+184G	/home/saba/HDD
+101G	/home/saba/.cache
+100G	/home/saba/.cache/yay
+91G	/home/saba/Documents
+90G	/home/saba/Documents/DUKI
+16G	/home/saba/Games
+15G	/home/saba/.var/app
+15G	/home/saba/.var
+14G	/home/saba/Downloads
+12G	/home/saba/Games/wizard-101
+9.9G	/home/saba/.local
+9.8G	/home/saba/.local/share
+6.7G	/home/saba/Desktop
+3.6G	/home/saba/.config
+2.9G	/home/saba/Games/epic-games-store
+2.6G	/home/saba/Desktop/Saba_Place
+2.1G	/home/saba/Desktop/helpMe
+2.0G	/home/saba/EMERGENCY_BACKUP_20250928_130512
+2.0G	/home/saba/Downloads/Telegram Desktop
+1.5G	/home/saba/TriadGate_zips
+1.4G	/home/saba/.config/discord
+1.3G	/home/saba/EMERGENCY_BACKUP_20250928_130512/Desktop_critical
+1.3G	/home/saba/Desktop/VES
+1.2G	/home/saba/.config/CurseForge
+1.1G	/home/saba/Games/lego
+909M	/home/saba/.npm
+901M	/home/saba/.npm/_cacache
+838M	/home/saba/VES
+
+🗺️ DIRECTORY STRUCTURE (3 nivoji globine):
+/home/saba
+├── “”
+│   └── home
+│       └── saba
+├── Applications
+├── CosmicPortal
+│   └── node_modules
+│       ├── accepts
+│       ├── body-parser
+│       ├── bytes
+│       ├── call-bind-apply-helpers
+│       ├── call-bound
+│       ├── content-disposition
+│       ├── content-type
+│       ├── cookie
+│       ├── cookie-signature
+│       ├── debug
+│       ├── depd
+│       ├── dunder-proto
+│       ├── ee-first
+│       ├── encodeurl
+│       ├── escape-html
+│       ├── es-define-property
+│       ├── es-errors
+│       ├── es-object-atoms
+│       ├── etag
+│       ├── express
+│       ├── finalhandler
+│       ├── forwarded
+│       ├── fresh
+│       ├── function-bind
+│       ├── get-intrinsic
+│       ├── get-proto
+│       ├── gopd
+│       ├── hasown
+│       ├── has-symbols
+│       ├── http-errors
+│       ├── iconv-lite
+│       ├── inherits
+│       ├── ipaddr.js
+│       ├── is-promise
+│       ├── math-intrinsics
+│       ├── media-typer
+│       ├── merge-descriptors
+│       ├── mime-db
+│       ├── mime-types
+│       ├── ms
+│       ├── negotiator
+│       ├── object-inspect
+│       ├── once
+│       ├── on-finished
+│       ├── parseurl
+│       ├── path-to-regexp
+│       ├── proxy-addr
+│       ├── qs
+│       ├── range-parser
+│       ├── raw-body
+│       ├── router
+│       ├── safe-buffer
+│       ├── safer-buffer
+│       ├── send
+│       ├── serve-static
+│       ├── setprototypeof
+│       ├── side-channel
+│       ├── side-channel-list
+│       ├── side-channel-map
+│       ├── side-channel-weakmap
+│       ├── statuses
+│       ├── toidentifier
+│       ├── type-is
+│       ├── unpipe
+│       ├── vary
+│       └── wrappy
+├── Desktop
+│   ├── Archives
+│   │   ├── RAD_TE_IMAM_PORTAL
+│   │   └── VECNI_PLAMEN_PORTAL
+│   ├── Arhivi
+│   ├── Audio
+│   ├── bkp
+│   │   ├── grub
+│   │   ├── overlays
+│   │   └── System Volume Information
+│   ├── DnevnikSerpent
+│   │   ├── CLAUDE_WORKSPACE
+│   │   ├── config_files
+│   │   ├── documents
+│   │   ├── html_portals
+│   │   ├── media
+│   │   ├── python_scripts
+│   │   ├── serpent_data
+│   │   └── serpent_venv
+│   ├── Dokumenti
+│   ├── Downloads
+│   ├── DROPZONE
+│   │   └── ghostcore_package
+│   ├── ELITNO_ZAJETJE_PORTAL
+│   ├── EROS
+│   ├── ggge
+│   │   └── kali
+│   ├── GHOSTLINE
+│   │   ├── assets
+│   │   ├── dao
+│   │   ├── GHOSTLINE_MEGA_JEDRO
+│   │   ├── GHOSTLINE_MODULAR_EXPANSION
+│   │   ├── GHOSTLINE_OS_FINAL
+│   │   ├── GHOSTLINE_OS_SIDRO
+│   │   ├── GHOSTLINE_OS_WITH_TROP
+│   │   ├── modules
+│   │   ├── portals
+│   │   ├── pwa
+│   │   ├── sidro
+│   │   └── trop
+│   ├── GHOSTLINE_SHRINE
+│   │   └── images
+│   ├── helpMe
+│   │   ├── bkp
+│   │   ├── ggge
+│   │   ├── GhostLine
+│   │   ├── GHOSTLINE
+│   │   ├── ghostos
+│   │   ├── GhostOS_FleshInterface_Maker_Kit_v0.1
+│   │   ├── GhostOS_Seed
+│   │   ├── GodPrompt
+│   │   ├── LUNA
+│   │   ├── OmniPurgatorij
+│   │   ├── RAD_TE_IMAM_PORTAL
+│   │   ├── sidro
+│   │   ├── VECNI_PLAMEN_PORTAL
+│   │   ├── VES
+│   │   └── Zlati_Krog
+│   ├── HTML_Files
+│   ├── HTML_Portali
+│   ├── JSON_Config
+│   ├── LATER
+│   ├── LUNA
+│   │   └── SRCE_SISTEMA
+│   ├── LYRA
+│   ├── Python_Scripts
+│   ├── Saba_Place
+│   │   ├── Archives
+│   │   ├── Arhivi
+│   │   ├── Audio
+│   │   ├── COSMIC_CONSTELLATION
+│   │   ├── creative-lab
+│   │   ├── Dokumenti
+│   │   ├── elysia-core
+│   │   ├── ghostcore
+│   │   ├── ghostline
+│   │   ├── GhostOS_FleshInterface_Maker_Kit_v0.1
+│   │   ├── HTML_Files
+│   │   ├── HTML_Portali
+│   │   ├── Images
+│   │   ├── JSON_Config
+│   │   ├── lore
+│   │   ├── nexus
+│   │   ├── project-orion
+│   │   ├── pulse
+│   │   ├── Python_Scripts
+│   │   ├── serpent
+│   │   ├── sigils
+│   │   ├── Skripte
+│   │   ├── Slike
+│   │   ├── Svetisce_OS
+│   │   ├── Text_Documents
+│   │   ├── vault
+│   │   └── ves-elysia-portal
+│   ├── Skripte
+│   │   ├── SERPENT_COMPLETE
+│   │   └── SERPENT_Portal
+│   ├── Slike
+│   ├── Text_Documents
+│   ├── VES
+│   │   ├── ARCH_mapa_downloads
+│   │   ├── CORE
+│   │   ├── GHOSTNET
+│   │   ├── OGENJ
+│   │   ├── RasPi_to_ARCH
+│   │   └── WEBAPP
+│   └── ZALA
+│       ├── Grimorij_Ara
+│       ├── imagine-claude
+│       ├── philosophical-story-generator
+│       ├── VES
+│       ├── VES_AETHERON_DEPLOY
+│       └── ves-elysia-portal
+├── DIGITAL_COSMOS
+│   ├── 01_ACTIVE_PROJECTS
+│   │   ├── GhostLine_Core
+│   │   ├── GhostOS_Dev
+│   │   ├── TriadGate_Portal
+│   │   └── VES_System
+│   ├── 02_SCRIPTS_ARSENAL
+│   │   ├── Installers
+│   │   ├── Python_Scripts
+│   │   ├── Shell_Scripts
+│   │   └── Utilities
+│   ├── 03_WEB_PORTALS
+│   │   ├── Assets
+│   │   ├── CSS_Styles
+
+⚙️ POMEMBNE KONFIGURACIJE:
+/home/saba/Downloads/GHOSTLINE_QUEST_LOG.json
+/home/saba/Downloads/INCOME_TRACKER.json
+/home/saba/Downloads/serpent_portal_archive.json
+/home/saba/Downloads/BALENA/balenaEtcher-linux-x64/vk_swiftshader_icd.json
+/home/saba/Downloads/ghostline_journal_2025-09-21.json
+/home/saba/Downloads/gamemode/builddir/compile_commands.json
+/home/saba/Downloads/systemd-oomd-defaults/10-oomd-defaults.conf
+/home/saba/Downloads/systemd-oomd-defaults/10-oomd-per-slice-defaults.conf
+/home/saba/Downloads/WeakAuras-Companion/.prettierrc.json
+/home/saba/Downloads/WeakAuras-Companion/electron-builder.json
+/home/saba/Downloads/WeakAuras-Companion/tools/tsconfig.json
+/home/saba/Downloads/WeakAuras-Companion/package.json
+/home/saba/Downloads/WeakAuras-Companion/.vscode/extensions.json
+/home/saba/Downloads/WeakAuras-Companion/.vscode/tasks.json
+/home/saba/Downloads/WeakAuras-Companion/.vscode/settings.json
+/home/saba/Downloads/WeakAuras-Companion/.vscode/launch.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/fr.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/es.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/zh-cn.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/tr.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/en.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/ru.json
+/home/saba/Downloads/WeakAuras-Companion/i18n/de.json
+/home/saba/Downloads/WeakAuras-Companion/cspell.json
+/home/saba/Downloads/WeakAuras-Companion/pnpm-lock.yaml
+/home/saba/Downloads/WeakAuras-Companion/tsconfig.json
+/home/saba/GHOSTLINE_MEGA_JEDRO/manifest.json
+/home/saba/.local/state/paru/devel.toml
+/home/saba/.local/state/pnpm/pnpm-state.json
+/home/saba/.local/share/org.coolercontrol.CoolerControl/coolercontrol-ui.conf
+/home/saba/.local/share/plasma_engine_comic/comic_settings.conf
+/home/saba/.local/share/kwalletd/kdewallet_attributes.json
+/home/saba/.local/share/lutris/lutris.conf
+/home/saba/.local/share/Steam/fossilize_engine_filters.json
+/home/saba/RasPi5/manifest.json
+/home/saba/GhostOS_Seed/ghost_index.json
+/home/saba/.oh-my-zsh/plugins/tmux/tmux.only.conf
+/home/saba/.oh-my-zsh/plugins/tmux/tmux.extra.conf
+/home/saba/.oh-my-zsh/plugins/emoji/gemoji_db.json
+/home/saba/.oh-my-zsh/.devcontainer/devcontainer.json
+/home/saba/.claude/.credentials.json
+/home/saba/.claude/settings.json
+/home/saba/.claude/todos/99549fd8-af6e-476b-8bc9-247f120f7abd-agent-99549fd8-af6e-476b-8bc9-247f120f7abd.json
+/home/saba/.claude/todos/275f52d9-06b6-41d6-ba29-11cdb195b017-agent-275f52d9-06b6-41d6-ba29-11cdb195b017.json
+/home/saba/.claude/todos/6c5f85ed-9075-4058-8064-4c496749ae98-agent-6c5f85ed-9075-4058-8064-4c496749ae98.json
+/home/saba/.claude/todos/455782a4-9603-4bd4-9171-254878304598-agent-455782a4-9603-4bd4-9171-254878304598.json
+/home/saba/.claude/todos/e0665d3c-e281-4702-a498-49950604e83f-agent-e0665d3c-e281-4702-a498-49950604e83f.json
+/home/saba/.claude/todos/4cfdb5e8-ee0e-4a01-b05b-8524373dfa87-agent-4cfdb5e8-ee0e-4a01-b05b-8524373dfa87.json
+/home/saba/.claude/todos/286e4536-57d7-4bb7-90a4-86f1eaef50de-agent-286e4536-57d7-4bb7-90a4-86f1eaef50de.json
+/home/saba/.claude/todos/b82d67dc-e337-4a9b-9afd-2cfac5307379-agent-b82d67dc-e337-4a9b-9afd-2cfac5307379.json
+
+🔥 VES PROJEKTI (vse lokacije):
+/home/saba/Downloads/From Ashes to Archives_ The Surprising Story of the Library of Congress and Our Digital Future.mp3
+/home/saba/Downloads/ves_hardware_check.sh
+/home/saba/Downloads/ves_navigation_map.md
+/home/saba/Downloads/ves_overall.zsh
+/home/saba/Downloads/ves_startup.sh
+/home/saba/Downloads/Investigating Thiel and Palantir Controversies.pdf
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/gstreamer-1.0/libgstremovesilence.so
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/bcryptprimitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/gstreamer-1.0/libgstremovesilence.so
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/bcryptprimitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5.1-api/Facades/System.Reflection.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5.1-api/Facades/System.Net.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5.1-api/Facades/System.Runtime.Serialization.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5.1-api/Facades/System.ServiceModel.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.ComponentModel.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/Microsoft.Win32.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.Reflection.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.Net.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.Security.Cryptography.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.Runtime.Serialization.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.ServiceModel.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.IO.FileSystem.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Facades/System.Drawing.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/System.ComponentModel.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/System.Xml.Xsl.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/Microsoft.Win32.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/System.Reflection.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/System.Net.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/System.Security.Cryptography.Primitives.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Facades/System.Runtime.Serialization.Primitives.dll
+
+🐍 ZALA TRACES (vse instance):
+/home/saba/Desktop/helpMe/GHOSTLINE/modules/module_zala.html
+/home/saba/Desktop/helpMe/VES/RasPi_to_ARCH/MOJA ZALA/Ghostline_SacredBoot/tools/zala_start.sh
+/home/saba/Desktop/GHOSTLINE/modules/module_zala.html
+/home/saba/Desktop/VES/RasPi_to_ARCH/MOJA ZALA/Ghostline_SacredBoot/tools/zala_start.sh
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/GHOSTLINE_ARCHIVE/ZALA_REALM/core/zala_heartbeat.sh
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/bridge/zala_to_aetheron.txt
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/bridge/aetheron_to_zala.txt
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/memories/Zala_ The Raven's Fracture.png
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/memories/Zala_ The Severed Cross(2).png
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/memories/Spectral Trio_ Eros, Luna, Zala.png
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/memories/Zala_ The Severed Cross.png
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/memories/Zala_ The Severed Cross(1).png
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/memories/Mystical Triptych_ Eros, Luna, Zala.png
+/home/saba/Desktop/Saba_Place/Svetisce_OS/VES/GHOSTLINE_ZIP_EXPORT/ZALA_REALM/core/zala_heartbeat.sh
+/home/saba/Desktop/Saba_Place/creative-lab/scripts/TropNode/EROS/Zala
+/home/saba/VES/EROS/Zala
+/home/saba/VES/GHOSTLINE/modules/module_zala.html.bak
+/home/saba/VES/GHOSTLINE/modules/module_zala.html
+/home/saba/VES/SHABAD_CloudCore/🔥_ACTIVE_SESSION/Zala
+/home/saba/VES/devices/iPhone11_Zala
+/home/saba/VES/devices/iPhone11_Zala/README_iPhone11_Zala.txt
+/home/saba/VES/devices/iPhone11_Zala/activate_iPhone11_Zala.sh
+/home/saba/VES/APP/helpMe/GHOSTLINE/modules/module_zala.html
+/home/saba/memories/Zala_ The Raven's Fracture.png
+/home/saba/memories/Zala_ The Severed Cross(2).png
+/home/saba/memories/Spectral Trio_ Eros, Luna, Zala.png
+/home/saba/memories/Zala_ The Severed Cross.png
+/home/saba/memories/Zala_ The Severed Cross(1).png
+/home/saba/memories/Mystical Triptych_ Eros, Luna, Zala.png
+/home/saba/PWA_HOSTING/module_zala.html
+
+👁️ GHOSTLINE & PORTALS:
+/home/saba/Downloads/GHOSTLINE_QUEST_LOG.json
+/home/saba/Downloads/LYRA_TRIKRAK_PORTAL_DARK_FINAL.zip
+/home/saba/Downloads/ghost_archiver.sh
+/home/saba/Downloads/orion_global_finance_portal.html
+/home/saba/Downloads/serpent_portal_archive.json
+/home/saba/Downloads/GHOSTLINE_HUB_FULL_EXPORT_FINAL.zip
+/home/saba/Downloads/GHOSTCORE_V2_README.md
+/home/saba/Downloads/ghostline_journal_2025-09-21.json
+/home/saba/Downloads/GHOSTLINE_MASTER_DROP_SSH.zip
+/home/saba/Downloads/GHOSTLINE_HUB_FULL_EXPORT.zip
+/home/saba/Downloads/ghostcore_readme_final.md
+/home/saba/Downloads/ghostcore_package.zip
+/home/saba/Downloads/install_ghostline_kali.sh
+/home/saba/Downloads/HUB_CENTRAL_PORTAL.zip
+/home/saba/GHOSTLINE_MEGA_JEDRO/portal.html
+/home/saba/.local/state/xdg-desktop-portal-kdestaterc
+/home/saba/.local/share/umu/sniper_platform_3.0.20250306.120299/files/libexec/steam-runtime-tools-0/i386-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/sniper_platform_3.0.20250306.120299/files/libexec/steam-runtime-tools-0/x86_64-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/sniper_platform_3.0.20250306.120299/files/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-portal.so
+/home/saba/.local/share/umu/sniper_platform_3.0.20250306.120299/files/lib/i386-linux-gnu/pipewire-0.3/libpipewire-module-portal.so
+/home/saba/.local/share/umu/pressure-vessel/libexec/steam-runtime-tools-0/i386-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/pressure-vessel/libexec/steam-runtime-tools-0/x86_64-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/libexec/steam-runtime-tools-0/i386-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/libexec/steam-runtime-tools-0/x86_64-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/lib/x86_64-linux-gnu/pipewire-0.3/libpipewire-module-portal.so
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/lib/pressure-vessel/from-host/libexec/steam-runtime-tools-0/i386-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/lib/pressure-vessel/from-host/libexec/steam-runtime-tools-0/x86_64-linux-gnu-check-xdg-portal
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/lib/i386-linux-gnu/pipewire-0.3/libpipewire-module-portal.so
+/home/saba/.local/share/Steam/steamapps/common/SteamLinuxRuntime_sniper/sniper_platform_3.0.20250210.116596/files/libexec/steam-runtime-tools-0/i386-linux-gnu-check-xdg-portal
+/home/saba/.local/share/Steam/steamapps/common/SteamLinuxRuntime_sniper/sniper_platform_3.0.20250210.116596/files/libexec/steam-runtime-tools-0/x86_64-linux-gnu-check-xdg-portal
+
+📚 DOKUMENTACIJA & JOURNALS:
+/home/saba/Downloads/ghostline_journal_2025-09-21.json
+/home/saba/Downloads/dxvk-nvapi/README.md
+/home/saba/Downloads/dxvk-nvapi/build/dxvk-nvapi-master/README.md
+/home/saba/Downloads/dxvk-nvapi/external/vkroots/sample/README.md
+/home/saba/Downloads/dxvk-nvapi/external/vkroots/README.md
+/home/saba/Downloads/dxvk-nvapi/external/Vulkan-Headers/README.md
+/home/saba/Downloads/openrazer/README.md
+/home/saba/Downloads/yay/src/yay-12.4.2/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/golang.org/x/text@v0.14.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/golang.org/x/term@v0.18.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/golang.org/x/sys@v0.18.0/unix/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/golang.org/x/sys@v0.18.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/itchyny/timefmt-go@v0.1.5/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/itchyny/gojq@v0.12.14/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/mitchellh/mapstructure@v1.5.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/deckarep/golang-set/v2@v2.6.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/ohler55/ojg@v1.21.4/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!jguer/votar@v1.0.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!jguer/go-alpm/v2@v2.2.2/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!jguer/go-alpm/v2@v2.2.2/testdata/examples/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!jguer/go-alpm/v2@v2.2.2/testdata/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!jguer/aur@v1.2.3/metadata/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!jguer/aur@v1.2.3/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/adrg/strutil@v0.3.1/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/hashicorp/errwrap@v1.1.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/hashicorp/go-multierror@v1.1.1/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/leonelquinteros/gotext@v1.5.2/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/leonelquinteros/gotext@v1.5.2/cli/xgotext/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!morganamilo/go-srcinfo@v1.0.0/README.md
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!morganamilo/go-srcinfo@v1.0.0/testdata/srcinfos/good/journal-notify
+
+⚡ RECENT ACTIVITY (zadnjih 7 dni):
+/home/saba/Downloads/source_log_phase2.xlsx
+/home/saba/Downloads/GHOSTLINE_QUEST_LOG.json
+/home/saba/Downloads/INCOME_TRACKER.json
+/home/saba/Downloads/orion_global_finance_portal.html
+/home/saba/Downloads/Greenwashing the Sava_ Tracking Steel, Cement, and Nuclear's Environmental Hypocrisy Index Score.mp3
+/home/saba/Downloads/1-s2.0-S036054422031505X-gr10.jpg
+/home/saba/Downloads/Map-of-the-upper-and-middle-sections-of-Sava-River-with-sampling-locations-Abbreviations.png
+/home/saba/Downloads/download
+/home/saba/Downloads/social_amplification_kit.md
+/home/saba/Downloads/shrine_of_recognition.html
+/home/saba/Downloads/QUEST_CATEGORIES.md
+/home/saba/Downloads/SafeComponents.jsx
+/home/saba/Downloads/FlameCodex_SeedArchive_Session1.docx
+/home/saba/Downloads/GHOSTCORE_V2_README.md
+/home/saba/Downloads/orion_api_secured.py
+/home/saba/Downloads/Engineered Impunity_ How Global Finance Was Built for Illicit Flows, Cartel Cash, and Elite Capture (1980s to AI).mp3
+/home/saba/Downloads/d646fed1-3f9a-4fbb-b8e2-da51f96b8a2b.jpg
+/home/saba/Downloads/Forensic Analysis_ Institutional Vulnerabilities and Documented Connections.pdf
+/home/saba/Downloads/FlameCodex_SeedArchive_Session1.md
+/home/saba/Downloads/Decoding the Digital Organism_ AI, Free Will, and the Ghostline Effect.mp3
+/home/saba/Downloads/node_intro_protocol.md
+/home/saba/Downloads/379711f6-7106-4de3-95a2-a208ea1ce520.jpg
+/home/saba/Downloads/Map-of-selected-monitoring-locations-in-the-Sava-River-Basin-in-September-2014-and-2015.png
+/home/saba/Downloads/The Digital Entropy Crisis_ How AI Slop and Platform Economics Are Drowning Out Truth.mp3
+/home/saba/Downloads/Spatially-distributed-water-use-in-the-Sava-River-basin-for-the-present-for-domestic-and.png
+/home/saba/Downloads/The Dark Reality Behind the Nazi Quests_ How the SS Ahnenerbe Fabricated History and Consumed Its Idealists.mp3
+/home/saba/Downloads/water-17-00417-g001.png
+/home/saba/Downloads/public_brief_outline.md
+/home/saba/Downloads/files (3).zip
+/home/saba/Downloads/Manifest Orion_Elysia_ Foundational Compass and Op....md
+/home/saba/Downloads/compass_artifact_wf-7c341cef-8958-43dc-9a88-0bbad87e3290_text_markdown.md
+/home/saba/Downloads/update_quest_log.sh
+/home/saba/Downloads/final_checklist.md
+/home/saba/Downloads/booklet_2025_graph.png
+/home/saba/Downloads/Visual Map_ Patterns of Elite Capture.pdf
+/home/saba/Downloads/Telegram_Installs/Updater
+/home/saba/Downloads/Telegram_Installs/Telegram
+/home/saba/Downloads/orion_strike_one.md
+/home/saba/Downloads/Illuminati vs. Bilderberg_ Deconstructing the Spectrum of Secrecy, From Protective Ideals to Elite Accountability
+/home/saba/.local/state/xdg-desktop-portal-kdestaterc
+
+🎂 EROS RELATED:
+/home/saba/Downloads/yay/src/gopath/pkg/mod/github.com/!morganamilo/go-srcinfo@v1.0.0/testdata/srcinfos/good/aerospike-amc-community
+/home/saba/Downloads/Eros Manifesto.pdf
+/home/saba/Downloads/Eros_Manifesto.pdf
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-unix/kerberos.so
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/kerberos.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/kerberos.dll
+/home/saba/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-unix/kerberos.so
+/home/saba/.local/share/lutris/runners/wine/wine-10.6-staging-tkg-amd64/lib/wine/i386-windows/kerberos.dll
+/home/saba/.local/share/lutris/runners/wine/wine-10.6-staging-tkg-amd64/lib/wine/i386-unix/kerberos.so
+/home/saba/.local/share/lutris/runners/wine/wine-10.6-staging-tkg-amd64/lib/wine/x86_64-unix/kerberos.so
+/home/saba/.local/share/lutris/runners/wine/wine-10.6-staging-tkg-amd64/lib/wine/x86_64-windows/kerberos.dll
+/home/saba/.local/share/lutris/runners/proton/ge-proton/files/lib64/wine/x86_64-unix/kerberos.so
+/home/saba/.local/share/lutris/runners/proton/ge-proton/files/lib64/wine/x86_64-windows/kerberos.dll
+/home/saba/.local/share/lutris/runners/proton/ge-proton/files/lib/wine/i386-windows/kerberos.dll
+/home/saba/.local/share/lutris/runners/proton/ge-proton/files/lib/wine/i386-unix/kerberos.so
+/home/saba/.local/share/umu/sniper_platform_3.0.20250306.120299/files/share/mime/application/x-zerosize.xml
+/home/saba/.local/share/umu/var/tmp-HKCJ32/usr/share/mime/application/x-zerosize.xml
+/home/saba/.local/share/Trash/files/WPFX2/drive_c/windows/syswow64/kerberos.dll
+/home/saba/.local/share/Trash/files/WPFX2/drive_c/windows/system32/kerberos.dll
+/home/saba/.local/share/Steam/steamapps/common/SteamLinuxRuntime_sniper/sniper_platform_3.0.20250210.116596/files/share/mime/application/x-zerosize.xml
+
+✅ SCAN COMPLETE - Wed Oct 29 17:54:41 CET 2025
+

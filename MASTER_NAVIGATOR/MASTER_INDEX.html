@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VES MASTER INDEX - GHOSTLINE INTELLIGENCE</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border: 2px solid var(--secondary);
+            border-radius: 10px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .subtitle {
+            color: #bdc3c7;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .status-bar {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0,0,0,0.3);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .status-item {
+            text-align: center;
+        }
+        
+        .status-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        .status-label {
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        .section {
+            background: rgba(44, 62, 80, 0.3);
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--secondary);
+        }
+        
+        .section-title {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--secondary);
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .category-card {
+            background: rgba(52, 73, 94, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+        }
+        
+        .category-title {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-count {
+            color: #e74c3c;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .file-list {
+            margin-top: 0.5rem;
+        }
+        
+        .file-item {
+            padding: 0.25rem 0;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
+        .file-path {
+            color: #9b59b6;
+        }
+        
+        .file-date {
+            color: #f39c12;
+        }
+        
+        .file-size {
+            color: #2ecc71;
+        }
+        
+        .refresh-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+        
+        .refresh-btn:hover {
+            background: #2980b9;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        .system-status {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+        
+        .status-active {
+            background: #2ecc71;
+            color: white;
+        }
+        
+        .status-inactive {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>VES MASTER INDEX</h1>
+            <div class="subtitle">GHOSTLINE INTELLIGENCE SYSTEM</div>
+            <div class="status-bar">
+                <div class="status-item">
+                    <div class="status-value" id="dir-count">0</div>
+                    <div class="status-label">DIRECTORIES</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-value" id="file-count">0</div>
+                    <div class="status-label">FILES</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-value" id="size-count">0 KB</div>
+                    <div class="status-label">TOTAL SIZE</div>
+                </div>
+                <div class="status-item">
+                    <div class="status-value" id="last-scan">NEVER</div>
+                    <div class="status-label">LAST SCAN</div>
+                </div>
+            </div>
+        </header>
+
+        <button class="refresh-btn" onclick="refreshIndex()">REFRESH INDEX</button>
+
+        <div class="section">
+            <h2 class="section-title">SYSTEM STATUS <span class="system-status status-active">ACTIVE</span></h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-title">ACTIVE OPERATIONS</div>
+                    <div class="category-count" id="active-count">0</div>
+                    <div class="file-list" id="active-files">
+                        <div class="file-item">No active operations detected</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">SYSTEMS</div>
+                    <div class="category-count" id="system-count">0</div>
+                    <div class="file-list" id="system-files">
+                        <div class="file-item">No systems detected</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">PROTOCOLS</div>
+                    <div class="category-count" id="protocol-count">0</div>
+                    <div class="file-list" id="protocol-files">
+                        <div class="file-item">No protocols detected</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">RESEARCH VAULT</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-title">RESEARCH DOCUMENTS</div>
+                    <div class="category-count" id="research-count">0</div>
+                    <div class="file-list" id="research-files">
+                        <div class="file-item">No research documents detected</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">ARCHIVES</div>
+                    <div class="category-count" id="archive-count">0</div>
+                    <div class="file-list" id="archive-files">
+                        <div class="file-item">No archives detected</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">KNOWLEDGE BASE</div>
+                    <div class="category-count" id="knowledge-count">0</div>
+                    <div class="file-list" id="knowledge-files">
+                        <div class="file-item">No knowledge base detected</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">TOOLS & AGENTS</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-title">OPERATIONAL TOOLS</div>
+                    <div class="category-count" id="tool-count">0</div>
+                    <div class="file-list" id="tool-files">
+                        <div class="file-item">No tools detected</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">AGENTS</div>
+                    <div class="category-count" id="agent-count">0</div>
+                    <div class="file-list" id="agent-files">
+                        <div class="file-item">No agents detected</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-title">LOGS & CHECKPOINTS</div>
+                    <div class="category-count" id="log-count">0</div>
+                    <div class="file-list" id="log-files">
+                        <div class="file-item">No logs detected</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="last-updated" id="last-updated">
+            Last updated: Never
+        </div>
+
+        <footer>
+            <p>GHOSTLINE INTELLIGENCE SYSTEM - INDEX AGENT v1.0</p>
+            <p>Filesystem = Source of Truth | Active Intelligence Infrastructure</p>
+        </footer>
+    </div>
+
+    <script>
+        // Load index data from JSON
+        async function loadIndexData() {
+            try {
+                const response = await fetch('system_index.json');
+                const data = await response.json();
+                
+                updateUI(data);
+            } catch (error) {
+                console.error('Error loading index data:', error);
+                // Use default values if JSON not available
+                updateUI({
+                    ves_system_index: {
+                        total_directories: 0,
+                        total_files: 0,
+                        categories: {
+                            systems: { count: 0, items: [] },
+                            research: { count: 0, items: [] },
+                            archives: { count: 0, items: [] },
+                            active_operations: { count: 0, items: [] },
+                            tools: { count: 0, items: [] },
+                            logs: { count: 0, items: [] }
+                        },
+                        last_scan: "Never"
+                    }
+                });
+            }
+        }
+
+        function updateUI(data) {
+            const index = data.ves_system_index;
+            
+            // Update status bar
+            document.getElementById('dir-count').textContent = index.total_directories || 0;
+            document.getElementById('file-count').textContent = index.total_files || 0;
+            
+            // Calculate total size (placeholder)
+            document.getElementById('size-count').textContent = (index.total_files ? Math.round(index.total_files * 100) : 0) + ' KB';
+            
+            document.getElementById('last-scan').textContent = index.last_scan || 'NEVER';
+            document.getElementById('last-updated').textContent = `Last updated: ${index.last_scan || 'Never'}`;
+            
+            // Update category counts and lists
+            updateCategory('active', index.categories.active_operations);
+            updateCategory('system', index.categories.systems);
+            updateCategory('research', index.categories.research);
+            updateCategory('archive', index.categories.archives);
+            updateCategory('tool', index.categories.tools);
+            updateCategory('log', index.categories.logs);
+            
+            // Protocol section (derived from systems)
+            updateProtocolSection(index.categories.systems);
+        }
+
+        function updateCategory(prefix, category) {
+            const countElement = document.getElementById(`${prefix}-count`);
+            const filesElement = document.getElementById(`${prefix}-files`);
+            
+            if (countElement && filesElement) {
+                countElement.textContent = category.count || 0;
+                
+                if (category.items && category.items.length > 0) {
+                    filesElement.innerHTML = '';
+                    category.items.forEach(item => {
+                        const fileItem = document.createElement('div');
+                        fileItem.className = 'file-item';
+                        fileItem.innerHTML = `
+                            <span class="file-path">${item.path || 'N/A'}</span>
+                            <br>
+                            <span class="file-date">${item.last_update || 'N/A'}</span>
+                            <span class="file-size">${item.description || ''}</span>
+                        `;
+                        filesElement.appendChild(fileItem);
+                    });
+                } else {
+                    filesElement.innerHTML = '<div class="file-item">No items detected</div>';
+                }
+            }
+        }
+
+        function updateProtocolSection(systems) {
+            const protocolCount = document.getElementById('protocol-count');
+            const protocolFiles = document.getElementById('protocol-files');
+            
+            if (protocolCount && protocolFiles) {
+                // For now, protocols are part of systems
+                const protocolItems = systems.items ? systems.items.filter(item => 
+                    item.path && (item.path.includes('protocol') || item.path.includes('protocol') || item.description.includes('protocol'))
+                ) : [];
+                
+                protocolCount.textContent = protocolItems.length;
+                
+                if (protocolItems.length > 0) {
+                    protocolFiles.innerHTML = '';
+                    protocolItems.forEach(item => {
+                        const fileItem = document.createElement('div');
+                        fileItem.className = 'file-item';
+                        fileItem.innerHTML = `
+                            <span class="file-path">${item.path}</span>
+                            <br>
+                            <span class="file-date">${item.last_update || 'N/A'}</span>
+                            <span class="file-size">${item.description || ''}</span>
+                        `;
+                        protocolFiles.appendChild(fileItem);
+                    });
+                } else {
+                    protocolFiles.innerHTML = '<div class="file-item">No protocols detected</div>';
+                }
+            }
+        }
+
+        async function refreshIndex() {
+            // Show loading state
+            document.querySelector('.refresh-btn').textContent = 'SCANNING...';
+            document.querySelector('.refresh-btn').disabled = true;
+            
+            try {
+                // In a real implementation, this would call the backend script
+                // For now, we'll just reload the current data
+                await loadIndexData();
+                
+                // Update the last scan time
+                document.getElementById('last-scan').textContent = new Date().toISOString();
+                document.getElementById('last-updated').textContent = `Last updated: ${new Date().toISOString()}`;
+            } catch (error) {
+                console.error('Error refreshing index:', error);
+            } finally {
+                document.querySelector('.refresh-btn').textContent = 'REFRESH INDEX';
+                document.querySelector('.refresh-btn').disabled = false;
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', loadIndexData);
+    </script>
+</body>
+</html>

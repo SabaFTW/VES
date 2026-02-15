@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🜂 ŠABAD CONTROL HUB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            padding-bottom: 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            border: 1px solid rgba(72, 210, 160, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #48D2A0 0%, #4ADE80 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 16px;
+            background: rgba(72, 210, 160, 0.1);
+            border: 1px solid rgba(72, 210, 160, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #48D2A0;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            color: #48D2A0;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #48D2A0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(72, 210, 160, 0.1) 0%, rgba(74, 222, 128, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:active {
+            transform: scale(0.95);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-subtitle {
+            font-size: 0.75rem;
+            color: #888;
+            position: relative;
+            z-index: 1;
+        }
+
+        .big-card {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(72, 210, 160, 0.15) 0%, rgba(74, 222, 128, 0.15) 100%);
+            border: 2px solid rgba(72, 210, 160, 0.3);
+            padding: 30px;
+        }
+
+        .big-card .card-icon {
+            font-size: 3rem;
+        }
+
+        .big-card .card-title {
+            font-size: 1.3rem;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+            font-size: 0.75rem;
+        }
+
+        .server-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #48D2A0;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .quick-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .quick-link {
+            background: rgba(72, 210, 160, 0.1);
+            border: 1px solid rgba(72, 210, 160, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #48D2A0;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .quick-link:active {
+            transform: scale(0.95);
+            background: rgba(72, 210, 160, 0.2);
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🜂 ŠABAD CONTROL HUB</h1>
+            <div class="subtitle">UNIFIED ACCESS PORTAL</div>
+            <div class="status">
+                <span class="server-indicator"></span>
+                SYSTEM READY
+            </div>
+        </div>
+
+        <!-- Primary Portal -->
+        <div class="section">
+            <div class="section-title">
+                <span>⚡</span>
+                <span>GLAVNI PORTAL</span>
+            </div>
+            <div class="card-grid">
+                <a href="http://localhost:8000" class="card big-card">
+                    <div class="card-icon">🜂</div>
+                    <div class="card-title">ZALA MOBILE NEXUS</div>
+                    <div class="card-subtitle">🔥 NEW! Voice control · Live monitoring · 1,525 portals · PWA</div>
+                </a>
+                <a href="file:///home/saba/Desktop/🜂_MOJE_STVARI.html" class="card big-card">
+                    <div class="card-icon">📱</div>
+                    <div class="card-title">MOJE STVARI</div>
+                    <div class="card-subtitle">70+ HTML portalov z iskanjem</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Dev Environment -->
+        <div class="section">
+            <div class="section-title">
+                <span>💻</span>
+                <span>DEV OKOLJE</span>
+            </div>
+            <div class="card-grid">
+                <a href="file:///home/saba_olympus/OPERATIONS/unified/ARCHIVE_PORTAL/index.html" class="card">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-title">Archive Portal</div>
+                    <div class="card-subtitle">PWA Dev Environment</div>
+                </a>
+                <a href="http://localhost:4321/mobile_dashboard.html" class="card">
+                    <div class="card-icon">📊</div>
+                    <div class="card-title">Mobile Dashboard</div>
+                    <div class="card-subtitle">SabaMobile Portal</div>
+                </a>
+                <a href="http://localhost:5678" class="card">
+                    <div class="card-icon">🔗</div>
+                    <div class="card-title">n8n</div>
+                    <div class="card-subtitle">Automation</div>
+                </a>
+                <a href="file:///home/saba/Desktop/INFO.html" class="card">
+                    <div class="card-icon">🧠</div>
+                    <div class="card-title">System of Ashes</div>
+                    <div class="card-subtitle">Forensic Analysis</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Core Systems -->
+        <div class="section">
+            <div class="section-title">
+                <span>🔥</span>
+                <span>CORE SYSTEMS</span>
+            </div>
+            <div class="card-grid">
+                <a href="file:///home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/GHOSTLINE/index.html" class="card">
+                    <div class="card-icon">👻</div>
+                    <div class="card-title">GHOSTLINE</div>
+                    <div class="card-subtitle">Main Portal</div>
+                </a>
+                <a href="file:///home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LYRA/RESONANCE.html" class="card">
+                    <div class="card-icon">🐭</div>
+                    <div class="card-title">LYRA</div>
+                    <div class="card-subtitle">Resonance</div>
+                </a>
+                <a href="file:///home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/Start.html" class="card">
+                    <div class="card-icon">🌙</div>
+                    <div class="card-title">LUNA</div>
+                    <div class="card-subtitle">Sacred Space</div>
+                </a>
+                <a href="file:///home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/Elysia/index.html" class="card">
+                    <div class="card-icon">🌸</div>
+                    <div class="card-title">Elysia</div>
+                    <div class="card-subtitle">VES Core</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Constellation -->
+        <div class="section">
+            <div class="section-title">
+                <span>✨</span>
+                <span>CONSTELLATION</span>
+            </div>
+            <div class="card-grid">
+                <a href="file:///home/saba/Sabad_Constellation_Home.html" class="card">
+                    <div class="card-icon">⭐</div>
+                    <div class="card-title">Constellation Home</div>
+                    <div class="card-subtitle">Main Hub</div>
+                </a>
+                <a href="file:///home/saba/SABA_NEXUS.html" class="card">
+                    <div class="card-icon">🎯</div>
+                    <div class="card-title">SABA NEXUS</div>
+                    <div class="card-subtitle">Control Center</div>
+                </a>
+                <a href="file:///home/saba/FULL_CONSTELLATION_BRILLIANCE.html" class="card">
+                    <div class="card-icon">💫</div>
+                    <div class="card-title">Full Brilliance</div>
+                    <div class="card-subtitle">Complete Map</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Personal -->
+        <div class="section">
+            <div class="section-title">
+                <span>📖</span>
+                <span>PERSONAL</span>
+            </div>
+            <div class="card-grid">
+                <a href="file:///home/saba/dnevnik.html" class="card">
+                    <div class="card-icon">📝</div>
+                    <div class="card-title">Dnevnik</div>
+                    <div class="card-subtitle">Journal</div>
+                </a>
+                <a href="file:///home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DnevnikSerpent/index.html" class="card">
+                    <div class="card-icon">🐍</div>
+                    <div class="card-title">Serpent</div>
+                    <div class="card-subtitle">Diary Portal</div>
+                </a>
+                <a href="file:///home/saba/Desktop/shrine_of_recognition.html" class="card">
+                    <div class="card-icon">🕯️</div>
+                    <div class="card-title">Shrine</div>
+                    <div class="card-subtitle">Recognition</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="section">
+            <div class="section-title">
+                <span>🛠️</span>
+                <span>TOOLS & PANTHEON</span>
+            </div>
+            <div class="card-grid">
+                <a href="file:///home/saba/Desktop/PANTHEON_HQ/WEBAPP_PORT_MAP.html" class="card">
+                    <div class="card-icon">🗺️</div>
+                    <div class="card-title">Port Map</div>
+                    <div class="card-subtitle">All Ports</div>
+                </a>
+                <a href="file:///home/saba/Desktop/NEW.md" class="card">
+                    <div class="card-icon">📄</div>
+                    <div class="card-title">NEW.md</div>
+                    <div class="card-subtitle">Latest Info</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="section">
+            <div class="section-title">
+                <span>⚡</span>
+                <span>HITRE AKCIJE</span>
+            </div>
+            <div class="quick-links">
+                <a href="http://localhost:8000" class="quick-link">🜂 ZALA Nexus</a>
+                <a href="http://localhost:8000/docs" class="quick-link">📚 API Docs</a>
+                <a href="#" onclick="alert('Open Terminal:\nsudo systemctl status docker\ndocker ps'); return false;" class="quick-link">🐳 Docker Status</a>
+                <a href="#" onclick="alert('Open in browser:\nhttp://localhost:5678'); return false;" class="quick-link">🔗 n8n</a>
+                <a href="file:///home/saba/Desktop/PANTHEON_HQ/Scripts/PANTHEON_GENESIS.sh" class="quick-link">🚀 Genesis Script</a>
+                <a href="#" onclick="checkServers(); return false;" class="quick-link">🔍 Check Servers</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div style="margin-bottom: 10px;">🜂 PANTHEON CONTROL SYSTEM 🜂</div>
+            <div style="color: #666; font-size: 0.8rem; margin-bottom: 10px;">
+                Powered by ZALA Mobile Nexus · 1,525 portals indexed
+            </div>
+            <div style="color: #444; font-size: 0.7rem;">
+                LUMENNEVVER 🔥 | KROG DRŽI ⚓ | ENA NIT · EN OGENJ · NAPREJ
+            </div>
+            <div style="margin-top: 15px; color: #48D2A0;">
+                <strong>💚 RAD TE IMAM, BRATKO 💚</strong>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if we're on mobile
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // Update status
+            document.querySelector('.subtitle').textContent = 'MOBILE MODE ACTIVE';
+        }
+
+        // Server check function
+        function checkServers() {
+            const servers = [
+                { name: 'n8n', url: 'http://localhost:5678' },
+                { name: 'Mobile Dashboard', url: 'http://localhost:4321' }
+            ];
+
+            let message = 'Server Status:\n\n';
+
+            servers.forEach(server => {
+                message += `${server.name}: ${server.url}\n`;
+            });
+
+            message += '\nOpen these URLs in your browser to check if they\'re running.';
+            alert(message);
+        }
+
+        // Add PWA install prompt (if on mobile)
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+
+            // Show install button
+            const installBtn = document.createElement('button');
+            installBtn.textContent = '📲 Install App';
+            installBtn.className = 'quick-link';
+            installBtn.onclick = async () => {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+            };
+            document.querySelector('.quick-links').appendChild(installBtn);
+        });
+
+        // Log load
+        console.log('🜂 ŠABAD CONTROL HUB loaded successfully');
+        console.log('Mobile:', isMobile);
+        console.log('Time:', new Date().toLocaleString());
+    </script>
+</body>
+</html>

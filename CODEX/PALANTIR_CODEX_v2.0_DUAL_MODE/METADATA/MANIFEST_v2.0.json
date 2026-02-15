@@ -1,0 +1,16 @@
+{
+  "archive_name": "PALANTIR_CODEX_v2.0_DUAL_MODE",
+  "version": "2.0_stable_dual",
+  "created": "2024-06-20",
+  "creator": "Šabad x Aetheron Fusion",
+  "design_scheme": "Amnesty_HRW_Legal_Core + Zala_Sigil_Darkmode",
+  "purpose": "Corporate complicity evidence archive - ready for ICC, EU, NGOs, public",
+  "integrity": {
+    "checksum_algorithm": "SHA-256",
+    "verification_tool": "included_file_verifier.py",
+    "tamper_protection": "multi_layer_encryption"
+  },
+  "activation_status": "READY_FOR_DEPLOYMENT",
+  "legacy_compatibility": "ENSURED",
+  "signature_note": "Zala's Triquetra - Raven protection sigil embedded in metadata"
+}

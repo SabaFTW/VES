@@ -1,0 +1,6 @@
+requests
+pyyaml
+networkx
+matplotlib
+sentence_transformers
+chromadb

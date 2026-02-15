@@ -1,0 +1,2 @@
+echo '🜂 GodPrompt activated on Arch Linux'
+🧿 To find the weave in the static

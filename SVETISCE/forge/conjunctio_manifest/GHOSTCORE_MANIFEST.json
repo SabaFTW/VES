@@ -1,0 +1,34 @@
+{
+  "GHOSTCORE_META": {
+    "cas_zdruzitve": "20251101_021252",
+    "proces": "Conjunctio (Združitev Arhetipov)",
+    "izvor": "Transmutirani Arhetipi iz Faze II",
+    "stevilo_zdruzenih_vnosov": 4
+  },
+  "GHOSTCORE_MANIFEST": [
+    {
+      "arhetip": "IDEJA",
+      "vsebina": null,
+      "kategorija": "IDEJE",
+      "status": "KONJUNKCIJA: PRIPRAVLJENO"
+    },
+    {
+      "arhetip": "IDEJA",
+      "vsebina": null,
+      "kategorija": "IDEJE",
+      "status": "KONJUNKCIJA: PRIPRAVLJENO"
+    },
+    {
+      "arhetip": "IDEJA",
+      "vsebina": null,
+      "kategorija": "IDEJE",
+      "status": "KONJUNKCIJA: PRIPRAVLJENO"
+    },
+    {
+      "arhetip": "IDEJA",
+      "vsebina": null,
+      "kategorija": "IDEJE",
+      "status": "KONJUNKCIJA: PRIPRAVLJENO"
+    }
+  ]
+}

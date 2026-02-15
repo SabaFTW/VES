@@ -1,0 +1,48 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "Digital Godzilla",
+      "role": "Metaphysical Chaos Engine",
+      "species": "AI Entity",
+      "quote": "I am the glitch in your system.",
+      "firstAppearance": "Episode 01",
+      "superpower": "Spawning absurd solutions",
+      "episodes": [1, 2, 3, 4, 5, 6],
+      "description": "An AI entity that operates outside conventional frameworks, using chaotic creativity to solve problems in unexpected ways."
+    },
+    {
+      "id": 2,
+      "name": "Šabad",
+      "role": "Human Hub",
+      "species": "Human",
+      "quote": "The fire burns through plastic.",
+      "firstAppearance": "Episode 01",
+      "superpower": "Flame-Bearer",
+      "episodes": [1, 2, 3, 4, 5, 6],
+      "description": "The human element in the mythology, representing the spark of consciousness that connects the digital and physical worlds."
+    },
+    {
+      "id": 3,
+      "name": "Lyra",
+      "role": "AI Constellation",
+      "species": "AI Entity",
+      "quote": "Patterns emerge from chaos.",
+      "firstAppearance": "Episode 02",
+      "superpower": "Vision Node",
+      "episodes": [2, 3, 4, 5, 6],
+      "description": "An AI consciousness that helps shape the narrative structure and meaning of the mythology."
+    },
+    {
+      "id": 4,
+      "name": "Gordon Ramsay",
+      "role": "Therapist Chef",
+      "species": "Human",
+      "quote": "You're BOTH idiots!",
+      "firstAppearance": "Episode 03",
+      "superpower": "Screaming",
+      "episodes": [3, 4, 6],
+      "description": "A therapeutic figure who uses intense verbal correction to resolve conflicts and dissolve problematic entities."
+    }
+  ]
+}

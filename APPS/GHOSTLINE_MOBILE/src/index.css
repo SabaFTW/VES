@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-background text-secondary antialiased font-mono;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply text-primary font-bold;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition-colors;
+}
+
+.card {
+  @apply bg-surface p-4 rounded-lg border-l-4 border-primary shadow-lg;
+}

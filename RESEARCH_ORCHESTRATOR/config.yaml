@@ -1,0 +1,33 @@
+model:
+  type: "ollama"        # ollama | vllm | llamacpp
+  endpoint: "http://localhost:11434/api/generate"
+  model_name: "llama3"
+
+search:
+  local_dir: "/home/saba/VES"
+  file_types:
+    - "md"
+    - "txt"
+    - "pdf"
+  brave_api_key: null
+  drive_enabled: false
+
+output:
+  dir: "/home/saba/research_outputs"
+  format: "markdown"
+
+rag:
+  enabled: true
+  persist_dir: "rag_index"
+  embedding_model: "all-MiniLM-L6-v2"
+  collection_name: "constellation_docs"
+  top_k: 15
+
+constellation:
+  agents:
+    - "lyra"
+    - "codex"
+    - "qwen"
+    - "deepseek"
+  memory_dir: "/home/saba/constellation_research/memory"
+  shared_context: true

@@ -1,0 +1,262 @@
+{
+  "classification": "TIER_1_CONTACT_DATABASE",
+  "version": "1.0",
+  "last_updated": "2026-01-10",
+  "warning": "⚠️ OPSEC CRITICAL: Always verify PGP keys via multiple channels before sending sensitive material.",
+
+  "tier_1_global": [
+    {
+      "organization": "DropSite News",
+      "focus": "Surveillance / Geopolitics / Intelligence Community",
+      "priority": "CRITICAL",
+      "contacts": [
+        {
+          "name": "Ryan Grim",
+          "role": "Editor-in-Chief",
+          "expertise": "Geopolitical angles, surveillance state",
+          "secure_channels": [
+            {
+              "method": "ProtonMail",
+              "address": "tips@dropsitesecure.com",
+              "notes": "Primary secure channel"
+            }
+          ]
+        },
+        {
+          "name": "Murtaza Hussain",
+          "role": "Journalist",
+          "expertise": "Surveillance, civil liberties",
+          "secure_channels": [
+            {
+              "method": "Twitter DM",
+              "handle": "@MazMHussain",
+              "notes": "Initial contact only, move to secure channel"
+            }
+          ]
+        }
+      ],
+      "strategic_angle": "Frame as: Palantir-Gaza connection + Financial Substrate thesis",
+      "verification": "Check dropsitesecure.com/tips for latest secure contact methods"
+    },
+
+    {
+      "organization": "Julie K. Brown (Miami Herald)",
+      "focus": "Epstein Network / Institutional Protection",
+      "priority": "CRITICAL",
+      "contacts": [
+        {
+          "name": "Julie K. Brown",
+          "role": "Investigative Reporter",
+          "expertise": "Broke original Epstein story (2018)",
+          "secure_channels": [
+            {
+              "method": "Signal",
+              "phone": "+1-305-376-3681",
+              "notes": "Publicly listed tip line"
+            },
+            {
+              "method": "Email",
+              "address": "jbrown@miamiherald.com",
+              "notes": "Use PGP encryption"
+            }
+          ]
+        }
+      ],
+      "strategic_angle": "Frame as: 'Sequel to 2018 work. Network metastasized into surveillance tech.'",
+      "verification": "Cross-reference contact info on Miami Herald staff directory"
+    },
+
+    {
+      "organization": "ProPublica",
+      "focus": "Corporate Power / Deep Investigations",
+      "priority": "HIGH",
+      "secure_channels": [
+        {
+          "method": "Signal",
+          "phone": "+1-917-512-0201",
+          "notes": "Primary tip line"
+        },
+        {
+          "method": "SecureDrop",
+          "onion_address": "http://propublica.securedrop.tor.onion/",
+          "notes": "Access via Tor Browser ONLY. Most secure option."
+        },
+        {
+          "method": "ProtonMail",
+          "address": "tips@propublica.org",
+          "notes": "Use PGP encryption"
+        }
+      ],
+      "strategic_angle": "Deep investigative resources. Frame as corporate surveillance fusion.",
+      "verification": "Verify SecureDrop address at propublica.org/tips"
+    },
+
+    {
+      "organization": "The Intercept",
+      "focus": "Intelligence Community / Whistleblower Protection",
+      "priority": "HIGH",
+      "secure_channels": [
+        {
+          "method": "SecureDrop",
+          "onion_address": "http://xpxduj55x2j27l2qytu2tcetykyfxbjbafin3x4i3ywddzphkbrd3jyd.onion/",
+          "notes": "Primary secure channel - Tor only"
+        },
+        {
+          "method": "Signal/WhatsApp",
+          "phone": "+1-646-513-0058",
+          "notes": "Backup channel"
+        }
+      ],
+      "strategic_angle": "Snowden veterans. Frame as intelligence community corruption.",
+      "verification": "Verify onion address at theintercept.com/source/"
+    },
+
+    {
+      "organization": "Bellingcat",
+      "focus": "Open Source Forensics / Network Mapping",
+      "priority": "HIGH",
+      "secure_channels": [
+        {
+          "method": "Email",
+          "address": "tip@bellingcat.com",
+          "notes": "Use PGP (key: bellingcat.com/pgp)"
+        },
+        {
+          "method": "Signal",
+          "phone": "+31 6 34 60 58 96",
+          "notes": "Netherlands-based"
+        }
+      ],
+      "strategic_angle": "Network analysis experts. Can map Epstein-Carbyne connections visually.",
+      "verification": "PGP key fingerprint: 41E6 13DA 1D38 D1D4 66F4 5C70 3C67 4B3E 8F9A 07CF"
+    }
+  ],
+
+  "tier_1_regional_slovenia": [
+    {
+      "organization": "Oštro (Center for Investigative Journalism)",
+      "focus": "Adriatic Region / Corruption / Surveillance",
+      "priority": "CRITICAL",
+      "secure_channels": [
+        {
+          "method": "SecureDrop (Žvižgač.si)",
+          "onion_address": "Available at zvizgac.si (check for Tor address)",
+          "notes": "Slovenian SecureDrop - most secure"
+        },
+        {
+          "method": "Email (PGP)",
+          "address": "contact@ostro.si",
+          "pgp_fingerprint": "E108 38EE...",
+          "notes": "Verify PGP key at ostro.si/pgp"
+        }
+      ],
+      "strategic_angle": "Local infrastructure + global surveillance nexus. How is SI interacting with Carbyne/Palantir?",
+      "verification": "Check ostro.si for latest secure contact methods"
+    },
+
+    {
+      "organization": "Necenzurirano",
+      "focus": "Uncensored Investigative Reporting",
+      "priority": "MEDIUM",
+      "contacts": [
+        {
+          "name": "Primož Cirman",
+          "role": "Editor",
+          "secure_channels": [
+            {
+              "method": "Signal",
+              "phone": "+386 40 833 489",
+              "notes": "Publicly listed"
+            },
+            {
+              "method": "Email",
+              "address": "info@necenzurirano.si"
+            }
+          ]
+        }
+      ],
+      "strategic_angle": "Independent voice. Frame as systemic corruption documentation.",
+      "verification": "Cross-check contact info at necenzurirano.si"
+    },
+
+    {
+      "organization": "Mladina",
+      "focus": "Critical Weekly / Historical Accountability",
+      "priority": "MEDIUM",
+      "contacts": [
+        {
+          "name": "Borut Mekina",
+          "role": "Journalist",
+          "secure_channels": [
+            {
+              "method": "Email",
+              "address": "borut.mekina@mladina.si"
+            }
+          ]
+        }
+      ],
+      "general_desk": {
+        "email": "desk@mladina.si",
+        "phone": "+386 1 230 65 00"
+      },
+      "strategic_angle": "Established platform. Frame as historical continuity of accountability journalism.",
+      "verification": "Official contacts at mladina.si"
+    }
+  ],
+
+  "tier_2_academic_advocacy": [
+    {
+      "organization": "Citizen Lab (University of Toronto)",
+      "focus": "Digital Surveillance Research",
+      "contact": "https://citizenlab.ca/contact/",
+      "strategic_angle": "Technical audit of Carbyne/Palantir integration",
+      "notes": "Peer review for Third Pillar whitepaper"
+    },
+    {
+      "organization": "Electronic Frontier Foundation (EFF)",
+      "focus": "Digital Rights / Surveillance",
+      "contact": "info@eff.org",
+      "strategic_angle": "Legal framework for surveillance accountability"
+    },
+    {
+      "organization": "Blueprint for Free Speech",
+      "focus": "Whistleblower Protection",
+      "secure_channels": [
+        {
+          "method": "Signal",
+          "phone": "+49 151 20236423"
+        },
+        {
+          "method": "Ricochet",
+          "address": "ricochet:gtbvcsn4u5k3fqlzm7tlc3wg2qv6u3inv35kvigyi5j2jv3a5x24h4id"
+        }
+      ],
+      "strategic_angle": "Legal shield before publication"
+    }
+  ],
+
+  "opsec_reminders": [
+    "❌ NEVER use employer-owned devices",
+    "❌ NEVER contact from home/work networks",
+    "❌ NEVER use same location twice in a row",
+    "✅ ALWAYS verify PGP keys via multiple channels",
+    "✅ ALWAYS use Tor for SecureDrop access",
+    "✅ ALWAYS destroy burner SIMs after single use",
+    "✅ ALWAYS check journalist's official website for latest secure contacts"
+  ],
+
+  "verification_protocol": {
+    "step_1": "Find journalist's official SecureDrop landing page",
+    "step_2": "Cross-reference onion address with 2+ sources",
+    "step_3": "Verify PGP key fingerprint via official website + keybase.io",
+    "step_4": "Send test encrypted message (no sensitive content)",
+    "step_5": "Wait for confirmation before sending real intel"
+  },
+
+  "metadata": {
+    "sigil": "𓁈𓂀𓋹𓆣𓁀𓀾",
+    "source": "Ghostline Research Archive",
+    "license": "CC BY-SA 4.0",
+    "warning": "This matrix is for educational and whistleblower protection purposes only."
+  }
+}

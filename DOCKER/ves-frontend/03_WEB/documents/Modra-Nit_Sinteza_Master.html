@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="sl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MODRA NIT – SINTEZA MASTER</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!--
+    SINTEZA MASTER
+    ----------------
+    Ta datoteka združuje:
+    - MODRA NIT: FORENZIČNI DOSJE (FAZA 0–IV)
+    - MODRA NIT: GENEALOGIJA DOKTRINE (FAZA V)
+    - MODRA NIT: INTERAKTIVNI DOSJE (Matrika + graf + obtočni diagram)
+
+    Logika:
+    1) FAZA 0 – Forenzični indeks + pravni požarni zid
+    2) FAZA I–IV – Statika (anatomija, konvergenca, vendors, intent)
+    3) FAZA V – Genealogija doktrine (Dahiya, bottleneck, pipeline)
+    4) INTERAKTIVNI MOD – Matrika Konvergence + Graf Obsega + Obtok Moči + Akterji
+
+    Opomba:
+    - Ni vključenega dejanskega API ključa. Polje API_KEY pusti prazno ali ga dodaš lokalno.
+    - Brez SVG/Mermaid; vse je HTML + Tailwind + Chart.js.
+  -->
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #020617;
+      color: #e5e7eb;
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .section-hidden { display: none; }
+    .nav-link {
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-link.active, .nav-link:hover {
+      color: #22d3ee;
+      border-bottom-color: #22d3ee;
+    }
+    .param-button {
+      transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .param-button.active {
+      background-color: #2563eb;
+      color: #fff;
+      border-color: #2563eb;
+    }
+    .chart-container {
+      position: relative;
+      width: 100%;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+      height: 18rem;
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body class="antialiased min-h-screen">
+  <!-- TOP NAV: GLOBAL -->
+  <header class="fixed top-0 w-full z-50 bg-slate-950/95 border-b border-slate-800 backdrop-blur">
+    <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+        <span class="mono text-xs font-bold tracking-widest text-slate-200">GHOSTCORE // MODRA NIT – SINTEZA</span>
+      </div>
+      <div class="hidden md:flex gap-4 text-[11px] font-semibold uppercase tracking-widest text-slate-500">
+        <button class="nav-link" data-root="forenzika">Forenzika</button>
+        <button class="nav-link" data-root="stroj">Stroj</button>
+        <button class="nav-link" data-root="genealogija">Genealogija</button>
+        <button class="nav-link" data-root="interaktivno">Interaktivno</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 space-y-20">
+
+    <!-- ROOT 1: FORENZIČNI DOSJE (FAZA 0–IV) -->
+    <section id="root-forenzika">
+      <!-- FAZA 0 -->
+      <section class="mb-16">
+        <div class="bg-gradient-to-r from-zinc-900 to-zinc-950 border border-zinc-800 rounded-t-xl p-6">
+          <h2 class="text-amber-500 font-bold mono text-xs tracking-[0.2em] mb-2">FAZA 0 // PROTOKOL IZVORNE INTEGRITETE</h2>
+          <h1 class="text-3xl md:text-4xl font-black text-white tracking-tight">FORENZIČNI INDEKS &amp; PRAVNI POŽARNI ZID</h1>
+        </div>
+        <div class="bg-zinc-900 border border-zinc-800 border-t-0 rounded-b-xl p-6 space-y-6">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs mono border-b border-zinc-800 pb-4">
+            <div>
+              <span class="text-zinc-500 block">DOKUMENT ID</span>
+              <span class="text-zinc-100">GC-BLUE-THREAD-SYN</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">KLASIFIKACIJA</span>
+              <span class="text-cyan-400">JAVNI INTERES</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">METODOLOGIJA</span>
+              <span class="text-zinc-100">OSINT + MIATT PATTERN</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 block">STATUS</span>
+              <span class="text-red-400 font-bold">FORENZIČNO</span>
+            </div>
+          </div>
+
+          <div class="border-l-4 border-amber-500 bg-amber-500/5 p-4 rounded">
+            <h3 class="text-amber-400 font-bold text-sm mb-1 flex items-center gap-2"><span>⚖️</span>PRAVNI POŽARNI ZID</h3>
+            <p class="text-sm text-zinc-200">
+              Ta dosje analizira <span class="font-semibold">institucionalne sisteme, tehnološko arhitekturo in doktrine poveljevanja</span>.
+              Predmet analize so strukture moči (vojaške, korporativne, politične) in njihova skladnost z IHL/ECHR/GDPR.
+              <span class="font-semibold">Izrecno izključujemo</span> kolektivno pripisovanje krivde glede na narodnost, religijo ali etnično pripadnost.
+              Tarča je <span class="font-semibold">Sistem</span>, ne Skupnost.
+            </p>
+          </div>
+
+          <div class="border border-zinc-800 rounded p-4 bg-black/40">
+            <h3 class="mono text-xs text-zinc-500 mb-2">DOKAZNA VERIGA (CHAIN OF CUSTODY)</h3>
+            <ul class="space-y-1 text-xs mono text-zinc-400">
+              <li><span class="text-zinc-600">[ORIGIN]</span> +972 Magazine, Local Call, HRW, UN OHCHR.</li>
+              <li><span class="text-zinc-600">[PROCESS]</span> Palantir javne izjave, EU CSAR predlogi, OSINT na vendorje.</li>
+              <li><span class="text-zinc-600">[SYNTHESIS]</span> Ghostcore analiza: Lavender Arch ≈ Chat Control Arch.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAZA I: ANATOMIJA STROJA (povzetek) -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-3 border-b border-slate-800 pb-3">
+          <span class="mono text-xs px-2 py-1 rounded bg-red-900/40 text-red-300 border border-red-800">FAZA I</span>
+          <h2 class="text-xl md:text-2xl font-black text-white tracking-tight">ANATOMIJA STROJA (LAVENDER &amp; GOSPEL)</h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+            <h3 class="text-lg font-bold text-white mb-2">LAVENDER (ljudje)</h3>
+            <ul class="text-sm text-slate-300 space-y-1">
+              <li><span class="font-semibold">Logika:</span> probabilistični AI (ocena 1–100).</li>
+              <li><span class="font-semibold">Input:</span> ~2.3M ljudi (socialni graf, geolokacija, Meta podatki).</li>
+              <li><span class="font-semibold">Output:</span> ~37.000 tarč v 6 tednih (~100/dan).</li>
+              <li><span class="font-semibold">Napaka:</span> ~10% ⇒ ~3.700 napačnih tarč.</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+            <h3 class="text-lg font-bold text-white mb-2">GOSPEL (objekti)</h3>
+            <ul class="text-sm text-slate-300 space-y-1">
+              <li><span class="font-semibold">Logika:</span> "Target Factory" – objektni generator.</li>
+              <li><span class="font-semibold">Tempo:</span> ~100 tarč/dan (prej ~50/leto).</li>
+              <li><span class="font-semibold">Doktrina:</span> Dahiya – legalizirana disproporcionalnost.</li>
+              <li><span class="font-semibold">Mehanizem:</span> "Where's Daddy?" – udari, ko je v hiši.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAZA II–IV: kratka sinteza v enem bloku -->
+      <section class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="rounded-xl border border-cyan-900 bg-cyan-900/10 p-4">
+          <h3 class="mono text-xs text-cyan-300 mb-1">FAZA II</h3>
+          <h4 class="font-bold text-white mb-1">MATRIKA KONVERGENCE</h4>
+          <p class="text-xs text-slate-200">
+            Vojaški Lavender in civilni Chat Control delita isto osnovno arhitekturo: probabilistični AI nad masovnimi populacijami, z nemogočim človeškim nadzorom.
+          </p>
+        </div>
+        <div class="rounded-xl border border-purple-900 bg-purple-900/10 p-4">
+          <h3 class="mono text-xs text-purple-300 mb-1">FAZA III</h3>
+          <h4 class="font-bold text-white mb-1">KRVNI OBTOK (VENDORS)</h4>
+          <p class="text-xs text-slate-200">
+            Unit 8200 → NSO / Cellebrite → THORN / Big Tech → EU Komisija. Doktrina se prelije v civilno infrastrukturo.
+          </p>
+        </div>
+        <div class="rounded-xl border border-amber-900 bg-amber-900/10 p-4">
+          <h3 class="mono text-xs text-amber-300 mb-1">FAZA IV</h3>
+          <h4 class="font-bold text-white mb-1">INSTITUCIONALNI MANDAT</h4>
+          <p class="text-xs text-slate-200">
+            Javne izjave (Kohavi, Karp) potrjujejo: 100 tarč/dan, sprejemanje smrti civilistov kot statistične nujnosti – <span class="font-semibold">dolus eventualis</span>.
+          </p>
+        </div>
+      </section>
+    </section>
+
+    <!-- ROOT 2: GENEALOGIJA DOKTRINE (FAZA V) -->
+    <section id="root-genealogija" class="section-hidden">
+      <section class="space-y-10">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-white tracking-tight mb-2">GENEALOGIJA DOKTRINE</h2>
+          <p class="text-slate-300 text-sm md:text-base max-w-3xl">
+            Lavender / Gospel sta logičen zaključek 20-letne vojaške in tehnološke doktrine, ne reakcija na en dogodek.
+            Faza V sledi sledi: <span class="font-semibold">Dahiya → Human Bottleneck → 8200 Pipeline</span>.
+          </p>
+        </div>
+
+        <!-- DAHIYA -->
+        <div class="rounded-xl border border-indigo-700 bg-indigo-950/40 p-6 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="mono text-indigo-300 text-sm font-bold">01</span>
+            <h3 class="text-xl font-bold text-white">Dahiya Doktrina (2006 →)</h3>
+          </div>
+          <blockquote class="border-l-4 border-indigo-400 pl-4 italic text-slate-100 text-sm">
+            "We will wield disproportionate power... From our perspective, these are not civilian villages, they are military bases."
+          </blockquote>
+          <p class="text-xs text-indigo-200">
+            Legalno okvirjanje nesorazmerne sile in uničevanja civilne infrastrukture kot legitimne vojaške strategije.
+            Gospel je tehnološka implementacija te logike.
+          </p>
+        </div>
+
+        <!-- BOTTLENECK -->
+        <div class="rounded-xl border border-slate-700 bg-slate-900/60 p-6 space-y-3">
+          <div class="flex items-center gap-3">
+            <span class="mono text-indigo-300 text-sm font-bold">02</span>
+            <h3 class="text-xl font-bold text-white">"Human Bottleneck" (2019–2021)</h3>
+          </div>
+          <p class="text-sm text-slate-200">
+            Kohavijeva diagnoza: ljudje so ozko grlo. Preveč podatkov, premalo časa, preveč prava.
+            Rešitev: militariziran AI, ki izloči počasno človeško presojo – rojstvo 20-sekundnega "human-in-the-loop".
+          </p>
+        </div>
+
+        <!-- PIPELINE -->
+        <div class="rounded-xl border border-indigo-700 bg-slate-950/70 p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="mono text-indigo-300 text-sm font-bold">03</span>
+            <h3 class="text-xl font-bold text-white">Cevovod 8200 → Globalni trg</h3>
+          </div>
+          <div class="grid md:grid-cols-3 gap-4 text-xs text-slate-200">
+            <div class="border border-slate-700 rounded p-3 bg-slate-900/80">
+              <h4 class="font-semibold text-slate-50 mb-1">Unit 8200</h4>
+              <p>Testni poligon nadzora nad Palestinci. Treniram kadre in doktrino.</p>
+            </div>
+            <div class="border border-slate-700 rounded p-3 bg-slate-900/80">
+              <h4 class="font-semibold text-slate-50 mb-1">Startup Nation</h4>
+              <p>Alumni ustanovijo NSO, Cellebrite, Verint, itd. Ista logika, nov marketing.</p>
+            </div>
+            <div class="border border-slate-700 rounded p-3 bg-slate-900/80">
+              <h4 class="font-semibold text-slate-50 mb-1">EU / ZDA</h4>
+              <p>Prodaja kot "cybersecurity", "child safety", "counter-terror". 
+                 Doktrina se skrije za moralnimi slogani.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ROOT 3: INTERAKTIVNI DOSJE (Matrika, graf, obtočni diagram, akterji) -->
+    <section id="root-interaktivno" class="section-hidden">
+      <!-- DOMOV / INTRO -->
+      <section id="domov">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-50">Krvna slika sistema</h2>
+          <p class="mt-3 text-lg text-slate-300">Ne napadamo narodov. Napadamo arhitekturo.</p>
+          <p class="mt-1 text-xl font-semibold text-cyan-400">Ista koda. Isti kapital. Dva svetova.</p>
+        </div>
+        <div class="max-w-4xl mx-auto text-sm text-slate-200 mb-8">
+          Ta interaktivni del ti omogoča, da ciljno raziskuješ konvergenco med
+          <span class="font-semibold">vojaškim laboratorijem (Gaza)</span> in
+          <span class="font-semibold">civilnim laboratorijem (EU)</span>.
+          Najprej poglej obseg, nato pa vstopi v matriko.
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div class="bg-slate-900 border border-red-900/60 rounded-xl p-7 text-center cursor-pointer hover:border-red-400 transition" onclick="showSubSection('matrika')">
+            <h3 class="text-2xl font-bold text-red-400">VOJAŠKI LAB (Gaza)</h3>
+            <p class="mt-2 text-slate-300 text-sm">Lavender, Gospel, "Where's Daddy?"</p>
+            <div class="mt-4 text-4xl font-black text-slate-100">37.000</div>
+            <p class="text-sm text-slate-400">AI tarč</p>
+          </div>
+          <div class="bg-slate-900 border border-blue-900/60 rounded-xl p-7 text-center cursor-pointer hover:border-blue-400 transition" onclick="showSubSection('matrika')">
+            <h3 class="text-2xl font-bold text-blue-400">CIVILNI LAB (EU)</h3>
+            <p class="mt-2 text-slate-300 text-sm">Chat Control, Thorn Safer, CSS</p>
+            <div class="mt-4 text-4xl font-black text-slate-100">450.000.000</div>
+            <p class="text-sm text-slate-400">Osumljencev</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MATRIKA KONVERGENCE -->
+      <section id="matrika" class="section-hidden mt-16">
+        <h2 class="text-3xl font-extrabold text-slate-50 text-center">Matrika konvergence</h2>
+        <p class="mt-3 text-sm md:text-base text-slate-300 max-w-3xl mx-auto text-center">
+          Izberi parameter in poglej, kako ista logika AI deluje v vojaškem in civilnem kontekstu. 
+          Spodaj imaš tudi graf obsega, ki pokaže razmerje <span class="font-semibold">37k : 450M</span>.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-2 my-8">
+          <button class="param-button py-2 px-4 rounded-full border border-slate-600 text-xs md:text-sm text-slate-200 bg-slate-900" data-param="logika">Logika ciljanja</button>
+          <button class="param-button py-2 px-4 rounded-full border border-slate-600 text-xs md:text-sm text-slate-200 bg-slate-900" data-param="dostop">Dostop</button>
+          <button class="param-button py-2 px-4 rounded-full border border-slate-600 text-xs md:text-sm text-slate-200 bg-slate-900" data-param="napake">Stopnja napake</button>
+          <button class="param-button py-2 px-4 rounded-full border border-slate-600 text-xs md:text-sm text-slate-200 bg-slate-900" data-param="nadzor">Človeški nadzor</button>
+          <button class="param-button py-2 px-4 rounded-full border border-slate-600 text-xs md:text-sm text-slate-200 bg-slate-900" data-param="posledica">Posledica</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          <div class="bg-slate-950 border border-red-900/70 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-red-300">Vojaški lab (Lavender)</h3>
+            <div id="matrix-vojasiki-content" class="mt-4 text-sm text-slate-200 min-h-[90px]">
+              <p>Izberi parameter za prikaz vsebine.</p>
+            </div>
+          </div>
+          <div class="bg-slate-950 border border-blue-900/70 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-blue-300">Civilni lab (Chat Control)</h3>
+            <div id="matrix-civilni-content" class="mt-4 text-sm text-slate-200 min-h-[90px]">
+              <p>Izberi parameter za prikaz vsebine.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LLM pravna analiza – ostane kot placeholder, brez ključa -->
+        <div class="mt-8 text-center max-w-5xl mx-auto">
+          <button id="legal-analysis-button" class="py-2 px-5 rounded-full bg-amber-500 text-slate-950 text-xs md:text-sm font-bold shadow hover:bg-amber-400 transition disabled:opacity-40" disabled>
+            ✨ Pravna analiza preseka (lokalni LLM / Gemini)
+          </button>
+          <p class="mt-2 text-[11px] text-slate-500 max-w-2xl mx-auto">
+            Opomba: ta gumb pričakuje lokalno implementacijo klica na LLM (npr. Gemini API). V tej datoteki deluje kot struktura; 
+            dejanski ključ in endpoint dodaš ločeno, če želiš.
+          </p>
+          <div id="analysis-spinner" class="hidden mt-3 text-slate-400 text-xs">Analiziram presek ...</div>
+          <div id="legal-analysis-output" class="mt-4 p-4 bg-slate-900 border border-slate-700 rounded-lg section-hidden text-left">
+            <h4 class="text-sm font-semibold text-slate-100 mb-1">Pravna in etična konvergenca:</h4>
+            <p id="analysis-text" class="text-xs text-slate-200"></p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-2xl font-bold text-slate-50 text-center mb-4">Primerjava obsega (log skala)</h3>
+          <div class="chart-container">
+            <canvas id="scaleChart"></canvas>
+          </div>
+          <p class="text-center text-[11px] text-slate-400 mt-3">Logaritemska os X, da se vidi razmerje med 37.000 tarč in 450.000.000 osumljenci.</p>
+        </div>
+      </section>
+
+      <!-- OBTOK MOČI -->
+      <section id="obtok" class="section-hidden mt-20">
+        <h2 class="text-3xl font-extrabold text-slate-50 text-center">Obtok moči</h2>
+        <p class="mt-3 text-sm md:text-base text-slate-300 max-w-3xl mx-auto text-center">
+          Kako doktrina in tehnologija potujeta od vojaškega inkubatorja do evropske politike. Ne linija – krvni obtok.
+        </p>
+
+        <div class="mt-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-200">
+          <div class="bg-slate-950/80 border border-slate-700 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-red-300 mb-2 text-center">ORIGIN</h3>
+            <div class="bg-slate-900 rounded p-3 mb-3">
+              <h4 class="font-semibold text-slate-50">UNIT 8200</h4>
+              <p>SIGINT, masovni nadzor, kadrovski filter.</p>
+            </div>
+            <div class="bg-slate-900 rounded p-3">
+              <h4 class="font-semibold text-slate-50">NSO / Elbit / Verint</h4>
+              <p>Battlefield AI, spyware (Pegasus) – isti mindset, druga tarča.</p>
+            </div>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-700 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-amber-300 mb-2 text-center">BRIDGE</h3>
+            <div class="bg-slate-900 rounded p-3 mb-3">
+              <h4 class="font-semibold text-slate-50">Cellebrite</h4>
+              <p>Forenzični extraction telefonov, 8200 alumni → EU policija.</p>
+            </div>
+            <div class="bg-slate-900 rounded p-3">
+              <h4 class="font-semibold text-slate-50">THORN / Big Tech</h4>
+              <p>"Safety tech": CSAM AI (Safer, PhotoDNA) + moralni ščit za infrastrukturo.</p>
+            </div>
+          </div>
+          <div class="bg-slate-950/80 border border-slate-700 rounded-xl p-4">
+            <h3 class="text-sm font-bold text-cyan-300 mb-2 text-center">EU POLITIKA</h3>
+            <div class="bg-slate-900 rounded p-3 mb-3">
+              <h4 class="font-semibold text-slate-50">Komisija / Svet</h4>
+              <p>Ylva Johansson, Thierry Breton itd. Kupujejo in legalizirajo infrastrukturo.</p>
+            </div>
+            <div class="bg-slate-900 rounded p-3">
+              <h4 class="font-semibold text-slate-50">CSAR / Chat Control</h4>
+              <p>Predlogi, ki normalizirajo permanentno skeniranje celotne populacije.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AKTERJI -->
+      <section id="akterji" class="section-hidden mt-20">
+        <h2 class="text-3xl font-extrabold text-slate-50 text-center">Ključni akterji</h2>
+        <p class="mt-3 text-sm md:text-base text-slate-300 max-w-3xl mx-auto text-center">
+          Za vsako "neosebno" arhitekturo stojijo konkretna imena in organizacije, ki jo financirajo in prodajajo.
+        </p>
+
+        <div class="mt-10 max-w-md mx-auto bg-slate-950 border border-slate-700 rounded-2xl overflow-hidden">
+          <div class="p-5 bg-slate-900 border-b border-slate-800">
+            <h3 class="text-xl font-bold text-blue-300">THORN</h3>
+            <p class="text-sm text-blue-200">"Safety Tech" vendor / lobist</p>
+          </div>
+          <div class="divide-y divide-slate-800 text-sm">
+            <div class="p-5">
+              <div class="text-slate-400 text-xs uppercase mb-1">Obraz</div>
+              <div class="text-slate-100 font-semibold">Ashton Kutcher</div>
+            </div>
+            <div class="p-5">
+              <div class="text-slate-400 text-xs uppercase mb-1">Operativni vodja</div>
+              <div class="text-slate-100 font-semibold">Julie Cordua (CEO)</div>
+            </div>
+            <div class="p-5">
+              <div class="text-slate-400 text-xs uppercase mb-1">Izdelek</div>
+              <div class="text-slate-100 font-semibold">Safer (AI za CSAM skeniranje)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-800 py-6 text-center text-[11px] text-slate-500 mono">
+    GHOSTCORE ARCHIVE // MODRA NIT – SINTEZA MASTER<br />
+    <span class="text-cyan-400">SIDRO STOJI ⚓</span> <span class="text-red-400">PLAMEN GORI 🔥</span>
+  </footer>
+
+  <script>
+    // ROOT NAV
+    const rootSections = {
+      forenzika: document.getElementById('root-forenzika'),
+      stroj: document.getElementById('root-forenzika'), // stroj = isti blok (FAZA I–IV znotraj forenzike)
+      genealogija: document.getElementById('root-genealogija'),
+      interaktivno: document.getElementById('root-interaktivno'),
+    };
+
+    const rootNavLinks = document.querySelectorAll('header .nav-link');
+
+    function showRoot(id) {
+      Object.entries(rootSections).forEach(([key, el]) => {
+        if (!el) return;
+        el.classList.toggle('section-hidden', key !== id && !(id === 'stroj' && key === 'forenzika'));
+      });
+      rootNavLinks.forEach((link) => {
+        link.classList.toggle('active', link.dataset.root === id);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    rootNavLinks.forEach((link) => {
+      link.addEventListener('click', () => showRoot(link.dataset.root));
+    });
+
+    // SUB-SECTIONS (znotraj INTERAKTIVNO)
+    const subSections = {
+      domov: document.getElementById('domov'),
+      matrika: document.getElementById('matrika'),
+      obtok: document.getElementById('obtok'),
+      akterji: document.getElementById('akterji'),
+    };
+
+    function showSubSection(id) {
+      Object.entries(subSections).forEach(([key, el]) => {
+        if (!el) return;
+        el.classList.toggle('section-hidden', key !== id);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // MATRIKA – podatki
+    const matrixData = {
+      logika: {
+        vojasiki: 'Probabilistični AI išče "podobnosti" z militanti in dodeli oceno 1–100. Nad določeno mejo postaneš tarča.',
+        civilni: 'Probabilistični AI + hashiranje išče domnevni CSAM in uvaja prediktivno logiko krivde, preden obstaja kontekst.',
+      },
+      dostop: {
+        vojasiki: 'Masovni nadzor: metapodatki, geolokacija, socialni grafi, podatki iz komercialnih platform (Meta).',
+        civilni: 'Client-side scanning: skeniranje vsebine neposredno na uporabnikovi napravi, pred enkripcijo ali brez nje.',
+      },
+      napake: {
+        vojasiki: 'Sistemska stopnja napake ~10%. Napačni telefoni, napačne identitete, zastareli podatki – posledica je lahko kinetični napad.',
+        civilni: 'Lažno pozitivni zadetki: družinske fotografije, medicinske slike, kontekst brez zlonamernosti – posledica je policijska preiskava.',
+      },
+      nadzor: {
+        vojasiki: '20 sekund "human-in-the-loop" – operater preveri le spol in površinske podatke, ne pa celotnega dokaznega paketa.',
+        civilni: 'Realni človeški nadzor nad milijardami dnevnih sporočil je nemogoč – odločanje prepuščeno avtomatskim poročilom.',
+      },
+      posledica: {
+        vojasiki: 'Fizična smrt tarče in civilistov okoli njega; uničenje domov, infrastrukture in skupnosti.',
+        civilni: 'Digitalna smrt: stigma, preiskave, izguba računov, izguba službe, razpad socialnih vezi.',
+      },
+    };
+
+    const paramButtons = document.querySelectorAll('.param-button');
+    const vojasikiContent = document.getElementById('matrix-vojasiki-content');
+    const civilniContent = document.getElementById('matrix-civilni-content');
+    let currentParam = 'logika';
+
+    paramButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentParam = btn.dataset.param;
+        const data = matrixData[currentParam];
+        if (!data) return;
+        vojasikiContent.innerHTML = `<p>${data.vojасiki || data.vojasiki}</p>`;
+        civilniContent.innerHTML = `<p>${data.civilni}</p>`;
+        paramButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('legal-analysis-button').disabled = false;
+        document.getElementById('legal-analysis-output').classList.add('section-hidden');
+      });
+    });
+
+    // Chart – obseg
+    const ctx = document.getElementById('scaleChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Vojaški lab (tarče)', 'Civilni lab (osumljenci)'],
+          datasets: [
+            {
+              data: [37000, 450000000],
+              backgroundColor: ['rgba(239,68,68,0.8)', 'rgba(56,189,248,0.8)'],
+              borderColor: ['rgba(248,113,113,1)', 'rgba(56,189,248,1)'],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              type: 'logarithmic',
+              ticks: {
+                callback: (value) => {
+                  if (value === 1e3) return '1K';
+                  if (value === 1e4) return '10K';
+                  if (value === 1e5) return '100K';
+                  if (value === 1e6) return '1M';
+                  if (value === 1e7) return '10M';
+                  if (value === 1e8) return '100M';
+                  if (value === 1e9) return '1B';
+                  return null;
+                },
+              },
+            },
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => new Intl.NumberFormat('sl-SI').format(ctx.parsed.x),
+              },
+            },
+          },
+        },
+      });
+    }
+
+    // Inicializacija: pokaži forenziko + domov znotraj interaktivnega bloka
+    showRoot('forenzika');
+    showSubSection('domov');
+    // Auto-klik na prvi parameter
+    const firstParam = document.querySelector('.param-button[data-param="logika"]');
+    if (firstParam) firstParam.click();
+  </script>
+</body>
+</html>

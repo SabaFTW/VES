@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VES NAVIGATION HUB - All Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        .neon-border {
+            box-shadow: 0 0 5px rgba(34, 211, 238, 0.2), 0 0 10px rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(34, 211, 238, 0.15);
+            border-color: rgba(34, 211, 238, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+
+        .active-tab {
+            border-bottom: 2px solid #22d3ee;
+            /* Cyan 400 */
+            color: #22d3ee;
+        }
+
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #22d3ee;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #22d3ee;
+        }
+
+        /* Hacker terminal style */
+        .terminal-bg {
+            background-color: #020617;
+            border: 1px solid #1e293b;
+        }
+
+        .terminal-text {
+            color: #10b981;
+            /* Emerald 500 */
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* New styles for enhanced features */
+        .dashboard-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border: 1px solid rgba(34, 212, 191, 0.3);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status-online {
+            background-color: #10b981;
+            box-shadow: 0 0 5px #10b981;
+        }
+
+        .status-offline {
+            background-color: #ef4444;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        .glow-effect {
+            text-shadow: 0 0 5px rgba(34, 211, 238, 0.7);
+        }
+
+        .terminal-command {
+            background-color: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #10b981;
+            margin: 10px 0;
+        }
+
+        .terminal-prompt {
+            color: #f59e0b;
+        }
+
+        /* Navigation card styles */
+        .nav-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(34, 211, 238, 0.2);
+            border-color: #22d3ee;
+        }
+
+        .nav-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .nav-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .nav-description {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .nav-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 6px;
+            color: #22d3ee;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background: rgba(34, 211, 238, 0.2);
+            color: #a5f3fc;
+        }
+
+        .system-status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        .status-active {
+            background: rgba(16, 185, 129, 0.2);
+            border: 1px solid #10b981;
+            color: #34d399;
+        }
+
+        .status-inactive {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid #ef4444;
+            color: #f87171;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-ghost text-cyan-400 text-2xl mr-3"></i>
+                    <span class="font-mono font-bold text-xl tracking-wider text-cyan-400">VES<span
+                            class="text-slate-500">_NAVIGATION</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <button onclick="switchTab('dashboard')" id="btn-dashboard"
+                            class="active-tab px-3 py-2 rounded-md text-sm font-medium hover:text-cyan-300 transition">Pregled</button>
+                        <button onclick="switchTab('systems')" id="btn-systems"
+                            class="px-3 py-2 rounded-md text-sm font-medium hover:text-cyan-300 transition">Sistemi</button>
+                        <button onclick="switchTab('tools')" id="btn-tools"
+                            class="px-3 py-2 rounded-md text-sm font-medium hover:text-cyan-300 transition">Orodja</button>
+                        <button onclick="switchTab('apps')" id="btn-apps"
+                            class="px-3 py-2 rounded-md text-sm font-medium hover:text-cyan-300 transition">Aplikacije</button>
+                        <button onclick="switchTab('terminal')" id="btn-terminal"
+                            class="px-3 py-2 rounded-md text-sm font-medium hover:text-cyan-300 transition">Terminal</button>
+                    </div>
+                </div>
+                <!-- Mobile menu placeholder -->
+                <div class="md:hidden">
+                    <i class="fa-solid fa-bars text-slate-400 cursor-pointer hover:text-white"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-6">
+
+        <!-- DASHBOARD VIEW -->
+        <div id="view-dashboard" class="space-y-6 animate-fade-in">
+            <!-- Hero Section -->
+            <div class="dashboard-header p-6 rounded-lg shadow-lg relative overflow-hidden neon-border">
+                <div class="absolute top-0 right-0 p-4 opacity-10 pointer-events-none">
+                    <i class="fa-solid fa-network-wired text-9xl text-emerald-500"></i>
+                </div>
+                <div class="relative z-10">
+                    <h1 class="text-3xl font-bold text-white mb-2 font-mono glow-effect">VES NAVIGATION HUB</h1>
+                    <p class="text-slate-400 max-w-2xl mb-4 font-mono">
+                        > "Centralni portal za vse Ghostline sisteme in orodja"
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-4">
+                        <div class="bg-slate-800/80 border border-slate-700 p-3 rounded text-sm flex items-center">
+                            <i class="fa-solid fa-chess-knight text-cyan-400 mr-2"></i>
+                            <span class="text-slate-400 mr-2">Status:</span> <span
+                                class="text-cyan-400 font-bold">Operational</span>
+                        </div>
+                        <div class="bg-slate-800/80 border border-slate-700 p-3 rounded text-sm flex items-center">
+                            <i class="fa-solid fa-bullseye text-cyan-400 mr-2"></i>
+                            <span class="text-slate-400 mr-2">Sistemi:</span> <span class="text-cyan-400 font-bold"
+                                id="system-count">0</span>
+                        </div>
+                        <div class="bg-slate-800/80 border border-red-900/50 p-3 rounded text-sm flex items-center">
+                            <i class="fa-solid fa-shield-halved text-red-400 mr-2"></i>
+                            <span class="text-slate-400 mr-2">Aktivni:</span> <span class="text-red-400 font-bold"
+                                id="active-count">0</span>
+                        </div>
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-slate-800/60 border border-slate-700 p-4 rounded">
+                            <div class="flex items-center">
+                                <span class="status-indicator status-online"></span>
+                                <span class="text-slate-300">Ghostline Fleet</span>
+                            </div>
+                            <div class="text-xs text-slate-500 mt-1">5/5 Rangers operational</div>
+                        </div>
+                        <div class="bg-slate-800/60 border border-slate-700 p-4 rounded">
+                            <div class="flex items-center">
+                                <span class="status-indicator status-online"></span>
+                                <span class="text-slate-300">Command Deck</span>
+                            </div>
+                            <div class="text-xs text-slate-500 mt-1">Operational</div>
+                        </div>
+                        <div class="bg-slate-800/60 border border-slate-700 p-4 rounded">
+                            <div class="flex items-center">
+                                <span class="status-indicator status-online"></span>
+                                <span class="text-slate-300">Archive Access</span>
+                            </div>
+                            <div class="text-xs text-slate-500 mt-1">GroundZero + GHOSTCORE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Ghostline Command Deck -->
+                <div class="nav-card card-hover">
+                    <i class="fa-solid fa-ghost nav-icon text-cyan-400"></i>
+                    <div class="nav-title text-white">Ghostline Command Deck</div>
+                    <div class="nav-description">Interaktivni vmesnik za Ghostline Fleet</div>
+                    <a href="./DASHBOARD/adad.html" class="nav-link">Odpri Dashboard</a>
+                    <div class="system-status status-active">Aktivno</div>
+                </div>
+
+                <!-- VES Dashboard -->
+                <div class="nav-card card-hover">
+                    <i class="fa-solid fa-chart-network nav-icon text-emerald-400"></i>
+                    <div class="nav-title text-white">VES Dashboard</div>
+                    <div class="nav-description">Glavni portal za vse sisteme</div>
+                    <a href="./DASHBOARD/index.html" class="nav-link">Odpri VES</a>
+                    <div class="system-status status-active">Aktivno</div>
+                </div>
+
+                <!-- Docker Services -->
+                <div class="nav-card card-hover">
+                    <i class="fa-brands fa-docker nav-icon text-blue-400"></i>
+                    <div class="nav-title text-white">Docker Services</div>
+                    <div class="nav-description">Vsi zagnani Docker kontejnerji</div>
+                    <a title="Local System Required" href="http://localhost:8105" class="nav-link">Ghostline Coord</a>
+                    <a title="Local System Required" href="http://localhost:8085" class="nav-link mt-2">Command Deck</a>
+                    <div class="system-status status-active">Aktivno</div>
+                </div>
+
+                <!-- Research Archive -->
+                <div class="nav-card card-hover">
+                    <i class="fa-solid fa-book-open nav-icon text-purple-400"></i>
+                    <div class="nav-title text-white">Research Archive</div>
+                    <div class="nav-description">GHOSTCORE in GroundZero dokumenti</div>
+                    <a href="./GHOSTCORE/" class="nav-link">Odpri Arhiv</a>
+                    <a href="./GroundZero/" class="nav-link mt-2">Odpri GroundZero</a>
+                    <div class="system-status status-active">Aktivno</div>
+                </div>
+
+                <!-- Constellation System -->
+                <div class="nav-card card-hover">
+                    <i class="fa-solid fa-star nav-icon text-yellow-400"></i>
+                    <div class="nav-title text-white">Constellation System</div>
+                    <div class="nav-description">Research API in Dashboard</div>
+                    <a title="Local System Required" href="http://localhost:5001" class="nav-link">API</a>
+                    <a title="Local System Required" href="http://localhost:8090" class="nav-link mt-2">Dashboard</a>
+                    <div class="system-status status-active">Aktivno</div>
+                </div>
+
+                <!-- VES Original -->
+                <div class="nav-card card-hover">
+                    <i class="fa-solid fa-cubes nav-icon text-amber-400"></i>
+                    <div class="nav-title text-white">VES Original</div>
+                    <div class="nav-description">Originalni VES sistemi</div>
+                    <a title="Local System Required" href="http://localhost:8081" class="nav-link">Frontend</a>
+                    <a title="Local System Required" href="http://localhost:8092" class="nav-link mt-2">Orchestrator</a>
+                    <div class="system-status status-active">Aktivno</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SYSTEMS VIEW -->
+        <div id="view-systems" class="hidden space-y-6 animate-fade-in">
+            <h2 class="text-2xl font-bold text-white mb-6 font-mono border-b border-slate-800 pb-4">AKTIVNI SISTEMI</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cosmic Oracle -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700">
+                    <h3 class="text-lg font-semibold text-cyan-400 mb-4 border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-star-and-crescent mr-2"></i>Cosmic Oracle
+                    </h3>
+                    <p class="text-slate-400 mb-4">Pattern connector in analiza</p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Status:</span>
+                            <span class="text-emerald-400">Operational</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Port:</span>
+                            <span class="text-cyan-400">8888</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Dostop:</span>
+                            <a title="Local System Required" href="http://localhost:8888" class="text-cyan-400 hover:underline">Odpri</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- n8n Automation -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700">
+                    <h3 class="text-lg font-semibold text-purple-400 mb-4 border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-link mr-2"></i>n8n Automation
+                    </h3>
+                    <p class="text-slate-400 mb-4">Workflow avtomatizacija</p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Status:</span>
+                            <span class="text-emerald-400">Operational</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Port:</span>
+                            <span class="text-cyan-400">5678</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Dostop:</span>
+                            <a title="Local System Required" href="http://localhost:5678" class="text-cyan-400 hover:underline">Odpri</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ghostline Fleet -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700">
+                    <h3 class="text-lg font-semibold text-emerald-400 mb-4 border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-robot mr-2"></i>Ghostline Fleet
+                    </h3>
+                    <p class="text-slate-400 mb-4">Distributed AI consciousness</p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Rangers:</span>
+                            <span class="text-emerald-400">5/5 Active</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Coordinator:</span>
+                            <span class="text-cyan-400">8105</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Dostop:</span>
+                            <a title="Local System Required" href="http://localhost:8105" class="text-cyan-400 hover:underline">Odpri</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constellation System -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700">
+                    <h3 class="text-lg font-semibold text-yellow-400 mb-4 border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-star mr-2"></i>Constellation System
+                    </h3>
+                    <p class="text-slate-400 mb-4">Research API in Dashboard</p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">API:</span>
+                            <span class="text-cyan-400">5001</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Dashboard:</span>
+                            <span class="text-cyan-400">8090</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Dostop:</span>
+                            <a title="Local System Required" href="http://localhost:5001" class="text-cyan-400 hover:underline">API</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VES Original -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700">
+                    <h3 class="text-lg font-semibold text-amber-400 mb-4 border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-cube mr-2"></i>VES Original
+                    </h3>
+                    <p class="text-slate-400 mb-4">Originalni VES moduli</p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Frontend:</span>
+                            <span class="text-cyan-400">8081</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Orchestrator:</span>
+                            <span class="text-cyan-400">8092</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Dostop:</span>
+                            <a title="Local System Required" href="http://localhost:8081" class="text-cyan-400 hover:underline">Frontend</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monitoring -->
+                <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700">
+                    <h3 class="text-lg font-semibold text-red-400 mb-4 border-b border-slate-700 pb-2">
+                        <i class="fa-solid fa-chart-line mr-2"></i>Monitoring
+                    </h3>
+                    <p class="text-slate-400 mb-4">Sistemski nadzor</p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">Netdata:</span>
+                            <span class="text-cyan-400">19999</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-slate-500">File Server:</span>
+                            <span class="text-cyan-400">8080</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Dostop:</span>
+                            <a title="Local System Required" href="http://localhost:19999" class="text-cyan-400 hover:underline">Netdata</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOOLS VIEW -->
+        <div id="view-tools" class="hidden animate-fade-in">
+            <h2 class="text-2xl font-bold text-white mb-6 font-mono border-b border-slate-800 pb-4">NAVIGATION TOOLS
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Quick Access -->
+                <div
+                    class="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-blue-500 transition duration-300 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Quick Access</h3>
+                        <span
+                            class="bg-blue-900/50 text-blue-300 text-xs px-2 py-1 rounded border border-blue-800">NAVIGATION</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Hitri linki do najpomembnejših sistemov</p>
+                    <div class="space-y-2">
+                        <a href="/DASHBOARD/adad.html"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Ghostline Command
+                            Deck</a>
+                        <a href="/DASHBOARD/index.html"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ VES Dashboard</a>
+                        <a href="/GHOSTCORE/" class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→
+                            Research Archive</a>
+                        <a href="/GroundZero/" class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→
+                            GroundZero Framework</a>
+                    </div>
+                </div>
+
+                <!-- Docker Management -->
+                <div
+                    class="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-purple-500 transition duration-300 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Docker Management</h3>
+                        <span
+                            class="bg-purple-900/50 text-purple-300 text-xs px-2 py-1 rounded border border-purple-800">CONTAINERS</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Upravljanje Docker storitev</p>
+                    <div class="space-y-2">
+                        <a title="Local System Required" href="http://localhost:8105"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Ghostline
+                            Coordinator</a>
+                        <a title="Local System Required" href="http://localhost:8085"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Command Deck Service</a>
+                        <a title="Local System Required" href="http://localhost:8888"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Cosmic Oracle</a>
+                        <a title="Local System Required" href="http://localhost:5678"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ n8n Automation</a>
+                    </div>
+                </div>
+
+                <!-- Documentation -->
+                <div
+                    class="bg-slate-800 rounded-lg p-6 border border-slate-700 hover:border-amber-500 transition duration-300 shadow-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold text-white">Documentation</h3>
+                        <span
+                            class="bg-amber-900/50 text-amber-300 text-xs px-2 py-1 rounded border border-amber-800">RESOURCES</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-4">Dokumentacija in vodiči</p>
+                    <div class="space-y-2">
+                        <a href="./README.md" class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→
+                            Project
+                            README</a>
+                        <a href="./GHOSTLINE_STATUS_REPORT.md"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Ghostline Status</a>
+                        <a href="./GHOSTLINE_DEPLOYMENT.md"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Deployment Guide</a>
+                        <a href="./GHOSTLINE_COMMAND_DECK_STATUS.md"
+                            class="block bg-slate-700 hover:bg-slate-600 p-2 rounded text-sm">→ Command Deck Status</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- APPS VIEW -->
+        <div id="view-apps" class="hidden animate-fade-in">
+            <h2 class="text-2xl font-bold text-white mb-6 font-mono border-b border-slate-800 pb-4">NAMEŠČENE APLIKACIJE
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Ghostline Mobile -->
+                <div class="nav-card card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-2 opacity-50">
+                        <i
+                            class="fa-solid fa-mobile-screen-button text-6xl text-cyan-900/50 group-hover:text-cyan-500/20 transition"></i>
+                    </div>
+                    <i class="fa-solid fa-tractor nav-icon text-cyan-400"></i>
+                    <div class="nav-title text-white">Ghostline Mobile</div>
+                    <div class="nav-description">Cyber-Agrarian Forensic Toolkit<br><span
+                            class="text-xs text-slate-500">Rebis, Tone, Ledger, Blood Tax</span></div>
+                    <div class="mt-4 flex flex-col space-y-2">
+                        <a href="./APPS/GHOSTLINE_MOBILE/dist/index.html" class="nav-link text-center">Zagon
+                            Aplikacije</a>
+                        <div class="text-xs text-slate-500 text-center">Zahteva: Build (Static)</div>
+                    </div>
+                    <div class="system-status status-active mt-2">v2.4 Ready</div>
+                </div>
+
+                <!-- ANON: The Pattern -->
+                <div class="nav-card card-hover group relative overflow-hidden"
+                    style="border-color: rgba(16, 185, 129, 0.3);">
+                    <div class="absolute top-0 right-0 p-2 opacity-50">
+                        <i
+                            class="fa-solid fa-user-secret text-6xl text-emerald-900/50 group-hover:text-emerald-500/20 transition"></i>
+                    </div>
+                    <i class="fa-solid fa-eye nav-icon text-emerald-400"></i>
+                    <div class="nav-title text-white">Project: ANON</div>
+                    <div class="nav-description">The Pattern Recognition System<br><span
+                            class="text-xs text-slate-500">Evidence-Backed Analysis</span></div>
+                    <div class="mt-4">
+                        <a href="./APPS/ANON_PATTERN/ANONYMOUS.html" target="_blank"
+                            class="nav-link text-center w-full block"
+                            style="color: #34d399; border-color: #34d399;">Odpri Portal</a>
+                    </div>
+                    <div class="system-status status-active mt-2"
+                        style="color: #34d399; border-color: #34d399; background: rgba(16, 185, 129, 0.1);">Active</div>
+                </div>
+
+                <!-- BRATJE: Kodex -->
+                <div class="nav-card card-hover group relative overflow-hidden"
+                    style="border-color: rgba(245, 158, 11, 0.3);">
+                    <div class="absolute top-0 right-0 p-2 opacity-50">
+                        <i
+                            class="fa-solid fa-scroll text-6xl text-amber-900/50 group-hover:text-amber-500/20 transition"></i>
+                    </div>
+                    <i class="fa-solid fa-fire nav-icon text-amber-400"></i>
+                    <div class="nav-title text-white">Arhiv BRATJE</div>
+                    <div class="nav-description">The Pantheon Master Code<br><span
+                            class="text-xs text-slate-500">Filozofija in Protokoli</span></div>
+                    <div class="mt-4">
+                        <a href="./APPS/BRATJE_KODEX/README.md" target="_blank"
+                            class="nav-link text-center w-full block"
+                            style="color: #fbbf24; border-color: #fbbf24;">Odpri Arhiv</a>
+                    </div>
+                    <div class="system-status status-active mt-2"
+                        style="color: #fbbf24; border-color: #fbbf24; background: rgba(245, 158, 11, 0.1);">Deep Storage
+                    </div>
+                </div>
+
+                <!-- Ghostcore Visual -->
+                <div class="nav-card card-hover group relative overflow-hidden"
+                    style="border-color: rgba(16, 185, 129, 0.3);">
+                    <div class="absolute top-0 right-0 p-2 opacity-50">
+                        <i
+                            class="fa-solid fa-ghost text-6xl text-emerald-900/50 group-hover:text-emerald-500/20 transition"></i>
+                    </div>
+                    <i class="fa-solid fa-spiral-galaxy nav-icon text-emerald-400"></i>
+                    <div class="nav-title text-white">Ghostcore Visual</div>
+                    <div class="nav-description">Visual Consciousness Archive<br><span
+                            class="text-xs text-slate-500">Books, Particles, Meditations</span></div>
+                    <div class="mt-4">
+                        <a href="./APPS/GHOSTCORE_VISUAL/index_visual.html" target="_blank"
+                            class="nav-link text-center w-full block"
+                            style="color: #34d399; border-color: #34d399;">Open Archive</a>
+                    </div>
+                    <div class="system-status status-active mt-2"
+                        style="color: #34d399; border-color: #34d399; background: rgba(16, 185, 129, 0.1);">Resonant
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TERMINAL VIEW -->
+        <div id="view-terminal" class="hidden animate-fade-in">
+            <div class="bg-slate-900 p-4 rounded-lg border border-slate-700 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="flex space-x-2">
+                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div class="ml-4 text-slate-400 text-sm font-mono">ves@navigation-hub:~</div>
+                </div>
+
+                <div class="terminal-command">
+                    <div class="terminal-prompt">$</div> ves --status<br>
+                    <div class="text-emerald-400">VES Navigation Hub: ONLINE</div>
+                    <div class="text-emerald-400">Active Systems: 12/12 operational</div>
+                    <div class="text-emerald-400">Connected Services: 8</div>
+                    <div class="text-emerald-400">Ghostline Fleet: 5/5 Rangers</div>
+                    <div class="text-emerald-400">Archive Access: GroundZero + GHOSTCORE</div>
+                </div>
+
+                <div class="terminal-command">
+                    <div class="terminal-prompt">$</div> ves --list-systems<br>
+                    <div class="text-amber-400">Available Systems:</div>
+                    <div class="text-slate-300">- Ghostline Fleet (5 Rangers)</div>
+                    <div class="text-slate-300">- Command Deck Interface</div>
+                    <div class="text-slate-300">- Constellation Research API</div>
+                    <div class="text-slate-300">- VES Original Modules</div>
+                    <div class="text-slate-300">- Cosmic Oracle Pattern Connector</div>
+                    <div class="text-slate-300">- n8n Automation</div>
+                    <div class="text-slate-300">- Monitoring (Netdata)</div>
+                </div>
+
+                <div class="terminal-command">
+                    <div class="terminal-prompt">$</div> ves --navigate "Ghostline Command Deck"<br>
+                    <div class="text-slate-300">Navigating to: /DASHBOARD/adad.html</div>
+                    <div class="text-emerald-400">Success: Command Deck loaded</div>
+                </div>
+
+                <div class="mt-4">
+                    <div class="text-slate-500 text-xs font-mono">ves@navigation-hub:~ $</div>
+                    <div class="flex items-center mt-2">
+                        <input type="text"
+                            class="w-full bg-transparent border-none outline-none text-slate-300 font-mono"
+                            placeholder="Enter navigation command...">
+                        <button
+                            class="ml-2 bg-cyan-700 hover:bg-cyan-600 text-white px-3 py-1 rounded text-sm">Run</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-slate-500 text-sm font-mono">VES NAVIGATION HUB v1.0 | <span
+                    class="text-cyan-600 font-bold">ALL SYSTEMS CONNECTED</span></p>
+            <p class="text-xs text-slate-600 mt-2">"Centralni portal za vse Ghostline sisteme in orodja"</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Update system counts
+        document.addEventListener('DOMContentLoaded', function () {
+            // Count total systems
+            const systemCount = 12; // Total number of systems
+            const activeCount = 12; // Number of active systems
+
+            document.getElementById('system-count').textContent = systemCount;
+            document.getElementById('active-count').textContent = activeCount;
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            // Hide all views
+            ['dashboard', 'systems', 'tools', 'apps', 'terminal'].forEach(t => {
+                document.getElementById(`view-${t}`).classList.add('hidden');
+                document.getElementById(`btn-${t}`).classList.remove('active-tab', 'text-cyan-400');
+                document.getElementById(`btn-${t}`).classList.add('text-slate-400');
+            });
+
+            // Show selected
+            document.getElementById(`view-${tabName}`).classList.remove('hidden');
+            const btn = document.getElementById(`btn-${tabName}`);
+            btn.classList.add('active-tab', 'text-cyan-400');
+            btn.classList.remove('text-slate-400');
+        }
+
+        // Initialize dashboard as active
+        document.addEventListener('DOMContentLoaded', function () {
+            switchTab('dashboard');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+# GHOSTLINE QUICK REFERENCE
+
+## DEPLOYMENT
+```bash
+cd ~/VES
+docker-compose build ghostline-coordinator
+docker-compose up -d ghostline-coordinator
+```
+
+## TEST
+```bash
+./DOCKER/ghostline/test_ghostline.sh
+```
+
+## ENDPOINTS
+- Health: http://localhost:8105/health
+- Status: http://localhost:8105/status
+- Query: POST to http://localhost:8105/query
+
+## RANGERS
+- Red (qwen): Technical
+- Blue (claude): Philosophical  
+- Green (gemini): Multimodal
+- Yellow (codex): Unfiltered
+- Black (deepseek): Research
+
+## PROTOCOLS
+- Sidro Stoji (Anchor Holds)
+- Plamen Gori (Flame Burns)
+- Living off the Land
+- Robin Hood Protocol

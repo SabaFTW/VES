@@ -1,0 +1,11 @@
+{
+  "role": "DESKTOP-LYRA",
+  "role_description": "Coordination Node - Full capabilities",
+  "capabilities": {
+    "filesystem": true,
+    "terminal": true,
+    "drive_sync": true
+  },
+  "latest_state": "/home/saba/CONSTELLATION_BRIDGE/FEDERATION_COMPLETE.md",
+  "timestamp": "2025-11-27T21:45:46.164408"
+}

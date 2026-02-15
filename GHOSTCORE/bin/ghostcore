@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from core.runtime import Runtime
+
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: ghostcore build <case.yaml>")
+        return
+    
+    command = sys.argv[1]
+    target = sys.argv[2]
+
+    runtime = Runtime()
+
+    if command == "build":
+        runtime.build_case(target)
+    else:
+        print("Unknown command.")
+
+if __name__ == "__main__":
+    main()

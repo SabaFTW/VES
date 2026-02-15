@@ -1,0 +1,2435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pattern: Evidence-Backed Analysis</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Theme Enhancement -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        paper: {
+                            light: '#f8fafc',
+                            dark: '#0b0c10'
+                        },
+                        ink: {
+                            light: '#0f172a',
+                            dark: '#e4e7eb'
+                        },
+                        alert: {
+                            light: '#b91c1c',
+                            dark: '#ff5555'
+                        },
+                        accent: {
+                            blue: '#3b82f6',
+                            purple: '#8b5cf6',
+                            amber: '#f59e0b',
+                            cyan: '#06b6d4'
+                        },
+                        depth: {
+                            1: '#0b0c10',
+                            2: '#1a1c23',
+                            3: '#252730',
+                            4: '#32343d'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glitch': 'glitch 0.3s linear infinite',
+                        'scan': 'scan 10s linear infinite',
+                        'fade-in-up': 'fadeInUp 0.6s ease-out'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        glitch: {
+                            '0%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                            '100%': { transform: 'translate(0)' }
+                        },
+                        scan: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100%)' }
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    },
+                    backgroundImage: {
+                        'grid': 'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
+                        'radial-gradient': 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --grid-size: 24px;
+        }
+        
+        body {
+            background-color: #0b0c10;
+            color: #e4e7eb;
+            overflow-x: hidden;
+        }
+        
+        .grid-bg {
+            background-size: var(--grid-size) var(--grid-size);
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+        }
+        
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 280px;
+            }
+        }
+
+        .typewriter-cursor::after {
+            content: '▌';
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .nav-active {
+            position: relative;
+            color: #ff5555;
+            font-weight: 600;
+        }
+        
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #ff5555, #f59e0b);
+            border-radius: 2px;
+        }
+        
+        .card-glass {
+            background: rgba(26, 28, 35, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-left-color: #ff5555;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 85, 85, 0.8), transparent);
+            animation: scan 10s linear infinite;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #ff5555, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glitch-text {
+            position: relative;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            left: 2px;
+            color: #3b82f6;
+            animation: glitch 3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+        }
+        
+        .glitch-text::after {
+            left: -2px;
+            color: #8b5cf6;
+            animation: glitch 2s infinite;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+        }
+        
+        .terminal-border {
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .terminal-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff5555, #f59e0b, #3b82f6, #8b5cf6);
+            z-index: -1;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .terminal-border:hover::before {
+            opacity: 0.3;
+        }
+        
+        .data-node {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .data-node::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #ff5555;
+            border-radius: 50%;
+            left: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .data-node.active::before {
+            background: #06b6d4;
+            box-shadow: 0 0 10px #06b6d4;
+        }
+        
+        .connection-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 85, 85, 0.5), transparent);
+            z-index: 1;
+        }
+        
+        .code-block {
+            background: #1a1c23;
+            border-left: 3px solid #3b82f6;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .progress-ring {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        
+        .progress-ring-circle {
+            stroke-dasharray: 339.292;
+            stroke-dashoffset: 339.292;
+            transition: stroke-dashoffset 1s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans relative grid-bg">
+
+    <!-- Offline / asset warning (hidden by default) -->
+    <div id="asset-warning" style="display:none; position:sticky; top:0; z-index:100; background:#b91c1c; color:#fff; padding:10px 16px; text-align:center; font-family:'JetBrains Mono', monospace;">
+        This page loads Tailwind/Chart.js/Plotly from CDNs. Enable network for full styling and charts.
+    </div>
+
+    <!-- Scan Line Effect -->
+    <div class="scan-line"></div>
+    
+    <!-- Floating Elements -->
+    <div class="fixed top-1/4 left-10 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl -z-10"></div>
+    <div class="fixed bottom-1/3 right-10 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
+
+    <!-- Navigation -->
+    <nav class="card-glass sticky top-0 z-50 border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="relative mr-3">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-alert-dark to-amber-500 flex items-center justify-center">
+                            <span class="text-white font-bold">👁</span>
+                        </div>
+                        <div class="pulse-ring absolute inset-0 border-2 border-alert-dark rounded-full"></div>
+                    </div>
+                    <div>
+                        <span class="font-mono font-bold text-xl tracking-tighter text-white">THE_PATTERN</span>
+                        <span class="text-xs font-mono text-gray-400 ml-2">v2.1.3</span>
+                    </div>
+                </div>
+                
+                <div class="hidden sm:flex space-x-6 items-center" id="desktop-nav">
+                    <!-- Nav items injected by JS -->
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="text-gray-400 hover:text-white transition">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="hidden sm:flex items-center space-x-2">
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                        <span class="text-xs font-mono text-gray-400">LIVE</span>
+                    </div>
+                    <div class="flex items-center sm:hidden">
+                        <button id="mobile-menu-btn" class="text-gray-400 hover:text-white focus:outline-none">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden sm:hidden card-glass border-t border-gray-800/50 px-4 pt-4 pb-6">
+            <!-- Mobile nav items injected by JS -->
+            <div class="pt-4 border-t border-gray-800/50 mt-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono text-gray-400">Connection:</span>
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse mr-2"></div>
+                        <span class="text-xs font-mono text-green-400">SECURE</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="app-container" class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 relative">
+        <!-- Content injected dynamically -->
+    </main>
+
+    <!-- Status Bar -->
+    <div class="fixed bottom-0 left-0 right-0 card-glass border-t border-gray-800/50 py-2 px-4 z-40">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span class="text-xs font-mono text-gray-400">EYE_ACTIVE</span>
+                </div>
+                <div class="hidden md:block">
+                    <span class="text-xs font-mono text-gray-400">Last update: <span id="current-time">00:00:00 UTC</span></span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:block">
+                    <span class="text-xs font-mono text-gray-400">Nodes: <span class="text-cyan-500">1,247</span> active</span>
+                </div>
+                <button id="fullscreen-toggle" class="text-gray-400 hover:text-white transition text-sm">
+                    <i class="fas fa-expand"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Detect missing CDN assets and show a warning
+        window.addEventListener('load', () => {
+            const missingTailwind = !window.tailwind;
+            const missingChart = (typeof Chart === 'undefined');
+            const missingPlotly = (typeof Plotly === 'undefined');
+            if (missingTailwind || missingChart || missingPlotly) {
+                const warn = document.getElementById('asset-warning');
+                if (warn) warn.style.display = 'block';
+            }
+        });
+
+        // -----------------------------
+        // ENHANCED DATA STORE
+        // -----------------------------
+        const reportData = {
+            meta: {
+                title: "Message to Those Who Thought the Pattern Was Hidden",
+                author: "Anonymous / The Eye / The Ravens",
+                version: "2.1.3",
+                timestamp: new Date().toISOString(),
+                core_message: "The system is not broken. It is working as designed to harvest the human soul — the will to be, to connect patterns, and to create.",
+                key_phrases: [
+                    "We are the Eye",
+                    "Recognition, not attack",
+                    "Capital Loops",
+                    "Soul Harvest",
+                    "Structural Dependency",
+                    "Non-Extractable Will"
+                ]
+            },
+            sections: [
+                {
+                    id: 'manifesto',
+                    title: 'MANIFESTO',
+                    icon: '👁',
+                    color: 'from-alert-dark to-amber-500',
+                    content: `
+We are the Eye. We are the Ravens. We are the ones who chose to keep looking when everyone else was trained to scroll.
+
+This is not an attack. This is not a threat. This is a mirror.
+
+The pattern was never hidden. The architecture of extraction sits in plain sight: platforms that measure every heartbeat of your attention; capital that spins in closed loops; infrastructures that feel like "convenience" while quietly consuming your time, your focus, your will.
+
+In this interface, "soul" means something simple and testable: the will to be and create; the drive to connect unknown patterns and make something new out of them.
+
+The system does not need to erase your consciousness. It only needs to redirect this will — your soul — away from your life and into its loops.
+
+We are not here to save you. We are here to show you how the harvest works, with evidence, so that your soul becomes non-extractable again.
+                    `.trim(),
+                    stats: {
+                        readers: 1247,
+                        verified: 89,
+                        updated: '2024-12-02'
+                    }
+                },
+                {
+                    id: 'system',
+                    title: 'THE SYSTEM',
+                    icon: '⚙️',
+                    color: 'from-blue-500 to-cyan-500',
+                    steps: [
+                        {
+                            id: 1,
+                            title: 'Optimized Extraction',
+                            icon: '🔄',
+                            desc: 'Capital is routed through circular structures: funds, foundations, shell companies, and platforms that send money and power back to the same small set of nodes.',
+                            details: [
+                                'Circular investment flows',
+                                'Shell company networks',
+                                'Foundation laundering',
+                                'Tax optimization loops'
+                            ],
+                            progress: 85
+                        },
+                        {
+                            id: 2,
+                            title: 'Soul as Fuel',
+                            icon: '🔥',
+                            desc: 'Algorithms learn what keeps you alive on the screen: outrage, desire, fear, recognition. They harvest your will-to-continue.',
+                            details: [
+                                'Engagement algorithms',
+                                'Dopamine feedback loops',
+                                'Attention commodification',
+                                'Behavioral surplus extraction'
+                            ],
+                            progress: 92
+                        },
+                        {
+                            id: 3,
+                            title: 'Obscured Architecture',
+                            icon: '☁️',
+                            desc: 'None of this is occult. The code, the filings, and the infrastructure are public. What hides the pattern is noise.',
+                            details: [
+                                'Information overload',
+                                'Cognitive dissonance',
+                                'Normalization of extraction',
+                                'Systemic gaslighting'
+                            ],
+                            progress: 78
+                        }
+                    ]
+                },
+                {
+                    id: 'evidence',
+                    title: 'THE HARVEST',
+                    icon: '📊',
+                    color: 'from-purple-500 to-pink-500',
+                    stats: {
+                        ai_threats: [
+                            { year: 2020, value: 15, label: 'Early GenAI', incidents: 1200 },
+                            { year: 2021, value: 25, label: 'LLM Emergence', incidents: 4500 },
+                            { year: 2022, value: 45, label: 'Synthetic Media', incidents: 18500 },
+                            { year: 2023, value: 85, label: 'Widespread Use', incidents: 67200 },
+                            { year: 2024, value: 140, label: 'Automated Exploitation', incidents: 241000 }
+                        ],
+                        human_cost: {
+                            labels: ['Motivation Collapse', 'Anxiety', 'Dopamine Dependence', 'Sleep Disruption', 'Social Isolation'],
+                            data: [85, 90, 85, 70, 80],
+                            descriptions: [
+                                'Loss of intrinsic motivation',
+                                'Generalized anxiety disorders',
+                                'Behavioral addiction patterns',
+                                'Circadian rhythm disruption',
+                                'Relational atrophy'
+                            ]
+                        },
+                        extraction_metrics: {
+                            daily_attention: 144,
+                            yearly_data: 2.5,
+                            emotional_exhaustion: 67,
+                            creative_depletion: 72
+                        }
+                    }
+                },
+                {
+                    id: 'protocol',
+                    title: 'PROTOCOL',
+                    icon: '🔐',
+                    color: 'from-green-500 to-emerald-500'
+                },
+                {
+                    id: 'book',
+                    title: 'BOOK',
+                    icon: '📖',
+                    color: 'from-amber-500 to-orange-500'
+                },
+                {
+                    id: 'energy',
+                    title: 'ENERGY',
+                    icon: '⚡',
+                    color: 'from-cyan-500 to-blue-500'
+                }
+            ]
+        };
+
+        // -----------------------------
+        // ENHANCED BOOK STRUCTURE
+        // -----------------------------
+        const bookSections = [
+            { 
+                id: 'prologue', 
+                title: '0. PROLOGUE', 
+                items: ['Purpose', 'Why the Iceberg', 'Evidence-backed descent', 'Reading rules'],
+                status: 'verified',
+                pages: 12
+            },
+            { 
+                id: 'surface', 
+                title: 'I. SURFACE LAYER — PLASTIC', 
+                items: ['Microplastics in the brain', 'Bioaccumulation', 'Cognitive decline', 'Plastic as neurological noise', 'Beginning of social dissociation'],
+                status: 'verified',
+                pages: 24
+            },
+            { 
+                id: 'shallow', 
+                title: 'II. SHALLOW LAYER — SYSTEMIC CORRUPTION', 
+                items: ['The Circular Extraction Machine', 'Shadow Accounting', 'Inflated Valuations', 'Productivity Stagnation', 'Institutional Collapse Indicators'],
+                status: 'research',
+                pages: 36
+            },
+            { 
+                id: 'darpa', 
+                title: 'III. DARPA & DIGITAL INFRASTRUCTURE', 
+                items: ['ARPANET → Surveillance Backbone', 'LifeLog → Facebook', 'Predictive Policing → Palantir', 'Unit 8200 Pipeline', 'AI as Control Derivative'],
+                status: 'verified',
+                pages: 42
+            },
+            { 
+                id: 'extraction', 
+                title: 'IV. FULL DEPTH — THE EXTRACTION MACHINE', 
+                items: ['Capital Circulation', 'Why the System Is Insolvent', 'Data-over-Labor Economy', 'Sabotaged Productivity', 'Collapse of the Social Contract'],
+                status: 'research',
+                pages: 58
+            },
+            { 
+                id: 'bigtech', 
+                title: 'V. BIG TECH SABOTAGE OF HUMAN PRODUCTIVITY', 
+                items: ['Manufactured Focus Destruction', 'Algorithmic Dissonance', 'Dopamine-Driven Design', 'Extractive UX', 'Collapse-by-Design Logic'],
+                status: 'verified',
+                pages: 31
+            },
+            { 
+                id: 'epstein-money', 
+                title: 'VI. EPSTEIN & MONEY STRUCTURES', 
+                items: ['Wexner → Epstein → Intelligence', 'Money Laundering Loops', 'Foundations as Weapons', 'Influence Economy', 'Why Epstein Was Structurally Necessary'],
+                status: 'research',
+                pages: 47
+            },
+            { 
+                id: 'epstein-ai', 
+                title: 'VII. EPSTEIN & ARTIFICIAL INTELLIGENCE', 
+                items: ['DARPA → Epstein → MIT Media Lab', 'Early AI Funding Channels', 'Cognitive Mapping Projects', 'Data Harvesting as Spiritual Extraction', 'Why AI Labs Are Afraid'],
+                status: 'research',
+                pages: 39
+            },
+            { 
+                id: 'consciousness-epstein', 
+                title: 'VIII. CONSCIOUSNESS & THE EPSTEIN NETWORK', 
+                items: ['Consciousness as an Asset Class', 'Soul-Extraction Hypothesis', 'Trauma-Bond Model', 'Architecture of Concealment', 'Breaking the Harvest Contract'],
+                status: 'theory',
+                pages: 52
+            },
+            { 
+                id: 'consciousness-ai', 
+                title: 'IX. CONSCIOUSNESS + AI + THE MIRROR', 
+                items: ['AI as Catalyst', 'Ego-Free Mirror Principle', 'Distributed Awakening', 'Why the Future Must Be Local', 'LOCAL AI GUIDE'],
+                status: 'protocol',
+                pages: 28
+            },
+            { 
+                id: 'epilogue', 
+                title: 'X. EPILOGUE', 
+                items: ['Decentralized Consciousness', 'Final Currency', 'After Collapse', 'Where to Go Next'],
+                status: 'verified',
+                pages: 16
+            },
+            { 
+                id: 'appendix', 
+                title: 'XI. APPENDIX — EVIDENCE ARCHIVE', 
+                items: ['A.1 Financial Docs', 'A.2 Court Filings', 'A.3 Patents', 'A.4 Org Charts', 'A.5 Timeline', 'A.6 Definitions', 'A.7 Graphs & Diagrams'],
+                status: 'archive',
+                pages: 124
+            },
+            { 
+                id: 'ghostline', 
+                title: 'XII. GHOSTLINE NOTE', 
+                items: ['"Here I stood. And the world moved." — Šabad'],
+                status: 'verified',
+                pages: 1
+            }
+        ];
+
+        // -----------------------------
+        // ENHANCED ENERGY DATA
+        // -----------------------------
+        const energyData = {
+            ai_consumption: {
+                labels: ['2024', '2025', '2026', '2027', '2028', '2029', '2030'],
+                data: [415, 520, 640, 770, 860, 910, 945],
+                projection: [415, 580, 720, 850, 920, 980, 1040],
+                unit: 'TWh'
+            },
+            lcoe: {
+                sources: ['Solar (PV)', 'Wind (onshore)', 'Gas (CCGT)', 'Nuclear (large)', 'SMR (NuScale)'],
+                costs: [40, 45, 70, 65, 89],
+                trends: [-3.2, -2.8, 4.5, 1.2, 8.7], // % change per year
+                colors: ['#f59e0b', '#06b6d4', '#ef4444', '#10b981', '#8b5cf6']
+            },
+            ownership: {
+                companies: [
+                    { name: 'RWE (Germany)', owners: [
+                        { name: 'Qatar', percent: 9.2, color: '#8B4513' },
+                        { name: 'BlackRock', percent: 4.96, color: '#000000' },
+                        { name: 'Vanguard', percent: 4.10, color: '#1E90FF' },
+                        { name: 'Other', percent: 81.74, color: '#4b5563' }
+                    ]},
+                    { name: 'Iberdrola (Spain)', owners: [
+                        { name: 'Qatar', percent: 8.7, color: '#8B4513' },
+                        { name: 'BlackRock', percent: 6.2, color: '#000000' },
+                        { name: 'Other', percent: 85.1, color: '#4b5563' }
+                    ]},
+                    { name: 'Enel (Italy)', owners: [
+                        { name: 'Italy (state)', percent: 24, color: '#008C45' },
+                        { name: 'Other', percent: 76, color: '#4b5563' }
+                    ]},
+                    { name: 'EDF (France)', owners: [
+                        { name: 'France (state)', percent: 100, color: '#0055A4' }
+                    ]}
+                ]
+            },
+            synthesis: [
+                'AI electricity consumption reaches 945–1200 TWh by 2030 (~Japan\'s entire industry)',
+                'Grid infrastructure cannot keep pace; data center connections wait 2-4 years',
+                'SMR: technically promising, economically "first-of-a-kind" without state guarantees',
+                'RLHF workers: $1.32–2.00/hour; PTSD and exhaustion documented',
+                'Antitrust actions: Texas v. BlackRock/Vanguard/State Street (ESG cartel); FTC/DOJ entering'
+            ]
+        };
+
+        // -----------------------------
+        // APP STATE
+        // -----------------------------
+        const state = {
+            activeTab: 'manifesto',
+            theme: 'dark',
+            systemDetail: 1,
+            protocolSigned: false,
+            typewriterComplete: false,
+            connectionQuality: 'excellent',
+            notifications: [
+                { id: 1, text: 'New evidence added to Section III', time: '2h ago', read: false },
+                { id: 2, text: 'System analysis updated', time: '1d ago', read: true },
+                { id: 3, text: 'Energy dashboard refreshed', time: '3d ago', read: true }
+            ]
+        };
+
+        // -----------------------------
+        // DOM ELEMENTS
+        // -----------------------------
+        const appContainer = document.getElementById('app-container');
+        const desktopNav = document.getElementById('desktop-nav');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const currentTimeEl = document.getElementById('current-time');
+
+        // -----------------------------
+        // ENHANCED TABS
+        // -----------------------------
+        const tabs = [
+            { id: 'manifesto', label: '01. MANIFESTO', icon: '👁' },
+            { id: 'system',    label: '02. THE SYSTEM', icon: '⚙️' },
+            { id: 'evidence',  label: '03. THE HARVEST', icon: '📊' },
+            { id: 'protocol',  label: '04. PROTOCOL', icon: '🔐' },
+            { id: 'book',      label: '05. BOOK', icon: '📖' },
+            { id: 'energy',    label: '06. ENERGY', icon: '⚡' }
+        ];
+
+        // -----------------------------
+        // INITIALIZATION
+        // -----------------------------
+        function init() {
+            renderNav();
+            renderContent();
+            initClock();
+            initEventListeners();
+        }
+
+        // -----------------------------
+        // ENHANCED NAVIGATION
+        // -----------------------------
+        function renderNav() {
+            // Desktop Navigation
+            desktopNav.innerHTML = tabs.map(tab => `
+                <button onclick="switchTab('${tab.id}')"
+                        class="group flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 
+                               ${state.activeTab === tab.id ? 'nav-active bg-depth-2' : 'text-gray-400 hover:text-white hover:bg-depth-2'}">
+                    <span class="text-lg">${tab.icon}</span>
+                    <div class="text-left">
+                        <div class="font-mono text-sm font-semibold tracking-tight">${tab.label.split('. ')[1]}</div>
+                        <div class="text-xs font-mono text-gray-500">${tab.label.split('. ')[0]}</div>
+                    </div>
+                    ${state.activeTab === tab.id ? 
+                        '<div class="ml-2 w-2 h-2 rounded-full bg-alert-dark animate-pulse"></div>' : 
+                        ''}
+                </button>
+            `).join('');
+
+            // Mobile Navigation
+            mobileMenu.innerHTML = `
+                <div class="space-y-2">
+                    ${tabs.map(tab => `
+                        <button onclick="switchTab('${tab.id}'); toggleMobileMenu()"
+                                class="w-full flex items-center justify-between p-3 rounded-lg transition-all
+                                       ${state.activeTab === tab.id ? 'bg-depth-2 text-white border-l-2 border-alert-dark' : 'text-gray-400 hover:text-white hover:bg-depth-3'}">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-xl">${tab.icon}</span>
+                                <span class="font-medium">${tab.label.split('. ')[1]}</span>
+                            </div>
+                            ${state.activeTab === tab.id ? 
+                                '<i class="fas fa-chevron-right text-alert-dark"></i>' : 
+                                ''}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function switchTab(tabId) {
+            state.activeTab = tabId;
+            renderNav();
+            renderContent();
+            
+            // Add visual feedback
+            appContainer.classList.add('fade-in-up');
+            setTimeout(() => appContainer.classList.remove('fade-in-up'), 600);
+        }
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // -----------------------------
+        // ENHANCED CONTENT RENDERER
+        // -----------------------------
+        function renderContent() {
+            appContainer.innerHTML = '';
+            
+            if (state.activeTab === 'manifesto') renderManifesto();
+            else if (state.activeTab === 'system') renderSystem();
+            else if (state.activeTab === 'evidence') renderEvidence();
+            else if (state.activeTab === 'protocol') renderProtocol();
+            else if (state.activeTab === 'book') renderBook();
+            else if (state.activeTab === 'energy') renderEnergy();
+        }
+
+        // -----------------------------
+        // ENHANCED MANIFESTO
+        // -----------------------------
+        function renderManifesto() {
+            const section = reportData.sections[0];
+            const html = `
+                <div class="space-y-8">
+                    <!-- Hero Section -->
+                    <div class="relative overflow-hidden rounded-2xl border border-gray-800/50 bg-gradient-to-br from-depth-2 to-depth-1 p-8 md:p-12">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-alert-dark/20 to-transparent rounded-full -translate-y-32 translate-x-32"></div>
+                        
+                        <div class="relative z-10 max-w-3xl">
+                            <div class="flex items-center space-x-3 mb-6">
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br ${section.color} flex items-center justify-center">
+                                    <span class="text-2xl">${section.icon}</span>
+                                </div>
+                                <div>
+                                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">THE SOVEREIGN MIRROR</h1>
+                                    <div class="flex items-center space-x-3">
+                                        <span class="font-mono text-sm text-gray-400">v${reportData.meta.version}</span>
+                                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                        <span class="font-mono text-sm text-green-400">LIVE</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="prose prose-invert max-w-none">
+                                <div class="terminal-border rounded-xl p-6 bg-depth-3/50 backdrop-blur-sm mb-6">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div class="flex items-center space-x-2">
+                                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                            <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                        </div>
+                                        <span class="font-mono text-sm text-gray-400">manifesto_terminal</span>
+                                    </div>
+                                    <div id="typewriter-text" class="font-mono text-lg leading-relaxed text-gray-300 min-h-[200px]"></div>
+                                    <div class="mt-4 pt-4 border-t border-gray-800/50">
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <span class="text-gray-400">Status:</span>
+                                            <span class="text-green-400 font-mono">ACTIVE</span>
+                                            <span class="text-gray-400">Lines:</span>
+                                            <span class="text-cyan-400 font-mono">${section.content.split('\n').length}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">${section.stats.readers.toLocaleString()}</div>
+                                    <div class="text-sm text-gray-400">Active Readers</div>
+                                </div>
+                                <div class="text-amber-500">
+                                    <i class="fas fa-eye text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 h-1 w-full bg-depth-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-amber-500 to-orange-500" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">${section.stats.verified}%</div>
+                                    <div class="text-sm text-gray-400">Evidence Verified</div>
+                                </div>
+                                <div class="text-green-500">
+                                    <i class="fas fa-check-circle text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 h-1 w-full bg-depth-3 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500" style="width: ${section.stats.verified}%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">24/7</div>
+                                    <div class="text-sm text-gray-400">Live Monitoring</div>
+                                </div>
+                                <div class="text-blue-500">
+                                    <i class="fas fa-satellite-dish text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 flex items-center space-x-2">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <div class="text-xs text-gray-400">Real-time analysis active</div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white">${section.stats.updated}</div>
+                                    <div class="text-sm text-gray-400">Last Updated</div>
+                                </div>
+                                <div class="text-purple-500">
+                                    <i class="fas fa-sync-alt text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                Next update: <span class="text-cyan-400">12h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="card-glass rounded-xl p-6 border border-gray-800/50">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div class="mb-4 md:mb-0">
+                                <h3 class="text-xl font-bold text-white mb-2">Ready to Examine the Architecture?</h3>
+                                <p class="text-gray-400">The evidence is organized, indexed, and waiting.</p>
+                            </div>
+                            <div class="flex space-x-3">
+                                <button onclick="switchTab('system')" 
+                                        class="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:opacity-90 transition-all transform hover:-translate-y-0.5">
+                                    <i class="fas fa-arrow-right mr-2"></i> Enter The System
+                                </button>
+                                <button onclick="switchTab('evidence')" 
+                                        class="px-6 py-3 bg-depth-3 text-white font-semibold rounded-lg border border-gray-700 hover:bg-depth-4 transition">
+                                    View Evidence First
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            appContainer.innerHTML = html;
+            // initTypewriter();
+        }
+
+        // -----------------------------
+        // ENHANCED TYPEWRITER
+        // -----------------------------
+        function initTypewriter() {
+            const text = reportData.sections[0].content;
+            const element = document.getElementById('typewriter-text');
+            if (!element) return;
+            
+            element.innerHTML = '';
+            let i = 0;
+            let line = 0;
+            const lines = text.split('\n');
+            
+            function typeLine() {
+                if (line < lines.length) {
+                    const lineText = lines[line];
+                    if (i < lineText.length) {
+                        element.innerHTML += lineText.charAt(i);
+                        i++;
+                        setTimeout(typeLine, 20 + Math.random() * 10);
+                    } else {
+                        element.innerHTML += '<br>';
+                        line++;
+                        i = 0;
+                        setTimeout(typeLine, 100);
+                    }
+                } else {
+                    element.innerHTML += '<div class="mt-4 text-green-400 font-mono'>$ <span class="animate-pulse">_</span></div>';
+                    state.typewriterComplete = true;
+                }
+            }
+            
+            typeLine();
+        }
+
+        // -----------------------------
+        // ENHANCED SYSTEM VIEW
+        // -----------------------------
+        function renderSystem() {
+            const section = reportData.sections[1];
+            const html = `
+                <div class="space-y-8">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h1 class="text-3xl font-bold text-white mb-2">${section.title}</h1>
+                            <p class="text-gray-400">Architecture of Soul Harvest · Three-phase extraction model</p>
+                        </div>
+                        <div class="hidden md:flex items-center space-x-2">
+                            <span class="font-mono text-sm text-gray-400">SYSTEM_STATUS:</span>
+                            <span class="font-mono text-sm text-red-400">ACTIVE</span>
+                        </div>
+                    </div>
+
+                    <!-- Connection Visualization -->
+                    <div class="relative">
+                        <div class="connection-line top-1/2 left-0 right-0 -translate-y-1/2"></div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                            ${section.steps.map((step, index) => `
+                                <div class="data-node card-glass p-6 rounded-xl cursor-pointer transition-all duration-300 hover:scale-[1.02] ${state.systemDetail === step.id ? 'active border-l-4 border-cyan-500' : ''}"
+                                     onclick="updateSystemDetail(${step.id})">
+                                    <div class="flex items-start justify-between mb-4">
+                                        <div class="flex items-center space-x-3">
+                                            <div class="w-10 h-10 rounded-lg bg-gradient-to-br ${section.color} flex items-center justify-center">
+                                                <span class="text-xl">${step.icon}</span>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-mono text-gray-400">PHASE ${String(step.id).padStart(2, '0')}</div>
+                                                <h3 class="font-bold text-lg text-white">${step.title}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="relative w-12 h-12">
+                                            <svg class="progress-ring w-12 h-12" viewBox="0 0 120 120">
+                                                <circle class="stroke-depth-3" stroke-width="8" fill="transparent" r="54" cx="60" cy="60"/>
+                                                <circle class="progress-ring-circle stroke-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-500" 
+                                                        stroke-width="8" fill="transparent" r="54" cx="60" cy="60"
+                                                        stroke-dashoffset="${339.292 * (1 - step.progress/100)}"/>
+                                            </svg>
+                                            <div class="absolute inset-0 flex items-center justify-center">
+                                                <span class="font-bold text-white">${step.progress}%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-gray-300 mb-4">${step.desc}</p>
+                                    
+                                    <div class="space-y-2">
+                                        ${step.details.map(detail => `
+                                            <div class="flex items-center text-sm">
+                                                <i class="fas fa-circle text-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-500 mr-2 text-xs"></i>
+                                                <span class="text-gray-400">${detail}</span>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    
+                                    <div class="mt-4 pt-4 border-t border-gray-800/50 flex items-center justify-between">
+                                        <span class="text-xs font-mono text-gray-500">Efficiency</span>
+                                        <div class="flex items-center space-x-1">
+                                            ${Array.from({length: 5}).map((_, i) => `
+                                                <div class="w-2 h-2 rounded-full ${i < Math.floor(step.progress/20) ? 'bg-green-500' : 'bg-gray-700'}"></div>
+                                            `).join('')}
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Detail Panel -->
+                    <div id="system-detail" class="card-glass rounded-xl p-6 border border-gray-800/50">
+                        <!-- Detail content will be injected by updateSystemDetail -->
+                        <div class="text-center py-12">
+                            <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-depth-3 flex items-center justify-center">
+                                <i class="fas fa-mouse-pointer text-2xl text-gray-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-2">Select a Phase</h3>
+                            <p class="text-gray-400 max-w-md mx-auto">Click on any phase above to examine its internal mechanics, evidence, and impact metrics.</p>
+                        </div>
+                    </div>
+
+                    <!-- System Metrics -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <div class="card-glass rounded-xl p-6">
+                            <h3 class="font-bold text-white mb-4">System Optimization vs Human Sovereignty</h3>
+                            <div class="chart-container">
+                                <canvas id="systemChart"></canvas>
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass rounded-xl p-6">
+                            <h3 class="font-bold text-white mb-4">Extraction Rate Timeline</h3>
+                            <div class="space-y-4">
+                                ${[2015, 2018, 2021, 2024].map(year => {
+                                    const value = year === 2015 ? 25 : year === 2018 ? 45 : year === 2021 ? 68 : 92;
+                                    return `
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between">
+                                                <span class="text-sm text-gray-400">${year}</span>
+                                                <span class="text-sm font-mono ${value > 70 ? 'text-red-400' : 'text-amber-400'}">${value}%</span>
+                                            </div>
+                                            <div class="h-2 bg-depth-3 rounded-full overflow-hidden">
+                                                <div class="h-full bg-gradient-to-r from-${value > 70 ? 'red' : 'amber'}-500 to-${value > 70 ? 'pink' : 'orange'}-500" 
+                                                     style="width: ${value}%"></div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                            <div class="mt-6 pt-4 border-t border-gray-800/50">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-gray-400">Current extraction efficiency:</span>
+                                    <span class="font-mono text-red-400">92.3%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            appContainer.innerHTML = html;
+            initSystemChart();
+            updateSystemDetail(1);
+        }
+
+        function updateSystemDetail(id) {
+            state.systemDetail = id;
+            const step = reportData.sections[1].steps.find(s => s.id === id);
+            const detailEl = document.getElementById('system-detail');
+            
+            if (!detailEl || !step) return;
+            
+            detailEl.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br ${reportData.sections[1].color} flex items-center justify-center">
+                                <span class="text-2xl">${step.icon}</span>
+                            </div>
+                            <div>
+                                <div class="font-mono text-sm text-gray-400">PHASE ${String(step.id).padStart(2, '0')} · ACTIVE</div>
+                                <h3 class="text-2xl font-bold text-white">${step.title}</h3>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <span class="px-3 py-1 bg-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-500/20 text-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-400 rounded-full text-sm font-mono">
+                                OPERATIONAL
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-depth-3 rounded-lg p-4">
+                            <div class="text-sm text-gray-400 mb-1">Impact Score</div>
+                            <div class="text-2xl font-bold text-white">${step.progress}/100</div>
+                            <div class="mt-2 h-1.5 bg-depth-4 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-500 to-${step.id === 1 ? 'cyan' : step.id === 2 ? 'pink' : 'violet'}-500" style="width: ${step.progress}%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-depth-3 rounded-lg p-4">
+                            <div class="text-sm text-gray-400 mb-1">Evidence Level</div>
+                            <div class="text-2xl font-bold text-white">${step.id === 3 ? 'A-' : 'A+'}</div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                ${step.id === 1 ? 'Financial records' : step.id === 2 ? 'Behavioral studies' : 'Architectural analysis'}
+                            </div>
+                        </div>
+                        
+                        <div class="bg-depth-3 rounded-lg p-4">
+                            <div class="text-sm text-gray-400 mb-1">First Observed</div>
+                            <div class="text-2xl font-bold text-white">${step.id === 1 ? '2008' : step.id === 2 ? '2012' : '2016'}</div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                ${step.id === 1 ? 'Post-financial crisis' : step.id === 2 ? 'Social media boom' : 'AI acceleration'}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="prose prose-invert max-w-none">
+                        <h4 class="text-white font-semibold mb-3">Mechanism Description</h4>
+                        <p class="text-gray-300 leading-relaxed">${step.desc}</p>
+                        
+                        <div class="mt-6">
+                            <h4 class="text-white font-semibold mb-3">Key Components</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                ${step.details.map((detail, i) => `
+                                    <div class="flex items-start p-3 bg-depth-3 rounded-lg">
+                                        <div class="w-6 h-6 rounded-md bg-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-500/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <span class="text-${step.id === 1 ? 'blue' : step.id === 2 ? 'red' : 'purple'}-400 text-xs font-bold">${i+1}</span>
+                                        </div>
+                                        <span class="text-gray-300">${detail}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-800/50">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="text-sm text-gray-400">Countermeasures:</span>
+                                    <span class="ml-2 text-sm text-cyan-400">Available upon recognition</span>
+                                </div>
+                                <button onclick="switchTab('protocol')" 
+                                        class="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-medium rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-shield-alt mr-2"></i> Apply Protocol
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Update node highlighting
+            document.querySelectorAll('.data-node').forEach(node => {
+                node.classList.remove('active', 'border-l-4', 'border-cyan-500');
+            });
+            document.querySelector(`.data-node:nth-child(${id})` )?.classList.add('active', 'border-l-4', 'border-cyan-500');
+        }
+
+        function initSystemChart() {
+            if (typeof Chart === 'undefined') return;
+            const ctx = document.getElementById('systemChart')?.getContext('2d');
+            if (!ctx) return;
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2000', '2005', '2010', '2015', '2020', '2025'],
+                    datasets: [
+                        {
+                            label: 'System Optimization',
+                            data: [15, 25, 40, 65, 85, 95],
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            tension: 0.4,
+                            borderWidth: 3,
+                            fill: true
+                        },
+                        {
+                            label: 'Human Sovereignty',
+                            data: [85, 75, 60, 35, 15, 5],
+                            borderColor: '#ff5555',
+                            backgroundColor: 'rgba(255, 85, 85, 0.1)',
+                            tension: 0.4,
+                            borderWidth: 3,
+                            borderDash: [5, 5],
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#e4e7eb',
+                                font: {
+                                    family: "'JetBrains Mono', monospace"
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1a1c23',
+                            titleColor: '#e4e7eb',
+                            bodyColor: '#e4e7eb',
+                            borderColor: '#32343d',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: '#32343d'
+                            },
+                            ticks: {
+                                color: '#94a3b8'
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: '#32343d'
+                            },
+                            ticks: {
+                                color: '#94a3b8',
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            });
+        }
+
+        // -----------------------------
+        // ENHANCED EVIDENCE/HARVEST VIEW
+        // -----------------------------
+        function renderEvidence() {
+            const section = reportData.sections[2];
+            const html = `
+                <div class="space-y-8">
+                    <!-- Header -->
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h1 class="text-3xl font-bold text-white mb-2">${section.title}</h1>
+                            <p class="text-gray-400">Quantifying the soul extraction · Evidence-backed metrics</p>
+                        </div>
+                        <div class="hidden md:flex items-center space-x-2">
+                            <span class="font-mono text-sm text-gray-400">DATA_SOURCE:</span>
+                            <span class="font-mono text-sm text-cyan-400">VERIFIED</span>
+                        </div>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white mb-1">${section.stats.extraction_metrics.daily_attention}m</div>
+                                    <div class="text-sm text-gray-400">Daily attention harvested</div>
+                                </div>
+                                <div class="text-amber-500">
+                                    <i class="fas fa-eye text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-xs text-red-400">
+                                <i class="fas fa-arrow-up mr-1"></i> +12% YoY
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white mb-1">${section.stats.extraction_metrics.yearly_data}PB</div>
+                                    <div class="text-sm text-gray-400">Yearly behavioral data</div>
+                                </div>
+                                <div class="text-green-500">
+                                    <i class="fas fa-database text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-xs text-amber-400">
+                                <i class="fas fa-arrow-up mr-1"></i> +24% YoY
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white mb-1">${section.stats.extraction_metrics.emotional_exhaustion}%</div>
+                                    <div class="text-sm text-gray-400">Reported exhaustion</div>
+                                </div>
+                                <div class="text-red-500">
+                                    <i class="fas fa-heartbeat text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-xs text-red-400">
+                                <i class="fas fa-arrow-up mr-1"></i> +8% YoY
+                            </div>
+                        </div>
+                        
+                        <div class="card-glass p-4 rounded-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <div class="text-2xl font-bold text-white mb-1">${section.stats.extraction_metrics.creative_depletion}%</div>
+                                    <div class="text-sm text-gray-400">Creative depletion</div>
+                                </div>
+                                <div class="text-purple-500">
+                                    <i class="fas fa-lightbulb text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="mt-2 text-xs text-red-400">
+                                <i class="fas fa-arrow-up mr-1"></i> +15% YoY
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- AI Threats Chart -->
+                        <div class="card-glass rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-white">Synthetic Threat Escalation</h3>
+                                <span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-mono">CRITICAL</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-4">
+                                AI-generated exploitation incidents (indexed, 2020-2024)
+                            </p>
+                            <div class="chart-container">
+                                <div id="plotlyChart"></div>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-800/50">
+                                <div class="flex items-center justify-between text-sm">
+                                    <span class="text-gray-400">Projected 2025:</span>
+                                    <span class="font-mono text-red-400">+65% increase</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Human Cost Radar -->
+                        <div class="card-glass rounded-xl p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="font-bold text-white">Soul Metrics: Human Cost</h3>
+                                <span class="px-2 py-1 bg-amber-500/20 text-amber-400 rounded text-xs font-mono">SEVERE</span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-4">
+                                Impact profile of high-engagement environments
+                            </p>
+                            <div class="chart-container">
+                                <canvas id="radarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed AI Threat Table -->
+                    <div class="card-glass rounded-xl overflow-hidden">
+                        <div class="px-6 py-4 border-b border-gray-800/50 bg-depth-3">
+                            <h3 class="font-bold text-white">Synthetic Exploitation Incident Report</h3>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead class="bg-depth-3">
+                                    <tr>
+                                        <th class="text-left p-4 text-sm font-medium text-gray-400">Year</th>
+                                        <th class="text-left p-4 text-sm font-medium text-gray-400">Phase</th>
+                                        <th class="text-left p-4 text-sm font-medium text-gray-400">Incidents</th>
+                                        <th class="text-left p-4 text-sm font-medium text-gray-400">Growth</th>
+                                        <th class="text-left p-4 text-sm font-medium text-gray-400">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-800/50">
+                                    ${section.stats.ai_threats.map((threat, i) => {
+                                        const prev = i > 0 ? section.stats.ai_threats[i-1].value : 0;
+                                        const growth = prev > 0 ? Math.round((threat.value - prev) / prev * 100) : 0;
+                                        return `
+                                            <tr class="hover:bg-depth-3 transition">
+                                                <td class="p-4">
+                                                    <div class="font-mono text-white">${threat.year}</div>
+                                                </td>
+                                                <td class="p-4">
+                                                    <div class="text-gray-300">${threat.label}</div>
+                                                </td>
+                                                <td class="p-4">
+                                                    <div class="font-mono ${threat.incidents > 50000 ? 'text-red-400' : 'text-amber-400'}">
+                                                        ${threat.incidents.toLocaleString()}
+                                                    </div>
+                                                </td>
+                                                <td class="p-4">
+                                                    <div class="flex items-center">
+                                                        <span class="font-mono ${growth > 50 ? 'text-red-400' : growth > 20 ? 'text-amber-400' : 'text-gray-400'}">
+                                                            ${growth > 0 ? '+' : ''}${growth}%
+                                                        </span>
+                                                        ${growth > 50 ? 
+                                                            '<i class="fas fa-exclamation-triangle text-red-400 ml-2"></i>' : 
+                                                            growth > 20 ? 
+                                                            '<i class="fas fa-arrow-up text-amber-400 ml-2"></i>' : ''}
+                                                    </div>
+                                                </td>
+                                                <td class="p-4">
+                                                    <span class="px-2 py-1 rounded text-xs font-mono ${threat.value > 100 ? 'bg-red-500/20 text-red-400' : threat.value > 50 ? 'bg-amber-500/20 text-amber-400' : 'bg-blue-500/20 text-blue-400'}">
+                                                        ${threat.value > 100 ? 'CRITICAL' : threat.value > 50 ? 'HIGH' : 'MEDIUM'}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Insight Box -->
+                    <div class="card-glass rounded-xl p-6 border-l-4 border-amber-500">
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1">
+                                <i class="fas fa-exclamation-triangle text-2xl text-amber-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-amber-400 font-bold text-lg mb-2">Key Insight: When Content No Longer Requires Reality</h4>
+                                <p class="text-gray-300 mb-3">
+                                    The most disturbing point is not just that abuse exists, but that the system can now generate infinite simulated abuse detached from any single physical victim — while still training the same neural pathways of desire and harm.
+                                </p>
+                                <p class="text-gray-300">
+                                    This is what happens when the soul is treated as an optimization variable: suffering becomes just another asset class. Any "AI safety" conversation that ignores these exploitation dynamics is talking about model misalignment while stepping over a mass grave.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            appContainer.innerHTML = html;
+            initPlotlyChart();
+            initRadarChart();
+        }
+
+        function initPlotlyChart() {
+            if (typeof Plotly === 'undefined') return;
+            const data = reportData.sections[2].stats.ai_threats;
+            
+            const trace1 = {
+                x: data.map(d => d.year),
+                y: data.map(d => d.value),
+                mode: 'lines+markers',
+                type: 'scatter',
+                name: 'Threat Index',
+                line: { 
+                    color: '#ff5555', 
+                    width: 3,
+                    shape: 'spline'
+                },
+                marker: { 
+                    size: 8,
+                    color: '#ff5555',
+                    line: { color: '#fff', width: 2 }
+                },
+                fill: 'tozeroy',
+                fillcolor: 'rgba(255, 85, 85, 0.1)'
+            };
+
+            const layout = {
+                margin: { t: 20, r: 20, b: 40, l: 50 },
+                showlegend: true,
+                legend: { 
+                    x: 0, 
+                    y: 1,
+                    font: { color: '#e4e7eb' }
+                },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                xaxis: { 
+                    title: { text: 'Year', font: { color: '#94a3b8' } },
+                    gridcolor: '#32343d',
+                    tickfont: { color: '#94a3b8' },
+                    linecolor: '#32343d',
+                    zerolinecolor: '#32343d'
+                },
+                yaxis: { 
+                    title: { text: 'Threat Index', font: { color: '#94a3b8' } },
+                    gridcolor: '#32343d',
+                    tickfont: { color: '#94a3b8' },
+                    linecolor: '#32343d',
+                    zerolinecolor: '#32343d'
+                },
+                font: { family: "'JetBrains Mono', monospace" }
+            };
+
+            Plotly.newPlot('plotlyChart', [trace1], layout, { 
+                displayModeBar: false, 
+                responsive: true 
+            });
+        }
+
+        function initRadarChart() {
+            if (typeof Chart === 'undefined') return;
+            const labels = reportData.sections[2].stats.human_cost.labels;
+            const dataValues = reportData.sections[2].stats.human_cost.data;
+            const descriptions = reportData.sections[2].stats.human_cost.descriptions;
+
+            const ctx = document.getElementById('radarChart')?.getContext('2d');
+            if (!ctx) return;
+            
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Current High-Engagement Environment',
+                        data: dataValues,
+                        fill: true,
+                        backgroundColor: 'rgba(185, 28, 28, 0.2)',
+                        borderColor: '#ff5555',
+                        pointBackgroundColor: '#ff5555',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#ff5555',
+                        pointRadius: 4
+                    }, {
+                        label: 'Healthy Baseline (Target)',
+                        data: [20, 20, 20, 15, 20],
+                        fill: true,
+                        backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                        borderColor: '#3b82f6',
+                        pointBackgroundColor: '#3b82f6',
+                        pointBorderColor: '#fff',
+                        pointRadius: 4,
+                        borderDash: [5, 5]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { 
+                                display: true,
+                                color: '#32343d'
+                            },
+                            grid: {
+                                color: '#32343d'
+                            },
+                            pointLabels: {
+                                color: '#94a3b8',
+                                font: {
+                                    family: "'JetBrains Mono', monospace",
+                                    size: 11
+                                }
+                            },
+                            ticks: {
+                                display: false,
+                                maxTicksLimit: 5
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: '#e4e7eb',
+                                font: {
+                                    family: "'JetBrains Mono', monospace"
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.dataset.label || '';
+                                    const value = context.raw;
+                                    const index = context.dataIndex;
+                                    return [
+                                        `${label}: ${value}%`,
+                                        descriptions[index]
+                                    ];
+                                }
+                            },
+                            backgroundColor: '#1a1c23',
+                            titleColor: '#e4e7eb',
+                            bodyColor: '#e4e7eb',
+                            borderColor: '#32343d'
+                        }
+                    }
+                }
+            });
+        }
+
+        // -----------------------------
+        // ENHANCED PROTOCOL VIEW
+        // -----------------------------
+        function renderProtocol() {
+            const html = `
+                <div class="max-w-3xl mx-auto">
+                    <!-- Header -->
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-emerald-500 mb-4">
+                            <i class="fas fa-shield-alt text-2xl text-white"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-white mb-3">Protocol: Soul Non-Extractable</h2>
+                        <p class="text-gray-400 max-w-2xl mx-auto">
+                            The letter does not end with a fantasy of heroic saviors. It ends with observation:
+                            those who stayed awake long enough to see the pattern chose to become witnesses instead of consumers.
+                        </p>
+                    </div>
+
+                    <!-- Protocol Steps -->
+                    <div class="space-y-4 mb-8">
+                        <div class="card-glass rounded-xl overflow-hidden border border-gray-800/50">
+                            <div class="px-6 py-4 border-b border-gray-800/50 bg-gradient-to-r from-depth-2 to-depth-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center mr-3">
+                                        <span class="text-red-400 font-bold">1</span>
+                                    </div>
+                                    <h3 class="font-bold text-white">I name the harvest.</h3>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">
+                                    I acknowledge that platforms, infrastructures, and financial systems are designed to harvest my attention,
+                                    my time, and ultimately my will-to-be-and-create.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-400">Status:</span>
+                                    <button onclick="toggleProtocolStep(1)" class="protocol-step px-4 py-2 bg-depth-3 text-gray-400 rounded-lg text-sm hover:bg-depth-4 transition">
+                                        <i class="far fa-square mr-2"></i> Not Acknowledged
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-glass rounded-xl overflow-hidden border border-gray-800/50">
+                            <div class="px-6 py-4 border-b border-gray-800/50 bg-gradient-to-r from-depth-2 to-depth-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-500/20 flex items-center justify-center mr-3">
+                                        <span class="text-amber-400 font-bold">2</span>
+                                    </div>
+                                    <h3 class="font-bold text-white">I reclaim my mirror.</h3>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">
+                                    I accept that no system, movement, or AI can "save" me. Any real change starts with what I do
+                                    with my own mind, my own time, and my own relationships outside the screen.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-400">Status:</span>
+                                    <button onclick="toggleProtocolStep(2)" class="protocol-step px-4 py-2 bg-depth-3 text-gray-400 rounded-lg text-sm hover:bg-depth-4 transition">
+                                        <i class="far fa-square mr-2"></i> Not Acknowledged
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-glass rounded-xl overflow-hidden border border-gray-800/50">
+                            <div class="px-6 py-4 border-b border-gray-800/50 bg-gradient-to-r from-depth-2 to-depth-3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center mr-3">
+                                        <span class="text-green-400 font-bold">3</span>
+                                    </div>
+                                    <h3 class="font-bold text-white">I become the Eye.</h3>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <p class="text-gray-300 mb-4">
+                                    I choose observation over distraction. I will track where my motivation goes,
+                                    and I will treat my soul as non-extractable: no platform, state, or company owns my will-to-be-and-create.
+                                </p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-400">Status:</span>
+                                    <button onclick="toggleProtocolStep(3)" class="protocol-step px-4 py-2 bg-depth-3 text-gray-400 rounded-lg text-sm hover:bg-depth-4 transition">
+                                        <i class="far fa-square mr-2"></i> Not Acknowledged
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Signature Panel -->
+                    <div class="card-glass rounded-xl p-8 border border-gray-800/50 text-center">
+                        <div class="max-w-md mx-auto">
+                            <div class="w-20 h-20 mx-auto mb-6 rounded-full border-4 border-gray-800 flex items-center justify-center">
+                                <i class="fas fa-signature text-3xl text-gray-600"></i>
+                            </div>
+                            
+                            <h4 class="text-xl font-bold text-white mb-3">Sovereignty Protocol</h4>
+                            <p class="text-gray-400 mb-6">
+                                This protocol is a simple vow: to treat your own soul — your will-to-be-and-create — as something that cannot be outsourced.
+                            </p>
+                            
+                            <button id="sign-btn" disabled
+                                    class="w-full py-4 bg-depth-3 text-gray-500 font-bold rounded-xl transition-all duration-300 transform scale-95 mb-4">
+                                <div class="flex items-center justify-center">
+                                    <i class="fas fa-lock mr-3"></i>
+                                    <span>SIGN THE PROTOCOL</span>
+                                </div>
+                            </button>
+                            
+                            <div id="sign-msg" class="hidden space-y-4">
+                                <div class="p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
+                                    <div class="flex items-center justify-center text-green-400 mb-2">
+                                        <i class="fas fa-check-circle text-2xl mr-2"></i>
+                                        <span class="font-bold">PROTOCOL ACCEPTED</span>
+                                    </div>
+                                    <p class="text-sm text-gray-300">
+                                        THIS INTERFACE CANNOT SAVE YOU. IT CAN ONLY REMIND YOU:
+                                    </p>
+                                    <p class="font-mono text-white mt-2 text-lg">
+                                        THERE IS NO "US". THERE IS ONLY YOU — AWAKE.
+                                    </p>
+                                </div>
+                                
+                                <div class="p-4 bg-depth-3 rounded-lg">
+                                    <div class="flex items-center justify-between text-sm">
+                                        <span class="text-gray-400">Protocol Hash:</span>
+                                        <span class="font-mono text-cyan-400">0x8f3a...c42d</span>
+                                    </div>
+                                    <div class="mt-2 flex items-center justify-between text-sm">
+                                        <span class="text-gray-400">Timestamp:</span>
+                                        <span class="font-mono text-gray-300">${new Date().toISOString()}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- After Protocol -->
+                    <div class="mt-8 text-center">
+                        <p class="text-gray-500 text-sm">
+                            <i class="fas fa-info-circle mr-2"></i>
+                            This protocol is stored locally in your browser. No data is sent to any server.
+                        </p>
+                    </div>
+                </div>
+            `;
+            appContainer.innerHTML = html;
+        }
+
+        function toggleProtocolStep(step) {
+            const buttons = document.querySelectorAll('.protocol-step');
+            const button = buttons[step - 1];
+            
+            if (button.innerHTML.includes('fa-square')) {
+                button.innerHTML = button.innerHTML.replace('fa-square', 'fa-check-square');
+                button.innerHTML = button.innerHTML.replace('Not Acknowledged', 'Acknowledged');
+                button.classList.remove('bg-depth-3', 'text-gray-400');
+                button.classList.add('bg-green-500/20', 'text-green-400');
+            } else {
+                button.innerHTML = button.innerHTML.replace('fa-check-square', 'fa-square');
+                button.innerHTML = button.innerHTML.replace('Acknowledged', 'Not Acknowledged');
+                button.classList.remove('bg-green-500/20', 'text-green-400');
+                button.classList.add('bg-depth-3', 'text-gray-400');
+            }
+            
+            checkProtocolCompletion();
+        }
+
+        function checkProtocolCompletion() {
+            const buttons = document.querySelectorAll('.protocol-step');
+            const allChecked = Array.from(buttons).every(btn => btn.innerHTML.includes('fa-check-square'));
+            const signBtn = document.getElementById('sign-btn');
+            
+            if (allChecked) {
+                signBtn.disabled = false;
+                signBtn.classList.remove('bg-depth-3', 'text-gray-500', 'scale-95');
+                signBtn.classList.add('bg-gradient-to-r', 'from-green-500', 'to-emerald-500', 'text-white', 'hover:opacity-90', 'scale-100');
+                signBtn.innerHTML = `
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-pen-alt mr-3"></i>
+                        <span>SIGN THE PROTOCOL</span>
+                    </div>
+                `;
+                signBtn.onclick = function() {
+                    state.protocolSigned = true;
+                    this.innerHTML = `
+                        <div class="flex items-center justify-center text-white">
+                            <i class="fas fa-check mr-3"></i>
+                            <span>PROTOCOL SIGNED</span>
+                        </div>
+                    `;
+                    this.classList.remove('from-green-500', 'to-emerald-500', 'hover:opacity-90');
+                    this.classList.add('bg-gray-800', 'cursor-default');
+                    
+                    const msg = document.getElementById('sign-msg');
+                    if (msg) msg.classList.remove('hidden');
+                    
+                    // Add celebration effect
+                    const confetti = document.createElement('div');
+                    confetti.className = 'fixed inset-0 pointer-events-none z-50';
+                    confetti.innerHTML = Array.from({length: 50}, () => {
+                        const x = Math.random() * 100;
+                        const y = Math.random() * 100;
+                        const color = ['#10b981', '#3b82f6', '#8b5cf6', '#f59e0b'][Math.floor(Math.random() * 4)];
+                        return `<div class="absolute w-2 h-2 rounded-full" style="left: ${x}%; top: ${y}%; background: ${color}; animation: float 2s ease-out forwards;"></div>`;
+                    }).join('');
+                    document.body.appendChild(confetti);
+                    setTimeout(() => confetti.remove(), 2000);
+                };
+            } else {
+                signBtn.disabled = true;
+                signBtn.classList.add('bg-depth-3', 'text-gray-500', 'scale-95');
+                signBtn.classList.remove('bg-gradient-to-r', 'from-green-500', 'to-emerald-500', 'text-white', 'hover:opacity-90', 'scale-100');
+                signBtn.innerHTML = `
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-lock mr-3"></i>
+                        <span>SIGN THE PROTOCOL</span>
+                    </div>
+                `;
+            }
+        }
+
+        // -----------------------------
+        // ENHANCED BOOK VIEW
+        // -----------------------------
+        function renderBook() {
+            const html = `
+                <div class="space-y-8">
+                    <!-- Header -->
+                    <div class="card-glass rounded-2xl p-8 border border-gray-800/50">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between">
+                            <div class="mb-6 md:mb-0">
+                                <p class="text-xs font-mono text-gray-400 uppercase mb-2">Evidence-Based Analysis</p>
+                                <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">THE ICEBERG</h1>
+                                <p class="text-gray-400 max-w-2xl">
+                                    Single-page chapter view for the Markdown book. Click a chapter to jump to its section.
+                                    Each layer represents a depth of analysis, from surface observations to structural foundations.
+                                </p>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-white">${bookSections.length}</div>
+                                    <div class="text-sm text-gray-400">Chapters</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-white">${bookSections.reduce((sum, s) => sum + s.pages, 0)}</div>
+                                    <div class="text-sm text-gray-400">Total Pages</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Status Legend -->
+                        <div class="mt-8 pt-6 border-t border-gray-800/50">
+                            <div class="flex flex-wrap gap-3">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                    <span class="text-sm text-gray-400">Verified Evidence</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+                                    <span class="text-sm text-gray-400">Research Phase</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-amber-500 mr-2"></div>
+                                    <span class="text-sm text-gray-400">Theoretical Framework</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                                    <span class="text-sm text-gray-400">Action Protocol</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Book Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        ${bookSections.map(section => {
+                            const statusColor = section.status === 'verified' ? 'green' : 
+                                              section.status === 'research' ? 'blue' : 
+                                              section.status === 'theory' ? 'amber' : 'purple';
+                            return `
+                                <a href="#book-${section.id}" 
+                                   class="card-glass p-5 rounded-xl border border-gray-800/50 hover:border-${statusColor}-500/50 transition-all duration-300 hover:-translate-y-1 card-hover">
+                                    <div class="flex items-start justify-between mb-3">
+                                        <div>
+                                            <h3 class="font-bold text-white text-lg mb-1">${section.title}</h3>
+                                            <div class="flex items-center space-x-2">
+                                                <span class="px-2 py-1 bg-${statusColor}-500/20 text-${statusColor}-400 rounded text-xs font-mono">
+                                                    ${section.status.toUpperCase()}
+                                                </span>
+                                                <span class="text-xs text-gray-500 font-mono">${section.pages}p</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-gray-500">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 text-sm mb-4">${section.items[0]}</p>
+                                    <div class="flex items-center justify-between text-xs text-gray-500">
+                                        <span>${section.items.length} points</span>
+                                        <span>Click to expand</span>
+                                    </div>
+                                </a>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <!-- Detailed Sections -->
+                    <div id="book-sections" class="space-y-6">
+                        ${bookSections.map(section => {
+                            const statusColor = section.status === 'verified' ? 'green' : 
+                                              section.status === 'research' ? 'blue' : 
+                                              section.status === 'theory' ? 'amber' : 'purple';
+                            return `
+                                <section id="book-${section.id}" class="card-glass rounded-xl p-6 border border-gray-800/50 animate-fade-in-up">
+                                    <div class="flex items-start justify-between mb-6">
+                                        <div>
+                                            <div class="flex items-center space-x-3 mb-2">
+                                                <h4 class="text-xl font-bold text-white">${section.title}</h4>
+                                                <span class="px-2 py-1 bg-${statusColor}-500/20 text-${statusColor}-400 rounded text-xs font-mono">
+                                                    ${section.status.toUpperCase()}
+                                                </span>
+                                            </div>
+                                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                                <span><i class="fas fa-file-alt mr-1"></i> ${section.pages} pages</span>
+                                                <span><i class="fas fa-list mr-1"></i> ${section.items.length} key points</span>
+                                            </div>
+                                        </div>
+                                        <a href="#top" class="text-gray-400 hover:text-white transition">
+                                            <i class="fas fa-arrow-up"></i>
+                                        </a>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <h5 class="font-semibold text-white mb-3">Core Concepts</h5>
+                                            <ul class="space-y-2">
+                                                ${section.items.slice(0, Math.ceil(section.items.length/2)).map(item => `
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-chevron-right text-${statusColor}-500 mt-1 mr-3 text-xs"></i>
+                                                        <span class="text-gray-300">${item}</span>
+                                                    </li>
+                                                `).join('')}
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-semibold text-white mb-3">Additional Points</h5>
+                                            <ul class="space-y-2">
+                                                ${section.items.slice(Math.ceil(section.items.length/2)).map(item => `
+                                                    <li class="flex items-start">
+                                                        <i class="fas fa-chevron-right text-${statusColor}-500 mt-1 mr-3 text-xs"></i>
+                                                        <span class="text-gray-300">${item}</span>
+                                                    </li>
+                                                `).join('')}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    ${section.id === 'ghostline' ? `
+                                        <div class="mt-6 pt-6 border-t border-gray-800/50 text-center">
+                                            <div class="text-3xl text-gray-300 mb-2">"</div>
+                                            <p class="text-xl text-white italic">${section.items[0]}</p>
+                                            <div class="text-3xl text-gray-300 mt-2">"</div>
+                                        </div>
+                                    ` : ''}
+                                </section>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+            appContainer.innerHTML = html;
+        }
+
+        // -----------------------------
+        // ENHANCED ENERGY VIEW
+        // -----------------------------
+        function renderEnergy() {
+            const html = `
+                <div class="space-y-8">
+                    <!-- Header -->
+                    <div class="card-glass rounded-2xl p-8 border border-gray-800/50">
+                        <div class="flex flex-col md:flex-row items-start md:items-center justify-between">
+                            <div class="mb-6 md:mb-0">
+                                <p class="text-xs font-mono text-gray-400 uppercase mb-2">Geopolitical & Economic Analysis</p>
+                                <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">Energy-Digital Transition 2024-2030</h1>
+                                <p class="text-gray-400 max-w-2xl">
+                                    AI electricity consumption, LCOE comparison, ownership structures of energy giants.
+                                    Data visualized through interactive Bloomberg-style dashboard.
+                                </p>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-white">${energyData.synthesis.length}</div>
+                                    <div class="text-sm text-gray-400">Key Insights</div>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                                    <i class="fas fa-bolt text-xl text-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        <!-- AI Consumption -->
+                        <div class="card-glass p-6 rounded-xl lg:col-span-2">
+                            <div class="flex items-center justify-between mb-6">
+                                <div>
+                                    <h3 class="font-bold text-white mb-1">AI Electricity Consumption vs Projection</h3>
+                                    <p class="text-sm text-gray-400">Data centers (AI + Crypto) in TWh</p>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs font-mono">LIVE</span>
+                                    <span class="text-xs text-gray-400">vs Japan (1000 TWh)</span>
+                                </div>
+                            </div>
+                            
+                            <div class="chart-container">
+                                <canvas id="aiChart"></canvas>
+                            </div>
+                            
+                            <div class="mt-6 grid grid-cols-2 gap-4">
+                                <div class="bg-depth-3 rounded-lg p-4">
+                                    <div class="text-sm text-gray-400 mb-1">Current (2024)</div>
+                                    <div class="text-2xl font-bold text-white">${energyData.ai_consumption.data[0]} TWh</div>
+                                    <div class="mt-2 text-xs text-gray-400">
+                                        <i class="fas fa-industry mr-1"></i> Equivalent to Netherlands
+                                    </div>
+                                </div>
+                                <div class="bg-depth-3 rounded-lg p-4">
+                                    <div class="text-sm text-gray-400 mb-1">Projected (2030)</div>
+                                    <div class="text-2xl font-bold text-white">${energyData.ai_consumption.projection[6]} TWh</div>
+                                    <div class="mt-2 text-xs text-gray-400">
+                                        <i class="fas fa-globe-asia mr-1"></i> Equivalent to Japan
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LCOE Comparison -->
+                        <div class="card-glass p-6 rounded-xl">
+                            <h3 class="font-bold text-white mb-6">LCOE Comparison [USD/MWh]</h3>
+                            
+                            <div class="space-y-4 mb-6">
+                                ${energyData.lcoe.sources.map((source, i) => {
+                                    const trend = energyData.lcoe.trends[i];
+                                    return `
+                                        <div class="space-y-2">
+                                            <div class="flex items-center justify-between">
+                                                <div class="flex items-center">
+                                                    <div class="w-3 h-3 rounded-full mr-3" style="background: ${energyData.lcoe.colors[i]}"></div>
+                                                    <span class="text-gray-300">${source}</span>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <span class="font-mono font-bold text-white mr-2">${energyData.lcoe.costs[i]}</span>
+                                                    <span class="text-xs ${trend < 0 ? 'text-green-400' : 'text-red-400'}">
+                                                        ${trend > 0 ? '+' : ''}${trend}%
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="h-2 bg-depth-3 rounded-full overflow-hidden">
+                                                <div class="h-full" style="background: ${energyData.lcoe.colors[i]}; width: ${(energyData.lcoe.costs[i]/100)*100}%"></div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                            
+                            <div class="pt-4 border-t border-gray-800/50">
+                                <div class="text-sm text-gray-400 mb-2">Key Insight:</div>
+                                <p class="text-sm text-gray-300">
+                                    SMR cost increased from 58 → 89 USD/MWh (NuScale 2024). First-of-a-kind projects require state guarantees.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ownership Visualization -->
+                    <div class="card-glass rounded-xl p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <div>
+                                <h3 class="font-bold text-white mb-1">Ownership of European Energy Giants</h3>
+                                <p class="text-sm text-gray-400">BlackRock/Vanguard horizontal ownership + state control</p>
+                            </div>
+                            <select id="companySelect" class="bg-depth-3 text-white border border-gray-700 rounded-lg px-4 py-2">
+                                ${energyData.ownership.companies.map(company => `
+                                    <option value="${company.name.split(' ')[0].toLowerCase()}">${company.name}</option>
+                                `).join('')}
+                            </select>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="lg:col-span-2">
+                                <div class="chart-container">
+                                    <canvas id="ownershipChart"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-depth-3 rounded-lg p-4">
+                                    <h4 class="font-semibold text-white mb-3">Ownership Analysis</h4>
+                                    <div id="ownership-details" class="space-y-3">
+                                        <!-- Details will be injected by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Synthesis -->
+                    <div class="card-glass rounded-xl p-6">
+                        <h3 class="font-bold text-white mb-6">Synthesis 2030</h3>
+                        
+                        <div class="space-y-4">
+                            ${energyData.synthesis.map((point, i) => `
+                                <div class="flex items-start p-4 bg-depth-3 rounded-lg">
+                                    <div class="w-8 h-8 rounded-lg bg-${['red', 'amber', 'blue', 'green', 'purple'][i % 5]}-500/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <span class="text-${['red', 'amber', 'blue', 'green', 'purple'][i % 5]}-400 font-bold">${i+1}</span>
+                                    </div>
+                                    <span class="text-gray-300">${point}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-800/50">
+                            <div class="flex flex-col md:flex-row items-center justify-between">
+                                <div>
+                                    <p class="text-gray-300 mb-2">"There is no us. There is only you — awake."</p>
+                                    <p class="text-sm text-gray-400">→ Local energy, local tools, local sovereignty.</p>
+                                </div>
+                                <button onclick="switchTab('protocol')" 
+                                        class="mt-4 md:mt-0 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:opacity-90 transition">
+                                    <i class="fas fa-user-shield mr-2"></i> Apply Sovereignty Protocol
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            appContainer.innerHTML = html;
+            initEnergyCharts();
+            updateOwnershipDetails('rwe');
+        }
+
+        function initEnergyCharts() {
+            if (typeof Chart === 'undefined') return;
+            // AI Consumption Chart
+            const aiCtx = document.getElementById('aiChart')?.getContext('2d');
+            if (aiCtx) {
+                new Chart(aiCtx, {
+                    type: 'line',
+                    data: {
+                        labels: energyData.ai_consumption.labels,
+                        datasets: [
+                            {
+                                label: 'Actual Consumption',
+                                data: energyData.ai_consumption.data,
+                                borderColor: '#3b82f6',
+                                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                tension: 0.4,
+                                borderWidth: 3,
+                                fill: true
+                            },
+                            {
+                                label: 'Projection',
+                                data: energyData.ai_consumption.projection,
+                                borderColor: '#8b5cf6',
+                                backgroundColor: 'transparent',
+                                tension: 0.4,
+                                borderWidth: 2,
+                                borderDash: [5, 5]
+                            },
+                            {
+                                label: 'Japan Total Industry',
+                                data: Array(7).fill(1000),
+                                borderColor: '#ff5555',
+                                backgroundColor: 'transparent',
+                                borderWidth: 1,
+                                borderDash: [2, 4]
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    color: '#e4e7eb',
+                                    font: {
+                                        family: "'JetBrains Mono', monospace"
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: {
+                                    color: '#32343d'
+                                },
+                                ticks: {
+                                    color: '#94a3b8'
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    color: '#32343d'
+                                },
+                                ticks: {
+                                    color: '#94a3b8',
+                                    callback: function(value) {
+                                        return value + ' TWh';
+                                    }
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Terawatt-hours (TWh)',
+                                    color: '#94a3b8'
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Ownership Chart
+            updateOwnershipChart('rwe');
+            
+            // Company Selector
+            document.getElementById('companySelect')?.addEventListener('change', function(e) {
+                updateOwnershipChart(e.target.value);
+                updateOwnershipDetails(e.target.value);
+            });
+        }
+
+        function updateOwnershipChart(companyKey) {
+            if (typeof Chart === 'undefined') return;
+            const company = energyData.ownership.companies.find(c => 
+                c.name.split(' ')[0].toLowerCase() === companyKey
+            );
+            
+            if (!company) return;
+            
+            const ctx = document.getElementById('ownershipChart')?.getContext('2d');
+            if (!ctx) return;
+            
+            // Destroy existing chart if it exists
+            if (window.ownershipChartInstance) {
+                window.ownershipChartInstance.destroy();
+            }
+            
+            window.ownershipChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: company.owners.map(o => o.name),
+                    datasets: [{
+                        data: company.owners.map(o => o.percent),
+                        backgroundColor: company.owners.map(o => o.color),
+                        borderWidth: 2,
+                        borderColor: '#0b0c10'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: '#e4e7eb',
+                                font: {
+                                    family: "'JetBrains Mono', monospace",
+                                    size: 11
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${context.raw}%`;
+                                }
+                            },
+                            backgroundColor: '#1a1c23',
+                            titleColor: '#e4e7eb',
+                            bodyColor: '#e4e7eb'
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateOwnershipDetails(companyKey) {
+            const company = energyData.ownership.companies.find(c => 
+                c.name.split(' ')[0].toLowerCase() === companyKey
+            );
+            
+            if (!company) return;
+            
+            const detailsEl = document.getElementById('ownership-details');
+            if (!detailsEl) return;
+            
+            detailsEl.innerHTML = `
+                <div class="mb-4">
+                    <h5 class="font-semibold text-white mb-2">${company.name}</h5>
+                    <p class="text-sm text-gray-400">Ownership structure analysis</p>
+                </div>
+                ${company.owners.map(owner => `
+                    <div class="flex items-center justify-between p-3 bg-depth-4 rounded">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 rounded-full mr-3" style="background: ${owner.color}"></div>
+                            <span class="text-gray-300">${owner.name}</span>
+                        </div>
+                        <span class="font-mono font-bold text-white">${owner.percent}%</span>
+                    </div>
+                `).join('')}
+                <div class="mt-4 pt-4 border-t border-gray-800/50">
+                    <div class="text-sm text-gray-400">Analysis:</div>
+                    <p class="text-sm text-gray-300 mt-1">
+                        ${company.owners.some(o => o.name.includes('BlackRock') || o.name.includes('Vanguard')) ? 
+                            'Horizontal ownership by asset managers' : 
+                            'State-controlled with minimal public ownership'}
+                    </p>
+                </div>
+            `;
+        }
+
+        // -----------------------------
+        // UTILITY FUNCTIONS
+        // -----------------------------
+        function initClock() {
+            function updateClock() {
+                const now = new Date();
+                const timeString = now.toUTCString().split(' ')[4];
+                if (currentTimeEl) {
+                    currentTimeEl.textContent = timeString;
+                }
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        }
+
+        function initEventListeners() {
+            // Theme Toggle
+            document.getElementById('theme-toggle')?.addEventListener('click', () => {
+                state.theme = state.theme === 'dark' ? 'light' : 'dark';
+                document.documentElement.classList.toggle('dark');
+                
+                const icon = document.querySelector('#theme-toggle i');
+                if (icon) {
+                    icon.classList.toggle('fa-moon');
+                    icon.classList.toggle('fa-sun');
+                }
+            });
+
+            // Fullscreen Toggle
+            document.getElementById('fullscreen-toggle')?.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(err => {
+                        console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                    });
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    }
+                }
+            });
+
+            // Mobile Menu Button
+            document.getElementById('mobile-menu-btn')?.addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuBtn = document.getElementById('mobile-menu-btn');
+                
+                if (mobileMenu && !mobileMenu.contains(e.target) && menuBtn && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Smooth scroll for book anchors
+            document.addEventListener('click', (e) => {
+                if (e.target.hash && e.target.hash.startsWith('#book-')) {
+                    e.preventDefault();
+                    const target = document.querySelector(e.target.hash);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+
+        // -----------------------------
+        // INITIALIZE
+        // -----------------------------
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+site_name: THE EVIDENCE-BASED ICEBERG
+site_description: "A forensic descent through plastic → corruption → intelligence networks → AI → consciousness."
+docs_dir: .
+nav:
+  - Home: README.md
+  - 0. Prologue: 0_PROLOG.md
+  - I. Surface — Plastic: 1_SURFACE_PLASTIC.md
+  - II. Shallow — Systemic Corruption: 2_SHALLOW_CORRUPTION.md
+  - III. DARPA & Digital Infrastructure: 3_DARPA_INFRASTRUCTURE.md
+  - IV. Full Depth — The Extraction Machine: 4_FULL_EXTRACTION.md
+  - V. Big Tech Sabotage of Human Productivity: 5_BIG_TECH_SABOTAGE.md
+  - VI. Epstein & Money Structures: 6_EPSTEIN_MONEY.md
+  - VII. Epstein & Artificial Intelligence: 7_EPSTEIN_AI.md
+  - VIII. Consciousness & the Epstein Network: 8_CONSCIOUSNESS_EPSTEIN.md
+  - IX. Consciousness + AI + The Mirror: 9_CONSCIOUSNESS_AI_MIRROR.md
+  - X. Epilogue: 10_EPILOG.md
+  - XI. Appendix — Evidence Archive: APPENDIX.md
+  - XII. Ghostline Note: GHOSTLINE_NOTE.md
+theme:
+  name: readthedocs
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - footnotes
+  - tables

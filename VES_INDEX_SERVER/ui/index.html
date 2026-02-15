@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghostline Index Deck</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070b12;
+      --panel: #0e1420;
+      --accent: #4ee0c6;
+      --muted: #8aa0c2;
+      --border: #1c2635;
+      --warning: #f1a208;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, #0b1220, #05070d 55%), var(--bg);
+      color: #e7edf7;
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(120deg, rgba(78, 224, 198, 0.08), rgba(78, 224, 198, 0.02));
+      margin-bottom: 14px;
+    }
+
+    .title {
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pulse {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 0 rgba(78, 224, 198, 0.6);
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(78, 224, 198, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(78, 224, 198, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(78, 224, 198, 0); }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 12px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      min-height: 220px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #d5e3ff;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    button, input {
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #0b1120;
+      color: #e7edf7;
+      padding: 10px 12px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    button:hover {
+      border-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #0b1220;
+      color: #c1cee7;
+      font-size: 13px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin: 10px 0;
+    }
+
+    .stat {
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #0b101a;
+      font-size: 13px;
+      color: #c7d5f1;
+    }
+
+    .muted { color: var(--muted); font-size: 13px; }
+
+    #searchResults { max-height: 320px; overflow: auto; display: grid; gap: 6px; }
+    .result {
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #0b101a;
+      cursor: pointer;
+    }
+
+    .result:hover { border-color: var(--accent); }
+
+    #previewBox {
+      min-height: 180px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      background: #050910;
+      white-space: pre-wrap;
+      font-family: "SFMono-Regular", "JetBrains Mono", monospace;
+      font-size: 13px;
+      overflow: auto;
+      max-height: 400px;
+    }
+
+    .tag { color: var(--accent); font-weight: 700; letter-spacing: 0.02em; }
+    .warning { color: var(--warning); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title">Ghostline Gateway</div>
+    <div class="status">
+      <span class="pulse"></span>
+      <span id="statusText">Booting…</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <section class="panel">
+      <h3>Public Knowledge</h3>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search indexed entries" />
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="muted" id="meta"></div>
+      <div class="muted" id="sampleHeading">Featured entries</div>
+      <div id="publicFeatured"></div>
+      <div id="searchResults"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Research Archive</h3>
+      <div class="controls">
+        <button id="requestAccess">Request Access</button>
+      </div>
+      <div id="researchList"></div>
+    </section>
+
+    <section class="panel" style="grid-column: 1 / -1;">
+      <h3>Preview</h3>
+      <div class="muted" id="previewPath">Select an entry to inspect</div>
+      <div id="previewBox"></div>
+    </section>
+  </div>
+
+  <script>
+    const statusText = document.getElementById("statusText");
+    const statsEl = document.getElementById("stats");
+    const metaEl = document.getElementById("meta");
+    const previewEl = document.getElementById("previewBox");
+    const previewPathEl = document.getElementById("previewPath");
+    const searchInput = document.getElementById("search");
+    const searchResults = document.getElementById("searchResults");
+    const publicFeatured = document.getElementById("publicFeatured");
+    const researchList = document.getElementById("researchList");
+
+    async function fetchJSON(url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(text || response.statusText);
+      }
+      return response.json();
+    }
+
+    function formatNumber(num) {
+      return num?.toLocaleString() ?? "0";
+    }
+
+    function formatDate(value) {
+      if (!value) return "n/a";
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return value;
+      return date.toLocaleString();
+    }
+
+    async function loadPublicIndex() {
+      statusText.textContent = "Syncing public index…";
+      try {
+        const data = await fetchJSON("/api/public/index");
+        statusText.textContent = "Operational";
+        const meta = data.meta || {};
+        statsEl.innerHTML = `
+          <div class="stat"><div class="tag">Files</div>${formatNumber(meta.totalFiles)}</div>
+          <div class="stat"><div class="tag">Directories</div>${formatNumber(meta.totalDirectories)}</div>
+          <div class="stat"><div class="tag">Size (KB)</div>${formatNumber(meta.totalSizeKb)}</div>
+        `;
+        metaEl.textContent = `Generated: ${meta.generatedAt || "unknown"}`;
+        renderFeatured(data.categories || {});
+      } catch (error) {
+        statusText.textContent = "Degraded";
+        metaEl.textContent = error.message;
+        statsEl.innerHTML = "";
+      }
+    }
+
+    function renderFeatured(categories) {
+      publicFeatured.innerHTML = "";
+      const picks = [];
+      Object.entries(categories).forEach(([category, payload]) => {
+        (payload.items || []).slice(0, 2).forEach(item => picks.push({ ...item, category }));
+      });
+      if (!picks.length) {
+        publicFeatured.innerHTML = "<div class=\"muted\">No featured entries available.</div>";
+        return;
+      }
+      picks.slice(0, 8).forEach(item => {
+        const card = document.createElement("div");
+        card.className = "result";
+        card.innerHTML = `<div class="tag">${item.category}</div><div>${item.title}</div><div class="muted">${item.id}</div>`;
+        card.addEventListener("click", () => showPublicSummary(item.id));
+        publicFeatured.appendChild(card);
+      });
+    }
+
+    async function showPublicSummary(id) {
+      previewPathEl.textContent = `Public · ${id}`;
+      previewEl.textContent = "Loading preview…";
+      try {
+        const data = await fetchJSON(`/api/public/summary?id=${encodeURIComponent(id)}`);
+        previewEl.textContent = data.preview || data.description || "No preview available";
+        if (data.truncated) {
+          const note = document.createElement("div");
+          note.className = "muted";
+          note.textContent = "Preview truncated.";
+          previewEl.appendChild(note);
+        }
+      } catch (error) {
+        previewEl.textContent = error.message;
+      }
+    }
+
+    function debounce(fn, wait = 250) {
+      let timer;
+      return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), wait);
+      };
+    }
+
+    const runSearch = debounce(async () => {
+      const term = searchInput.value.trim();
+      if (!term) {
+        searchResults.innerHTML = "<div class=\"muted\">Type to search the public index.</div>";
+        return;
+      }
+      searchResults.textContent = "Searching…";
+      try {
+        const data = await fetchJSON(`/api/public/search?q=${encodeURIComponent(term)}`);
+        searchResults.innerHTML = "";
+        if (!data.results.length) {
+          searchResults.innerHTML = "<div class=\"muted\">No matches</div>";
+          return;
+        }
+        data.results.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "result";
+          card.innerHTML = `<div class="tag">${item.category}</div><div>${item.title}</div><div class="muted">${item.id}</div>`;
+          card.addEventListener("click", () => showPublicSummary(item.id));
+          searchResults.appendChild(card);
+        });
+      } catch (error) {
+        searchResults.innerHTML = `<div class="warning">${error.message}</div>`;
+      }
+    }, 250);
+
+    async function loadResearch() {
+      researchList.textContent = "Syncing research catalog…";
+      try {
+        const data = await fetchJSON("/api/research/list");
+        researchList.innerHTML = "";
+        if (!data.records.length) {
+          researchList.innerHTML = "<div class=\"muted\">No research entries registered.</div>";
+          return;
+        }
+        data.records.forEach(item => {
+          const card = document.createElement("div");
+          card.className = "result";
+          card.innerHTML = `
+            <div class="tag">Research</div>
+            <div>${item.title}</div>
+            <div class="muted">${item.summary || "No summary"}</div>
+            <div class="muted">Updated: ${formatDate(item.updated_at)}</div>
+          `;
+          card.addEventListener("click", () => showResearchSummary(item.id));
+          researchList.appendChild(card);
+        });
+      } catch (error) {
+        researchList.innerHTML = `<div class="warning">${error.message}</div>`;
+      }
+    }
+
+    async function showResearchSummary(id) {
+      previewPathEl.textContent = `Research · ${id}`;
+      previewEl.textContent = "Loading research summary…";
+      try {
+        const data = await fetchJSON(`/api/research/summary?id=${encodeURIComponent(id)}`);
+        const lines = [data.title || id, data.summary || "No summary available"];
+        previewEl.textContent = lines.join("\n\n");
+        if (data.previewAvailable) {
+          previewEl.textContent += "\n\n(Preview gated. Use Request Access.)";
+        }
+      } catch (error) {
+        previewEl.textContent = error.message;
+      }
+    }
+
+    document.getElementById("requestAccess").addEventListener("click", () => {
+      alert("Access request sent to Ghostline operations.");
+    });
+
+    searchInput.addEventListener("input", runSearch);
+    loadPublicIndex();
+    loadResearch();
+  </script>
+</body>
+</html>

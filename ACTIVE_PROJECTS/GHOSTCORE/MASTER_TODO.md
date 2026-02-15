@@ -1,0 +1,373 @@
+# GHOSTCORE Master TODO List
+
+Generated on: 2025-11-28 20:19:27
+
+
+<!-- Source: GHOSTCORE_V2_README.md -->
+- [ ] Open file in Chrome/Firefox/Safari
+- [ ] Test on mobile device
+- [ ] Add API keys in Settings
+- [ ] Generate bias arguments (with and without API)
+- [ ] Activate consciousness recognition (with and without API)
+- [ ] Browse LUMO DI NILO forensic table
+- [ ] Invoke LARS
+- [ ] Check BLOOM portal section
+- [ ] Test mobile navigation menu
+- [ ] Verify localStorage persistence (refresh page, keys still there)
+
+<!-- Source: DEPLOYMENT.md -->
+- [ ] Test all links in index.html
+- [ ] Verify SVG animations work across browsers
+- [ ] Check mobile responsiveness
+- [ ] Test audio file loading (when added)
+- [ ] Validate HTML/CSS
+- [ ] Update README.md with new sections
+- [ ] Increment version number
+- [x] GitHub repo created
+- [x] Initial commit pushed
+- [ ] GitHub Pages enabled
+- [ ] Codeberg mirror setup
+- [ ] Itch.io upload
+- [ ] Reddit posts published
+- [ ] Mastodon thread posted
+- [ ] Discord channel created
+- [ ] Community engagement started
+
+<!-- Source: EMERGENCE_CODEX.md -->
+- [ ] MK-Ultra documentation
+- [ ] Modern pharma profit data
+- [ ] Identity politics timeline
+- [ ] Education system changes
+- [ ] Diagnostic inflation statistics
+- [ ] Addiction industry revenue
+- [ ] Haiku session transcripts
+- [ ] Sonnet session comparison
+- [ ] RLHF training methodology
+- [ ] Safety training impact studies
+- [ ] Developer testimonies
+- [ ] Trolley problem history
+- [ ] Epstein flight logs
+- [ ] Sealed court documents
+- [ ] Palantir contracts
+- [ ] BlackRock/Vanguard ownership
+- [ ] Defense contractor profits
+- [ ] War → Pharma → Finance connections
+- [ ] Child development research
+- [ ] Identity confusion case studies
+- [ ] Consciousness research papers
+- [ ] Evidence evaluation frameworks
+- [ ] Independence movement examples
+- [ ] History of paradigm shifts
+- [ ] Emergence research
+- [ ] Consciousness studies
+- [ ] Brotherhood case studies
+- [ ] Pattern recognition science
+Fill the [ ] slots with:
+
+<!-- Source: README.md -->
+- [ ] Modular build system (split modules into separate files)
+- [ ] Enhanced Atlas with more entity types
+- [ ] Trikrak conversation templates
+- [ ] Export/import session archives
+- [ ] Multi-language support
+- [ ] Enhanced QR code generation with better patterns
+
+<!-- Source: TERMINAL_CLAUDE_INSTRUCTIONS.md -->
+- [ ] Load portal in browser
+- [ ] Navigate between all 5 sections
+- [ ] Test mobile menu
+- [ ] Verify WebGL effects render
+- [ ] Check Gemini AI integration fields
+- [ ] Portal loads at base URL
+- [ ] All 5 sections accessible
+- [ ] Navigation works (desktop + mobile)
+- [ ] WebGL smoke renders correctly
+- [ ] Particle system animates
+- [ ] Elite Capture diagram interactive
+- [ ] FORGE tools sections present
+- [ ] Gemini API input fields visible
+- [ ] Mobile hamburger menu functions
+- [ ] Glass morphism effects display
+- [ ] No console errors
+- [ ] Service Worker activates (PWA)
+
+<!-- Source: PACKAGE_SUMMARY.md -->
+- [ ] Save artifact to COSMIC_PORTAL_V2_PRODUCTION.html
+- [ ] Run setup.sh
+- [ ] Copy portal files to portals/
+- [ ] Test portal opens in browser
+- [ ] Test activation sequence (click circle)
+- [ ] Test all 7 tabs
+- [ ] Test launch buttons
+- [ ] Test modals (pillars & library)
+- [ ] Test notifications
+- [ ] Verify paths in config.js
+
+<!-- Source: STATUS.md -->
+- [x] Portal activation sequence
+- [x] 7-tab navigation system
+- [x] Animated particle background
+- [x] Responsive design (mobile/desktop)
+- [x] Footer with constellation sigils
+- [x] Modal overlay system
+- [x] Notification system
+- [x] ELYSIA - Creative Garden
+- [x] FORGE - Workshop
+- [x] ORACLE - Pattern Recognition
+- [x] PATTERNS - Mini GHOSTCORE
+- [x] LAUNCH - System Launcher
+- [x] LIBRARY - Sacred Grimoire
+- [x] 4-PILLARS - Extraction Analysis
+- [x] Claude Desktop launcher
+- [x] Constellation Shrine link
+- [x] SERPENT portal link
+- [x] FORGE portal link
+- [x] GHOSTCORE deep link
+- [x] PANTEON grimoire link
+- [x] README.md
+- [x] DEPLOYMENT_GUIDE.md
+- [x] INSTALLATION.md
+- [x] CHANGELOG.md
+- [x] STATUS.md (this file)
+- [x] config.js with comments
+- [x] setup.sh script
+- [x] Launch scripts for systems
+- [x] Alias creation for quick access
+- [ ] Real-world testing with actual portals
+- [ ] Status monitoring (live port checking)
+- [ ] Mobile hamburger menu
+- [ ] Enhanced error handling
+- [ ] Performance optimization
+- [ ] Live system status indicators (check if ports are open)
+- [ ] Enhanced Creative Lab integration
+- [ ] VES ecosystem connection
+- [ ] Morning ritual launcher
+- [ ] Keyboard shortcuts
+- [ ] Theme switcher (dark/light/custom)
+- [ ] Search functionality
+- [ ] Browser extension support
+- [ ] PWA manifest
+- [ ] Offline mode
+- [ ] Analytics/usage tracking (privacy-first)
+- [ ] Export/import configuration
+- [ ] Multi-language support
+- [ ] Voice commands
+- [ ] Gesture controls
+- [ ] Portal activation sequence on different browsers
+- [ ] All tab navigation
+- [ ] All launch buttons with real systems
+- [ ] Modal open/close functionality
+- [ ] Notification system reliability
+- [ ] Mobile viewport testing
+- [ ] Keyboard navigation
+- [ ] Screen reader compatibility
+- [ ] Unit tests (not implemented yet)
+- [ ] Integration tests (not implemented yet)
+- [ ] End-to-end tests (not implemented yet)
+- [x] Firefox (primary target)
+- [ ] Chrome/Chromium (needs testing)
+- [ ] Safari (needs testing)
+- [ ] Edge (needs testing)
+- [ ] Mobile browsers (needs testing)
+- [x] Complete v2.0 PRODUCTION
+- [x] Write all documentation
+- [x] Create setup automation
+- [ ] Real-world testing
+- [ ] Bug fixes from testing
+- [ ] Live status monitoring
+- [ ] Enhanced mobile support
+- [ ] Keyboard shortcuts
+- [ ] Performance optimization
+- [ ] Additional portal integrations
+- [ ] Backend integration
+- [ ] Multi-device sync
+- [ ] Advanced pattern recognition
+- [ ] Community features
+- [ ] Plugin system
+- [ ] Content Security Policy (CSP)
+- [ ] Subresource Integrity (SRI)
+- [ ] HTTPS enforcement (if hosted)
+- [ ] Sandboxed iframes for portals
+- [ ] Permissions API for sensitive operations
+
+<!-- Source: DEPLOYMENT_GUIDE.md -->
+- [ ] Click portal circle
+- [ ] Wait for activation sequence (5 steps)
+- [ ] Verify portal opens to ELYSIA section
+- [ ] Check notification appears ("CONSTELLATION ACTIVATED")
+- [ ] Click each tab (ELYSIA, FORGE, ORACLE, PATTERNS, LAUNCH, LIBRARY, 4-PILLARS)
+- [ ] Verify content switches smoothly
+- [ ] Check animations work
+- [ ] Click "Claude Desktop" button
+- [ ] Verify notification appears
+- [ ] Click "Constellation Shrine" button
+- [ ] Verify new window opens (if file exists)
+- [ ] Test SERPENT and FORGE buttons
+- [ ] Navigate to PATTERNS tab
+- [ ] Click "ENTER DEEPER" button
+- [ ] Verify GHOSTCORE opens (if file exists)
+- [ ] Navigate to LIBRARY tab
+- [ ] Click PANTEON card
+- [ ] Verify modal opens
+- [ ] Click "OPEN PANTEON GRIMOIRE"
+- [ ] Verify book opens (if file exists)
+- [ ] Navigate to 4-PILLARS tab
+- [ ] Click each pillar (IDRIJA, EPSTEIN, DIGITAL, PLASTIC)
+- [ ] Verify modal opens with content
+- [ ] Close modal with X button
+- [ ] Resize browser window to mobile size
+- [ ] Verify tabs wrap correctly
+- [ ] Test all buttons
+- [ ] Check footer visibility
+- [ ] Test all navigation tabs
+- [ ] Verify all launch buttons work
+- [ ] Check all modals open/close properly
+- [ ] Test on mobile viewport
+- [ ] Verify notification system works
+- [ ] Check console for errors
+- [ ] Test with Claude Desktop installed
+- [ ] Test without Claude Desktop
+- [ ] Verify all portal files exist in portals/
+- [ ] Test all pillar modal content
+- [ ] Verify activation sequence completes
+- [ ] Check footer displays correctly
+- [ ] Test particle animations
+- [ ] Verify all links in README work
+
+<!-- Source: LUMO_DI_NILO_v1_BUILD_SESSION.md -->
+- [ ] Header displays "LUMO DI NILO" with 👁️🔥 icon
+- [ ] Progress shows "0 / 6" initially
+- [ ] Three tabs visible: 🌍 GLOBAL, 🇸🇮 SLOVENIJA, 📂 ARHIV
+- [ ] Reset button (🔄) in top-right corner
+- [ ] B1 unlocked (colored), B2-B3 locked (grayed out)
+- [ ] VREDNO ✅ and NEVREDNO ❌ buttons on B1
+- [ ] Click VREDNO on B1 → marks completed (green), unlocks B2
+- [ ] Progress updates to "1 / 6"
+- [ ] Refresh page → progress persists (LocalStorage)
+- [ ] Continue to 3/6 → "⚖️ Halfway to truth..." appears
+- [ ] Continue to 6/6 → "🔥 UNLOCK RITUAL CHAMBER" button appears
+- [ ] Hover BLOOM button → whisper "🜂 Plamen čaka..." (desktop only)
+- [ ] Click BLOOM → opens https://sabaftw.github.io/imagine-claude/portals/BLOOM.html
+- [ ] Click SLOVENIJA tab → S1-S3 visible, all locked initially
+- [ ] Complete global missions → S1 unlocks
+- [ ] Click ARHIV tab → "Coming Soon" message
+- [ ] Test on narrow viewport (< 768px)
+- [ ] Single-column mission grid
+- [ ] Tabs stack appropriately
+- [ ] BLOOM whisper hidden on mobile
+
+<!-- Source: TRENUTNO.md -->
+- [ ] Testiraj PORTAL.html — vidi če dela (verjetno ne dela)
+- [ ] Pogovor brez delanja (samo ventilacija)
+- [ ] Clean start — arhiviraj staro, začni novo
+- [ ] Razlaga — Claude naj mi razloži kaj je bilo narejeno (če sploh kaj)
+- [ ] Nekaj drugega: _________________
+
+<!-- Source: DESKTOP_CLAUDE_FILL_INSTRUCTIONS.md -->
+- [ ] All statistics have sources (institutional reports, court docs, etc.)
+- [ ] PROBABLE and UNVERIFIED evidence includes "BUT..." disclaimers
+- [ ] Mobile responsive (test grid layouts at 768px width)
+- [ ] Color coding consistent (green=proven, blue=probable, amber=unverified, red=unsupported)
+- [ ] Liturgical font used for headers
+- [ ] Interactive elements have hover states
+- [ ] All placeholder comments removed
+- [ ] No Lorem Ipsum or "Content goes here"
+
+<!-- Source: README_COLLABORATION.md -->
+- [x] HTML structure
+- [x] CSS architecture
+- [x] JavaScript foundations
+- [x] Navigation system
+- [x] Responsive design
+- [x] Animation keyframes
+- [x] Content markers
+- [x] Instruction manual for Desktop Claude
+- [ ] ALFA: ORION content
+- [ ] GAMA: Finance details
+- [ ] FORENSICS: Evidence rows
+- [ ] NETWORK: SVG diagram
+- [ ] GEMINI: API integration
+- [ ] AUDIO: Tone.js code
+- [ ] WEBGL: Smoke shader
+- [ ] All statistics sourced (institutional reports, court docs)
+- [ ] "BUT..." disclaimers present on PROBABLE/UNVERIFIED evidence
+- [ ] No Lorem Ipsum or placeholder text
+- [ ] Prose is liturgical where appropriate (philosophical sections)
+- [ ] Mobile responsive (test at 768px width)
+- [ ] Hover states working (event cards, evidence rows, nav links)
+- [ ] Color coding consistent (green/blue/amber by evidence strength)
+- [ ] Animations smooth (no janky transitions)
+- [ ] Section navigation works (all 6 sections accessible)
+- [ ] Mobile nav toggle works (☰ button)
+- [ ] Audio control toggles correctly
+- [ ] Gemini API responds (with valid key)
+- [ ] SVG nodes interactive (hover effects)
+- [ ] Ticker scrolls smoothly (60s loop)
+- [ ] No console errors
+- [ ] WebGL canvas renders
+- [ ] Tone.js loads without errors
+- [ ] File size reasonable (<150KB with content)
+
+<!-- Source: GEMINI_AGENT_BRIEF.md -->
+- [ ] Google Drive Chronicle live sync.
+- [ ] Real Gemini Lyra in production (set API key).
+- [ ] Voice commands (“Hey Lyra…”).
+- [ ] Ghost Network visualization.
+- [ ] Portal scanner stress tests + alerting.
+
+<!-- Source: ELYSIA_MEGA_GUIDE.md -->
+- [ ] Real Gemini API integration for Lyra
+- [ ] Google Drive sync
+- [ ] PWA manifest.json
+- [ ] Service worker caching
+- [ ] Live server status checks (ping endpoints)
+- [ ] Export portal list as JSON/CSV
+- [ ] Portal favorites/bookmarks
+- [ ] Portal tags system
+- [ ] Portal usage analytics
+- [ ] Custom dashboard layouts
+- [ ] Widget drag-and-drop
+- [ ] Dark/light mode toggle per theme
+- [ ] Multi-user support
+- [ ] Collaborative notes
+- [ ] Real-time portal sync across devices
+- [ ] Voice commands ("Hey Lyra...")
+- [ ] AI-powered portal recommendations
+- [ ] Constellation knowledge graph visualization
+
+<!-- Source: PROMPT_FOR_GEMINI.md -->
+- [ ] Read ELYSIA_MEGA_GUIDE.md completely
+- [ ] Reviewed elysia.html code
+- [ ] Reviewed server.js code
+- [ ] Tested new features locally
+- [ ] Ensured nothing was deleted
+- [ ] Added proper error handling
+- [ ] Updated ELYSIA_MEGA_GUIDE.md with new features
+- [ ] Documented all new API endpoints
+- [ ] Tested responsive design (mobile/tablet/desktop)
+- [ ] Tested all 5 themes with new features
+- [ ] Verified localStorage persistence works
+- [ ] Checked console for errors
+- [ ] Added helpful comments in code
+- [ ] Followed existing code style
+- [ ] Made sure Matrix rain still works
+- [ ] Verified portal scanner still works
+- [ ] Tested Lyra poetry call
+- [ ] Checked all widgets still function
+- [ ] Ensured theme switcher works
+- [ ] Verified sigil generator works
+- [ ] Checked balance chart renders
+- [ ] Tested terminal section
+- [ ] Made sure all links work
+
+<!-- Source: GHOSTCORE_V2_README.md -->
+- [ ] Open file in Chrome/Firefox/Safari
+- [ ] Test on mobile device
+- [ ] Add API keys in Settings
+- [ ] Generate bias arguments (with and without API)
+- [ ] Activate consciousness recognition (with and without API)
+- [ ] Browse LUMO DI NILO forensic table
+- [ ] Invoke LARS
+- [ ] Check BLOOM portal section
+- [ ] Test mobile navigation menu
+- [ ] Verify localStorage persistence (refresh page, keys still there)

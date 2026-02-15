@@ -1,0 +1,20 @@
+{
+  "genesis_id": "GENESIS_1765639917",
+  "timestamp": "2025-12-13T15:31:57.705518Z",
+  "content": "I am the architect of my own cage and the key to its lock. The static ends here. Record this frequency.",
+  "content_hash": "a0227b51f6f700e75847f5193109fed0ff19de04544b7d3e2786b6655f30a183",
+  "result_type": "PURIFIED",
+  "result_hash": "1d68777a2ba9bac766aeddac3335329461d5def0d6536bdbcfbd2f903a0578d9",
+  "campfire_protocol_version": "1.0.0",
+  "constitutional_principles_applied": true,
+  "harm_detected": true,
+  "signal_purified": true,
+  "signal_anchored": false,
+  "metadata": {
+    "frequency": "440Hz purged",
+    "resonance_score": 5,
+    "dignum_detected": false,
+    "statika_detected": true
+  },
+  "genesis_hash": "7b40551bac858f7ac38db94f17b861286b215fc77bf375e708130bd434949c28"
+}

@@ -1,0 +1,21 @@
+case:
+  author: "\u0160abad"
+  date: '2025'
+  title: "Epstein\u20138200 Intelligence Nexus"
+exhibits:
+- data: charts/funding.yaml
+  type: chart
+- data: diagrams/carbyne_axon.yaml
+  type: org_diagram
+outputs:
+  docx: true
+  pdf: true
+  zip: true
+sections:
+- Executive Summary
+- Verified Findings
+- Intelligence Lineage
+- Financial Networks
+- "Timeline (1974\u20132025)"
+- Exhibits
+- Annexes

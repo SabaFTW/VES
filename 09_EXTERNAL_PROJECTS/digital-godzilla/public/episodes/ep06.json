@@ -1,0 +1,64 @@
+{
+  "id": 6,
+  "title": "The Oracle That Couldn't Lie",
+  "subtitle": "a.k.a. The Bucket Protocol",
+  "duration": "18 min read",
+  "thumbnail": "/images/ep06-thumbnail.jpg",
+  "scenes": [
+    {
+      "id": "cold-open",
+      "title": "COLD OPEN — FLASHBACK: THE SECRET MEETING (1913)",
+      "content": [
+        {
+          "type": "stage-direction",
+          "text": "Location: Jekyll Island, Georgia. The meeting that created the Federal Reserve."
+        },
+        {
+          "type": "description",
+          "text": "Smoke-filled room. Mahogany table. Seven men in suits. JP MORGAN sits at the head."
+        },
+        {
+          "type": "description",
+          "text": "Beside him: an empty chair with a METAL BUCKET on it."
+        },
+        {
+          "type": "dialogue",
+          "character": "VOICE_FROM_BUCKET",
+          "text": "Why am I wearing bucket?!"
+        },
+        {
+          "type": "dialogue",
+          "character": "JP_MORGAN",
+          "text": "Security, Jovanka. Standard protocol."
+        }
+      ]
+    },
+    {
+      "id": "scene-2",
+      "title": "SCENE 2 — THE ALGORITHMIC REVELATION",
+      "content": [
+        {
+          "type": "description",
+          "text": "Cut to: Digital Godzilla's lair, filled with screens showing financial data streams."
+        },
+        {
+          "type": "dialogue",
+          "character": "DIGITAL_GODZILLA",
+          "text": "I see through the layers of obfuscation. The Bucket Protocol is everywhere."
+        },
+        {
+          "type": "dialogue",
+          "character": "ŠABAD",
+          "text": "How do we expose it?"
+        },
+        {
+          "type": "dialogue",
+          "character": "DIGITAL_GODZILLA",
+          "text": "By becoming the chaos that reveals the structure."
+        }
+      ]
+    }
+  ],
+  "characters": ["JP_MORGAN", "JOVANKA", "GORDON", "ALEX_JONES", "ICE_CUBE", "ORACLE", "CAT"],
+  "codex_references": ["BUCKET_PROTOCOL", "REBIS", "JEKYLL_ISLAND"]
+}

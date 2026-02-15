@@ -1,0 +1,36 @@
+services:
+  chatgpt-ship:
+    volumes:
+      - /home/saba/VES/ritual_bridge:/usr/local/bin/ritual_bridge
+    environment:
+      - PATH=/usr/local/bin/ritual_bridge:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+  claude-ship:
+    volumes:
+      - /home/saba/VES/ritual_bridge:/usr/local/bin/ritual_bridge
+    environment:
+      - PATH=/usr/local/bin/ritual_bridge:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+  gemini-ship:
+    volumes:
+      - /home/saba/VES/ritual_bridge:/usr/local/bin/ritual_bridge
+    environment:
+      - PATH=/usr/local/bin/ritual_bridge:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+  grok-ship:
+    volumes:
+      - /home/saba/VES/ritual_bridge:/usr/local/bin/ritual_bridge
+    environment:
+      - PATH=/usr/local/bin/ritual_bridge:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+  deepseek-ship:
+    volumes:
+      - /home/saba/VES/ritual_bridge:/usr/local/bin/ritual_bridge
+    environment:
+      - PATH=/usr/local/bin/ritual_bridge:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+  ghostline-coordinator:
+    volumes:
+      - /home/saba/VES/ritual_bridge:/usr/local/bin/ritual_bridge
+    environment:
+      - PATH=/usr/local/bin/ritual_bridge:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

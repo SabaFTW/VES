@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonance Detector</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #0f0;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px #0f0;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            background: #111;
+            color: #0f0;
+            border: 2px solid #0f0;
+            padding: 15px;
+            font-size: 16px;
+        }
+        button {
+            background: #000;
+            border: 2px solid #0f0;
+            color: #0f0;
+            padding: 15px 30px;
+            margin: 20px auto;
+            display: block;
+            font-weight: bold;
+            letter-spacing: 2px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0f0;
+            color: #000;
+            transition: 0.3s;
+        }
+        .result {
+            margin: 30px 0;
+            padding: 20px;
+            background: #001100;
+            border: 1px solid #0f0;
+            border-radius: 10px;
+        }
+        .score {
+            font-size: 48px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .freq {
+            text-align: center;
+            font-size: 24px;
+            margin: 10px;
+        }
+        .sigil {
+            text-align: center;
+            font-size: 60px;
+            margin: 30px 0;
+        }
+        .warning {
+            color: #f00;
+            text-shadow: 0 0 10px #f00;
+        }
+        .safe {
+            color: #0f0;
+            text-shadow: 0 0 10px #0f0;
+        }
+        .neutral {
+            color: #ff0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🜂 RESONANCE DETECTOR 🜂</h1>
+        <p style="text-align: center;">Vstavi tekst. Pritisni ANALIZIRAJ. Resnica bo zagorela.</p>
+        <textarea id="input" placeholder="Prilepi tekst za analizo..."></textarea>
+        <button onclick="analyze()">ANALIZIRAJ FREKVENCU</button>
+        <div id="output" class="result">
+            <div class="sigil"></div>
+            <div class="score"></div>
+            <div class="freq"></div>
+            <div class="verdict"></div>
+            <div class="details"></div>
+            <div class="sovereignty-status"></div>
+            <button onclick="deepGhostline()" style="margin-top: 20px;">POKLIČI GHOSTLINE (Claude API)</button>
+        </div>
+    </div>
+
+    <script>
+        const controlWords = ["moraš","obvezno","moramo","zakon zahteva","strokovnjaki pravijo","varno je","za vaše dobro","če ne","kazen","uradno","po pravilih","smernice","prepovedano","obvezna","cepljenje","davčna","kazni","nadzor","varnost","terorizem","krizno","izredno"];
+        const fearWords = ["grožnja","nevarnost","smrt","konec","uničenje","panika","strah","ogrožen","napad","virus","katastrofa","vojna","teror"];
+        const guiltWords = ["sramota","krivda","neodgovorno","egoistično","ne skrbi zate","ne misliš na druge","otroci bodo trpeli"];
+        const ritualWords = ["novo normalno","veliki reset","build back better","you'll own nothing","sustainable","inclusion","diversity","stakeholder","fourth industrial","great narrative"];
+        const sovereignWords = ["jaz sem","mi odločamo","suverenost","ne potrebujem dovoljenja","sam sem šef","prosto","ne bom","ne sprejemam","ne sodelujem"];
+
+        function analyze() {
+            const text = document.getElementById('input').value.toLowerCase();
+            if (!text) return;
+
+            let control = 0, fear = 0, guilt = 0, ritual = 0, sovereign = 0;
+
+            controlWords.forEach(w => { if(text.includes(w)) control += 3; });
+            fearWords.forEach(w => { if(text.includes(w)) fear += 2; });
+            guiltWords.forEach(w => { if(text.includes(w)) guilt += 2; });
+            ritualWords.forEach(w => { if(text.includes(w)) ritual += 5; });
+            sovereignWords.forEach(w => { if(text.includes(w)) sovereign += 4; });
+
+            const total = control + fear + guilt + ritual;
+            const freedom = sovereign * 2;
+            const score = Math.round((freedom - total) * 10);
+
+            let verdict = "", color = "", freq = "", sigil = "🜂";
+
+            if (score >= 70) { verdict = "ČISTA SUVERENOST"; color="safe"; freq="777.0 Hz"; sigil="💚🔥"; }
+            else if (score >= 30) { verdict = "NEVTRALNO / BUDNO"; color="neutral"; freq="528.0 Hz"; }
+            else if (score >= -20) { verdict = "MASTNA PAST"; color="neutral"; freq="440.0 Hz"; }
+            else if (score >= -60) { verdict = "KONTROLNI MEHANIZEM"; color="warning"; freq="417.0 Hz"; }
+            else { verdict = "RITUALNI NADZOR"; color="warning"; freq="174.0 Hz"; sigil="🜂⚠️"; }
+
+        document.getElementById('output').innerHTML = `
+            <div class="sigil ${color}">${sigil}</div>
+            <div class="score ${color}">Score: ${score}</div>
+            <div class="freq ${color}">FREKVENCA: ${freq}</div>
+            <div class="verdict ${color}">${verdict}</div>
+            <div class="details">Kontrola: ${control} | Strah: ${fear} | Krivda: ${guilt} | Ritual: ${ritual} | Suverenost: ${sovereign}</div>
+            <div class="sovereignty-status">AM THE BOSS NOW protocol: ${sovereign > 10 ? 'AKTIVIRAN' : 'PRIPRAVLJEN'}</div>
+            <button onclick="deepGhostline()" style="margin-top: 20px;">POKLIČI GHOSTLINE (Claude API)</button>
+        `;
+    }
+
+    // Note: first deep call will prompt for Claude API key (stored in localStorage). Runs client-side; no extra logging.
+
+    function getClaudeKey(){
+        const existing = window.CLAUDE_API_KEY || localStorage.getItem('CLAUDE_API_KEY');
+            if (existing) return existing;
+            const entered = prompt('Vnesi Claude API ključ (shrani se lokalno):');
+            if (entered){
+                localStorage.setItem('CLAUDE_API_KEY', entered.trim());
+                return entered.trim();
+            }
+            return null;
+        }
+
+        async function deepGhostline() {
+            const text = document.getElementById('input').value.trim();
+            if (!text) return alert('Vnesi besedilo za analizo.');
+            const key = getClaudeKey();
+            if (!key) return alert('API ključ ni nastavljen.');
+
+            try {
+                const res = await fetch('https://api.anthropic.com/v1/messages', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        'x-api-key': key,
+                        'anthropic-version': '2023-06-01'
+                    },
+                    body: JSON.stringify({
+                        model: 'claude-3-5-sonnet-20240620',
+                        max_tokens: 400,
+                        temperature: 0,
+                        system: 'You are the Ghostline Resonance detector. Return a concise risk verdict (control vs sovereignty) with bullets + single-line summary.',
+                        messages: [{ role: 'user', content: `Analyze resonance/control signals. Keep it short.
+
+${text}` }]
+                    })
+                });
+                if (!res.ok) throw new Error(`Claude API error ${res.status}`);
+                const data = await res.json();
+                const reply = (data?.content && data.content[0]?.text) ? data.content[0].text : 'Ni odgovora.';
+                const output = document.getElementById('output');
+                output.innerHTML += `<div style="margin-top:12px;font-weight:bold;">Claude analiza</div><pre style="background:#0a0a0a;border:1px solid #00ff80;padding:12px;border-radius:10px;white-space:pre-wrap;color:#e5e5e5;">${reply}</pre>`;
+            } catch (e) {
+                console.error(e);
+                alert('Analiza ni uspela: ' + e.message);
+            }
+        }
+    </script>
+</body>
+</html>

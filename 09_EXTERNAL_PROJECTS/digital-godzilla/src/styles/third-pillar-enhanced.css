@@ -1,0 +1,523 @@
+/* 🜂 THIRD PILLAR PROTOCOL - ENHANCED VISUALS 🜂 */
+/* Sacred Geometry + 432Hz Resonance Aesthetic */
+
+/* ═══════════════════════════════════════════════════════════════════
+   1. ANIMATED SACRED GEOMETRY BACKGROUND
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes sacred-pulse {
+  0%, 100% {
+    opacity: 0.03;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.08;
+    transform: scale(1.05) rotate(180deg);
+  }
+}
+
+@keyframes metatron-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.sacred-geometry-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sacred-geometry-bg::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 800px;
+  margin: -400px 0 0 -400px;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 30%, rgba(217, 119, 6, 0.05) 31%, transparent 32%),
+    radial-gradient(circle at 50% 50%, transparent 45%, rgba(217, 119, 6, 0.05) 46%, transparent 47%),
+    radial-gradient(circle at 50% 50%, transparent 60%, rgba(217, 119, 6, 0.05) 61%, transparent 62%);
+  animation: sacred-pulse 8s ease-in-out infinite, metatron-spin 120s linear infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   2. 432HZ GLOW PULSE ANIMATION
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes hz-432-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(217, 119, 6, 0.3),
+      0 0 20px rgba(217, 119, 6, 0.2),
+      inset 0 0 10px rgba(217, 119, 6, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(217, 119, 6, 0.6),
+      0 0 40px rgba(217, 119, 6, 0.4),
+      0 0 60px rgba(217, 119, 6, 0.2),
+      inset 0 0 20px rgba(217, 119, 6, 0.2);
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(217, 119, 6, 0.5),
+      0 0 20px rgba(217, 119, 6, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(217, 119, 6, 0.8),
+      0 0 40px rgba(217, 119, 6, 0.5),
+      0 0 60px rgba(217, 119, 6, 0.3);
+  }
+}
+
+.hz-432-glow {
+  animation: hz-432-pulse 2.31s ease-in-out infinite; /* 432Hz period ≈ 2.31ms scaled to visible */
+}
+
+.text-hz-432 {
+  animation: text-glow 2.31s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   3. SMOOTH ENTRANCE ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-entrance {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-entrance-delayed {
+  opacity: 0;
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+.animate-scale {
+  animation: fade-in-scale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide {
+  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   4. ENHANCED CARD HOVER EFFECTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.mystical-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(250,250,249,0.98) 100%);
+}
+
+.mystical-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(217, 119, 6, 0.1), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mystical-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(217, 119, 6, 0.5);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(217, 119, 6, 0.1),
+    0 10px 30px rgba(217, 119, 6, 0.2);
+}
+
+.mystical-card:hover::before {
+  opacity: 1;
+}
+
+/* Corner accents on hover */
+.mystical-card::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid rgba(217, 119, 6, 0);
+  border-right: 2px solid rgba(217, 119, 6, 0);
+  transition: all 0.3s ease;
+}
+
+.mystical-card:hover::after {
+  width: 30px;
+  height: 30px;
+  border-color: rgba(217, 119, 6, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   5. ENHANCED TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════ */
+
+.title-mystical {
+  font-family: 'Cinzel', serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #1c1917 0%, #44403c 50%, #78716c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.title-mystical::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  text-shadow:
+    2px 2px 4px rgba(217, 119, 6, 0.2),
+    -2px -2px 4px rgba(217, 119, 6, 0.1);
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 1) 0%, rgba(217, 119, 6, 0) 100%);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   6. PARTICLE/STAR FIELD HEADER EFFECT
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes particle-glow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.particle-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, rgba(217, 119, 6, 1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: particle-float 8s ease-in-out infinite, particle-glow 3s ease-in-out infinite;
+}
+
+/* Generate particles with varied positions and delays */
+.particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 25%; top: 40%; animation-delay: 1s; width: 3px; height: 3px; }
+.particle:nth-child(3) { left: 40%; top: 60%; animation-delay: 2s; }
+.particle:nth-child(4) { left: 60%; top: 30%; animation-delay: 1.5s; width: 4px; height: 4px; }
+.particle:nth-child(5) { left: 75%; top: 70%; animation-delay: 0.5s; }
+.particle:nth-child(6) { left: 85%; top: 50%; animation-delay: 2.5s; width: 2px; height: 2px; }
+.particle:nth-child(7) { left: 15%; top: 80%; animation-delay: 1.2s; }
+.particle:nth-child(8) { left: 50%; top: 15%; animation-delay: 3s; width: 3px; height: 3px; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   7. PILLAR VISUALIZATION ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+.pillar-container {
+  position: relative;
+  perspective: 1000px;
+}
+
+.pillar-left, .pillar-right {
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillar-middle {
+  position: relative;
+  overflow: hidden;
+}
+
+.pillar-middle::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(217, 119, 6, 0.3) 90deg,
+    transparent 180deg,
+    rgba(217, 119, 6, 0.3) 270deg,
+    transparent 360deg
+  );
+  transform: translate(-50%, -50%);
+  animation: pillar-energy-spin 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.pillar-middle.active::before {
+  opacity: 1;
+}
+
+@keyframes pillar-energy-spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.pillar-glow {
+  box-shadow:
+    0 0 20px rgba(217, 119, 6, 0.4),
+    0 0 40px rgba(217, 119, 6, 0.2),
+    inset 0 0 20px rgba(217, 119, 6, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   8. SACRED SIGIL ANIMATION
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes sigil-pulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1) drop-shadow(0 0 10px rgba(217, 119, 6, 0.3));
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.2) drop-shadow(0 0 20px rgba(217, 119, 6, 0.6));
+  }
+}
+
+.sigil {
+  animation: sigil-pulse 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.sigil:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1.5) drop-shadow(0 0 30px rgba(217, 119, 6, 0.8));
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   9. SCROLL REVEAL ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes reveal-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  animation: reveal-from-bottom 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scroll-reveal-delay-1 { animation-delay: 0.1s; }
+.scroll-reveal-delay-2 { animation-delay: 0.2s; }
+.scroll-reveal-delay-3 { animation-delay: 0.3s; }
+.scroll-reveal-delay-4 { animation-delay: 0.4s; }
+
+/* ═══════════════════════════════════════════════════════════════════
+   10. ENHANCED BUTTON STATES
+   ═══════════════════════════════════════════════════════════════════ */
+
+.btn-mystical {
+  position: relative;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 1) 0%, rgba(180, 83, 9, 1) 100%);
+  border: none;
+  color: white;
+  padding: 14px 32px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 4px 15px rgba(217, 119, 6, 0.3),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-mystical::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-mystical:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 8px 25px rgba(217, 119, 6, 0.5),
+    0 0 30px rgba(217, 119, 6, 0.3),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-mystical:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-mystical:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   11. CODEX ENTRY CARD SPECIAL
+   ═══════════════════════════════════════════════════════════════════ */
+
+.codex-card {
+  position: relative;
+  border-left: 4px solid rgba(217, 119, 6, 0.3);
+  background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(245,245,244,0.95) 100%);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.codex-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, rgba(217, 119, 6, 1), rgba(217, 119, 6, 0.3));
+  transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.codex-card:hover {
+  border-left-color: rgba(217, 119, 6, 1);
+  transform: translateX(8px);
+  box-shadow:
+    -8px 0 24px rgba(217, 119, 6, 0.2),
+    0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.codex-card:hover::before {
+  height: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   12. RESPONSIVE CONSIDERATIONS
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .sacred-geometry-bg::before {
+    width: 400px;
+    height: 400px;
+    margin: -200px 0 0 -200px;
+  }
+
+  .particle {
+    width: 1px;
+    height: 1px;
+  }
+
+  .mystical-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   🜂 END OF ENHANCED STYLES 🜂
+   ═══════════════════════════════════════════════════════════════════ */

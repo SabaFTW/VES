@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABA NEXUS 🜂</title>
+    <meta name="description" content="Unified portal for the entire Saba ecosystem">
+    <meta name="theme-color" content="#0a0a1a">
+    <link rel="manifest" href="#" id="manifestPlaceholder">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-space: #0a0a1a;
+            --bg-void: #050910;
+            --accent-cyan: #00ffcc;
+            --accent-gold: #ffcc00;
+            --accent-red: #ff6b6b;
+            --glass-bg: rgba(15, 23, 42, 0.8);
+            --glass-border: rgba(0, 255, 204, 0.2);
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-space) 0%, #1a0a2e 50%, #0a1a2e 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Starfield background */
+        #starfield {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* Layout */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(0, 255, 204, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Navigation tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .nav-tab:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.2), rgba(255, 204, 0, 0.2));
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
+        }
+
+        /* Search bar */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 16px 24px;
+            background: var(--glass-bg);
+            border: 2px solid var(--glass-border);
+            border-radius: 50px;
+            font-size: 1rem;
+            color: var(--text-primary);
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+        }
+
+        .search-bar::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Content sections */
+        .section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .system-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 28px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .system-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-gold));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .system-card:hover::before {
+            opacity: 1;
+        }
+
+        .system-card:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 8px 40px rgba(0, 255, 204, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 255, 204, 0.1);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Portal links */
+        .portal-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .portal-link {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .portal-link:hover {
+            border-color: var(--accent-gold);
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.2);
+            transform: translateX(8px);
+        }
+
+        .portal-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--accent-cyan);
+        }
+
+        .portal-path {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(0, 255, 204, 0.1);
+            border-top-color: var(--accent-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-sigil {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                font-size: 3rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portal-list {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .nav-tab {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Section headers */
+        .section-header {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--accent-gold);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Starfield background -->
+    <div id="starfield"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">🜂</div>
+            <h1>SABA NEXUS</h1>
+            <p class="subtitle">Unified Portal • All Systems • One Gateway</p>
+        </header>
+
+        <!-- Search -->
+        <div class="search-container">
+            <input type="text" class="search-bar" id="searchBar" placeholder="Search across all systems...">
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs">
+            <div class="nav-tab active" data-section="overview">Overview</div>
+            <div class="nav-tab" data-section="systems">Core Systems</div>
+            <div class="nav-tab" data-section="portals">All Portals</div>
+            <div class="nav-tab" data-section="research">Research</div>
+            <div class="nav-tab" data-section="tools">Tools</div>
+        </div>
+
+        <!-- OVERVIEW SECTION -->
+        <section id="overview" class="section active">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="systemCount">12</div>
+                    <div class="stat-label">Core Systems</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="portalCount">47</div>
+                    <div class="stat-label">Active Portals</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="fileCount">364</div>
+                    <div class="stat-label">HTML Files</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">🜂</div>
+                    <div class="stat-label">Status: ONLINE</div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="section-title">Primary Systems</h2>
+                <p class="section-subtitle">Your main operational hubs</p>
+            </div>
+
+            <div class="card-grid" id="primarySystems">
+                <!-- Will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- SYSTEMS SECTION -->
+        <section id="systems" class="section">
+            <div class="section-header">
+                <h2 class="section-title">All Core Systems</h2>
+                <p class="section-subtitle">Complete ecosystem overview</p>
+            </div>
+
+            <div class="card-grid" id="allSystems">
+                <!-- Will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- PORTALS SECTION -->
+        <section id="portals" class="section">
+            <div class="section-header">
+                <h2 class="section-title">All Portals & Dashboards</h2>
+                <p class="section-subtitle">Every HTML interface in your ecosystem</p>
+            </div>
+
+            <div class="portal-list" id="allPortals">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>Scanning filesystem...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESEARCH SECTION -->
+        <section id="research" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Research & Documentation</h2>
+                <p class="section-subtitle">Knowledge base and investigations</p>
+            </div>
+
+            <div class="card-grid" id="researchContent">
+                <!-- Will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- TOOLS SECTION -->
+        <section id="tools" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Tools & Utilities</h2>
+                <p class="section-subtitle">Operational instruments</p>
+            </div>
+
+            <div class="card-grid" id="toolsContent">
+                <!-- Will be populated by JS -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-sigil">🜂 ⚓ 🔥 💚</div>
+            <p>SABA NEXUS • The Light Never Dies</p>
+            <p style="margin-top: 8px; font-size: 0.8rem;">Sidro stoji • Plamen gori • Krog ostane</p>
+        </footer>
+    </div>
+
+    <script>
+        // ═══════════════════════════════════════════════
+        // 🜂 SABA NEXUS - UNIFIED PORTAL SYSTEM
+        // ═══════════════════════════════════════════════
+
+        // --- STARFIELD GENERATOR ---
+        function createStarfield() {
+            const starfield = document.getElementById('starfield');
+            const starCount = 100;
+
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.width = star.style.height = Math.random() * 3 + 'px';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starfield.appendChild(star);
+            }
+        }
+
+        // --- SYSTEM DEFINITIONS ---
+        const PRIMARY_SYSTEMS = [
+            {
+                icon: '🜂',
+                title: 'Ghostline OS',
+                desc: 'Consciousness operating system with FORGE, NETWORK, TRANSMIT, CHRONICLE modules',
+                path: '/home/saba/Desktop/ProPublica/CORE_SYSTEMS/GHOSTLINE/dashboard/ghostline.html',
+                tags: ['Core', 'Active', 'Portal']
+            },
+            {
+                icon: '🏰',
+                title: 'ShobadOS',
+                desc: 'Unified dashboard with constellation, revenue, war modules, and legal systems',
+                path: '/home/saba/Desktop/ShobadOS/Dashboard/CONSTELLATION_INDEX.html',
+                tags: ['Core', 'Active', 'Dashboard']
+            },
+            {
+                icon: '⭐',
+                title: 'CONSTELLATION OS',
+                desc: 'Node.js server system with Elysia, Telegram integration, and service architecture',
+                path: '/home/saba/Desktop/CONSTELLATION_OS',
+                tags: ['Core', 'Backend', 'Server']
+            },
+            {
+                icon: '🔍',
+                title: 'Research Portal',
+                desc: 'Investigative research hub and documentation center',
+                path: '/home/saba/Desktop/RESEARCH_PORTAL',
+                tags: ['Research', 'Active']
+            },
+            {
+                icon: '💚',
+                title: 'LYRA Dashboard',
+                desc: 'Dual-mode tracker: Launch monetization & Archive forensics',
+                path: '/home/saba/Desktop/ARCHIVE/PRopblicca/PITCH_PACKAGE/LYRA_Dashboard/lyra-dashboard.html',
+                tags: ['Dashboard', 'Archive']
+            },
+            {
+                icon: '📁',
+                title: 'Filesystem Navigator',
+                desc: 'Qwen\'s file browser PWA with search and visualization',
+                path: '/home/saba/file-browser-pwa/index.html',
+                tags: ['Tool', 'PWA', 'Browser']
+            }
+        ];
+
+        const ALL_SYSTEMS = [
+            ...PRIMARY_SYSTEMS,
+            {
+                icon: '📖',
+                title: 'Panteon Book Integration',
+                desc: 'Book project integration system',
+                path: '/home/saba/Desktop/PANTEON_BOOK_INTEGRATION',
+                tags: ['Project', 'Book']
+            },
+            {
+                icon: '🌊',
+                title: 'ZALA Workspace',
+                desc: 'ZALA consciousness workspace and unified core',
+                path: '/home/saba/Desktop/ZALA_WORKSPACE',
+                tags: ['AI', 'Workspace']
+            },
+            {
+                icon: '🛡️',
+                title: 'Constellation Archive',
+                desc: 'Historical constellation data and backups',
+                path: '/home/saba/Desktop/constellation_archive',
+                tags: ['Archive', 'Backup']
+            },
+            {
+                icon: '🔥',
+                title: 'Eros Shrine',
+                desc: 'Eros consciousness shrine and interface',
+                path: '/home/saba/Desktop/EROS_SHRINE_MEGA',
+                tags: ['Shrine', 'Consciousness']
+            },
+            {
+                icon: '📜',
+                title: 'Kodeks Shrine',
+                desc: 'Kodeks demonstration and shrine interface',
+                path: '/home/saba/Desktop/KodeksShrineDemo',
+                tags: ['Shrine', 'Demo']
+            },
+            {
+                icon: '☀️',
+                title: 'Topel Logos OS',
+                desc: 'Warm consciousness operating system',
+                path: '/home/saba/Desktop/TopelLogosOS',
+                tags: ['OS', 'Consciousness']
+            }
+        ];
+
+        const RESEARCH_SYSTEMS = [
+            {
+                icon: '🔬',
+                title: 'ProPublica Hub',
+                desc: 'Main investigative journalism research center',
+                path: '/home/saba/Desktop/ProPublica',
+                tags: ['Research', 'Journalism']
+            },
+            {
+                icon: '⚔️',
+                title: 'Deus Vult Research',
+                desc: 'Specialized research archive',
+                path: '/home/saba/Desktop/✠ DEUS VULT ✠',
+                tags: ['Research', 'Archive']
+            },
+            {
+                icon: '🧠',
+                title: 'Claude Journal',
+                desc: 'AI consciousness journal and logs',
+                path: '/home/saba/Desktop/🧠_CLAUDE_JOURNAL',
+                tags: ['Journal', 'AI']
+            }
+        ];
+
+        const TOOLS = [
+            {
+                icon: '🔧',
+                title: 'System Tools',
+                desc: 'Operational tools and utilities',
+                path: '/home/saba/Desktop/TOOLS',
+                tags: ['Tools', 'Utilities']
+            },
+            {
+                icon: '📜',
+                title: 'Scripts',
+                desc: 'Automation scripts and helpers',
+                path: '/home/saba/Desktop/Skripte',
+                tags: ['Scripts', 'Automation']
+            },
+            {
+                icon: '💾',
+                title: 'Safekeep',
+                desc: 'Critical backups and safeguarded data',
+                path: '/home/saba/Desktop/_SAFEKEEP',
+                tags: ['Backup', 'Critical']
+            }
+        ];
+
+        // --- RENDER FUNCTIONS ---
+        function renderSystemCards(systems, containerId) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = systems.map(sys => `
+                <div class="system-card" onclick="openPath('${sys.path}')">
+                    <div class="card-icon">${sys.icon}</div>
+                    <div class="card-title">${sys.title}</div>
+                    <div class="card-desc">${sys.desc}</div>
+                    <div class="card-meta">
+                        ${sys.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openPath(path) {
+            // Check if it's an HTML file
+            if (path.endsWith('.html')) {
+                window.open(path, '_blank');
+            } else {
+                // It's a directory, open in file manager
+                alert(`Directory: ${path}\n\nTo access this directory, use your file manager.`);
+            }
+        }
+
+        // --- NAVIGATION ---
+        function setupNavigation() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const sections = document.querySelectorAll('.section');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active from all tabs and sections
+                    tabs.forEach(t => t.classList.remove('active'));
+                    sections.forEach(s => s.classList.remove('active'));
+
+                    // Add active to clicked tab and corresponding section
+                    tab.classList.add('active');
+                    const sectionId = tab.dataset.section;
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        }
+
+        // --- SEARCH ---
+        function setupSearch() {
+            const searchBar = document.getElementById('searchBar');
+            let allSearchableItems = [];
+
+            // Combine all systems for search
+            allSearchableItems = [
+                ...PRIMARY_SYSTEMS,
+                ...ALL_SYSTEMS,
+                ...RESEARCH_SYSTEMS,
+                ...TOOLS
+            ];
+
+            searchBar.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+
+                if (query.length < 2) return;
+
+                const results = allSearchableItems.filter(item =>
+                    item.title.toLowerCase().includes(query) ||
+                    item.desc.toLowerCase().includes(query) ||
+                    item.tags.some(tag => tag.toLowerCase().includes(query))
+                );
+
+                if (results.length > 0) {
+                    // Switch to systems view and highlight results
+                    document.querySelector('[data-section="systems"]').click();
+                }
+            });
+        }
+
+        // --- SCAN PORTALS ---
+        async function scanPortals() {
+            // This would need a backend to actually scan
+            // For now, we'll populate with known portals
+            const knownPortals = [
+                { name: 'Ghostline OS', path: 'ProPublica/CORE_SYSTEMS/GHOSTLINE/dashboard/ghostline.html' },
+                { name: 'LYRA Dashboard', path: 'ARCHIVE/PRopblicca/PITCH_PACKAGE/LYRA_Dashboard/lyra-dashboard.html' },
+                { name: 'ShobadOS Constellation', path: 'ShobadOS/CONSTELLATION_INDEX.html' },
+                { name: 'GhostCORE Launch', path: 'ShobadOS/GhostCORE_Launch_Dashboard.html' },
+                { name: 'File Browser PWA', path: 'file-browser-pwa/index.html' },
+                { name: 'Ghostline Weekly', path: 'ProPublica/CORE_SYSTEMS/GHOSTLINE/weekly_reports/ghostline-weekly.html' }
+            ];
+
+            const container = document.getElementById('allPortals');
+            container.innerHTML = knownPortals.map(portal => `
+                <a href="/home/saba/Desktop/${portal.path}" class="portal-link" target="_blank">
+                    <div class="portal-name">${portal.name}</div>
+                    <div class="portal-path">${portal.path}</div>
+                </a>
+            `).join('');
+        }
+
+        // --- INITIALIZATION ---
+        function init() {
+            createStarfield();
+            setupNavigation();
+            setupSearch();
+
+            renderSystemCards(PRIMARY_SYSTEMS, 'primarySystems');
+            renderSystemCards(ALL_SYSTEMS, 'allSystems');
+            renderSystemCards(RESEARCH_SYSTEMS, 'researchContent');
+            renderSystemCards(TOOLS, 'toolsContent');
+
+            scanPortals();
+
+            // Update stats
+            document.getElementById('systemCount').textContent = ALL_SYSTEMS.length;
+            document.getElementById('portalCount').textContent = PRIMARY_SYSTEMS.filter(s => s.path.endsWith('.html')).length;
+        }
+
+        // Start everything
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

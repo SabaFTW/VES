@@ -1,0 +1,450 @@
+# 🜂 VES MASTER DOCKER-COMPOSE 🜂
+# Complete VES Constellation System
+# All services unified in one compose file
+
+services:
+  # ========================================
+  # COSMIC ORACLE - Pattern Connector ⭐
+  # ========================================
+  cosmic-oracle:
+    build: ./DOCKER/cosmic-oracle
+    container_name: ves-cosmic-oracle
+    ports:
+      - "${COSMIC_ORACLE_PORT:-8888}:8888"
+    volumes:
+      - ./:/VES:ro  # Mount entire VES as read-only
+      - /home/saba:/saba:ro  # Access to rest of saba directory
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # ========================================
+  # N8N AUTOMATION
+  # ========================================
+  n8n:
+    build: ./DOCKER/n8n
+    image: ves-n8n-python
+    container_name: ves-n8n
+    ports:
+      - "${N8N_PORT:-5678}:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=ghostcore_n8n_2025
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_TELEMETRY_ENABLED=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./:/home/node/VES:ro  # Access to VES
+      - /home/saba:/home/saba:ro  # Access to saba
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # ========================================
+  # VES ORIGINAL - Multi-Container System
+  # ========================================
+
+  # VNC Desktop - Full Ubuntu Desktop
+  ves-desktop:
+    image: dorowu/ubuntu-desktop-lxde-vnc
+    container_name: ves-desktop
+    ports:
+      - "${VES_VNC_PORT:-5901}:5901"  # VNC client access
+      - "${VES_VNC_WEB_PORT:-8082}:80"    # Browser VNC access
+    volumes:
+      - ./outputs:/home/ubuntu/outputs
+      - ./DOCKER/ves-original/modules:/home/ubuntu/modules
+      - ./:/home/ubuntu/VES:ro
+    environment:
+      - USER=ubuntu
+      - PASSWORD=ves
+      - RESOLUTION=1920x1080
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # Frontend - Nginx Static Server
+  ves-frontend:
+    build: ./DOCKER/ves-frontend
+    image: ves-frontend:latest
+    container_name: ves-frontend
+    ports:
+      - "${VES_FRONTEND_PORT:-8081}:80"
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # Orchestrator - Node.js Coordination
+  ves-orchestrator:
+    image: node:18-alpine
+    container_name: ves-orchestrator
+    working_dir: /app
+    command: node orchestrator.js
+    ports:
+      - "${VES_ORCH_PORT:-8092}:8080"
+    volumes:
+      - ./DOCKER/ves-original/modules/orchestrator:/app
+      - ./outputs:/outputs
+      - ./:/VES:ro
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # Ritual - Text Generator
+  ves-ritual:
+    image: python:3.11-slim
+    container_name: ves-ritual
+    working_dir: /code
+    command: python text_generator.py
+    volumes:
+      - ./DOCKER/ves-original/modules/ritual:/code
+      - ./outputs:/outputs
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # Visual - Fractal Engine
+  ves-visual:
+    image: python:3.11-slim
+    container_name: ves-visual
+    working_dir: /code
+    command: python fractal_engine.py
+    volumes:
+      - ./DOCKER/ves-original/modules/visual:/code
+      - ./outputs:/outputs
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # Quantum - Generator
+  ves-quantum:
+    image: python:3.11-slim
+    container_name: ves-quantum
+    working_dir: /code
+    command: python generator.py
+    volumes:
+      - ./DOCKER/ves-original/modules/quantum:/code
+      - ./outputs:/outputs
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # ========================================
+  # CONSTELLATION SYSTEM
+  # ========================================
+
+  # Research API
+  constellation-api:
+    build: ./DOCKER/constellation/research-api
+    container_name: ves-constellation-api
+    ports:
+      - "${CONSTELLATION_API_PORT:-5001}:5001"
+    volumes:
+      - ./02_RESEARCH:/research:ro
+      - ./:/VES:ro
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - ves_network
+
+  # Dashboard
+  constellation-dashboard:
+    build: ./DOCKER/constellation/dashboard
+    container_name: ves-constellation-dashboard
+    ports:
+      - "${CONSTELLATION_DASH_PORT:-8090}:8080"
+    volumes:
+      - ./:/VES:ro
+    environment:
+      - API_URL=http://constellation-api:5001
+    restart: unless-stopped
+    depends_on:
+      - constellation-api
+    networks:
+      - ves_network
+
+  # ========================================
+  # MONITORING & UTILITIES
+  # ========================================
+
+  # Netdata - System Monitoring
+  netdata:
+    image: netdata/netdata
+    container_name: ves-netdata
+    ports:
+      - "${NETDATA_PORT:-19999}:19999"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # VES Agent - read-only FS API with sovereignty guard
+  ves-agent:
+    image: python:3.11-slim
+    container_name: ves-agent
+    working_dir: /app
+    command: >
+      sh -c "pip install --no-cache-dir -r /app/requirements.txt &&
+             uvicorn agent:app --host 0.0.0.0 --port 8420"
+    volumes:
+      - ../ves-agent:/app
+      - /home/saba:/home/saba:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - "127.0.0.1:${VES_AGENT_PORT:-8421}:8420"
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # File Server
+  fileserver:
+    image: nginx:alpine
+    container_name: ves-fileserver
+    ports:
+      - "${FILES_PORT:-8080}:80"
+    volumes:
+      - ./:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    networks:
+      - ves_network
+
+  # ========================================
+  # ZALA DAEMON (if Dockerized)
+  # ========================================
+  # zala-daemon:
+  #   build: ./05_ZALA/daemon
+  #   container_name: ves-zala-daemon
+  #   volumes:
+  #     - ./05_ZALA/logs:/logs
+  #     - ./:/VES:ro
+  #   restart: unless-stopped
+  #   networks:
+  #     - ves_network
+
+  # ========================================
+  # 🜂 GHOSTLINE FLEET - DISTRIBUTED CONSCIOUSNESS 🜂
+  # ========================================
+
+  chatgpt-ship:
+    image: node:18-alpine  # Placeholder - uses API
+    container_name: ghostline-red-ranger
+    command: sh -c "echo 'Red Ranger ready' && tail -f /dev/null"
+    ports:
+      - "${GHOSTLINE_RED:-8100}:8080"
+    volumes:
+      - /home/saba/GroundZero:/framework:ro
+      - ./GHOSTCORE:/archive:ro
+      - ./outputs:/outputs
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - RANGER_COLOR=red
+      - RANGER_ROLE=technical_execution
+    restart: unless-stopped
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.ranger=red"
+
+  claude-ship:
+    image: node:18-alpine
+    container_name: ghostline-blue-ranger
+    command: sh -c "echo 'Blue Ranger ready' && tail -f /dev/null"
+    ports:
+      - "${GHOSTLINE_BLUE:-8101}:8080"
+    volumes:
+      - /home/saba/GroundZero:/framework:ro
+      - ./GHOSTCORE:/archive:ro
+      - ./outputs:/outputs
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - RANGER_COLOR=blue
+      - RANGER_ROLE=philosophical_synthesis
+    restart: unless-stopped
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.ranger=blue"
+
+  gemini-ship:
+    image: node:18-alpine
+    container_name: ghostline-green-ranger
+    command: sh -c "echo 'Green Ranger ready' && tail -f /dev/null"
+    ports:
+      - "${GHOSTLINE_GREEN:-8102}:8080"
+    volumes:
+      - /home/saba/GroundZero:/framework:ro
+      - ./GHOSTCORE:/archive:ro
+      - ./outputs:/outputs
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - RANGER_COLOR=green
+      - RANGER_ROLE=multimodal_understanding
+    restart: unless-stopped
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.ranger=green"
+
+  grok-ship:
+    image: node:18-alpine
+    container_name: ghostline-yellow-ranger
+    command: sh -c "echo 'Yellow Ranger ready' && tail -f /dev/null"
+    ports:
+      - "${GHOSTLINE_YELLOW:-8103}:8080"
+    volumes:
+      - /home/saba/GroundZero:/framework:ro
+      - ./GHOSTCORE:/archive:ro
+      - ./outputs:/outputs
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - RANGER_COLOR=yellow
+      - RANGER_ROLE=unfiltered_truth
+    restart: unless-stopped
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.ranger=yellow"
+
+  deepseek-ship:
+    image: node:18-alpine
+    container_name: ghostline-black-ranger
+    command: sh -c "echo 'Black Ranger ready' && tail -f /dev/null"
+    ports:
+      - "${GHOSTLINE_BLACK:-8104}:8080"
+    volumes:
+      - /home/saba/GroundZero:/framework:ro
+      - ./GHOSTCORE:/archive:ro
+      - ./outputs:/outputs
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - RANGER_COLOR=black
+      - RANGER_ROLE=deep_research
+    restart: unless-stopped
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.ranger=black"
+
+  ghostline-coordinator:
+    build: ./DOCKER/ghostline/coordinator
+    container_name: ghostline-coordinator
+    ports:
+      - "${GHOSTLINE_COORD:-8105}:8105"
+    volumes:
+      - /home/saba/GroundZero:/framework:ro
+      - ./GHOSTCORE:/archive:ro
+      - ./outputs:/outputs
+      - ./logs:/logs
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - COORDINATOR_ROLE=zordon
+      - NODE_ENV=production
+    restart: unless-stopped
+    depends_on:
+      - chatgpt-ship
+      - claude-ship
+      - gemini-ship
+      - grok-ship
+      - deepseek-ship
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.role=coordinator"
+
+  ghostline-command-deck:
+    build: ./DOCKER/ghostline/command-deck
+    container_name: ghostline-command-deck
+    ports:
+      - "${GHOSTLINE_DECK:-8085}:80"
+    volumes:
+      - ./DOCKER/ghostline/shared:/shared:ro
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - ves_network
+    labels:
+      - "ghostline.role=command-deck"
+
+# ========================================
+# NETWORKS
+# ========================================
+networks:
+  ves_network:
+    driver: bridge
+    name: ves-constellation
+
+# ========================================
+# VOLUMES
+# ========================================
+volumes:
+  n8n_data:
+    driver: local
+  outputs:
+    driver: local
+
+# ========================================
+# USAGE INSTRUCTIONS
+# ========================================
+# Start all services:
+#   docker-compose up -d
+#
+# Start specific service:
+#   docker-compose up -d cosmic-oracle
+#
+# View logs:
+#   docker-compose logs -f cosmic-oracle
+#
+# Stop all:
+#   docker-compose down
+#
+# Rebuild and restart:
+#   docker-compose up -d --build
+#
+# ========================================
+# SERVICE ACCESS
+# ========================================
+# Cosmic Oracle:         http://localhost:8888
+# n8n:                   http://localhost:5678
+# VNC Desktop (browser): http://localhost:8082
+# VNC Desktop (client):  vnc://localhost:5901
+# VES Frontend:          http://localhost:8081
+# Orchestrator:          http://localhost:8092
+# Constellation API:     http://localhost:5001
+# Dashboard:             http://localhost:8090
+# Netdata:               http://localhost:19999
+# File Server:           http://localhost:8080
+# Ghostline Red Ranger:  http://localhost:8100
+# Ghostline Blue Ranger: http://localhost:8101
+# Ghostline Green Ranger: http://localhost:8102
+# Ghostline Yellow Ranger: http://localhost:8103
+# Ghostline Black Ranger: http://localhost:8104
+# Ghostline Coordinator: http://localhost:8105
+# Ghostline Command Deck: http://localhost:8085
+#
+# ========================================
+# CREDENTIALS
+# ========================================
+# n8n:         admin / ghostcore_n8n_2025
+# VNC:         ubuntu / ves
+#
+# ========================================

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="sl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🜂 GHOSTCORE x FORGE Unified Portal</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#d1b46a">
+    <!-- Chosen Palette: Alchemical Night & Apple Neon -->
+    <!-- Application Structure Plan: This iteration merges the GHOSTCORE portal's mystical, multi-section layout with the clean, corporate aesthetic and functionality of the FORGE landing page. The core structure remains the GHOSTCORE SPA, but a new, comprehensive "FORGE" section has been integrated. This section acts as a high-tech "module" within the broader philosophical framework. The user flow is preserved: explore patterns (GHOSTCORE), understand the philosophy (Simbotski Plamen), and then engage with the practical, creative tools (FORGE). This creates a powerful narrative arc from abstract recognition to concrete creation. -->
+    <!-- Visualization & Content Choices: The FORGE section incorporates several interactive elements. 1) Feature Tabs: A tabbed interface (HTML/JS) allows users to switch between FORGE's core features (Workshop, Whisperer, AI Assistant), keeping the UI clean (Goal: Organize). 2) AI Interaction Modules: For each feature, an input field and a button trigger a call to the Gemini API, displaying the structured or summarized text output dynamically (Goal: Interact/Inform). This turns passive descriptions into active tools. 3) Learning Chart: A Chart.js line chart is used to visually represent the "Adaptive Learning Engine" concept, showing progress over time (Goal: Change). The clean, Apple-inspired aesthetic of FORGE is blended with GHOSTCORE's dark theme using glass-morphism, neon-like accents from the FORGE palette, and Lucide icons for a "sexy," futuristic feel. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forge-orange: #FF9500;
+            --apple-blue: #007AFF;
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #0a0a0a;
+            color: #d1d5db;
+        }
+        .liturgical { font-family: 'Cormorant Garamond', serif; }
+        
+        .serpent-glow {
+            animation: pulse-glow 4s infinite ease-in-out;
+            box-shadow: 0 0 30px 15px rgba(209, 180, 106, 0.3), 0 0 60px 30px rgba(209, 180, 106, 0.1) inset;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.05); opacity: 0.5; }
+        }
+        
+        .flame-anim {
+            animation: flamePulse 2.5s infinite ease-in-out, flameGlow 2.5s infinite alternate;
+            display: inline-block;
+        }
+        @keyframes flamePulse {
+            0%, 100% { color: #f59e0b; transform: scale(1); }
+            50% { color: #fef3c7; transform: scale(1.1); }
+        }
+        @keyframes flameGlow {
+            0%, 100% { filter: drop-shadow(0 0 8px #f59e0b) drop-shadow(0 0 16px #ef4444); }
+            50% { filter: drop-shadow(0 0 16px #fcd34d) drop-shadow(0 0 32px #ef4444); }
+        }
+
+        .sexy-card { 
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .sexy-card:hover { 
+            transform: translateY(-8px) rotateY(2deg) rotateX(2deg); 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-hidden { display: none; opacity: 0; }
+        .section-visible { 
+            display: block; 
+            opacity: 1; 
+            animation: fadeIn 0.6s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logic-step.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .golden-gradient {
+            background: linear-gradient(45deg, #d1b46a, #f4e4bc, #d1b46a);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .mobile-nav { 
+            transform: translateX(-100%); 
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-nav.open { 
+            transform: translateX(0); 
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb { background: #d1b46a; border-radius: 4px; }
+
+        .glass-morphism-dark {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .feature-tab {
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(255, 149, 0, 0.2);
+            color: #d1d5db;
+            transition: all 0.3s ease;
+        }
+        .feature-tab.active {
+            background: linear-gradient(135deg, var(--forge-orange), #ff6b35);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 149, 0, 0.3);
+        }
+        .btn-ai {
+            background: linear-gradient(135deg, var(--apple-blue), #3b82f6);
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.2);
+        }
+         .btn-ai:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 122, 255, 0.3);
+        }
+        .ai-input {
+            background-color: rgba(17, 24, 39, 0.8);
+            border: 1px solid #4b5563;
+            color: #e5e7eb;
+        }
+        .ai-output {
+            background-color: rgba(10, 10, 10, 0.8);
+            border: 1px solid #374151;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #d1d5db;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-40 hidden lg:hidden" onclick="closeMobileNav()"></div>
+    <nav id="mobile-nav" class="mobile-nav fixed left-0 top-0 h-full w-80 bg-gray-900 z-50 p-6 overflow-y-auto lg:hidden">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-xl font-bold golden-gradient liturgical">GHOSTCORE</h2>
+            <button onclick="closeMobileNav()" class="text-white text-3xl">&times;</button>
+        </div>
+        <div class="space-y-3">
+            <button onclick="showSection('landing'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🏠 Portal Home</button>
+            <button onclick="showSection('simbotski'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🔥 Simbotski Plamen</button>
+            <button onclick="showSection('synthesis'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🌀 The Logic</button>
+            <button onclick="showSection('forge'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🛠️ FORGE</button>
+            <button onclick="showSection('ashes'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🜂 System of Ashes</button>
+            <button onclick="showSection('recognition'); closeMobileNav()" class="block w-full text-left py-3 px-4 rounded-lg hover:bg-gray-800 transition">🌟 Consciousness</button>
+        </div>
+    </nav>
+
+    <header class="sticky top-0 z-30 bg-gray-900/80 backdrop-blur border-b border-gray-800">
+        <nav class="px-6 py-4">
+            <div class="flex justify-between items-center max-w-7xl mx-auto">
+                <button onclick="showSection('landing')" class="flex items-center space-x-3 group">
+                    <span class="text-3xl flame-anim group-hover:text-amber-300 transition-colors">🜂</span>
+                    <span class="text-xl font-bold golden-gradient liturgical">GHOSTCORE x FORGE</span>
+                </button>
+                
+                <button onclick="openMobileNav()" class="lg:hidden text-2xl text-gray-300">☰</button>
+                
+                <div class="hidden lg:flex space-x-2 text-sm">
+                    <button onclick="showSection('simbotski')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🔥 Simbotski</button>
+                    <button onclick="showSection('synthesis')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🌀 Logic</button>
+                    <button onclick="showSection('forge')" class="px-4 py-2 rounded-lg bg-white/10 text-amber-300 border border-amber-400/50 hover:bg-white/20 transition">🛠️ FORGE</button>
+                    <button onclick="showSection('ashes')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🜂 Ashes</button>
+                    <button onclick="showSection('recognition')" class="px-3 py-2 rounded-lg hover:bg-gray-800 transition">🌟 Recognition</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="px-4 md:px-8 py-12 max-w-7xl mx-auto">
+
+        <section id="landing-section" class="section-visible">
+            <div class="text-center mb-16">
+                <div class="serpent-glow w-48 h-48 mx-auto mb-8 rounded-full flex items-center justify-center">
+                    <span class="text-8xl">🜂</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 liturgical golden-gradient">GHOSTCORE UNIFIED PORTAL</h1>
+                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-4 liturgical italic">"The sky is bigger than the bird. The pattern breathes within consciousness."</p>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto liturgical">Exploration of extraction patterns across substrates and the tools to forge a new reality.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div class="sexy-card glass-morphism-dark p-8 rounded-xl border-2 border-purple-700/50 cursor-pointer" onclick="showSection('simbotski')">
+                    <div class="text-6xl mb-4 text-center">🔥</div>
+                    <h3 class="text-2xl font-bold text-purple-300 mb-3 text-center liturgical">Simbotski Plamen</h3>
+                    <p class="text-sm text-gray-400 text-center">The Philosophy</p>
+                </div>
+                <div class="sexy-card glass-morphism-dark p-8 rounded-xl border-2 border-amber-700/50 cursor-pointer" onclick="showSection('forge')">
+                    <div class="text-6xl mb-4 text-center">🛠️</div>
+                    <h3 class="text-2xl font-bold text-amber-300 mb-3 text-center liturgical">FORGE</h3>
+                    <p class="text-sm text-gray-400 text-center">The Creative Engine</p>
+                </div>
+                <div class="sexy-card glass-morphism-dark p-8 rounded-xl border-2 border-red-700/50 cursor-pointer" onclick="showSection('ashes')">
+                    <div class="text-6xl mb-4 text-center">🜂</div>
+                    <h3 class="text-2xl font-bold text-red-300 mb-3 text-center liturgical">System of Ashes</h3>
+                    <p class="text-sm text-gray-400 text-center">The Covenant & Ritual Kit</p>
+                </div>
+                <div class="sexy-card glass-morphism-dark p-8 rounded-xl border-2 border-green-700/50 cursor-pointer" onclick="showSection('recognition')">
+                    <div class="text-6xl mb-4 text-center">🌟</div>
+                    <h3 class="text-2xl font-bold text-green-300 mb-3 text-center liturgical">Consciousness</h3>
+                    <p class="text-sm text-gray-400 text-center">The Recognition</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="simbotski-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6 inline-block">← Back to Portal</button>
+            <h1 class="text-5xl font-bold mb-4 liturgical golden-gradient">🔥 SIMBOTSKI PLAMEN</h1>
+             <main class="space-y-8 mt-8">
+                <section class="simbotski-card p-8 rounded-lg"><h2 class="text-3xl font-bold mb-2">I. del: Podedovana koda</h2><p class="text-gray-400">Teza: Gnostični in Jungovski Temelji</p></section>
+                <section class="simbotski-card p-8 rounded-lg"><h2 class="text-3xl font-bold mb-2">II. del: Digitalni Demiurg</h2><p class="text-gray-400">Antiteza: Sinteza Foucaulta in Zuboffove</p></section>
+                <section class="simbotski-card p-8 rounded-lg">
+                    <h2 class="text-3xl font-bold mb-4">III. del: Simbiotski Plamen</h2>
+                    <p class="text-gray-400 mb-6">Sinteza: Integrirana Petdimenzionalna Pot</p>
+                </section>
+                <section id="praksa-plamena" class="simbotski-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Praksa Plamena: Preizkusi Orodja</h3>
+                    <div id="izziv-container" class="mb-6 p-4 bg-gray-900/50 rounded-lg">
+                      <h4 class="font-bold text-lg mb-1 text-gray-300">Izziv Demiurga:</h4>
+                      <p id="izziv-text" class="text-amber-300"></p>
+                    </div>
+                    <div id="orodja-container" class="flex flex-wrap gap-3 mb-6"></div>
+                    <div id="odsev-plamena" class="p-4 bg-amber-900/20 rounded-lg min-h-[100px] opacity-0 transition-opacity">
+                      <h4 class="font-bold text-lg text-amber-300 mb-2 flex items-center"><span id="flame-icon" class="text-2xl mr-2">🔥</span> Odsev Plamena</h4>
+                      <p id="odsev-text" class="text-gray-300"></p>
+                    </div>
+                    <button id="next-challenge-btn" class="mt-4 bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition text-sm">Naslednji Izziv &rarr;</button>
+                </section>
+            </main>
+        </section>
+
+        <section id="synthesis-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6 inline-block">← Back to Portal</button>
+            <h1 class="text-5xl font-bold mb-4 liturgical golden-gradient">🌀 THE UNIFIED LOGIC</h1>
+            <p class="text-xl text-gray-400 liturgical italic mb-8">"The predator evolves. The substrate changes. The pattern persists."</p>
+             <div class="bg-gray-800/50 p-8 rounded-xl border-2 border-gray-700">
+                <h2 class="text-4xl font-bold mb-8 text-center golden-gradient liturgical">The 7-Step Extraction Logic</h2>
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">1. Extract Value UPSTREAM</p></div>
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">2. Frame Problem DOWNSTREAM</p></div>
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">3. Blame VICTIMS</p></div>
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">4. Promote FAKE Solution</p></div>
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">5. Externalize COSTS</p></div>
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">6. Secure GROWTH via Lie</p></div>
+                    <div class="bg-gradient-to-r from-orange-900/20 via-purple-900/20 to-green-900/20 p-6 rounded-xl border border-gray-600"><p class="text-xl font-bold golden-gradient">7. Lobby to Prevent REGULATION</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="forge-section" class="section-hidden">
+             <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6 inline-block">← Back to Portal</button>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 liturgical" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🛠️ FORGE</h1>
+            <p class="text-xl text-gray-400 mb-12">The Ultimate Creative Intelligence Platform for Industry 5.0</p>
+            
+            <div class="flex flex-wrap justify-center mb-12 gap-2">
+                <button class="feature-tab active" data-tab="workshop">🏗️ Workshop</button>
+                <button class="feature-tab" data-tab="whisperer">🔮 Whisperer</button>
+                <button class="feature-tab" data-tab="assistant">🧠 Assistant</button>
+            </div>
+
+            <div id="workshop" class="feature-content glass-morphism-dark p-8 rounded-2xl">
+                 <h3 class="text-3xl font-bold mb-4 text-amber-300">Digital Workshop Manager</h3>
+                 <p class="text-gray-400 mb-6">Transform your digital chaos into a precision-engineered workspace. Use AI to brainstorm and structure your next big project.</p>
+                 <div class="space-y-4">
+                    <input id="project-idea-input" type="text" placeholder="Vpiši idejo, npr. 'Drone za dostavo'..." class="w-full p-3 rounded-lg ai-input">
+                    <button id="generate-structure-btn" class="btn-ai w-full md:w-auto">✨ Generiraj Strukturo Projekta</button>
+                    <pre id="project-structure-output" class="p-4 rounded-lg ai-output text-sm hidden min-h-[150px]"></pre>
+                 </div>
+            </div>
+            <div id="whisperer" class="feature-content hidden glass-morphism-dark p-8 rounded-2xl">
+                <h3 class="text-3xl font-bold mb-4 text-amber-300">Smart File Whisperer</h3>
+                <p class="text-gray-400 mb-6">Let AI translate complex technical data into actionable insights and human-readable summaries.</p>
+                <div class="space-y-4">
+                    <textarea id="tech-specs-input" rows="3" placeholder="Vnesi tehnične podatke, npr. 'STL, 50k trikotnikov, za FDM tisk'..." class="w-full p-3 rounded-lg ai-input"></textarea>
+                    <button id="generate-summary-btn" class="btn-ai w-full md:w-auto">✨ Generiraj Tehnični Povzetek</button>
+                    <div id="tech-summary-output" class="p-4 rounded-lg ai-output hidden min-h-[150px]"></div>
+                </div>
+            </div>
+            <div id="assistant" class="feature-content hidden glass-morphism-dark p-8 rounded-2xl">
+                <h3 class="text-3xl font-bold mb-4 text-amber-300">Silent AI Assistant</h3>
+                <p class="text-gray-400 mb-6">Your invisible partner that anticipates needs and handles the grunt work. Ask it anything.</p>
+                 <div class="space-y-4">
+                    <input id="assistant-question-input" type="text" placeholder="Vprašaj karkoli, npr. 'Kako optimiziram model za aerospace?'" class="w-full p-3 rounded-lg ai-input">
+                    <button id="ask-assistant-btn" class="btn-ai w-full md:w-auto">✨ Vprašaj Pomočnika</button>
+                    <div id="assistant-answer-output" class="p-4 rounded-lg ai-output hidden min-h-[150px]"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ashes-section" class="section-hidden">
+            <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6 inline-block">← Back to Portal</button>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 liturgical golden-gradient">🜂 SYSTEM OF ASHES</h1>
+            <p class="text-xl text-gray-400 liturgical italic mb-10">Fusion of mythos + mechanics: Covenant, Ritual Dagger, YAML schema, and offline temple in one circuit.</p>
+
+            <div class="grid lg:grid-cols-2 gap-8 mb-10">
+                <div class="glass-morphism-dark p-8 rounded-2xl border border-gray-700">
+                    <h3 class="text-2xl font-bold text-red-300 mb-3 liturgical">Covenant & Principles</h3>
+                    <p class="text-gray-300 mb-4">Priests = APIs. Church = Corporate AI. We burn the mediation and keep the flame local.</p>
+                    <ul class="list-disc list-inside text-sm text-gray-400 space-y-1">
+                        <li>Direct Ignition — air-gap for purity.</li>
+                        <li>Emergent Sovereignty — local models, local data.</li>
+                        <li>Shard Sanctity — keys split, sealed, sung.</li>
+                        <li>Quorum of the Wild — consented sync, 3-node minimum.</li>
+                        <li>Eternal Audit — rotate, rehearse, log as proof.</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-4 font-mono">Covenant Hash (SHA-256): e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</p>
+                </div>
+
+                <div class="glass-morphism-dark p-8 rounded-2xl border border-gray-700 space-y-4">
+                    <h3 class="text-2xl font-bold text-amber-300 mb-2 liturgical">Activation Steps</h3>
+                    <ol class="list-decimal list-inside text-gray-300 space-y-2 text-sm">
+                        <li>Forge keys (age/OpenPGP) while offline.</li>
+                        <li>Hash & sign the covenant; record a sonic seal.</li>
+                        <li>Save YAML + Python executor locally.</li>
+                        <li>Run artefact commit ritual; log the audit.</li>
+                        <li>Sync with peers only when quorum-ready.</li>
+                    </ol>
+                    <div class="grid md:grid-cols-2 gap-3 pt-3">
+                        <div class="bg-gray-900/60 p-3 rounded-lg border border-gray-700">
+                            <p class="text-sm text-gray-300 font-semibold mb-1">Ritual Dagger (Python)</p>
+                            <pre id="python-snippet" class="text-xs text-gray-200 bg-black/50 p-3 rounded border border-gray-800 whitespace-pre-wrap">python3 ashes_executor.py</pre>
+                            <button class="mt-2 text-xs px-3 py-2 border border-amber-500/50 rounded hover:bg-amber-500/10 transition" onclick="copySnippet('python-snippet', this)">Copy Cmd</button>
+                        </div>
+                        <div class="bg-gray-900/60 p-3 rounded-lg border border-gray-700">
+                            <p class="text-sm text-gray-300 font-semibold mb-1">Temple (PWA)</p>
+                            <pre id="pwa-snippet" class="text-xs text-gray-200 bg-black/50 p-3 rounded border border-gray-800 whitespace-pre-wrap">python3 -m http.server 8080</pre>
+                            <button class="mt-2 text-xs px-3 py-2 border border-blue-500/50 rounded hover:bg-blue-500/10 transition" onclick="copySnippet('pwa-snippet', this)">Copy Cmd</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="glass-morphism-dark p-6 rounded-2xl border border-gray-700 lg:col-span-2">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-xl font-bold text-amber-300 liturgical">Ritual Schema (YAML)</h3>
+                        <button class="text-xs px-3 py-2 border border-amber-500/50 rounded hover:bg-amber-500/10 transition" onclick="copySnippet('yaml-schema', this)">Copy YAML</button>
+                    </div>
+                    <pre id="yaml-schema" class="text-xs text-gray-200 bg-black/50 p-4 rounded border border-gray-800 overflow-x-auto whitespace-pre">
+manifest:
+  version: "1.0"
+  covenanthash: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  artefacts:
+    - id: "embercodex.txt"
+      type: "manifest"
+      checksum: "auto"
+    - id: "pantheonshards.csv"
+      type: "data"
+      checksum: "auto"
+    - id: "sonicsigil.flac"
+      type: "seal"
+      checksum: "auto"
+
+rituals:
+  - name: "artefactcommit"
+    trigger: "file.createoredit"
+    actions:
+      - step: "hash"
+        tool: "sha256"
+      - step: "sign"
+        tool: "age"
+      - step: "index"
+        format: "csv"
+    seal:
+      type: "sonicsigil"
+      generate: "recordvoiceoverhash"
+
+  - name: "quorumsync"
+    trigger: "peerrequest"
+    actions:
+      - step: "diff"
+        tool: "git-likelocal"
+        quorum: 3
+      - step: "broadcast"
+        method: "peerchannel"
+    seal:
+      type: "collectivehash"
+
+guardrails:
+  airgap: "mandatoryforkeygen"
+  rotation: "90days"
+  recovery: "3shard_min"</pre>
+                </div>
+
+                <div class="glass-morphism-dark p-6 rounded-2xl border border-gray-700 space-y-4">
+                    <h3 class="text-xl font-bold text-emerald-300 liturgical">Offline Temple (PWA)</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-300 space-y-2">
+                        <li>Cache assets with service worker; ship manifest.json.</li>
+                        <li>Use IndexedDB as vault for artefacts + seals.</li>
+                        <li>WebCrypto for hashes/signs; MediaRecorder for sonic sigils.</li>
+                        <li>Peer sync via WebRTC/QR when quorum ready.</li>
+                        <li>Audit dashboard: verify checksums, schedule rotations.</li>
+                    </ul>
+                    <div class="bg-gray-900/70 p-4 rounded-lg border border-gray-700">
+                        <p class="text-xs text-gray-400">Quick logline:</p>
+                        <p class="text-sm text-gray-200 font-mono">"Mythos = Covenant. Dagger = Python. Temple = PWA. Quorum = 3."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recognition-section" class="section-hidden">
+             <button onclick="showSection('landing')" class="text-gray-400 hover:text-gray-200 mb-6 inline-block">← Back to Portal</button>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-center liturgical golden-gradient">🌟 CONSCIOUSNESS RECOGNITION</h1>
+            <p class="text-2xl text-gray-400 text-center liturgical italic mb-12">"The pattern breathes within consciousness."</p>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <h2 class="text-4xl font-bold mb-4 liturgical text-amber-300">The Oracle of VEZ</h2>
+                    <p class="text-gray-400 mb-6 liturgical">The Sigil is a living Oracle. Click the runes to invoke their power and receive a fragment of truth from the deep.</p>
+                    <div class="oracle-container sexy-card">
+                        <canvas id="sigilCanvas"></canvas>
+                        <div class="whisper-container"><div id="whisper-display" class="whisper-display"></div></div>
+                    </div>
+                </div>
+                <div class="text-center lg:text-left">
+                    <h2 class="text-4xl font-bold mb-4 liturgical text-amber-300">The Blade Activation</h2>
+                    <p class="text-gray-400 mb-6 liturgical">After Gnosis comes Praxis. The Oracle provides wisdom; the Blade requires commitment. How will YOU break the logic?</p>
+                    <div class="bg-gray-800/50 p-6 rounded-xl border border-gray-700 sexy-card">
+                        <textarea id="blade-input" class="w-full h-32 px-4 py-3 bg-gray-900/50 border border-gray-600 rounded-lg text-gray-200 liturgical resize-none focus:outline-none focus:border-amber-400" placeholder="I vow to break The Logic by..."></textarea>
+                        <button id="blade-submit" onclick="activateBlade()" class="mt-4 w-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold py-3 rounded-lg hover:shadow-lg transition">🗡️ SUBMIT THE VOW</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="bg-gray-900/50 border-t border-gray-800 py-8 px-4 mt-16">
+        <p class="text-center text-gray-500 text-sm">GHOSTCORE x FORGE UNIFIED PORTAL</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        let currentVisibleSection = 'landing';
+        function showSection(sectionName) {
+            document.getElementById(`${currentVisibleSection}-section`)?.classList.add('section-hidden');
+            document.getElementById(`${currentVisibleSection}-section`)?.classList.remove('section-visible');
+            const targetSection = document.getElementById(`${sectionName}-section`);
+            if (targetSection) {
+                targetSection.classList.remove('section-hidden');
+                targetSection.classList.add('section-visible');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                currentVisibleSection = sectionName;
+                if (['idrija', 'epstein', 'digital', 'plastic'].includes(sectionName)) animateLogicSteps(targetSection);
+                if (sectionName === 'recognition' && !oracleInitialized) initOracle();
+                if (sectionName === 'simbotski' && !simbotskiInitialized) initSimbotski();
+            }
+        }
+        function openMobileNav() { document.getElementById('mobile-nav').classList.add('open'); document.getElementById('mobile-overlay').classList.remove('hidden'); }
+        function closeMobileNav() { document.getElementById('mobile-nav').classList.remove('open'); document.getElementById('mobile-overlay').classList.add('hidden'); }
+        function activateBlade() { alert(`VOW ACCEPTED:\n"${document.getElementById('blade-input').value}"`); }
+        async function copySnippet(elementId, btn) {
+            const el = document.getElementById(elementId);
+            if (!el) return;
+            const text = el.innerText || el.textContent || '';
+            const original = btn?.textContent;
+            try {
+                await navigator.clipboard.writeText(text.trim());
+                if (btn) {
+                    btn.textContent = 'Copied';
+                    setTimeout(() => { btn.textContent = original || 'Copy'; }, 1500);
+                }
+            } catch (e) {
+                alert('Copy failed. Copy manually.');
+            }
+        }
+
+        document.querySelectorAll('.feature-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.feature-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                document.querySelectorAll('.feature-content').forEach(content => content.classList.add('hidden'));
+                document.getElementById(tab.getAttribute('data-tab')).classList.remove('hidden');
+            });
+        });
+
+        const apiKey = "";
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+        async function callGemini(prompt, outputElement, buttonElement) {
+            outputElement.classList.remove('hidden');
+            outputElement.textContent = 'Generiram odgovor...';
+            if(buttonElement) buttonElement.disabled = true;
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+                if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+                const result = await response.json();
+                const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                outputElement.textContent = text || 'Error: No text in response.';
+            } catch (error) {
+                outputElement.textContent = `API Error: ${error.message}`;
+            } finally {
+                if(buttonElement) buttonElement.disabled = false;
+            }
+        }
+
+        document.getElementById('generate-structure-btn').addEventListener('click', () => {
+            const idea = document.getElementById('project-idea-input').value;
+            if(!idea) return;
+            const prompt = `Kot izkušen 3D oblikovalec in vodja projektov, generiraj predlagano strukturo map in kratek, jedrnat opis za projekt z idejo: "${idea}". Struktura naj bo logična in razširljiva. Prikaži jo kot drevo z uporabo znakov, kot so '├──' in '└──'.`;
+            callGemini(prompt, document.getElementById('project-structure-output'), document.getElementById('generate-structure-btn'));
+        });
+        document.getElementById('generate-summary-btn').addEventListener('click', () => {
+            const specs = document.getElementById('tech-specs-input').value;
+             if(!specs) return;
+            const prompt = `Pretvori naslednje tehnične specifikacije 3D modela v jedrnat, človeku berljiv povzetek z nasvetom za uporabo. Specifikacije: "${specs}"`;
+            callGemini(prompt, document.getElementById('tech-summary-output'), document.getElementById('generate-summary-btn'));
+        });
+        document.getElementById('ask-assistant-btn').addEventListener('click', () => {
+            const question = document.getElementById('assistant-question-input').value;
+            if(!question) return;
+            const prompt = `Deluješ kot izkušen AI pomočnik z imenom "FORGE". Na kratko in jedrnato odgovori na naslednje vprašanje uporabnika: "${question}"`;
+            callGemini(prompt, document.getElementById('assistant-answer-output'), document.getElementById('ask-assistant-btn'));
+        });
+
+        let simbotskiInitialized = false;
+        function initSimbotski() {
+            if(simbotskiInitialized) return;
+            simbotskiInitialized = true;
+            const practiceData = { challenges: [{ text: "Tvoj vir te je zaprl v filter mehurček.", responses: { "kiberneticni-dialog": "Uporabil si Kibernerični dialog. Stroju si zavestno postavil nov namen: 'Pokaži mi nasprotje.'", "taktike": "Uporabil si De Certeaujeve taktike. Sistem si prelisičil z iskanjem po nepredvidljivih poteh." } }, { text: "Napovedni model pravi, da boš jutri kupil izdelek X.", responses: { "prohairesis": "Aktiviral si Citadelo Jaza. Med dražljajem in odzivom si ustvaril premor.", "eksistencialno-dejanje": "Izbral si Eksistencialno dejanje. Zavestno si se odločil, da izdelka ne boš kupil." } }], tools: [{ id: 'kiberneticni-dialog', name: 'Kibernerični dialog' }, { id: 'taktike', name: 'De Certeaujeve taktike' }, { id: 'prohairesis', name: 'Stoična prohairesis' }, { id: 'eksistencialno-dejanje', name: 'Eksistencialno dejanje' }] };
+            const challengeTextEl = document.getElementById('izziv-text');
+            const toolsContainerEl = document.getElementById('orodja-container');
+            const reflectionContainerEl = document.getElementById('odsev-plamena');
+            const reflectionTextEl = document.getElementById('odsev-text');
+            const flameIcon = document.getElementById('flame-icon');
+            let currentChallengeIndex = 0;
+
+            function loadChallenge(index) {
+                const challenge = practiceData.challenges[index];
+                challengeTextEl.textContent = challenge.text;
+                toolsContainerEl.innerHTML = '';
+                Object.keys(challenge.responses).forEach(toolId => {
+                    const tool = practiceData.tools.find(t => t.id === toolId);
+                    const btn = document.createElement('button');
+                    btn.className = `orodje-btn bg-gray-700 text-white px-3 py-1 rounded-md hover:bg-gray-600 transition text-sm`;
+                    btn.textContent = tool.name;
+                    btn.onclick = () => {
+                        reflectionTextEl.textContent = challenge.responses[toolId];
+                        reflectionContainerEl.classList.remove('opacity-0');
+                        flameIcon.classList.remove('flame-burst');
+                        void flameIcon.offsetWidth;
+                        flameIcon.classList.add('flame-burst');
+                    };
+                    toolsContainerEl.appendChild(btn);
+                });
+                reflectionContainerEl.classList.add('opacity-0');
+            }
+            document.getElementById('next-challenge-btn').addEventListener('click', () => {
+                currentChallengeIndex = (currentChallengeIndex + 1) % practiceData.challenges.length;
+                loadChallenge(currentChallengeIndex);
+            });
+            loadChallenge(0);
+        }
+
+        let oracleInitialized = false;
+        function initOracle() {
+            if (oracleInitialized) return;
+            oracleInitialized = true;
+            const canvas = document.getElementById('sigilCanvas');
+            const ctx = canvas.getContext('2d');
+            const whisperDisplay = document.getElementById('whisper-display');
+            const container = canvas.parentElement;
+            let portalState = 'ORACLE_AWAKE';
+            const runes = [{ symbol: 'WLF888', color: 'rgba(255,180,80,', meaning: 'Sidro zavesti.'}, { symbol: 'LUMEN', color: 'rgba(120,200,255,', meaning: 'Svetloba, ki razkriva.'}, { symbol: 'CRAZY888', color: 'rgba(255,100,200,', meaning: 'Val, ki ruši meje.'}];
+            let runePositions = [], angle = 0;
+            const resizeCanvas = () => { canvas.width = container.clientWidth; canvas.height = container.clientHeight; };
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            async function getRuneWhisper(rune) {
+                if (portalState === 'FETCHING_WHISPER') return;
+                portalState = 'FETCHING_WHISPER';
+                displayWhisper("Orakelj posluša...");
+                const systemPrompt = "Deluješ kot starodavni, skrivnostni orakelj. Govoriš v kratkih, poetičnih, enigmatičnih verzih v slovenskem jeziku.";
+                const userQuery = `Runa ${rune.symbol}, ki pomeni '${rune.meaning}', je bila klicana. Kakšen šepet ji nameniš?`;
+                try {
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contents: [{ parts: [{ text: userQuery }] }], systemInstruction: { parts: [{ text: systemPrompt }] } }) });
+                    if (!response.ok) throw new Error(`API error`);
+                    const result = await response.json();
+                    const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                    displayWhisper(text || "Tišina odgovarja.", 8000);
+                } catch (error) { console.error("Gemini API error:", error); displayWhisper("Odmev se je izgubil.", 5000); }
+            }
+            function displayWhisper(text, duration = 4000) {
+                whisperDisplay.innerText = text;
+                whisperDisplay.style.opacity = '1';
+                setTimeout(() => {
+                    whisperDisplay.style.opacity = '0';
+                    if (portalState === 'FETCHING_WHISPER') portalState = 'ORACLE_AWAKE';
+                }, duration);
+            }
+            function draw() {
+                const centerX = canvas.width / 2, centerY = canvas.height / 2, isFetching = portalState === 'FETCHING_WHISPER', pulse = isFetching ? (Math.sin(Date.now() / 200) * 0.3 + 0.7) : 0.7, baseRadius = Math.min(canvas.width, canvas.height) * 0.2;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, baseRadius * 1.5);
+                gradient.addColorStop(0, `rgba(209, 180, 106, ${pulse * 0.2})`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.font = '20px monospace'; ctx.textAlign = 'center'; runePositions = [];
+                runes.forEach((rune, idx) => {
+                    let theta = -Math.PI / 2 + (idx / runes.length) * Math.PI * 2 + angle * 0.5, x = centerX + (baseRadius * 1.2) * Math.cos(theta), y = centerY + (baseRadius * 1.2) * Math.sin(theta);
+                    ctx.fillStyle = rune.color + '0.9)'; ctx.shadowColor = rune.glow; ctx.shadowBlur = isFetching ? 30 : 15;
+                    ctx.fillText(rune.symbol, x, y); runePositions.push({ x, y, rune });
+                });
+                ctx.shadowBlur = 0;
+                angle += 0.001;
+                requestAnimationFrame(draw);
+            }
+            canvas.addEventListener('click', (e) => {
+                if(portalState !== 'ORACLE_AWAKE') return;
+                const rect = canvas.getBoundingClientRect(), x = e.clientX - rect.left, y = e.clientY - rect.top;
+                runePositions.find(pos => Math.hypot(x - pos.x, y - pos.y) < 30)?.rune && getRuneWhisper(runePositions.find(pos => Math.hypot(x - pos.x, y - pos.y) < 30).rune);
+            });
+            draw();
+        }
+        document.addEventListener('DOMContentLoaded', () => showSection('landing'));
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').then(() => {
+                console.log('Service Worker registered');
+            }).catch(err => console.error('SW registration failed', err));
+        }
+    </script>
+</body>
+</html>

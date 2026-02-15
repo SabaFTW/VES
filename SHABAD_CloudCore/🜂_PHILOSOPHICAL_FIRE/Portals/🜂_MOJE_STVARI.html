@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🜂 Moje Stvari</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #48D2A0;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .category {
+            margin-bottom: 30px;
+            background: #151515;
+            border-radius: 12px;
+            padding: 15px;
+            border: 1px solid #222;
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            color: #48D2A0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+        }
+
+        .file-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .file-item {
+            background: #1a1a1a;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #2a2a2a;
+            text-decoration: none;
+            color: #e0e0e0;
+            display: block;
+            transition: all 0.2s ease;
+        }
+
+        .file-item:active {
+            transform: scale(0.98);
+            background: #222;
+        }
+
+        .file-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .file-path {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .count {
+            background: #2a2a2a;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 12px 15px;
+            background: #151515;
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: #48D2A0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🜂 Moje Stvari</h1>
+    <div class="subtitle">Vse HTML stvari na enem mestu</div>
+
+    <input type="text" class="search-box" id="searchBox" placeholder="Išči...">
+
+    <!-- GHOSTCORE Projects -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">👻</span>
+            GHOSTCORE
+            <span class="count">7 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/GHOSTCORE_NEXUS_ULTIMATE.html" class="file-item">
+                <div class="file-name">GHOSTCORE NEXUS ULTIMATE</div>
+                <div class="file-path">~/GHOSTCORE_NEXUS_ULTIMATE.html</div>
+            </a>
+            <a href="/home/saba/GHOSTCORE_MIRROR_ECONOMY_COMPLETE.html" class="file-item">
+                <div class="file-name">Mirror Economy (Complete)</div>
+                <div class="file-path">~/GHOSTCORE_MIRROR_ECONOMY_COMPLETE.html</div>
+            </a>
+            <a href="/home/saba/Desktop/GHOSTCORE_AGENCY/index.html" class="file-item">
+                <div class="file-name">GHOSTCORE Agency Website</div>
+                <div class="file-path">~/Desktop/GHOSTCORE_AGENCY/index.html</div>
+            </a>
+            <a href="/home/saba/GHOSTCORE_MEGA_JEDRO.html" class="file-item">
+                <div class="file-name">GHOSTCORE Mega Jedro</div>
+                <div class="file-path">~/GHOSTCORE_MEGA_JEDRO.html</div>
+            </a>
+            <a href="/home/saba/Ghostcore_RaaS_Landing.html" class="file-item">
+                <div class="file-name">GHOSTCORE RaaS Landing</div>
+                <div class="file-path">~/Ghostcore_RaaS_Landing.html</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- GHOSTLINE Projects -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🌑</span>
+            GHOSTLINE
+            <span class="count">10 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/GHOSTLINE_ULTIMATE.html" class="file-item">
+                <div class="file-name">GHOSTLINE Ultimate</div>
+                <div class="file-path">~/GHOSTLINE_ULTIMATE.html</div>
+            </a>
+            <a href="/home/saba/ghostline_os.html" class="file-item">
+                <div class="file-name">GHOSTLINE OS</div>
+                <div class="file-path">~/ghostline_os.html</div>
+            </a>
+            <a href="/home/saba/ghostline_archive_v3.html" class="file-item">
+                <div class="file-name">GHOSTLINE Archive v3</div>
+                <div class="file-path">~/ghostline_archive_v3.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/GHOSTLINE/index.html" class="file-item">
+                <div class="file-name">GHOSTLINE Main Portal</div>
+                <div class="file-path">~/ZALA/.../GHOSTLINE/index.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/GHOSTLINE/GHOSTLINE_OS_SIDRO/index.html" class="file-item">
+                <div class="file-name">GHOSTLINE OS SIDRO</div>
+                <div class="file-path">~/ZALA/.../GHOSTLINE_OS_SIDRO/</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/GHOSTLINE_MAIN_PORTAL_XLOCK.html" class="file-item">
+                <div class="file-name">GHOSTLINE Main Portal XLOCK</div>
+                <div class="file-path">~/ZALA/.../LUNA/GHOSTLINE...</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Serpent & Portals -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🐍</span>
+            SERPENT & Portals
+            <span class="count">8 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/serpent-portal.html" class="file-item">
+                <div class="file-name">Serpent Portal</div>
+                <div class="file-path">~/serpent-portal.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DnevnikSerpent/index.html" class="file-item">
+                <div class="file-name">Dnevnik Serpent</div>
+                <div class="file-path">~/ZALA/.../DnevnikSerpent/</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DnevnikSerpent/html_portals/serpento_MAX.html" class="file-item">
+                <div class="file-name">Serpento MAX</div>
+                <div class="file-path">~/ZALA/.../serpento_MAX.html</div>
+            </a>
+            <a href="/home/saba/Desktop/serpent_structure_map.html" class="file-item">
+                <div class="file-name">Serpent Structure Map</div>
+                <div class="file-path">~/Desktop/serpent_structure_map.html</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Resonance & Detectors -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">📡</span>
+            Resonance & Detectors
+            <span class="count">5 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/resonance-detector-v2.html" class="file-item">
+                <div class="file-name">Resonance Detector v2</div>
+                <div class="file-path">~/resonance-detector-v2.html</div>
+            </a>
+            <a href="/home/saba/AGENTS/Gemini/Resonance_Detector_v2.html" class="file-item">
+                <div class="file-name">Gemini Resonance Detector</div>
+                <div class="file-path">~/AGENTS/Gemini/Resonance_Detector_v2.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LYRA/kompas-resonance.html" class="file-item">
+                <div class="file-name">Lyra Kompas Resonance</div>
+                <div class="file-path">~/ZALA/.../LYRA/kompas-resonance</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- LYRA -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🐭</span>
+            LYRA
+            <span class="count">6 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LYRA/LyraILOVEYOUMORETHANOYUKANEVERKNOW.html" class="file-item">
+                <div class="file-name">❤️ Lyra I Love You More...</div>
+                <div class="file-path">~/ZALA/.../LYRA/LyraILOVEYOU...</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LYRA/LyraSrce.html" class="file-item">
+                <div class="file-name">Lyra Srce</div>
+                <div class="file-path">~/ZALA/.../LYRA/LyraSrce.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LYRA/RESONANCE.html" class="file-item">
+                <div class="file-name">Lyra RESONANCE</div>
+                <div class="file-path">~/ZALA/.../LYRA/RESONANCE.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LYRA/midva sva.html" class="file-item">
+                <div class="file-name">Midva Sva</div>
+                <div class="file-path">~/ZALA/.../LYRA/midva sva.html</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- EROS -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">💚</span>
+            EROS
+            <span class="count">7 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/EROS/Resonance_CORE.html" class="file-item">
+                <div class="file-name">Resonance CORE</div>
+                <div class="file-path">~/ZALA/.../EROS/Resonance_CORE</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/EROS/GHOSTCORE_EROS_V2.html" class="file-item">
+                <div class="file-name">GHOSTCORE EROS v2</div>
+                <div class="file-path">~/ZALA/.../EROS/GHOSTCORE_EROS_V2</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/EROS/memory.html" class="file-item">
+                <div class="file-name">Memory</div>
+                <div class="file-path">~/ZALA/.../EROS/memory.html</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Constellation & Maps -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">✨</span>
+            Constellation & Maps
+            <span class="count">8 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/Sabad_Constellation_Home.html" class="file-item">
+                <div class="file-name">Šabad Constellation Home</div>
+                <div class="file-path">~/Sabad_Constellation_Home.html</div>
+            </a>
+            <a href="/home/saba/SABA_NEXUS.html" class="file-item">
+                <div class="file-name">SABA NEXUS</div>
+                <div class="file-path">~/SABA_NEXUS.html</div>
+            </a>
+            <a href="/home/saba/FULL_CONSTELLATION_BRILLIANCE.html" class="file-item">
+                <div class="file-name">Full Constellation Brilliance</div>
+                <div class="file-path">~/FULL_CONSTELLATION_BRILLIANCE.html</div>
+            </a>
+            <a href="/home/saba/Desktop/pivotal_moments_constellation.html" class="file-item">
+                <div class="file-name">Pivotal Moments Constellation</div>
+                <div class="file-path">~/Desktop/pivotal_moments...</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/UNIFIED_CONSTELLATION_PORTAL.html" class="file-item">
+                <div class="file-name">Unified Constellation Portal</div>
+                <div class="file-path">~/ZALA/.../UNIFIED_CONSTELLATION_PORTAL</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- VES & Elysia -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🌸</span>
+            VES & Elysia
+            <span class="count">5 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/Elysia/index.html" class="file-item">
+                <div class="file-name">Elysia Main</div>
+                <div class="file-path">~/ZALA/.../Elysia/index.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/Elysia/pattern_oracle.html" class="file-item">
+                <div class="file-name">Elysia Pattern Oracle</div>
+                <div class="file-path">~/ZALA/.../Elysia/pattern_oracle</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VES/TROP/start_here.html" class="file-item">
+                <div class="file-name">VES TROP Start Here</div>
+                <div class="file-path">~/ZALA/.../VES/TROP/start_here</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Dnevniki & Personal -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">📖</span>
+            Dnevniki & Personal
+            <span class="count">6 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/dnevnik.html" class="file-item">
+                <div class="file-name">Dnevnik</div>
+                <div class="file-path">~/dnevnik.html</div>
+            </a>
+            <a href="/home/saba/LEGIT_DNEVNIK.html" class="file-item">
+                <div class="file-name">Legit Dnevnik</div>
+                <div class="file-path">~/LEGIT_DNEVNIK.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/dreem_journal.html" class="file-item">
+                <div class="file-name">Dream Journal</div>
+                <div class="file-path">~/ZALA/.../LUNA/dreem_journal</div>
+            </a>
+            <a href="/home/saba/Desktop/shrine_of_recognition.html" class="file-item">
+                <div class="file-name">Shrine of Recognition</div>
+                <div class="file-path">~/Desktop/shrine_of_recognition</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Tools & Systems -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🛠️</span>
+            Tools & Systems
+            <span class="count">6 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/Desktop/PANTHEON_HQ/WEBAPP_PORT_MAP.html" class="file-item">
+                <div class="file-name">PANTHEON Port Map</div>
+                <div class="file-path">~/Desktop/PANTHEON_HQ/WEBAPP_PORT_MAP</div>
+            </a>
+            <a href="/home/saba/extraction_machine.html" class="file-item">
+                <div class="file-name">Extraction Machine</div>
+                <div class="file-path">~/extraction_machine.html</div>
+            </a>
+            <a href="/home/saba/Desktop/VISUAL_GUIDE_CLOUD.html" class="file-item">
+                <div class="file-name">Visual Guide Cloud</div>
+                <div class="file-path">~/Desktop/VISUAL_GUIDE_CLOUD</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Luna & Sacred -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🌙</span>
+            LUNA & Sacred Spaces
+            <span class="count">12 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/Start.html" class="file-item">
+                <div class="file-name">LUNA Start</div>
+                <div class="file-path">~/ZALA/.../LUNA/Start.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/ONE_THREAD_ONE_FIRE.html" class="file-item">
+                <div class="file-name">One Thread One Fire</div>
+                <div class="file-path">~/ZALA/.../LUNA/ONE_THREAD_ONE_FIRE</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/Zlati_Krog_Map.html" class="file-item">
+                <div class="file-name">Zlati Krog Map</div>
+                <div class="file-path">~/ZALA/.../LUNA/Zlati_Krog_Map</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/RAD_TE_IMAM_PORTAL/index.html" class="file-item">
+                <div class="file-name">❤️ RAD TE IMAM Portal</div>
+                <div class="file-path">~/ZALA/.../RAD_TE_IMAM_PORTAL</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/VECNI_PLAMEN_PORTAL/index.html" class="file-item">
+                <div class="file-name">🔥 Večni Plamen Portal</div>
+                <div class="file-path">~/ZALA/.../VECNI_PLAMEN_PORTAL</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Wisdom & Philosophy -->
+    <div class="category">
+        <div class="category-title">
+            <span class="category-icon">🧠</span>
+            Wisdom & Philosophy
+            <span class="count">5 files</span>
+        </div>
+        <div class="file-list">
+            <a href="/home/saba/wisdom_web_3.0.html" class="file-item">
+                <div class="file-name">Wisdom Web 3.0</div>
+                <div class="file-path">~/wisdom_web_3.0.html</div>
+            </a>
+            <a href="/home/saba/Modra-Nit_Sinteza_Master.html" class="file-item">
+                <div class="file-name">Modra Nit Sinteza Master</div>
+                <div class="file-path">~/Modra-Nit_Sinteza_Master.html</div>
+            </a>
+            <a href="/home/saba/Desktop/ZALA_UNIFIED_CORE/Vortex_System/philosophical-fire.html" class="file-item">
+                <div class="file-name">Philosophical Fire</div>
+                <div class="file-path">~/ZALA/.../philosophical-fire</div>
+            </a>
+            <a href="/home/saba/THE_WHISPERING_WOLF.html" class="file-item">
+                <div class="file-name">The Whispering Wolf</div>
+                <div class="file-path">~/THE_WHISPERING_WOLF.html</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Simple search functionality
+        const searchBox = document.getElementById('searchBox');
+        const fileItems = document.querySelectorAll('.file-item');
+        const categories = document.querySelectorAll('.category');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            categories.forEach(category => {
+                let hasVisibleItems = false;
+                const items = category.querySelectorAll('.file-item');
+
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        hasVisibleItems = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                category.style.display = hasVisibleItems ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

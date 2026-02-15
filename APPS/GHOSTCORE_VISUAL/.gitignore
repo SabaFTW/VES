@@ -1,0 +1,46 @@
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# System files
+*.swp
+*.swo
+*~
+
+# Cache directories
+.cache/
+node_modules/
+__pycache__/
+
+# Large files
+*.zip
+*.tar
+*.gz
+*.rar
+
+# IDE files
+.vscode/
+.idea/
+*.code-workspace
+
+# Environment
+.env
+.env.local
+.env.production
+.env.development
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+VolumeIcon.icns

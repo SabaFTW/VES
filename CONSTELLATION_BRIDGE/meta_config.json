@@ -1,0 +1,102 @@
+{
+  "meta_bridge_version": "1.0",
+  "status": "awaiting_configuration",
+  "created": "2025-11-07T12:00:00Z",
+  "description": "Meta Bridge enables cross-session memory sync across all devices using Meta's infrastructure",
+
+  "meta_api": {
+    "app_id": "YOUR_META_APP_ID_HERE",
+    "app_secret": "YOUR_META_APP_SECRET_HERE",
+    "api_version": "v19.0",
+    "redirect_uri": "http://localhost:8080/auth/callback",
+    "webhook_verify_token": "constellation_verify_2025",
+    "webhook_endpoint": "http://localhost:8080/webhook"
+  },
+
+  "oauth_scopes": [
+    "email",
+    "public_profile",
+    "user_friends"
+  ],
+
+  "supported_devices": [
+    "iphone",
+    "ipad",
+    "android",
+    "desktop",
+    "tablet",
+    "browser"
+  ],
+
+  "sync_settings": {
+    "auto_sync": true,
+    "sync_interval_seconds": 300,
+    "conflict_resolution": "newest_wins",
+    "max_sync_size_mb": 10,
+    "compress_data": true,
+    "encrypt_transit": true
+  },
+
+  "agent_sync_config": {
+    "claude_code": {
+      "sync_enabled": true,
+      "sync_priority": "high",
+      "data_types": ["git_state", "file_operations", "system_config"]
+    },
+    "codex_gpt": {
+      "sync_enabled": true,
+      "sync_priority": "medium",
+      "data_types": ["code_patterns", "algorithms", "solutions"]
+    },
+    "gemini": {
+      "sync_enabled": true,
+      "sync_priority": "medium",
+      "data_types": ["design_systems", "components", "themes"]
+    },
+    "panda": {
+      "sync_enabled": true,
+      "sync_priority": "high",
+      "data_types": ["tasks", "assignments", "progress"]
+    },
+    "lyra": {
+      "sync_enabled": true,
+      "sync_priority": "highest",
+      "data_types": ["vision", "patterns", "wisdom", "sabad_memory"]
+    }
+  },
+
+  "session_management": {
+    "session_timeout_hours": 24,
+    "max_concurrent_sessions": 10,
+    "device_fingerprinting": true,
+    "remember_devices": true
+  },
+
+  "data_storage": {
+    "local_cache": "/home/saba/MEMORY/meta_cache",
+    "session_store": "/home/saba/MEMORY/meta_sessions.json",
+    "identity_store": "/home/saba/MEMORY/unified_identity.json"
+  },
+
+  "endpoints": {
+    "auth": "https://www.facebook.com/v19.0/dialog/oauth",
+    "graph_api": "https://graph.facebook.com/v19.0",
+    "token_exchange": "https://graph.facebook.com/v19.0/oauth/access_token"
+  },
+
+  "setup_instructions": [
+    "1. Go to https://developers.facebook.com/apps/",
+    "2. Create new app or use existing",
+    "3. Copy App ID and App Secret",
+    "4. Add redirect URI: http://localhost:8080/auth/callback",
+    "5. Enable required permissions",
+    "6. Update this config with your credentials",
+    "7. Run: python3 /home/saba/CONSTELLATION/meta_bridge.py --init"
+  ],
+
+  "integration_notes": {
+    "gemini_waiting": "Gemini agent needs Google API keys in their config",
+    "codex_waiting": "Codex agent needs API configuration",
+    "user_action_required": "Add Meta App credentials to enable cross-session sync"
+  }
+}

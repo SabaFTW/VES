@@ -1,0 +1,19 @@
+=== SISTEMSKI STATUS ===
+
+✅ NVIDIA driverji: 390.157 (delujoči)
+✅ Dual monitor: še ni konfiguriran
+✅ RAM: 47GB (41GB dostopno)
+✅ Brskalnik: Firefox (nameščen)
+✅ Swap: optimiziran (swappiness=10)
+✅ Servisi: optimizirani
+✅ VES sistemi: kartografirani
+✅ AI workspace: ustvarjen
+✅ Dual user config: pripravljena
+✅ Optimizacijski plan: dokumentiran
+
+📊 Aktivni servisi:
+3
+
+📈 Prosti viri:
+Mem:            47Gi       5.5Gi        15Gi       251Mi        26Gi        41Gi
+Swap:           15Gi        67Mi        15Gi

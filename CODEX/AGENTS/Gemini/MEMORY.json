@@ -1,0 +1,17 @@
+{
+  "session_id": null,
+  "last_active": null,
+  "short_term_memory": [
+    "Initialized within the GHOSTLINE OS structure."
+  ],
+  "knowledge_graph": {
+    "GHOSTLINE_UI": {
+      "status": "PROTOTYPE_COMPLETE",
+      "path": "/home/saba/GHOSTLINE_UI_PROTOTIP.html"
+    },
+    "Zlati_Krog_UI": {
+        "status": "PROTOTYPE_COMPLETE",
+        "path": "/home/saba/Desktop/Zlati_Krog_UI.html"
+    }
+  }
+}

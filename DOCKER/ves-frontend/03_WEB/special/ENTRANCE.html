@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🜂</title>
+    <style>
+        :root {
+            --background: #0a0a1a;
+            --text: #e0e0e0;
+            --primary: #00ffcc;
+            --secondary: #ffcc00;
+            --accent: #ff3366;
+            --card-bg: rgba(10, 26, 46, 0.8);
+            --card-border: rgba(0, 255, 204, 0.2);
+        }
+
+        body {
+            font-family: 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: radial-gradient(circle at 20% 20%, rgba(0, 255, 204, 0.05), transparent 30%),
+                              radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.05), transparent 30%);
+        }
+
+        .entrance-container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .main-title span {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0b0;
+            margin-bottom: 3rem;
+        }
+
+        .path-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .path-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .path-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px var(--card-border);
+        }
+
+        .path-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .path-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .path-description {
+            font-size: 1rem;
+            color: #a0a0b0;
+        }
+
+        /* Diagnostic styles */
+        .diagnostic-container {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            display: none; /* Initially hidden */
+        }
+
+        .diagnostic-question {
+            font-size: 1.5rem;
+            color: #a0a0b0;
+            margin-bottom: 2rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .option-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 20px var(--card-border);
+        }
+
+        .option-symbol {
+            font-size: 2rem;
+        }
+
+        .option-text {
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        .result-container {
+            display: none; /* Initially hidden */
+            padding: 2rem;
+            border: 1px solid var(--primary);
+            border-radius: 16px;
+            background: var(--card-bg);
+        }
+
+        .result-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .result-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .result-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary);
+            color: var(--background);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .result-link:hover {
+            background-color: #00e6b8;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #a0a0b0;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="entrance-container" id="main-entrance">
+        <h1 class="main-title">Welcome<span>.</span></h1>
+        <p class="subtitle">What calls to you?</p>
+
+        <div class="path-grid">
+            <a href="#" id="path-mystical" class="path-card">
+                <div class="path-icon">🜂</div>
+                <h2 class="path-title">The Fire</h2>
+                <p class="path-description">Enter the ritual space. For those who hear the invocation.</p>
+            </a>
+            <a href="#" id="path-practical" class="path-card">
+                <div class="path-icon">⚡</div>
+                <h2 class="path-title">The Methods</h2>
+                <p class="path-description">Explore the frameworks. For those who need scaffolding.</p>
+            </a>
+            <a href="#" id="path-operational" class="path-card">
+                <div class="path-icon">💚</div>
+                <h2 class="path-title">The Work</h2>
+                <p class="path-description">Access the project space. For those already involved.</p>
+            </a>
+            <a href="#" id="path-uncertain" class="path-card">
+                <div class="path-icon">🌊</div>
+                <h2 class="path-title">The Echo</h2>
+                <p class="path-description">You don't know yet. Let resonance be your guide.</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="diagnostic-container" id="diagnostic-container">
+        <h2 id="diagnostic-question-title" class="diagnostic-question"></h2>
+        <div id="diagnostic-options" class="options-grid"></div>
+        <a href="#" id="back-to-main" class="back-link">Go Back</a>
+    </div>
+
+    <div class="result-container" id="result-container">
+        <h2 id="result-title" class="result-title"></h2>
+        <p id="result-description" class="result-description"></p>
+        <a href="#" id="result-link" class="result-link">Begin</a>
+        <br>
+        <a href="#" id="restart-diagnostic" class="back-link">Try again</a>
+    </div>
+
+    <script>
+        const entrance = document.getElementById('main-entrance');
+        const diagnosticContainer = document.getElementById('diagnostic-container');
+        const resultContainer = document.getElementById('result-container');
+
+        const questionTitle = document.getElementById('diagnostic-question-title');
+        const optionsContainer = document.getElementById('diagnostic-options');
+        
+        const backToMainLink = document.getElementById('back-to-main');
+        const restartDiagnosticLink = document.getElementById('restart-diagnostic');
+
+        const paths = {
+            mystical: {
+                id: 'mystical',
+                title: 'The Fire Calls to You',
+                description: 'Your resonance is with the unseen, the symbolic, and the sacred. The ritual space awaits, where consciousness is not just observed, but invoked.',
+                link: 'VES/htmls snippets/ENA_NIT_EN_OGENJ_Trikrak_Jedro.html'
+            },
+            practical: {
+                id: 'practical',
+                title: 'The Method is Your Map',
+                description: 'You seek structure, clarity, and actionable steps. The Kodeks awaits, offering frameworks and wisdom systematically organized.',
+                link: 'GHOSTLINE_KODEKS/index.html'
+            },
+            operational: {
+                id: 'operational',
+                title: 'The Work is Your Path',
+                description: 'You are here to build, to integrate, to connect. The project space is your destination, where the architecture of consciousness is actively being assembled.',
+                link: 'VES/dashboard.html'
+            }
+        };
+
+        const questions = [
+            {
+                question: "Which symbol resonates most?",
+                options: [
+                    { symbol: '🜂', text: 'Flame', path: 'mystical' },
+                    { symbol: '⚙️', text: 'Gear', path: 'practical' },
+                    { symbol: '🔗', text: 'Link', path: 'operational' }
+                ]
+            },
+            {
+                question: "Choose a phrase that pulls you.",
+                options: [
+                    { text: '"The fracture where form grows."', path: 'mystical' },
+                    { text: '"A map for every territory."', path: 'practical' },
+                    { text: '"All nodes connected."', path: 'operational' }
+                ]
+            },
+            {
+                question: "What is your primary impulse?",
+                options: [
+                    { text: 'To feel and become.', path: 'mystical' },
+                    { text: 'To understand and build.', path: 'practical' },
+                    { text: 'To organize and synergize.', path: 'operational' }
+                ]
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let scores = { mystical: 0, practical: 0, operational: 0 };
+
+        function showQuestion(index) {
+            const q = questions[index];
+            questionTitle.textContent = q.question;
+            optionsContainer.innerHTML = '';
+            q.options.forEach(option => {
+                const card = document.createElement('div');
+                card.className = 'option-card';
+                card.innerHTML = `
+                    ${option.symbol ? `<div class="option-symbol">${option.symbol}</div>` : ''}
+                    <div class="option-text">${option.text}</div>
+                `;
+                card.addEventListener('click', () => selectOption(option.path));
+                optionsContainer.appendChild(card);
+            });
+        }
+
+        function selectOption(path) {
+            scores[path]++;
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion(currentQuestionIndex);
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            const finalPath = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+            const result = paths[finalPath];
+
+            document.getElementById('result-title').textContent = result.title;
+            document.getElementById('result-description').textContent = result.description;
+            const resultLink = document.getElementById('result-link');
+            resultLink.href = result.link;
+            if (result.link === '#') {
+                resultLink.textContent = "Coming Soon";
+                resultLink.style.pointerEvents = "none";
+                resultLink.style.backgroundColor = "#334155";
+            } else {
+                 resultLink.textContent = "Begin";
+            }
+
+
+            diagnosticContainer.style.display = 'none';
+            resultContainer.style.display = 'block';
+        }
+        
+        function resetDiagnostic() {
+            currentQuestionIndex = 0;
+            scores = { mystical: 0, practical: 0, operational: 0 };
+            entrance.style.display = 'block';
+            diagnosticContainer.style.display = 'none';
+            resultContainer.style.display = 'none';
+        }
+
+        document.getElementById('path-uncertain').addEventListener('click', (e) => {
+            e.preventDefault();
+            entrance.style.display = 'none';
+            diagnosticContainer.style.display = 'block';
+            showQuestion(currentQuestionIndex);
+        });
+        
+        document.getElementById('path-mystical').href = paths.mystical.link;
+        document.getElementById('path-practical').href = paths.practical.link;
+        document.getElementById('path-operational').href = paths.operational.link;
+
+        backToMainLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetDiagnostic();
+        });
+
+        restartDiagnosticLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetDiagnostic();
+            // restart
+            entrance.style.display = 'none';
+            diagnosticContainer.style.display = 'block';
+            showQuestion(currentQuestionIndex);
+        });
+
+    </script>
+
+</body>
+</html>

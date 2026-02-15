@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: ghostline-backend
+    ports:
+      - "${PORT:-3001}:3001"
+    environment:
+      # Core
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=3001
+      - DB_PATH=/app/storage/db/ghostline.db
+      - CORS_ORIGIN=${CORS_ORIGIN:-http://localhost:3000}
+      # LLM Provider
+      - LLM_PROVIDER=${LLM_PROVIDER:-local}
+      - MAX_TOKENS=${MAX_TOKENS:-4096}
+      - TEMPERATURE=${TEMPERATURE:-0.7}
+      # Claude
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - CLAUDE_MODEL=${CLAUDE_MODEL}
+      # OpenAI
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL}
+      - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+      # Gemini
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL}
+      # Local LLM
+      - LOCAL_LLM_ENDPOINT=${LOCAL_LLM_ENDPOINT:-http://host.docker.internal:11434}
+      - LOCAL_LLM_MODEL=${LOCAL_LLM_MODEL:-llama2}
+      - LOCAL_LLM_FORMAT=${LOCAL_LLM_FORMAT:-ollama}
+    volumes:
+      - ./storage:/app/storage
+    networks:
+      - ghostline-net
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build: ./frontend
+    container_name: ghostline-frontend
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    environment:
+      - REACT_APP_API_URL=${REACT_APP_API_URL:-http://localhost:3001}
+    tmpfs:
+      - /var/cache/nginx:rw,size=50m
+      - /var/run:rw,size=10m
+    depends_on:
+      - backend
+    networks:
+      - ghostline-net
+    restart: unless-stopped
+
+networks:
+  ghostline-net:
+    driver: bridge
+
+volumes:
+  storage:

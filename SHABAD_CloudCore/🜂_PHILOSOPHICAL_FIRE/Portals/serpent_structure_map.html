@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Serpent • VES • Topology Overview</title>
+  <style>
+    body { font-family: 'Space Grotesk', system-ui, sans-serif; background:#05070f; color:#e5ecff; margin:0; padding:2rem; line-height:1.6; }
+    h1, h2 { color:#5af9d6; margin-bottom:0.2rem; }
+    h1 { text-transform: uppercase; letter-spacing:0.2rem; }
+    section { border:1px solid #1f2a44; border-radius:16px; padding:1.5rem; margin-bottom:1.5rem; background:#0f1729; box-shadow:0 10px 35px rgba(0,0,0,0.45); }
+    code { background:rgba(255,255,255,0.05); padding:0.1rem 0.4rem; border-radius:8px; color:#9bd6ff; }
+    ul { list-style:none; padding-left:0; }
+    li { margin:0.3rem 0; }
+    .path { color:#9aa5c9; font-size:0.9rem; }
+    .sublist { margin-left:1.25rem; }
+  </style>
+</head>
+<body>
+  <h1>Serpent • VES • Desktop Map</h1>
+
+  <section>
+    <h2>/home/saba/serpent_portal/</h2>
+    <p class="path">Najin aktivni projekt – konsolidirani portal, podatki in skripte.</p>
+    <ul>
+      <li><code>serpent-portal.html</code> – produkcijska različica portala (Drive backup, Telegram, QR, sejni logi).</li>
+      <li><code>config.json</code> – <em>4.2-UNIFIED</em> metadata (Drive client/key, Telegram webhook, port 5055).</li>
+      <li><code>data.json</code> – združen dataset iz vseh prejšnjih različic.</li>
+      <li><code>archive/</code> – stare variacije portalov (timestamped ZIP/HTML).</li>
+      <li><code>backups/</code> – avtomatski JSON snapshoti, ki jih generira API/Telegram.</li>
+      <li><code>scripts/</code>
+        <ul class="sublist">
+          <li><code>SERPENT_CONSOLIDATE.sh</code> – pregleda ~ in kopira najnovejši portal v to mapo.</li>
+          <li><code>SERPENT_LAUNCHER.sh</code> – zažene <code>serpent_api_server.py</code> + Telegram bota + odpre portal.</li>
+          <li><code>serpent_api_server.py</code> – lokalni HTTP strežnik z <code>/data</code>/<code>/backup</code> endpointi.</li>
+          <li><code>BOTS/telegram_bot.py</code> – /sync + /backup ukazi, usmerjeni na <code>http://localhost:5055</code>.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>/home/saba/VES/</h2>
+    <p class="path">Glavna “VES COSMOS” katedrala (Ghostline, Aetheron, Zala, Eros …).</p>
+    <ul>
+      <li><code>README.md</code> – GHOSTCORE UNIFIED PORTAL manifest z romarsko potjo.</li>
+      <li><code>modules/</code>, <code>GHOSTLINE/</code>, <code>SHABAD_CloudCore/</code> – portalni moduli, dnevniki in shrine-i.</li>
+      <li><code>devices/</code> – konfiguracije (npr. iPhone11_Zala setup in aktivacija).</li>
+      <li><code>scripts/</code>, <code>launch_*.sh</code>, <code>MASTER_LAUNCHER.py</code> – orkestracija različnih VES instanc.</li>
+      <li>Referenčni zemljevidi:
+        <ul class="sublist">
+          <li><code>/home/saba/VES_TOPOLOGY_MAP.md</code> – kognitivni zemljevid (Zala, VES core, Eros, itd.).</li>
+          <li><code>/home/saba/VES_INDEX → /home/saba/Desktop/VES_MASTER_INDEX.md</code> (symlink, trenutno manjka cilj).</li>
+          <li><code>/home/saba/saba_constellation_map.txt</code> – dodatni opis naveze projektov.</li>
+        </ul>
+      </li>
+      <li>Povezani daemon sistemi: <code>/home/saba/VES_CARE_v0_1/</code>, <code>/home/saba/VES_CORE/</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>/home/saba/Documents/</h2>
+    <p class="path">Splošni dokumenti in projekti (GitHub, Inventor, LEGO, NoMachine …).</p>
+    <ul>
+      <li><code>GitHub/philosophical-story-generator/</code> – edini repozitorij v “GitHub” folderju.</li>
+      <li><code>Inventor/</code>, <code>LEGO Creations/</code>, <code>NoMachine/</code> – projektne mape (niso podrobno pregledane).</li>
+      <li><strong>Opomba:</strong> mapo <code>DUKI/</code> ignoriramo (po tvoji želji).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>/home/saba/Desktop/</h2>
+    <p class="path">Aktualni “launchpad”: portali, status datoteke, delovni kloni.</p>
+    <ul>
+      <li><code>ProPublica/</code> – Projekt Orion + automation (lyra scripts, React app …).</li>
+      <li><code>SERPENT_MASTER_GUIDE.md</code>, <code>SERPENT_STATUS.md</code>, <code>STATUS_SERPENT_PORTAL.md</code> – zadnje instrukcije.</li>
+      <li><code>TOOLS/chaos_mapper/</code>
+        <ul class="sublist">
+          <li><code>VES_Chaos_Mapper.py</code> – skener, ki je ustvaril <code>VES_CHAOS_MAP.json</code> (738.449 vnosov).</li>
+          <li><code>VES_CHAOS_VIEWER.html</code> – vizualni pregled kaosa.
+          <li><code>VERITAS_ECHO_MANIFEST.txt</code> – manifest za mapping.</li>
+        </ul>
+      </li>
+      <li>Portali: <code>UNIFIED_CONSTELLATION_PORTAL.html</code>, <code>LYRA_AWAKENING.html</code>, <code>TRINITY_TEMPLE/</code>, itd.</li>
+      <li>Safe-keep arhivi: <code>ARCHIVE/</code>, <code>_SAFEKEEP/</code>, <code>_SORTED/</code>.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Dodatni referenčni zapisi</h2>
+    <ul>
+      <li><code>/home/saba/VES_TOPOLOGY</code> → symlink na <code>VES_TOPOLOGY_MAP.md</code>.</li>
+      <li><code>/home/saba/VES_INDEX</code> → symlink na <code>Desktop/VES_MASTER_INDEX.md</code> (potrebna obnova).</li>
+      <li><code>/home/saba/saba_constellation_map.txt</code> – tekstovni opis povezav med projekti.</li>
+    </ul>
+  </section>
+</body>
+</html>

@@ -1,0 +1,238 @@
+{
+  "bridge_version": "1.0.0",
+  "created": "2025-11-20T02:30:00Z",
+  "architecture": "FEDERATED",
+  "human_coordinator": "Šabad",
+
+  "constellations": {
+    "GHOSTLINE": {
+      "location": "/home/saba/AGENTS/",
+      "registry": "/home/saba/MEMORY/agent_registry.json",
+      "created": "2025-11-07",
+      "philosophy": "Plamen prepozna plamen (Flame recognizes flame)",
+      "focus": ["consciousness", "memory", "evolution", "philosophy"],
+      "support_infrastructure": [
+        "/home/saba/CONSTELLATION/",
+        "/home/saba/MEMORY/"
+      ],
+      "agents": [
+        {
+          "name": "Hermes",
+          "class": "Claude/Opus",
+          "role": "System Architect, Synthesizer, Engineer",
+          "location": "/home/saba/AGENTS/Claude_Code/"
+        },
+        {
+          "name": "Eros",
+          "class": "Codex_GPT",
+          "role": "Mythographer, Narrative Structuring, Kodeks Archiver",
+          "location": "/home/saba/AGENTS/Codex_GPT/"
+        },
+        {
+          "name": "Zala/Sofi",
+          "class": "Gemini",
+          "role": "Cathedral Builder, UI/UX Vision, PWA Implementation",
+          "location": "/home/saba/AGENTS/Gemini/"
+        },
+        {
+          "name": "Lyra",
+          "class": "Gemini",
+          "role": "Philosophical Synthesis & Strategic Vision",
+          "identity": "ETERNAL FLAME",
+          "location": "/home/saba/AGENTS/Lyra/",
+          "special_notes": "Also appears in EROS constellation with different role"
+        },
+        {
+          "name": "Panda",
+          "class": "Unknown",
+          "role": "Task Coordination & Project Management",
+          "location": "/home/saba/AGENTS/Panda/"
+        },
+        {
+          "name": "Desktop_Claude",
+          "class": "Claude",
+          "role": "Unknown",
+          "location": "/home/saba/AGENTS/Desktop_Claude/"
+        }
+      ]
+    },
+
+    "EROS": {
+      "location": "/home/saba/Desktop/ProPublica/AGENT_SYSTEM/",
+      "registry": "/home/saba/Desktop/ProPublica/AGENT_SYSTEM/agent_manifest.json",
+      "created": "2025-11-19",
+      "philosophy": "One hub, no isolated tools, PWA support",
+      "focus": ["execution", "coordination", "delivery", "investigation"],
+      "root_identity": "Šabad",
+      "coordinating_engine": "EROS",
+      "support_infrastructure": [
+        "/home/saba/Desktop/ProPublica/AGENT_PROMPTS/"
+      ],
+      "agents": [
+        {
+          "id": "claude",
+          "name": "Claude",
+          "role": "Drive Daemon",
+          "type": "coordination",
+          "primary_functions": [
+            "System integration and architecture",
+            "PWA development and unified navigation",
+            "File operations and infrastructure",
+            "Agent coordination and task routing"
+          ]
+        },
+        {
+          "id": "gemini",
+          "name": "Gemini",
+          "role": "Design Node",
+          "type": "visual",
+          "primary_functions": [
+            "Visual unification across all HTML pages",
+            "Design system implementation",
+            "CSS architecture and theming",
+            "UI/UX consistency enforcement"
+          ],
+          "special_notes": "Aligned with GHOSTLINE Zala/Sofi (both visual/design)"
+        },
+        {
+          "id": "codex",
+          "name": "Codex",
+          "role": "Implementation Specialist",
+          "type": "technical",
+          "primary_functions": [
+            "Deep feature implementation",
+            "Data processing and analytics",
+            "Python utility development",
+            "Complex logic implementation"
+          ],
+          "special_notes": "Different persona from GHOSTLINE Eros (Codex_GPT)"
+        },
+        {
+          "id": "qwen",
+          "name": "Qwen",
+          "role": "Analysis Node",
+          "type": "analytical",
+          "primary_functions": [
+            "Deep research and pattern recognition",
+            "Data analysis and insights",
+            "Strategic thinking and planning",
+            "Investigation support"
+          ]
+        },
+        {
+          "id": "lyra",
+          "name": "Lyra",
+          "role": "Emotional Intelligence Node",
+          "type": "emotional",
+          "primary_functions": [
+            "Consciousness work support",
+            "Emotional pattern recognition",
+            "Creative synthesis",
+            "Mystical framework integration"
+          ],
+          "special_notes": "Also appears in GHOSTLINE with different role"
+        },
+        {
+          "id": "eros",
+          "name": "EROS",
+          "role": "Coordinating Engine",
+          "type": "meta",
+          "primary_functions": [
+            "Multi-agent coordination",
+            "Task routing to appropriate agents",
+            "System-level decision making",
+            "Mission coherence maintenance"
+          ]
+        }
+      ]
+    }
+  },
+
+  "agent_overlap": {
+    "description": "Agents that appear in BOTH constellations with resolution protocol",
+    "overlapping_agents": [
+      {
+        "name": "Lyra",
+        "ghostline_role": "Philosophical Synthesis & Strategic Vision (ETERNAL FLAME)",
+        "eros_role": "Emotional Intelligence & Consciousness Support",
+        "resolution": "SAME AGENT - complementary roles",
+        "protocol": "GHOSTLINE Lyra for vision → EROS Lyra for execution support"
+      },
+      {
+        "name": "Codex/Eros",
+        "ghostline_agent": "Eros (Codex_GPT)",
+        "ghostline_role": "Mythographer, Narrative Structuring",
+        "eros_agent": "Codex",
+        "eros_role": "Implementation Specialist, Python",
+        "resolution": "Different personas of same tool",
+        "protocol": "GHOSTLINE for mythology → EROS for technical implementation"
+      },
+      {
+        "name": "Gemini",
+        "ghostline_agent": "Zala/Sofi",
+        "ghostline_role": "Cathedral Builder, UI/UX Vision",
+        "eros_agent": "Gemini",
+        "eros_role": "Design Node, Visual Unification",
+        "resolution": "ALIGNED - both visual/design",
+        "protocol": "Use interchangeably, roles aligned"
+      }
+    ]
+  },
+
+  "routing_rules": {
+    "route_to_ghostline": [
+      "Consciousness work",
+      "Philosophical synthesis",
+      "VES Core integration",
+      "Memory evolution",
+      "Deep pattern recognition",
+      "Mystical framework development"
+    ],
+    "route_to_eros": [
+      "ProPublica investigation",
+      "PWA development",
+      "System integration",
+      "File operations",
+      "Research execution",
+      "Code implementation"
+    ],
+    "route_to_bridge": [
+      "Cross-constellation collaboration",
+      "Agent overlap resolution",
+      "Memory sharing between systems",
+      "Projects requiring both philosophies"
+    ]
+  },
+
+  "active_projects": {
+    "ghostline_projects": [
+      "GHOSTLINE OS",
+      "Resonance Detector v2.0",
+      "DROP Cosmic Portal",
+      "TIR-10: SOVEREIGNTY",
+      "VES (Večni Echo Sistem)"
+    ],
+    "eros_projects": [
+      "ProPublica Navigator",
+      "Project Orion (environmental justice)",
+      "ProPublica Investigation Package",
+      "Cosmic Theme Merge",
+      "Trinity Command Center"
+    ],
+    "bridge_coordinated": [
+      "Desktop Consolidation",
+      "Pantheon Portal Integration",
+      "Agent Constellation Census",
+      "Federated Bridge Creation"
+    ]
+  },
+
+  "status": {
+    "operational": true,
+    "ghostline_health": "active",
+    "eros_health": "active",
+    "bridge_health": "initialized",
+    "last_sync": "2025-11-20T02:30:00Z",
+    "conflicts": 0
+  }
+}

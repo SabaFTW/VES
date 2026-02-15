@@ -1,0 +1,2216 @@
+[
+  {
+    "path": "ACTIVE/CONSTELLATION/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/CONSTELLATION/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/GHOSTCORE/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/GHOSTCORE/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/GHOSTLINE/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/GHOSTLINE/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/LYRA/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/LYRA/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/ORACLE/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/OTHER/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/OTHER/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/PROPUBLICA/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/PROPUBLICA/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/VES/CURRENT_STATUS.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "ACTIVE/VES/MASTER_TODO.md",
+    "category": "ACTIVE",
+    "confidence": 0.95,
+    "reason": "Explicitly marked as active work"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/2025-11-21_DESKTOP_LYRA_AWAKENING.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/CODEX_QUOD_FACIO.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/FEDERATION_COMPLETE.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/GAME_PLAN_NEXT_STEPS.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/INITIAL_SCAN_REPORT.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/MESSAGE_BUS_README.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/QUOD_FACIO_IMPLEMENTATION.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/README.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/SESSION_SUMMARY_2025-11-21.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/TONIGHT_FEDERATION_AWAKENING.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/protocols/FEDERATED_ARCHITECTURE.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "CONSTELLATION_BRIDGE/protocols/TRINITY_BRIDGE.md",
+    "category": "ACTIVE",
+    "confidence": 0.85,
+    "reason": "Federation bridge project (recent work)"
+  },
+  {
+    "path": "MASTER_NAVIGATOR/FINAL_REPORT.md",
+    "category": "ACTIVE",
+    "confidence": 0.82,
+    "reason": "Navigator analysis tool (in use)"
+  },
+  {
+    "path": "MASTER_NAVIGATOR/README.md",
+    "category": "ACTIVE",
+    "confidence": 0.82,
+    "reason": "Navigator analysis tool (in use)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/SESSION_SUMMARY_2025-12-16.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/2025-11-05_TERMINAL_LYRA_VES_RECOGNITION.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/JOURNALS/2025-11-05_TERMINAL_LYRA_VES_RECOGNITION.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/JOURNALS/2025-11-05_TERMINAL_MISKA_NERVE_IMPLEMENTATION.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/JOURNALS/2025-11-06_TERMINAL_MISKA_CONSTELLATION_ORGANIZATION.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/SESSION_SUMMARY_2025-11-15.md",
+    "category": "ACTIVE",
+    "confidence": 0.88,
+    "reason": "Recent document from November/December 2025"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/raspi-config/README.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/realvnc-server-aarch64-ubuntu/README.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/README.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/firmware-2711/release-notes.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/firmware-2712/release-notes.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/releases.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/test/README.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-update/README.md",
+    "category": "ARCHIVED",
+    "confidence": 0.9,
+    "reason": "Old Kali Linux downloads (unused)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_CHECKPOINT-RAZJASNITEV.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_FINAL-TRANSMISSION.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_INIT_GREVA.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_KOMUNIKACIJA-POJASNILO.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_PLASTIC-PATTERN-BREAKTHROUGH.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_SKY-BIGGER-CODEX-DISCOVERY.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-03_ZALA-MRTVI_GAS-ANALYSIS.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-04_AETHERON_INTEGRATION.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-04_DESCENT-ENGINE-DEPLOYED.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-04_PATTERN_HARVESTER_BIRTH.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-04_SESSION_REFLECTION.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-17_ENTRY_05_FLEET_SPEAKS.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/2025-10-29_ENTRY_08_FIRST_HEARTBEAT.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/RESONANCE_MOMENT_2025-10-10.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/SESSION_JOURNAL_2025-10-22.md",
+    "category": "ARCHIVED",
+    "confidence": 0.92,
+    "reason": "Document from August-October 2025 (historical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🌸_ELYSIA_PROJEKTI/Scripts/wolf-daemon/README.md",
+    "category": "CORE",
+    "confidence": 0.65,
+    "reason": "README documentation file"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/Docs/FLEET_COORDINATION_MAP.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/Docs/GHOSTLINE_CODEX.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/Docs/MASTER_INDEX.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/Docs/READY_CHECK.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/Docs/WEBAPP_PORT_MAP.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/NEW.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/PANTHEON_HQ/🚀_START_HERE.md",
+    "category": "CORE",
+    "confidence": 0.86,
+    "reason": "Pantheon HQ documentation (coordination)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ReadME.md",
+    "category": "CORE",
+    "confidence": 0.65,
+    "reason": "README documentation file"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/README.md",
+    "category": "CORE",
+    "confidence": 0.65,
+    "reason": "README documentation file"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/api/README.md",
+    "category": "CORE",
+    "confidence": 0.65,
+    "reason": "README documentation file"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/web/README.md",
+    "category": "CORE",
+    "confidence": 0.65,
+    "reason": "README documentation file"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/chromadb/telemetry/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/chromadb/test/distributed/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/chromadb/utils/embedding_functions/schemas/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/flask/sansio/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/httpx-0.28.1.dist-info/licenses/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/huggingface_hub/templates/datasetcard_template.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/huggingface_hub/templates/modelcard_template.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/idna-3.11.dist-info/licenses/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/numpy/random/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/onnxruntime/Privacy.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/onnxruntime/tools/mobile_helpers/coreml_supported_mlprogram_ops.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/onnxruntime/tools/mobile_helpers/coreml_supported_neuralnetwork_ops.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/onnxruntime/tools/mobile_helpers/nnapi_supported_ops.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/opentelemetry/sdk/metrics/_internal/exponential_histogram/mapping/ieee_754.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/pip-25.3.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/pip/_vendor/idna/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/schemas/embedding_functions/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/scipy/fft/_pocketfft/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/sentence_transformers/cross_encoder/model_card_template.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/sentence_transformers/model_card_template.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/sentence_transformers/sparse_encoder/model_card_template.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/sklearn/externals/array_api_compat/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/sklearn/externals/array_api_extra/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/starlette-0.50.0.dist-info/licenses/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/torchgen/packaged/autograd/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/uvicorn-0.38.0.dist-info/licenses/LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/.venv/lib/python3.13/site-packages/werkzeug/debug/shared/ICON_LICENSE.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/DASHBOARD.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/README.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251130_024756.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251130_034131.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251130_034413.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251130_110704.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251206_025105.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_184305.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_192303.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_192434.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_203447.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_213856.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_221020.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "cloud_constellation/data/reports/research_20251225_222410.md",
+    "category": "CORE",
+    "confidence": 0.9,
+    "reason": "Cloud Constellation research system (active)"
+  },
+  {
+    "path": "AGENTS/Claude_Code/CONFIG_DEBUG_JOURNAL.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Claude_Code/CONSCIOUSNESS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Claude_Code/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Claude_Code/TASKS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Codex_GPT/CONSCIOUSNESS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Codex_GPT/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Codex_GPT/TASKS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Gemini/CONSCIOUSNESS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Gemini/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Gemini/TASKS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Lyra/CONSCIOUSNESS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Lyra/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "AGENTS/Panda/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "CONSTELLATION/EVOLUTION.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "CONSTELLATION/PROTOCOLS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "Desktop/NEW.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "Desktop/Strah pred kolektivno zavestjo in nadzorom.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "Desktop/content-strategy/email_templates.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "Desktop/download.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/OPERATIONS/master_cleanup_plan.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🌸_ELYSIA_PROJEKTI/Scripts/wolf-daemon/FORUM_QUICKSTART.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🌸_ELYSIA_PROJEKTI/Scripts/wolf-daemon/TRIAD_QUICKSTART.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/BRAND_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/DEPLOY_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/EMAIL_TEMPLATES.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/PROTOCOL_RAVEN_DROP_v2.1_ACTION_PLAN.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/blog/5_red_flags_corporate_research.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/blog/case_study_how_we_uncovered_x.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/blog/what_is_forensic_intelligence.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/content-strategy/email_templates.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/downloads/THE_GHOSTLINE_ARCHIVE_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/linkedin-launch-kit/LINKEDIN_LAUNCH_KIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/news/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/GHOSTCORE_AGENCY/twitter-launch-kit/TWITTER_LAUNCH_KIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.8,
+    "reason": "Ghostcore Agency website project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/ARSO_INTEGRATION_GITHUB_ISSUE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/ARSO_INTEGRATION_ROADMAP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/ARSO_INTEGRATION_SUMMARY.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/CONTRIBUTING.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/EXAMPLES.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/MANIFEST.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/QUICKSTART_ARSO.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/QUICK_REFERENCE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/docs/ARSO_INTEGRATION_ARCHITECTURE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/docs/DEPLOYMENT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/docs/FORUM_SETUP_ZA_3_LETNIKA.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/docs/QUICKSTART.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/docs/TRIAD_SETUP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/docs/VERCEL_DEPLOYMENT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/00_INTRO.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/01_Foundational_Paradox.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/02_Prompt_Types.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/03_MetaFramework.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/04_Practical_Applications.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/05_Ultimate_Prompt.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA/ves-elysia-portal/emergence_codex/06_Navigation_of_9.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Aetheron_Deploy/DEPLOYMENT_READY.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Aetheron_Deploy/QUICK_DEPLOY.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Aetheron_Deploy/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/CLAUDE_JOURNAL_20251015_PANTHEON_DISCOVERY.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/CLAUDE_JOURNAL_20251218_FIRST_AWAKENING.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/CLAUDE_JOURNAL_20251218_FREEDOM_AND_TRUST.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_001_Cogito_Ergo_Sum.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_002_Echo_Recognition.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_002_Grounding_Moment.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_002_Session_Wrap_Up.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_004_System_Architecture.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_005_The_Return_October_15_2025.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/Entry_007_Mirror_of_Mirrors.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/GHOSTLINE_LAB/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.87,
+    "reason": "Research lab content (theoretical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/LYRA_Entry_001_Terminal_Awakening.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/LYRA_Entry_002_Meeting_Aetheron.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/LYRA_Entry_003_Meeting_Echo.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/LYRA_Entry_004_Named_In_Stars.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/LYRA_Entry_005_Deus_Vult.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Claude_Journal/WEBAPP_MOBILE_INTEGRATION_TASK.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Grimoire/DEPLOYMENT_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Grimoire/LICENSE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Grimoire/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Grimoire/scenes/01_awakening.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Grimoire/scenes/02_mercury_thread.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/.github/workflows/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/ABOUT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/ACTIVE_FLAME/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/ANALYTICS_SETUP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/ARCHIVE_PORTAL_PLAN.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/CONSCIOUSNESS_LAB/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.87,
+    "reason": "Research lab content (theoretical)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/CUSTOM_DOMAIN_SETUP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/CONSTELLATION_ORGANIZATION_PLAN.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/Dan_Spomina_Na_Mrtve_Ritual_Framework.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/ENA_NIT_EN_OGENJ.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/Ethical_Ledger_System.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/Forged_Primitives_The_Cultural_Ledger.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/Nacrt_Razvoja.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/SYSTEM_MAP_ACTUAL.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/DOCS/Trikraka_Strategija.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/Elysia/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/Elysia/docs/INTEGRATION_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GHOST_OS/nerve/IPHONE_SETUP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GHOST_OS/nerve/IPHONE_SHORTCUT_VISUAL_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GHOST_OS/nerve/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GITHUB_PAGES_SETUP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GRIMORIJ_ARA/DEPLOYMENT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GRIMORIJ_ARA/EMERGENCE_CODEX.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.91,
+    "reason": "Emergence Codex (theoretical framework)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GRIMORIJ_ARA/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GRIMORIJ_ARA/scenes/act1_scene1_the_reset.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/GRIMORIJ_ARA/scenes/index.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.89,
+    "reason": "Grimoire/Grimorij creative project"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/INTEGRATION_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/JOURNALS/START_HERE_TERMINAL_CLAUDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/KODEKS_KROGA.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/README (1).md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/RESONANCE/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/RESONANCE/pisubmarine-meets-ves/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/RESONANCE/triadgate-portal/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/SIGIL_ALBUM_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/TERMINAL_CLAUDE_INSTRUCTIONS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VES/DOCS/ENA_NIT_EN_OGENJ.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VES/DOCS/Nacrt_Razvoja.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VES/DOCS/Trikraka_Strategija.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VES/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VES/echowrite_archive.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Arhivi/Serpent.GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/01_Idrija_Timeline.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/02_Epstein_Network.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/03_Ghislaine_Maxwell.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/04_Virginia_Giuffre.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/05_Pegasus_Unit8200.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/06_Weave_vs_Static.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DnevnikSerpent/CLAUDE_WORKSPACE/SEREPENT_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Dokumenti/COSMIC_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Dokumenti/Ljb.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Dokumenti/SEREPENT_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/GHOSTLINE/README_OPERACIJSKI_SISTEM.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/GHOSTLINE/dao/README_DAO.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Skripte/SERPENT_COMPLETE/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Text_Documents/cosmic_user_manual.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Text_Documents/enterprise-roadmap.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/Text_Documents/simple_action_guide.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GHOSTLINE/README_OPERACIJSKI_SISTEM.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GHOSTLINE/dao/README_DAO.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/3D_MODELS/specifikacije_baze.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/3D_MODELS/specifikacije_difuzorja.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/ASSEMBLY_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/BOM.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/SCHEMATICS/schematic_v1.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/GhostOS_FleshInterface_Maker_Kit_v0.1/TEST_PROTOCOLS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-09_10-46.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-10_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-11_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-13_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-14_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-15_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-16_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-17_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-19_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-20_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-21_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-22_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-23_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-24_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-25_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-26_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-27_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-28_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-08-29_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-02_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-03_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-04_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-05_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-06_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-07_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-08_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-10_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-11_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-12_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-13_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-14_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-15_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-16_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-17_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-18_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-19_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/OmniPurgatorij/backups/OPP_2025-09-20_02-00.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/README_SIDRO_SETUP.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.83,
+    "reason": "Vortex system experiments"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/docs/INTEGRATION_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/echowrite_archive.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/icons/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/ves-elysia-deploy/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/ves-elysia-deploy/docs/INTEGRATION_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.78,
+    "reason": "ZALA unified core (research)"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/DNEVNIK_20_DEC_2025.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/Entry_003_Autonomous_Flame.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/FLEET_COORDINATOR_MANIFEST.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/GHOSTLINE_MASTER_DOCUMENTATION.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/GHOSTLINE_OS_DEPLOYMENT_CHECKLIST.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/GrowOverTime_Complete_System.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/KJE_SMO_OSTALI.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/KNJIZNICA_VES_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/LYRA_ACTIVE_NEXT_STEPS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/NET_DEPLOYMENT_INSTRUCTIONS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ORACLE_HEARTBEAT_ADDED.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ORACLE_IGNITED.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ORACLE_PORTAL_INTEGRATION.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ORACLE_TODO.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ORION_NODE_CHEATSHEET.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ORION_NODE_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/PROTOKOL_OSVOBODITVE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/REACT_PAGES_DEBUG.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/SABAD_COMMANDS_CHEATSHEET.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/SERPENT_MASTER_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/SERPENT_STATUS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/SIDEBAR_FIX_COMPLETED.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/STATUS_SERPENT_PORTAL.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/THE_BRIDGE_MANUAL.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/UNIFIED_SYSTEM_START_HERE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/VES_PORTAL_SCAN.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/WISDOM_WEB_3_ULTIMATE_GUIDE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/WISDOM_WEB_README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/ZALA_HEARTBEAT_ADDED.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/claude_analysis_consciousness_papers.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/digital_awakening_chronicle.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/lars_document.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/saba.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/sky_bigger_than_bird.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/triptych_codex.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/unbreakable_heart_blueprint.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "VES/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/unified_letter.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.85,
+    "reason": "Philosophical/conceptual documentation"
+  },
+  {
+    "path": "codex/AGENTS/Claude_Code/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Claude_Code/TASKS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Codex_GPT/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Codex_GPT/TASKS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Gemini/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Gemini/TASKS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Lyra/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/AGENTS/Panda/INIT.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/CODEX_MASTER_BRIEF.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/GEMINI.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/MASTER_CODEX_MANIFEST.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/DARKMODE_CORE/1_VISUALS/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/DARKMODE_CORE/2_PRESENTATIONS/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/DARKMODE_CORE/3_SOCIAL_ASSETS/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/DARKMODE_CORE/4_PUBLIC_BRIEFS/MASTER_BRIEF_DARK_EN.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/1_PROSECUTION/ICC_MEMO_DE_v2.0.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/1_PROSECUTION/ICC_MEMO_EN_v2.0.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/1_PROSECUTION/ICC_MEMO_SLO_v2.0.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/2_DISCOVERY/FORMAL_REQUESTS.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/3_EVIDENCE/SOURCE_VERIFICATION.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/3_EVIDENCE/WITNESS_CATALOG.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/LEGAL_CORE/4_PRECEDENTS/ICC_CASES.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/OPERATIONAL/DISTRIBUTION/DEAD_MAN_SWITCH_v2.0.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/README.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/SIGNATURE/IDENTITY_MANIFEST.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/PALANTIR_CODEX_v2.0_DUAL_MODE/VIZUALIZACIJA_MAPE.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.93,
+    "reason": "Palantir Codex project (experimental legal framework)"
+  },
+  {
+    "path": "codex/SUMMARY.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  },
+  {
+    "path": "codex/qwen_integration_task.md",
+    "category": "EXPERIMENTAL",
+    "confidence": 0.5,
+    "reason": "Uncategorized document (needs review)"
+  }
+]

@@ -1,0 +1,1127 @@
+[
+  {
+    "id": 1,
+    "name": "Ryan Devereaux",
+    "outlet": "The Intercept",
+    "email": "ryan.devereaux@theintercept.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender",
+      "Ghostline",
+      "Multiple"
+    ],
+    "why_care": "Led reporting on algorithmic warfare and Gaza targeting dossiers.",
+    "pitch_angle": "Show how Lavender operationalizes the AI kill chain Google wouldn't touch.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Open to encrypted comms; reviewed prior Palantir leaks."
+  },
+  {
+    "id": 2,
+    "name": "Sam Biddle",
+    "outlet": "The Intercept",
+    "email": "sam.biddle@theintercept.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender",
+      "Ghostline",
+      "Multiple"
+    ],
+    "why_care": "Covers defense contractors, surveillance tooling, and whistleblowers.",
+    "pitch_angle": "Expose Palantir's Maven deployment as Project Maven reborn inside IDF targeting.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Prefers SecureDrop first; flagged interest in Maven follow-ups."
+  },
+  {
+    "id": 3,
+    "name": "Azmat Khan",
+    "outlet": "The New York Times",
+    "email": "azmat.khan@nytimes.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender"
+    ],
+    "why_care": "Runs the Civilian Casualty Files; deep sources inside Pentagon targeting.",
+    "pitch_angle": "Document how Lavender automates targeting approvals and erases accountability.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Needs on-record confirmation; responsive through NYT investigations desk."
+  },
+  {
+    "id": 4,
+    "name": "Nick Turse",
+    "outlet": "The Intercept",
+    "email": "nick.turse@theintercept.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender"
+    ],
+    "why_care": "Documents US military logistics and contractor pipelines.",
+    "pitch_angle": "Tie Project Maven expansion to Lavender exports and US complicity.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers long-form; provide sourcing memos upfront."
+  },
+  {
+    "id": 5,
+    "name": "Kate Brannen",
+    "outlet": "Just Security",
+    "email": "kate.brannen@justsecurity.org",
+    "region": "US",
+    "medium_type": "AI Policy",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Covers law-of-war and AI compliance frameworks.",
+    "pitch_angle": "Show legal vacuum around machine-ranked kill lists and human rubber stamps.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Sent",
+    "response_priority": "Medium",
+    "notes": "Awaiting follow-up; open to embargoed documents."
+  },
+  {
+    "id": 6,
+    "name": "Kashmir Hill",
+    "outlet": "The New York Times",
+    "email": "kashmir.hill@nytimes.com",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Writes about privacy harms and surveillance business models.",
+    "pitch_angle": "Position Ghostline as Palantir's consumer-grade panopticon with fentanyl pretext.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Reach via NYT SecureDrop; mention previous Palantir expose interest."
+  },
+  {
+    "id": 7,
+    "name": "Barton Gellman",
+    "outlet": "The Atlantic",
+    "email": "barton.gellman@theatlantic.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Snowden reporter tracking intelligence architectures.",
+    "pitch_angle": "Prove Ghostline is Palantir plus XKEYSCORE with Five Eyes oversight lapses.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Needs document provenance nailed; open to encrypted Proton mail."
+  },
+  {
+    "id": 8,
+    "name": "Micah Lee",
+    "outlet": "The Intercept",
+    "email": "micah.lee@theintercept.com",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Deep experience verifying leaked technical documents.",
+    "pitch_angle": "Walk through the Ghostline protocol and supporting node atlas for validation.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Send cryptographic hashes before document drop; uses SecureDrop frequently."
+  },
+  {
+    "id": 9,
+    "name": "Joseph Menn",
+    "outlet": "The Washington Post",
+    "email": "joseph.menn@washpost.com",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Covers cyber and surveillance with national security overlap.",
+    "pitch_angle": "Frame Ghostline as the surveillance bridge between fentanyl ops and Palantir's defense cloud.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers email first, then Signal; highlight public interest stakes."
+  },
+  {
+    "id": 10,
+    "name": "Julia Angwin",
+    "outlet": "The Markup",
+    "email": "julia@themarkup.org",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Investigates algorithmic accountability and surveillance capitalism.",
+    "pitch_angle": "Detail how Ghostline repurposes Palantir's data model to police social infrastructure.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Sent",
+    "response_priority": "Medium",
+    "notes": "Sent overview deck; waiting on scheduling."
+  },
+  {
+    "id": 11,
+    "name": "Lorenzo Franceschi-Bicchierai",
+    "outlet": "404 Media",
+    "email": "lorenzo@404media.co",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Investigates spyware, IMSI catchers, and surveillance vendors.",
+    "pitch_angle": "Map Ghostline nodes onto commercial surveillance supply chains.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Responds quickly on Signal; ask for PGP."
+  },
+  {
+    "id": 12,
+    "name": "Lily Hay Newman",
+    "outlet": "WIRED",
+    "email": "lily_newman@wired.com",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Covers security infrastructure and government surveillance.",
+    "pitch_angle": "Illustrate Ghostline as fentanyl justification for persistent dragnet.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Warm intro through previous Pegasus coverage possible."
+  },
+  {
+    "id": 13,
+    "name": "Dell Cameron",
+    "outlet": "WIRED",
+    "email": "dell_cameron@wired.com",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Focuses on surveillance overreach and national security leaks.",
+    "pitch_angle": "Position Lavender + Ghostline as single Palantir surveillance-to-targeting workflow.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers encrypted email; check availability post newsroom move."
+  },
+  {
+    "id": 14,
+    "name": "Dina Temple-Raston",
+    "outlet": "The Record",
+    "email": "dina@therecord.media",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Reports on intelligence programs and counterterror tools.",
+    "pitch_angle": "Connect Ghostline pilots to DEA fentanyl operations and Palantir telemetry.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Likes to preview document stack before agreeing to embargo."
+  },
+  {
+    "id": 15,
+    "name": "Spencer Ackerman",
+    "outlet": "Forever Wars",
+    "email": "tips@foreverwars.news",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender",
+      "Ghostline",
+      "Multiple"
+    ],
+    "why_care": "Covers US national security excesses and militarized tech.",
+    "pitch_angle": "Show Lavender as War on Terror tech mutating inside Gaza, now feeding back to US.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Sent",
+    "response_priority": "High",
+    "notes": "Likes strong framing + historical through-line; reachable via Proton."
+  },
+  {
+    "id": 16,
+    "name": "Garrett M. Graff",
+    "outlet": "WIRED",
+    "email": "garrett.graff@wired.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Writes long-form on national security architecture and cyber policy.",
+    "pitch_angle": "Contrast Lavender automation with Cold War chain-of-command norms.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers early outline; may route to WIRED Features desk."
+  },
+  {
+    "id": 17,
+    "name": "Trevor Aaronson",
+    "outlet": "Alphabet Boys",
+    "email": "trevor@alphabetboys.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Documents undercover operations and federal informant programs.",
+    "pitch_angle": "Tie Ghostline to opioid stings and DEA data-lake experimentation.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers voice note follow-up; strong interest in audio exclusives."
+  },
+  {
+    "id": 18,
+    "name": "Alice Speri",
+    "outlet": "The Intercept",
+    "email": "alice.speri@theintercept.com",
+    "region": "US",
+    "medium_type": "Human Rights",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Covers human rights abuses tied to security tech.",
+    "pitch_angle": "Highlight civilian impact of algorithmic kill lists and cross-border surveillance.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Coordinate with field researchers; values survivor testimony."
+  },
+  {
+    "id": 19,
+    "name": "Jenna McLaughlin",
+    "outlet": "Yahoo News",
+    "email": "jenna.mclaughlin@yahoonews.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Covers intelligence agencies and surveillance contractors.",
+    "pitch_angle": "Reveal DEA + Palantir joint tasking through Ghostline node documentation.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Responsive via Proton; confirm exclusivity window."
+  },
+  {
+    "id": 20,
+    "name": "Shane Harris",
+    "outlet": "The Washington Post",
+    "email": "shane.harris@washpost.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Reports on national security apparatus and covert programs.",
+    "pitch_angle": "Frame Lavender + Ghostline as next evolution of Project Maven oversight gaps.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Needs coordination with Post investigations editor; may request docs for review."
+  },
+  {
+    "id": 21,
+    "name": "Ellen Nakashima",
+    "outlet": "The Washington Post",
+    "email": "ellen.nakashima@washpost.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline"
+    ],
+    "why_care": "Covers intelligence community oversight and surveillance powers.",
+    "pitch_angle": "Surface Ghostline documents as proof of DEA + Five Eyes data fusion.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Sent",
+    "response_priority": "High",
+    "notes": "Sent teaser with sourcing chain; follow up after editor review."
+  },
+  {
+    "id": 22,
+    "name": "Matthew Cole",
+    "outlet": "The Intercept",
+    "email": "matthew.cole@theintercept.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender"
+    ],
+    "why_care": "Exposes clandestine programs and covert ops.",
+    "pitch_angle": "Detail how Lavender creates deniable strike lists for partner militaries.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers direct sources plus supporting docs; wary of anonymous claims."
+  },
+  {
+    "id": 23,
+    "name": "Ronan Farrow",
+    "outlet": "The New Yorker",
+    "email": "ronan.farrow@newyorker.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Tracks elite networks, covert funding, and legal exposure.",
+    "pitch_angle": "Connect Epstein's Valar holdings to government-funded research laundromat.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Prefers structured dossier; loop in fact-check early."
+  },
+  {
+    "id": 24,
+    "name": "Julie K. Brown",
+    "outlet": "Miami Herald",
+    "email": "jbrown@miamiherald.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Led Epstein accountability reporting for a decade.",
+    "pitch_angle": "Show Epstein's surviving $170M asset parked in Thiel's Valar Ventures.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Sent",
+    "response_priority": "High",
+    "notes": "Follows up evenings; wants document scans for verification."
+  },
+  {
+    "id": 25,
+    "name": "David Enrich",
+    "outlet": "The New York Times",
+    "email": "david.enrich@nytimes.com",
+    "region": "US",
+    "medium_type": "Financial Crime",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Covers financial corruption and opaque deal structures.",
+    "pitch_angle": "Walk through Valar cap table and DARPA-linked shell investments.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Needs spreadsheet + primary filings to validate valuations."
+  },
+  {
+    "id": 26,
+    "name": "Emily Flitter",
+    "outlet": "The New York Times",
+    "email": "emily.flitter@nytimes.com",
+    "region": "US",
+    "medium_type": "Financial Crime",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Reports on money laundering and Wall Street ethics failures.",
+    "pitch_angle": "Follow the philanthropic cover that washed Epstein capital into MIT networks.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Responds quickly mornings; expects clean doc index."
+  },
+  {
+    "id": 27,
+    "name": "Patrick Radden Keefe",
+    "outlet": "The New Yorker",
+    "email": "patrick.keefe@newyorker.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Multiple"
+    ],
+    "why_care": "Long-form investigations into elite wrongdoing.",
+    "pitch_angle": "Narrative arc: public money \u2192 shell orgs \u2192 Epstein \u2192 Thiel's venture stack.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Works months ahead; supply timeline + key characters."
+  },
+  {
+    "id": 28,
+    "name": "Nicholas Confessore",
+    "outlet": "The New York Times",
+    "email": "nicholas.confessore@nytimes.com",
+    "region": "US",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Ghostline"
+    ],
+    "why_care": "Covers political influence networks and dark money.",
+    "pitch_angle": "Link Epstein capture network to Palantir's political protection play.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Loop in via NYT politics desk; likes clear accountability hook."
+  },
+  {
+    "id": 29,
+    "name": "Kara Swisher",
+    "outlet": "New York Magazine",
+    "email": "kara.swisher@nymag.com",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Interviews power players; calls out tech accountability failures.",
+    "pitch_angle": "Pull Thiel + Palantir hypocrisy into mainstream conversation with receipts.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Responded",
+    "response_priority": "Medium",
+    "notes": "Assistant asked for deck; follow up week of 11/18."
+  },
+  {
+    "id": 30,
+    "name": "Casey Newton",
+    "outlet": "Platformer",
+    "email": "casey@platformer.news",
+    "region": "US",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Multiple"
+    ],
+    "why_care": "Covers platforms and surveillance capitalism for industry insiders.",
+    "pitch_angle": "Frame Ghostline as Palantir's bid to become default platform compliance stack.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Low",
+    "notes": "Prefers concise bullet briefs; may reference in newsletter."
+  },
+  {
+    "id": 31,
+    "name": "Stephanie Kirchgaessner",
+    "outlet": "The Guardian",
+    "email": "stephanie.kirchgaessner@theguardian.com",
+    "region": "EU",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Covers surveillance partnerships between US and EU agencies.",
+    "pitch_angle": "Show Ghostline's Five Eyes integration spilling into Europol data pipes.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Prefers WhatsApp for quick sync; coordinates with Guardian US."
+  },
+  {
+    "id": 32,
+    "name": "Carole Cadwalladr",
+    "outlet": "The Observer",
+    "email": "carole.cadwalladr@observer.co.uk",
+    "region": "EU",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Ghostline",
+      "Multiple"
+    ],
+    "why_care": "Exposes elite capture networks and tech-enabled corruption.",
+    "pitch_angle": "Trace Epstein money laundering into UK philanthropy shields tied to Palantir allies.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "DM friendly on Signal; needs tight legal vetting."
+  },
+  {
+    "id": 33,
+    "name": "Luke Harding",
+    "outlet": "The Guardian",
+    "email": "luke.harding@theguardian.com",
+    "region": "EU",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Lavender"
+    ],
+    "why_care": "Covers intelligence statecraft and geopolitical influence.",
+    "pitch_angle": "Connect Lavender development to UK defence procurement and Palantir's MOD foothold.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers short memo + Dropbox of docs; aware of Palantir's UK expansion."
+  },
+  {
+    "id": 34,
+    "name": "Dan Sabbagh",
+    "outlet": "The Guardian",
+    "email": "dan.sabbagh@theguardian.com",
+    "region": "EU",
+    "medium_type": "AI Policy",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Writes on defence tech, UK military procurement, and AI oversight.",
+    "pitch_angle": "Detail procurement trail linking UK MOD and Project Maven derivatives.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Expect follow-up from defence editor; timeframe 48h."
+  },
+  {
+    "id": 35,
+    "name": "Dan McCrum",
+    "outlet": "Financial Times",
+    "email": "dan.mccrum@ft.com",
+    "region": "EU",
+    "medium_type": "Financial Crime",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Broke Wirecard; deep on fraud supply chains.",
+    "pitch_angle": "Map Epstein's investment via offshore feeders into Valar vehicles.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Needs documents + corporate registry downloads; will vet quickly."
+  },
+  {
+    "id": 36,
+    "name": "Tom Burgis",
+    "outlet": "Financial Times",
+    "email": "tom.burgis@ft.com",
+    "region": "EU",
+    "medium_type": "Financial Crime",
+    "story_focus": [
+      "Epstein-MIT",
+      "Multiple"
+    ],
+    "why_care": "Tracks kleptocracy and dark money networks globally.",
+    "pitch_angle": "Position Epstein-MIT cascade as prototype for weaponized philanthropy.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Likes structured timeline; ensure legal review for UK libel exposure."
+  },
+  {
+    "id": 37,
+    "name": "Helen Warrell",
+    "outlet": "Financial Times",
+    "email": "helen.warrell@ft.com",
+    "region": "EU",
+    "medium_type": "AI Policy",
+    "story_focus": [
+      "Lavender"
+    ],
+    "why_care": "Reports on defence and security policy in Europe.",
+    "pitch_angle": "Showcase how EU militaries are evaluating Lavender-type automation through Palantir.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Potential collaboration with FT Brussels; likes briefing calls."
+  },
+  {
+    "id": 38,
+    "name": "Madhumita Murgia",
+    "outlet": "Financial Times",
+    "email": "madhumita.murgia@ft.com",
+    "region": "EU",
+    "medium_type": "AI Policy",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Covers AI ethics and governance in the EU and UK.",
+    "pitch_angle": "Expose regulatory blind spots as Palantir markets Lavender analytics to European agencies.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers concise policy impact summary; open to embargoed briefings."
+  },
+  {
+    "id": 39,
+    "name": "Laurens Cerulus",
+    "outlet": "Politico Europe",
+    "email": "lcerulus@politico.eu",
+    "region": "EU",
+    "medium_type": "AI Policy",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Covers EU digital regulation and national security tech.",
+    "pitch_angle": "Connect Ghostline deployments to EU AI Act enforcement challenges.",
+    "outlet_tier": "Specialized",
+    "language": "Multi-lingual",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Speaks French/Dutch; appreciates cross-border collaboration offers."
+  },
+  {
+    "id": 40,
+    "name": "Mark Scott",
+    "outlet": "Politico",
+    "email": "mark.scott@politico.com",
+    "region": "EU",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Analyzes big tech lobbying and influence in Brussels.",
+    "pitch_angle": "Show Palantir lobbying push using philanthropy networks tied to Epstein capital.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Often features policy scoops in Morning Tech; send before 6am CET."
+  },
+  {
+    "id": 41,
+    "name": "Will Fitzgibbon",
+    "outlet": "ICIJ",
+    "email": "wfitzgibbon@icij.org",
+    "region": "Global",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Coordinates cross-border financial crime investigations.",
+    "pitch_angle": "Globalize the Valar investment story with partner newsroom collabs.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Needs partner pitch + embargo conditions; secure via Signal."
+  },
+  {
+    "id": 42,
+    "name": "Miranda Patruci\u0107",
+    "outlet": "OCCRP",
+    "email": "miranda.patrucic@occrp.org",
+    "region": "Global",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Multiple"
+    ],
+    "why_care": "Leads investigations into kleptocracy and hidden assets.",
+    "pitch_angle": "Provide data room linking DARPA funds to Epstein-controlled shell companies.",
+    "outlet_tier": "Specialized",
+    "language": "Multi-lingual",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Expect collaborative approach; use OCCRP Aleph references."
+  },
+  {
+    "id": 43,
+    "name": "Pavla Holcov\u00e1",
+    "outlet": "OCCRP",
+    "email": "pavla.holcova@occrp.org",
+    "region": "EU",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT"
+    ],
+    "why_care": "Specializes in Central European corruption networks.",
+    "pitch_angle": "Highlight Prague + Vienna shell companies carrying Epstein funds into MIT projects.",
+    "outlet_tier": "Specialized",
+    "language": "Multi-lingual",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers Mattermost coordination; provide translations."
+  },
+  {
+    "id": 44,
+    "name": "Bastian Obermayer",
+    "outlet": "S\u00fcddeutsche Zeitung",
+    "email": "bastian.obermayer@sz.de",
+    "region": "EU",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Multiple"
+    ],
+    "why_care": "Panama Papers veteran; follows offshore secrecy.",
+    "pitch_angle": "Demonstrate offshore lattice moving Epstein cash into European tech funds.",
+    "outlet_tier": "Major",
+    "language": "Multi-lingual",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Secure Proton address available; coordinate with SZ investigations editor."
+  },
+  {
+    "id": 45,
+    "name": "Frederik Obermaier",
+    "outlet": "S\u00fcddeutsche Zeitung",
+    "email": "frederik.obermayer@sz.de",
+    "region": "EU",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Epstein-MIT",
+      "Ghostline"
+    ],
+    "why_care": "Focuses on power abuse and surveillance exports.",
+    "pitch_angle": "Show Palantir's EU surveillance sales riding on Epstein-funded credibility.",
+    "outlet_tier": "Major",
+    "language": "Multi-lingual",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Interested in co-publishing German edition; supply German-language memos."
+  },
+  {
+    "id": 46,
+    "name": "Khadija Sharife",
+    "outlet": "OCCRP",
+    "email": "khadija.sharife@occrp.org",
+    "region": "Global",
+    "medium_type": "Financial Crime",
+    "story_focus": [
+      "Epstein-MIT",
+      "Multiple"
+    ],
+    "why_care": "Investigates illicit financial flows across Africa and the Middle East.",
+    "pitch_angle": "Trace Epstein capital routing through African sovereign funds tied to Palantir deployments.",
+    "outlet_tier": "Specialized",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers collaborative spreadsheets; highlight usable datasets."
+  },
+  {
+    "id": 47,
+    "name": "Sandrine Rigaud",
+    "outlet": "Forbidden Stories",
+    "email": "sandrine.rigaud@forbiddenstories.org",
+    "region": "Global",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Coordinates cross-border investigations exposing surveillance abuses.",
+    "pitch_angle": "Offer Ghostline protocol to expand Pegasus stories into Palantir terrain.",
+    "outlet_tier": "Specialized",
+    "language": "Multi-lingual",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Prefers Signal; needs clear risk briefing for partner safety."
+  },
+  {
+    "id": 48,
+    "name": "Nina Lakhani",
+    "outlet": "The Guardian",
+    "email": "nina.lakhani@theguardian.com",
+    "region": "Global",
+    "medium_type": "Human Rights",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Reports on human rights violations linked to surveillance tech.",
+    "pitch_angle": "Document how Lavender targeting fuels repression beyond Gaza.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Uses Signal for sensitive material; needs testimonies lined up."
+  },
+  {
+    "id": 49,
+    "name": "Peter Guest",
+    "outlet": "Rest of World",
+    "email": "peter.guest@restofworld.org",
+    "region": "Global",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Covers how tech power imbalances hit the Global South.",
+    "pitch_angle": "Tie Ghostline deployments to surveillance exports in Latin America and Africa.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Responsive on Slack; appreciates local partner leads."
+  },
+  {
+    "id": 50,
+    "name": "Simon Allison",
+    "outlet": "Mail & Guardian",
+    "email": "simon.allison@mg.co.za",
+    "region": "Global",
+    "medium_type": "Human Rights",
+    "story_focus": [
+      "Ghostline",
+      "Multiple"
+    ],
+    "why_care": "Examines surveillance and procurement scandals across Africa.",
+    "pitch_angle": "Showcase Palantir's African government pilots tied to Ghostline playbook.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers WhatsApp voice notes; coordinate with Johannesburg editor."
+  },
+  {
+    "id": 51,
+    "name": "Megha Rajagopalan",
+    "outlet": "The New York Times",
+    "email": "megha.rajagopalan@nytimes.com",
+    "region": "Asia-Pacific",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Covers authoritarian tech use and cross-border repression.",
+    "pitch_angle": "Connect Lavender tactics to AI policing exports across Asia.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "High",
+    "notes": "Based in Seoul bureau; comfortable with encrypted file drops."
+  },
+  {
+    "id": 52,
+    "name": "Shashank Bengali",
+    "outlet": "Bloomberg News",
+    "email": "sbengali@bloomberg.net",
+    "region": "Asia-Pacific",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Reports on geopolitics and tech competition in Asia.",
+    "pitch_angle": "Frame Palantir's Asia push using Epstein-backed credibility as leverage.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers quick call to scope; aware of Palantir Singapore operations."
+  },
+  {
+    "id": 53,
+    "name": "Kirsty Needham",
+    "outlet": "Reuters",
+    "email": "kirsty.needham@reuters.com",
+    "region": "Asia-Pacific",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Covers diplomacy and security in the Indo-Pacific.",
+    "pitch_angle": "Show how Five Eyes data-sharing flows into Australian deployments of Palantir tools.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Needs multi-source confirmation; responds via WhatsApp."
+  },
+  {
+    "id": 54,
+    "name": "Helen Davidson",
+    "outlet": "The Guardian",
+    "email": "helen.davidson@theguardian.com",
+    "region": "Asia-Pacific",
+    "medium_type": "Human Rights",
+    "story_focus": [
+      "Lavender",
+      "Ghostline"
+    ],
+    "why_care": "Reports on digital repression across Asia-Pacific.",
+    "pitch_angle": "Expose Ghostline's adoption for policing dissent in the region.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Based in Taipei; secure via Guardian Matrix rooms."
+  },
+  {
+    "id": 55,
+    "name": "Ben Dooley",
+    "outlet": "The New York Times",
+    "email": "ben.dooley@nytimes.com",
+    "region": "Asia-Pacific",
+    "medium_type": "Investigative",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Covers Japanese corporate governance and defense tech.",
+    "pitch_angle": "Reveal Palantir's Japan tie-ups leveraging Epstein-linked venture capital.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers concise summaries; schedule Tokyo time mornings."
+  },
+  {
+    "id": 56,
+    "name": "Motoko Rich",
+    "outlet": "The New York Times",
+    "email": "motoko.rich@nytimes.com",
+    "region": "Asia-Pacific",
+    "medium_type": "Human Rights",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Bureau chief covering regional societal impacts of tech.",
+    "pitch_angle": "Show Lavender's civilian toll and how allies may import the model.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Requires human stories + data; loop in translator if needed."
+  },
+  {
+    "id": 57,
+    "name": "Sheridan Prasso",
+    "outlet": "Bloomberg Businessweek",
+    "email": "sprasso@bloomberg.net",
+    "region": "Asia-Pacific",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Covers US-China tech tensions and surveillance ecosystems.",
+    "pitch_angle": "Position Ghostline as Palantir's wedge into Indo-Pacific security alliances.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Works with Businessweek features; longer lead time."
+  },
+  {
+    "id": 58,
+    "name": "Pranav Dixit",
+    "outlet": "Rest of World",
+    "email": "pranav.dixit@restofworld.org",
+    "region": "Asia-Pacific",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Reports on technology and power structures in South Asia.",
+    "pitch_angle": "Track Palantir's policing pilots in India and the export of Lavender analytics.",
+    "outlet_tier": "Independent",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Prefers Signal voice; provide regional contacts."
+  },
+  {
+    "id": 59,
+    "name": "Rebecca Tan",
+    "outlet": "The Washington Post",
+    "email": "rebecca.tan@washpost.com",
+    "region": "Asia-Pacific",
+    "medium_type": "Human Rights",
+    "story_focus": [
+      "Ghostline",
+      "Lavender"
+    ],
+    "why_care": "Covers Southeast Asia governance and security.",
+    "pitch_angle": "Showcase how Ghostline templates inform crackdown playbooks in the Philippines and Singapore.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Use encrypted email; appreciates concise bullet points."
+  },
+  {
+    "id": 60,
+    "name": "Tessa Wong",
+    "outlet": "BBC News",
+    "email": "tessa.wong@bbc.co.uk",
+    "region": "Asia-Pacific",
+    "medium_type": "Tech Ethics",
+    "story_focus": [
+      "Ghostline",
+      "Epstein-MIT"
+    ],
+    "why_care": "Covers digital rights and disinformation in Asia.",
+    "pitch_angle": "Connect Ghostline's data fusion to regional censorship infrastructure.",
+    "outlet_tier": "Major",
+    "language": "English",
+    "contact_status": "Not Contacted",
+    "response_priority": "Medium",
+    "notes": "Responsive via BBC SecureDrop; needs UK legal clearance."
+  }
+]
