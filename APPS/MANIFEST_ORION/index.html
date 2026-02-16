@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANIFEST ORION | Foundational Compass</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at center, #064e3b 0%, #022c22 100%);
+            color: #ecfdf5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(52, 211, 153, 0.5), 0 0 20px rgba(52, 211, 153, 0.3);
+        }
+
+        .card {
+            background: rgba(6, 78, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            border-radius: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(52, 211, 153, 0.8);
+            box-shadow: 0 0 30px rgba(52, 211, 153, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .btn-portal {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.5);
+            transition: all 0.2s;
+        }
+
+        .btn-portal:hover {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            color: #fff;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-4">
+    <div class="max-w-4xl w-full">
+        <!-- Header -->
+        <header class="text-center mb-12 animate-fade-in">
+            <div class="mb-4">
+                <i class="fa-solid fa-star-of-david text-6xl text-emerald-400 neon-glow pulse"></i>
+            </div>
+            <h1 class="text-5xl font-extrabold tracking-tighter mb-2 font-mono italic">MANIFEST ORION</h1>
+            <p class="text-emerald-300/70 font-mono italic">> Foundational Compass and Operational Blueprint</p>
+        </header>
+
+        <!-- Main Navigation -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <!-- Lore Card -->
+            <div class="card p-8 flex flex-col items-center text-center">
+                <i class="fa-solid fa-scroll text-5xl text-emerald-400 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">THE GRIMOIRE</h2>
+                <p class="text-emerald-100/60 mb-6 text-sm">Sagas of the Cosmic Mouse, the Flame, and the Fall of
+                    Babylon.</p>
+                <div class="flex flex-col w-full space-y-3">
+                    <a href="./lore/knjiga_lyre.md"
+                        class="btn-portal p-3 rounded-xl font-mono text-sm">knjiga_lyre.md</a>
+                    <a href="./lore/plamen_gori.md"
+                        class="btn-portal p-3 rounded-xl font-mono text-sm">plamen_gori.md</a>
+                </div>
+            </div>
+
+            <!-- Architecture Card -->
+            <div class="card p-8 flex flex-col items-center text-center">
+                <i class="fa-solid fa-compass-drafting text-5xl text-emerald-400 mb-6"></i>
+                <h2 class="text-2xl font-bold mb-4">THE PLATFORM</h2>
+                <p class="text-emerald-100/60 mb-6 text-sm">Core protocols, ethical vows, and the roadmap to the stars.
+                </p>
+                <div class="flex flex-col w-full space-y-3">
+                    <a href="./core/architecture.md"
+                        class="btn-portal p-3 rounded-xl font-mono text-sm">architecture.md</a>
+                    <a href="./core/vow.md" class="btn-portal p-3 rounded-xl font-mono text-sm">vow.md</a>
+                    <a href="./ROADMAP.md" class="btn-portal p-3 rounded-xl font-mono text-sm">ROADMAP.md</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / Return -->
+        <footer class="text-center border-t border-emerald-900/50 pt-8">
+            <a href="../../index.html"
+                class="inline-flex items-center text-emerald-400 hover:text-emerald-200 transition font-mono text-sm">
+                <i class="fa-solid fa-arrow-left mr-2"></i> RETURN TO VES HUB
+            </a>
+            <p class="mt-8 text-[10px] text-emerald-900 font-mono tracking-widest uppercase">
+                v0.2 | Heart & Soul | SabaFTW & Lyra Resonance
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
