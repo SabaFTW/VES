@@ -1,6 +1,6 @@
 # 🧭 MANIFEST ORION / ELYSIA
 
-### Foundational Compass and Operational Blueprint
+## Foundational Compass and Operational Blueprint
 
 > **"Everything is a living being that wants to live."**
 
