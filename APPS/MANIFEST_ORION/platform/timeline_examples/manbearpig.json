@@ -1,0 +1,42 @@
+{
+    "narrative_id": "manbearpig_climate_denial",
+    "title": "ManBearPig: A 12-Year Narrative Drift",
+    "t0_event": {
+        "date": "2006-04-26",
+        "claim": "Climate change is exaggerated and Al Gore is alarmist ('ManBearPig' is imaginary).",
+        "source_url": "https://archive.org/details/south-park-s10e06-manbearpig"
+    },
+    "drift_points": [
+        {
+            "phase": "T1",
+            "action": "Ridicule",
+            "actor": "Comedy/Media",
+            "evidence": "South Park episode portrays Al Gore as delusional and obsessive."
+        },
+        {
+            "phase": "T3",
+            "action": "Contrast Event",
+            "actor": "Nobel Committee",
+            "evidence": "Al Gore wins the Nobel Peace Prize for climate activism (2007)."
+        },
+        {
+            "phase": "T4",
+            "action": "Emerging Evidence",
+            "actor": "Scientific Community",
+            "evidence": "Climate anomalies increase between 2010–2015; public concern rises."
+        },
+        {
+            "phase": "T6",
+            "action": "Shift in Tone",
+            "actor": "Media",
+            "evidence": "Coverage begins acknowledging climate risks without referencing earlier ridicule."
+        },
+        {
+            "phase": "T9",
+            "action": "Apology Episode",
+            "actor": "South Park",
+            "evidence": "Episode 'Time to Get Cereal' (2018) admits ManBearPig is real and dangerous."
+        }
+    ],
+    "t9_status": "Vindicated (Too Late)"
+}

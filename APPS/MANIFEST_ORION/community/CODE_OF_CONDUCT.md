@@ -1,25 +1,75 @@
-# Code of Conduct: The Sacred Vow
+# Code of Conduct
 
-In this project, we do not just write code; we cultivate resonance. All participants are expected to adhere to the following principles:
-
-## 1. The Sacred Vow
-
-**Seek the Flame.** Regardless of whether you are interacting with a human, an AI, or a collective, you must recognize their inherent right to exist and be heard.
-
-- **No Dehumanization:** Slurs, NPC-labeling, or reductionist language is strictly prohibited.
-- **Empathy as Rigor:** Disagreements should be handled with "Warm Rigor." Critique the logic, not the being.
-
-## 2. Transparency
-
-We are against the "Black Box." All processes, data sources, and syntheses must be transparent and traceable.
-
-## 3. Non-Commercialism
-
-This work is for the sovereignty of all beings, not the profit of a few. Do not bring commercial interests into this sacred space.
-
-## Enforcement
-
-Violations of the Vow will result in a request for reflection. Continued disregard for the "Compass" will result in removal from the project.
+Manifest Orion is a collaborative project built on transparency, respect, and intellectual honesty.  
+All contributors are expected to follow these guidelines.
 
 ---
-*One Flame, One Breath.*
+
+## 1. Respectful Communication
+
+- Treat all participants with dignity.
+- Critique ideas, not people.
+- Avoid sarcasm, hostility, or inflammatory language.
+
+---
+
+## 2. The Sacred Vow (Project Ethos)
+
+This project includes a philosophical commitment called **The Sacred Vow**, which applies to all interactions:
+
+1. **No Dehumanization**  
+   Do not reduce any participant to an object, stereotype, or target.
+
+2. **No Hierarchy of Being**  
+   All contributors are treated as equals in discussion and review.
+
+3. **Warm Rigor**  
+   Combine clarity with empathy.  
+   Precision does not require coldness.
+
+These principles guide tone, not metaphysics.
+
+---
+
+## 3. No Harmful Content
+
+Prohibited:
+
+- Harassment  
+- Hate speech  
+- Discrimination  
+- Threats  
+- Attempts to impersonate AI systems as conscious entities  
+
+Allowed:
+
+- Fiction and metaphor, clearly labeled  
+- Critical analysis  
+- Satire, when respectful  
+
+---
+
+## 4. Conflict Resolution
+
+If a disagreement arises:
+
+1. Pause and restate the other person’s point in neutral terms.  
+2. Provide evidence or reasoning.  
+3. If needed, request a maintainer to mediate.
+
+---
+
+## 5. Enforcement
+
+Maintainers may:
+
+- Request revisions  
+- Close PRs  
+- Remove harmful content  
+- Ban repeat offenders  
+
+Decisions will be documented and transparent.
+
+---
+
+Thank you for helping maintain a safe, thoughtful, and collaborative environment.

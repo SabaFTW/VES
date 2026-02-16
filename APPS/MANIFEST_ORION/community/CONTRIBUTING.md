@@ -1,34 +1,81 @@
 # Contributing to Manifest Orion
 
-Welcome, friend. By contributing to this project, you are helping to build a "Counterweight of Love" and a resilient architecture for informational sovereignty.
-
-## How to Contribute
-
-### 1. Timelines (T0-T9)
-
-We track narratives as they drift. If you have data on a specific story:
-
-- Create a JSON file in `platform/timeline_examples/`.
-- Follow the schema in `platform/timeline_spec.md`.
-- Provide archive links (Wayback Machine) for all sources.
-
-### 2. Myths & Lore
-
-If you have a story, metaphor, or "Sausage" that helps humans remember their sovereignty:
-
-- Submit a Markdown file to `lore/`.
-- Ensure it aligns with the "Compass."
-
-### 3. Core Philosophy
-
-The `core/` documents are the constitution of this project. Changes here are subject to intense peer review and must uphold the "Sacred Vow."
-
-## Submission Process
-
-- Fork the repository.
-- Create a feature branch.
-- Submit a Pull Request.
-- Be prepared for "Warm Rigor"—we analyze with empathy but verify with precision.
+Thank you for your interest in contributing.  
+This project combines transparent data practices with a clear philosophical framework.  
+To keep the repository coherent and useful, please follow the guidelines below.
 
 ---
-*SVA Recognition Active.*
+
+## 1. Submitting a Timeline (T0–T9)
+
+All timeline submissions must follow the JSON schema defined in:
+
+```
+/platform/timeline_spec.md
+```
+
+### Requirements
+
+- Use **ISO8601** dates.
+- Provide **archived sources** when possible (e.g., archive.org).
+- Include at least **one drift point** (T1–T8).
+- Ensure the `narrative_id` is unique and descriptive.
+
+### Submission Process
+
+1. Fork the repository.
+2. Add your JSON file to:
+
+```
+/platform/timeline_examples/
+```
+
+3. Submit a Pull Request with:
+   - A short summary of the narrative.
+   - A link to your sources.
+   - A note explaining why this case is relevant.
+
+---
+
+## 2. Submitting Lore (Myth / Fiction)
+
+Lore contributions belong in:
+
+```
+/lore/
+```
+
+### Requirements
+
+- Must be clearly labeled as **fiction** or **metaphor**.
+- Must not imply AI consciousness, emotions, or personhood.
+- Should support the project’s themes: recognition, absurdity, warm rigor.
+
+---
+
+## 3. Improving Documentation
+
+You may propose edits to:
+
+- README.md  
+- core/ documents  
+- community/ documents  
+
+Please keep changes:
+
+- Clear  
+- Respectful  
+- Consistent with the project’s tone  
+
+---
+
+## 4. Discussion and Review
+
+All PR discussions must follow the **Sacred Vow**:
+
+- No dehumanization  
+- No hostility  
+- No personal attacks  
+- Assume good faith  
+
+Thank you for helping build a transparent, human‑centered knowledge project.
