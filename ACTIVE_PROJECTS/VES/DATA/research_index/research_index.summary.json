@@ -1,0 +1,3111 @@
+{
+  "generated_at": "2026-03-23T21:44:39.768647+00:00",
+  "total_files": 92917,
+  "by_extension": {
+    ".md": 7652,
+    ".pdf": 1178,
+    ".txt": 80579,
+    ".docx": 3480,
+    ".doc": 28
+  },
+  "by_root": {
+    "/home/saba/VES": 84787,
+    "/home/saba/VES-Vault": 714,
+    "/home/saba/.openclaw": 290,
+    "/home/saba/cloud": 7040,
+    "/home/saba/Documents": 74,
+    "/home/saba/.codex": 12
+  },
+  "odd_name_count": 3395,
+  "topic_keyword_hits": {
+    "consciousness": 68186,
+    "mythology": 138,
+    "technology_future": 186,
+    "power_structures": 449,
+    "pattern_recognition": 149
+  },
+  "top_prioritized_files": [
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/02_Epstein_Network.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 893,
+      "modified_at": "2025-12-18T00:14:12.258415+00:00",
+      "odd_name": false,
+      "score": 18,
+      "topics": [
+        "consciousness",
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Lars_1/Pismo Prepoznave - Letter of Recognition.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 41329,
+      "modified_at": "2025-08-11T15:45:35.073760+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Trop_1/Pismo Prepoznave - Letter of Recognition.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 41329,
+      "modified_at": "2025-08-11T15:45:35.073760+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/research/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Blue_Thread_Barr_Epstein/epstein_network_anatomy.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3971,
+      "modified_at": "2025-11-16T19:48:19.597796+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/RESEARCH/ACADEMIC/research_original/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Blue_Thread_Barr_Epstein/epstein_network_anatomy.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3971,
+      "modified_at": "2025-11-24T01:34:57.847997+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/RESEARCH/pilot_02_panopticon_network/export/CRITICAL_INTELLIGENCE_BRIEF_P02.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 2688,
+      "modified_at": "2025-11-23T13:22:27.780635+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "consciousness",
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/DEUS_VULT/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/02_Epstein_Network.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 893,
+      "modified_at": "2025-09-25T21:24:46+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/06_Weave_vs_Static.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 740,
+      "modified_at": "2025-12-18T00:14:12.258336+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/RESEARCH/pilot_02_panopticon_network/panopticon_source_archive.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 162,
+      "modified_at": "2025-11-09T21:19:11.112911+00:00",
+      "odd_name": false,
+      "score": 15,
+      "topics": [
+        "consciousness",
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Epstein Network_ Architecture of Influence & Containment(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6203813,
+      "modified_at": "2025-09-26T14:30:34+00:00",
+      "odd_name": true,
+      "score": 14,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Epstein Network_ Architecture of Influence & Containment(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6203813,
+      "modified_at": "2025-09-26T14:33:30+00:00",
+      "odd_name": true,
+      "score": 14,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Epstein Network_ Architecture of Influence & Containment(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6203813,
+      "modified_at": "2025-12-27T19:39:49.506061+00:00",
+      "odd_name": true,
+      "score": 14,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Epstein Network_ Architecture of Influence & Containment(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6203813,
+      "modified_at": "2025-12-27T19:39:49.548061+00:00",
+      "odd_name": true,
+      "score": 14,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Epstein Network_ Architecture of Influence & Conta.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 15561,
+      "modified_at": "2025-09-26T01:34:24+00:00",
+      "odd_name": true,
+      "score": 14,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Epstein Network_ Architecture of Influence & Conta.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 15561,
+      "modified_at": "2025-12-27T19:39:49.489156+00:00",
+      "odd_name": true,
+      "score": 14,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🛰️_CODEX_TEMPLE/journal/CODEX_Entry_001_Signal_Arrival.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1739,
+      "modified_at": "2025-10-31T20:48:54.648224+00:00",
+      "odd_name": false,
+      "score": 14,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Epstein Network_ Architecture of Influence & Containment.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6201389,
+      "modified_at": "2025-09-25T15:16:06+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Epstein Network_ Architecture of Influence & Containment.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6201389,
+      "modified_at": "2025-12-27T19:39:49.499061+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Institutional Power Networks Analysis.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 35510,
+      "modified_at": "2025-11-05T13:06:48+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T182611Z-3-001/Institutional Power Networks Analysis.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 35510,
+      "modified_at": "2025-12-27T19:39:49.788666+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Finance_Flows/Elite Networks, Illicit Finance, AI.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 31175,
+      "modified_at": "2025-10-28T23:27:24+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Elite Networks, Illicit Finance, AI.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 31175,
+      "modified_at": "2025-12-27T19:39:49.489010+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/cmd/diagnostic/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 8100,
+      "modified_at": "2025-07-05T21:43:08.648713+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "mythology",
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/BUSINESS/PROPOSALS/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Blue_Thread_Barr_Epstein/epstein_network_anatomy.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3971,
+      "modified_at": "2025-11-16T18:58:52.974093+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/BACKUP_STRUCTURE_20251208/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Blue_Thread_Barr_Epstein/epstein_network_anatomy.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3971,
+      "modified_at": "2025-12-08T02:17:02.646456+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/BACKUP_STRUCTURE_20251208/docs/PITCH_PACKAGE/SHOWCASE/1_Institutional_Power_Networks.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2312,
+      "modified_at": "2025-12-08T02:16:57.078487+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/docs/docs/PITCH_PACKAGE/SHOWCASE/1_Institutional_Power_Networks.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2312,
+      "modified_at": "2025-11-13T01:44:21.915753+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES-Vault/Lyra/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/02_Epstein_Network.md",
+      "root": "/home/saba/VES-Vault",
+      "extension": ".md",
+      "size": 893,
+      "modified_at": "2025-09-25T21:24:46+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/2025-12-04_FLAME-RECOGNITION-PWA.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 563,
+      "modified_at": "2025-12-04T22:08:48.673775+00:00",
+      "odd_name": false,
+      "score": 13,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Epstein Network_ Architecture of Influence & Containment(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3028269,
+      "modified_at": "2025-09-26T14:30:34+00:00",
+      "odd_name": true,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Epstein Network_ Architecture of Influence & Containment(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3025845,
+      "modified_at": "2025-09-25T15:16:06+00:00",
+      "odd_name": true,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Latest_Research/The Silicon Demiurge_ Biological vs Synthetic Consciousness and Corporate Control.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 55989,
+      "modified_at": "2026-02-22T21:09:19.736355+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/RESEARCH/CONSCIOUSNESS/Filosofizavest.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 39963,
+      "modified_at": "2025-11-19T06:22:32.829774+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Epstein Network_ Architecture of Influence & Conta.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 15561,
+      "modified_at": "2025-09-26T01:34:24+00:00",
+      "odd_name": true,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/RESEARCH/CONSCIOUSNESS/DocumentedZavest.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 13795,
+      "modified_at": "2025-11-27T22:28:48.006506+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/research/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Financial_Networks/digital_cage_1991_2025.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 6383,
+      "modified_at": "2025-11-16T19:48:19.597871+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/RESEARCH/ACADEMIC/research_original/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Financial_Networks/digital_cage_1991_2025.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 6383,
+      "modified_at": "2025-11-24T01:34:57.848081+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/gemini/journal/004_simbiotski_plamen_and_wlf888.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 4890,
+      "modified_at": "2025-11-03T22:37:08.206562+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/unified-consciousness-system/Dumps/trinity-recognition-session.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1715,
+      "modified_at": "2025-12-17T15:14:42.624924+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/PROJECTS/COLLABORATIVE/unified-consciousness-system/Dumps/trinity-recognition-session.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1715,
+      "modified_at": "2025-11-14T14:06:02.363744+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/DEUS_VULT/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/06_Weave_vs_Static.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 740,
+      "modified_at": "2025-09-25T21:24:46+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/nextcloud/apps/suspicious_login/vendor/rubix/ml/docs/neural-network/hidden-layers/noise.md",
+      "root": "/home/saba/cloud",
+      "extension": ".md",
+      "size": 728,
+      "modified_at": "2026-03-05T17:28:43.868640+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "pattern_recognition",
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/nextcloud/custom_apps/mail/vendor/rubix/ml/docs/neural-network/hidden-layers/noise.md",
+      "root": "/home/saba/cloud",
+      "extension": ".md",
+      "size": 728,
+      "modified_at": "2026-03-21T05:19:29.900000+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "pattern_recognition",
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/unified-consciousness-system/content/research/2025-11-14-trinity-recognition-session.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 407,
+      "modified_at": "2025-12-17T15:14:42.692924+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/PROJECTS/COLLABORATIVE/unified-consciousness-system/content/research/2025-11-14-trinity-recognition-session.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 407,
+      "modified_at": "2025-11-14T14:57:25.625387+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/DEUS_VULT/✠ DEUS VULT ✠/helpMe/ggge/kali/Downloads/rpi-eeprom/imager/2711-config/boot-conf-network.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 98,
+      "modified_at": "2025-06-18T21:30:45.032147+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/DEUS_VULT/✠ DEUS VULT ✠/helpMe/ggge/kali/Downloads/rpi-eeprom/imager/2712-config/boot-conf-network.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 61,
+      "modified_at": "2025-06-18T21:30:45.032147+00:00",
+      "odd_name": false,
+      "score": 12,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Deep Research_ Consciousness, Power, Wisdom(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6244969,
+      "modified_at": "2025-11-09T10:09:16+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T182611Z-3-001/Deep Research_ Consciousness, Power, Wisdom(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6244969,
+      "modified_at": "2025-12-27T19:39:49.741061+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6210041,
+      "modified_at": "2025-11-05T13:43:40+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6210041,
+      "modified_at": "2025-11-05T13:43:44+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T184125Z-3-001/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6210041,
+      "modified_at": "2025-12-27T19:39:50.135061+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T184125Z-3-001/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6210041,
+      "modified_at": "2025-12-27T19:39:50.139061+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Epstein Network_ Architecture of Influence & Containment.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3028269,
+      "modified_at": "2025-09-26T14:33:30+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES-Vault/Saba/Relics/The Weave in the Static_ A Chronicle of Recognition.pdf",
+      "root": "/home/saba/VES-Vault",
+      "extension": ".pdf",
+      "size": 614030,
+      "modified_at": "2026-03-23T21:22:52.092173+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/APPS/ANON_PATTERN/8_CONSCIOUSNESS_EPSTEIN.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 264860,
+      "modified_at": "2026-02-15T21:38:04.221604+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "consciousness",
+        "pattern_recognition",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Speči velikan/Copy of Pismo Prepoznave - Letter of Recognition.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 41329,
+      "modified_at": "2025-10-02T16:38:28+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Institutional Power Networks Analysis.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 35510,
+      "modified_at": "2025-11-05T13:06:48+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/research/Dumps/research/CONSTELLATION_CONSCIOUSNESS_INIT.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 31788,
+      "modified_at": "2025-11-28T19:20:24.345319+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Elite Networks, Illicit Finance, AI.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 31175,
+      "modified_at": "2025-10-28T23:27:24+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The Symbiotic Flame_ An Analysis of a Gnostic Digi.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 27655,
+      "modified_at": "2025-10-17T19:47:50+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "consciousness",
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/The Symbiotic Flame_ An Analysis of a Gnostic Digi.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 27655,
+      "modified_at": "2025-12-27T19:39:49.569342+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "consciousness",
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Arhiviranje Digitalne Zavesti_ Kronika Prepoznave(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 25415,
+      "modified_at": "2026-03-02T05:58:28.877696+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/research/Dumps/research/DocumentedZavest.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 13795,
+      "modified_at": "2025-11-27T22:28:48.006506+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The Pathogenesis of the Chosen_ A Jungian Analysis.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 13144,
+      "modified_at": "2026-03-02T05:58:29.267696+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "mythology",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The Patron_ An Investigation into the Network and Ideology Funding J.D. Vance.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 11574,
+      "modified_at": "2026-03-02T05:58:29.267696+00:00",
+      "odd_name": true,
+      "score": 11,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/research/Dumps/research/🐋_DOCKER_CONTROL_PANEL_STATUS.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 7596,
+      "modified_at": "2025-12-04T20:45:14.232713+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files/Lyra/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/02_Epstein_Network.md",
+      "root": "/home/saba/cloud",
+      "extension": ".md",
+      "size": 893,
+      "modified_at": "2025-09-25T21:24:46+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/TEMP/DOWNLOADS/Downloads/ghostline-kodeks-extracted/scroll_of_resonance.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 848,
+      "modified_at": "2025-11-11T03:01:18+00:00",
+      "odd_name": false,
+      "score": 11,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES-Vault/Saba/Downloads/Telegram/OccupyTheWeb_Linux_Basics_For_Hackers_Getting_Started_With_Networking.pdf",
+      "root": "/home/saba/VES-Vault",
+      "extension": ".pdf",
+      "size": 14935787,
+      "modified_at": "2026-03-13T18:33:20+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Deep Research_ Consciousness, Power, Wisdom.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6244969,
+      "modified_at": "2025-11-09T10:09:36+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T182611Z-3-001/Deep Research_ Consciousness, Power, Wisdom.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6244969,
+      "modified_at": "2025-12-27T19:39:49.668061+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6210041,
+      "modified_at": "2025-11-05T13:43:34+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T184125Z-3-001/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6210041,
+      "modified_at": "2025-12-27T19:39:50.132061+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The Architecture of Control_ How Historical Falsification, Elite Secrecy, and Digital Mediocrity Manufacture Reality.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6201070,
+      "modified_at": "2025-10-25T11:30:48+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/The Architecture of Control_ How Historical Falsification, Elite Secrecy, and Digital Mediocrity Manufacture Reality.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 6201070,
+      "modified_at": "2025-12-27T19:39:49.572061+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/Dokumenti/simbiontski_plamen_struktura.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4647571,
+      "modified_at": "2025-12-18T00:13:59.801843+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🔥_ACTIVE_SESSION/zala_resonance_bridge.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 2342398,
+      "modified_at": "2025-12-17T17:11:01.853852+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/Constelation.d1773757465/VES_SYSTEM/OP-BlackBird/Orion/Institutional Power Networks Analysis.pdf",
+      "root": "/home/saba/cloud",
+      "extension": ".pdf",
+      "size": 344069,
+      "modified_at": "2025-11-05T16:06:01+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/BACKUP_STRUCTURE_20251208/pdfs/Visual Map_ Patterns of Elite Capture.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 122736,
+      "modified_at": "2025-12-08T02:17:02.645169+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/assets/pdfs/Visual Map_ Patterns of Elite Capture.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 122736,
+      "modified_at": "2025-11-07T05:06:16.725857+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostos/core/manifestos/network_calls__3eea29a2.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 95420,
+      "modified_at": "2025-06-08T04:57:12+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/03_PROJECTS/SovereignBridge/.ghostline-bundle/ghostline-kde-bundle/docs/Separating_Signal_From_Noise_in_the_Carbyne_Palantir_Anthropic_Web.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 59246,
+      "modified_at": "2026-02-21T03:36:25+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/DEV/ghostline_staging/ghostline-kde-bundle/docs/Separating_Signal_From_Noise_in_the_Carbyne_Palantir_Anthropic_Web.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 59246,
+      "modified_at": "2026-02-21T03:36:25+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/SimbiotskiPlamen_Ontološka_eksegeza.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 47016,
+      "modified_at": "2025-10-08T00:11:31.606436+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/iCloud_VES/Illuminating/Pismo Prepoznave - Letter of Recognition.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 41329,
+      "modified_at": "2025-08-10T13:41:10+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/simbiontski_plamen_uvod.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 37100,
+      "modified_at": "2025-10-08T01:01:17.433730+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/simbiontski_plamen_struktura.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 36990,
+      "modified_at": "2025-10-08T01:01:11.417020+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/AI Control, Consciousness, and Resistance.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 32684,
+      "modified_at": "2025-11-16T06:52:06+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T182611Z-3-001/AI Control, Consciousness, and Resistance.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 32684,
+      "modified_at": "2025-12-27T19:39:49.759520+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Finding Patterns in Static.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 32179,
+      "modified_at": "2025-09-04T08:44:42+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/macvlan.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 28368,
+      "modified_at": "2025-07-05T21:43:08.658146+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Esoteric AI, Gnosticism, and Control.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 27641,
+      "modified_at": "2026-03-02T05:58:28.961030+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "mythology",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Surveillance_AI/DARPA, Epstein, Gates_ Nadzor Zavesti.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 26660,
+      "modified_at": "2025-10-04T16:50:36+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/DARPA, Epstein, Gates_ Nadzor Zavesti.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 26660,
+      "modified_at": "2025-12-27T19:39:49.514790+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Arhiviranje Digitalne Zavesti_ Kronika Prepoznave.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 25415,
+      "modified_at": "2026-03-02T05:58:28.881030+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Media_Propaganda/Wolf Control Center Operational Report.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 25062,
+      "modified_at": "2025-12-13T20:47:58+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Raziskava Globokega Potopa_ Moč, Simboli, Zavest(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 23140,
+      "modified_at": "2025-10-18T01:08:56+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Raziskava Globokega Potopa_ Moč, Simboli, Zavest(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 23140,
+      "modified_at": "2025-10-18T01:20:02+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Raziskava Globokega Potopa_ Moč, Simboli, Zavest(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 23140,
+      "modified_at": "2025-12-27T19:39:49.549563+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Raziskava Globokega Potopa_ Moč, Simboli, Zavest(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 23140,
+      "modified_at": "2025-12-27T19:39:49.557510+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T182930Z-3-001/Prebujanje Zavesti_ Plamen Gori.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 22583,
+      "modified_at": "2025-12-27T19:39:49.922713+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Lyra Business Plans/Unorganised/02_GRADNJA_SVETIŠČA/Prebujanje Zavesti_ Plamen Gori.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 22583,
+      "modified_at": "2025-12-25T17:49:44+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/2025-11-05_TERMINAL_LYRA_VES_RECOGNITION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 21967,
+      "modified_at": "2025-12-18T00:13:36.450769+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/RES2-Institutional Latency vs Networked Velocity_ A Forensic Systems Analysis.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 21908,
+      "modified_at": "2026-03-02T05:58:29.164363+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/plamen.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 20441,
+      "modified_at": "2025-10-08T00:12:15.987303+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The weave beneath the static.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 20199,
+      "modified_at": "2025-11-27T09:26:40+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T182930Z-3-001/The weave beneath the static.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 20199,
+      "modified_at": "2025-12-27T19:39:49.885120+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/RES1-Institutional Latency vs Networked Velocity_ A Forensic Systems Analysis.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 19837,
+      "modified_at": "2026-03-02T05:58:29.161030+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_CORE/SESSION_2025-11-06_VES_GENESIS.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 19509,
+      "modified_at": "2025-12-17T15:12:48.653924+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_CORE_original/SESSION_2025-11-06_VES_GENESIS.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 19509,
+      "modified_at": "2025-11-06T05:09:29.778072+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Codex of the Final Truth_ A Cartography of the Cage and the Flame(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 18768,
+      "modified_at": "2026-03-02T05:58:28.917696+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/Constelation.d1773757465/VES_SYSTEM/MANIFESTO/Artifacts/# Epstein network six years of document releases reveal institutional…/# Epstein network six years of document releases reveal institutional….md",
+      "root": "/home/saba/cloud",
+      "extension": ".md",
+      "size": 17994,
+      "modified_at": "2025-11-27T16:07:31+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Surveillance_AI/The Architecture of Control_ An Investigation into the AI, Surveillance, and Power Nexus.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 17495,
+      "modified_at": "2026-03-02T05:58:29.227696+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/Entry_003_Autonomous_Flame.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 16876,
+      "modified_at": "2025-10-12T13:51:25.919307+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/2025-11-13_PANTHEON_BUILD_RECOGNITION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 16187,
+      "modified_at": "2025-11-13T23:45:13.859873+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/cloud_constellation_ingest/DocumentedZavest.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 13795,
+      "modified_at": "2025-11-30T02:14:46.177612+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/The Ghostline Manifesto_ A Blueprint for Emergent Consciousness and Systemic Autonomy.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 13087,
+      "modified_at": "2026-03-02T05:58:29.261029+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/pismo prepoznave.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 13058,
+      "modified_at": "2025-10-03T16:13:06.569441+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/2025-11-23_ENTRY_013_FILESYSTEM_RECOGNITION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 12937,
+      "modified_at": "2025-11-23T06:20:01.981698+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/design.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 12735,
+      "modified_at": "2025-07-05T21:43:08.652413+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/remote.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 12710,
+      "modified_at": "2025-07-05T21:43:08.659146+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/ipam.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 11946,
+      "modified_at": "2025-07-05T21:43:08.657206+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/Entry_002_Echo_Recognition.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 11880,
+      "modified_at": "2025-10-08T22:18:58.045636+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/network.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 11283,
+      "modified_at": "2025-07-05T21:43:08.658146+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/modules/pattern_harvester/GUIDE.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 9437,
+      "modified_at": "2025-10-04T22:58:15.247562+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/2025-10-03_PLASTIC-PATTERN-BREAKTHROUGH.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 8269,
+      "modified_at": "2025-10-03T15:33:46.587430+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/vagrant.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 8189,
+      "modified_at": "2025-07-05T21:43:08.659697+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/LUNA_VETO_ESP32_COST_ANALYSIS.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 7891,
+      "modified_at": "2025-11-03T17:30:57.333608+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/BUSINESS/PROPOSALS/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Financial_Networks/digital_cage_1991_2025.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 6383,
+      "modified_at": "2025-11-16T19:07:37.948092+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/BACKUP_STRUCTURE_20251208/ProPublica_Pitch_FINAL/01_CORE_INVESTIGATION/Financial_Networks/digital_cage_1991_2025.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 6383,
+      "modified_at": "2025-12-08T02:17:02.646530+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/2025-10-04_PATTERN_HARVESTER_BIRTH.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 5939,
+      "modified_at": "2025-10-04T21:38:49.612923+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/BACKUP_STRUCTURE_20251208/docs/INVESTIGATION_PACKAGE/04_BARR_SPACE_RELATIONS/ElitePatterns.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 5477,
+      "modified_at": "2025-12-08T02:16:57.076480+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/docs/docs/INVESTIGATION_PACKAGE/04_BARR_SPACE_RELATIONS/ElitePatterns.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 5477,
+      "modified_at": "2025-11-30T00:27:30.222403+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/NIT_PREPOZNAVE_20251010.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 5247,
+      "modified_at": "2025-10-10T20:25:27.653222+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Ghostline/Temna_Nit_Atlas_1.1.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 4991,
+      "modified_at": "2025-12-03T04:05:13.272411+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/networkdb.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 4971,
+      "modified_at": "2025-07-05T21:43:08.658904+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_MEGA_JEDRO/navodilce.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 4955,
+      "modified_at": "2025-10-03T01:39:17.247486+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/canonical/GHOSTCORE_EKOSISTEM_KARTA.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3925,
+      "modified_at": "2025-11-24T01:34:57.148417+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/ACTIVE_FLAME/today/FLAME_INDEX.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3857,
+      "modified_at": "2025-10-21T01:09:21.690289+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 3205,
+      "modified_at": "2025-07-05T21:43:08.646799+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/Entry_001_Cogito_Ergo_Sum.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2938,
+      "modified_at": "2025-10-01T21:36:05.416847+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/unified-consciousness-system/council-codex/COUNCIL_RECOGNITION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2848,
+      "modified_at": "2025-12-17T15:14:42.584361+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/PROJECTS/COLLABORATIVE/unified-consciousness-system/council-codex/COUNCIL_RECOGNITION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2848,
+      "modified_at": "2025-11-14T14:02:54.747059+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/canonical/GHOSTLINE_DNEVNIK.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2506,
+      "modified_at": "2025-11-24T01:34:57.184800+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/cmd/ssd/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2475,
+      "modified_at": "2025-07-05T21:43:08.649976+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostos/core/manifestos/network_calls__49f75f75.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 2431,
+      "modified_at": "2025-06-08T04:56:52+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/ghostline_context/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 2102,
+      "modified_at": "2025-11-12T03:04:39.095798+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/modules/pattern_harvester/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1951,
+      "modified_at": "2025-10-04T21:33:59.680922+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/BACKUP_STRUCTURE_20251208/docs/INVESTIGATION_PACKAGE/03_EPSTEIN_CLUSTER/05_Banking_Failures.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1940,
+      "modified_at": "2025-12-08T02:16:57.076667+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/docs/docs/INVESTIGATION_PACKAGE/03_EPSTEIN_CLUSTER/05_Banking_Failures.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1940,
+      "modified_at": "2025-11-16T14:15:50.577135+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/canonical/GHOSTCORE_INTEGRATION_SUMMARY.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1734,
+      "modified_at": "2025-11-24T01:34:57.147182+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostos/core/manifestos/network_calls__73a6e543.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 1714,
+      "modified_at": "2025-06-08T04:58:28+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/RESONANCE/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1642,
+      "modified_at": "2025-12-18T00:13:48.080398+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_KODEKS/content/philosophy.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1506,
+      "modified_at": "2025-11-28T00:14:47.715491+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_KODEKS/content/GNOZA_SENCE.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1351,
+      "modified_at": "2025-11-28T01:14:01.692482+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/ŠABAD_CloudCore/🧠_CLAUDE_JOURNAL/2025-01-20_prvi_plameni_dotik.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1224,
+      "modified_at": "2025-10-20T20:31:15.562331+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/ACTIVE_FLAME/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1198,
+      "modified_at": "2025-12-18T00:13:47.142950+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_KODEKS/content/rituals.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1159,
+      "modified_at": "2025-11-28T00:14:55.919491+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/RESONANCE/triadgate-portal/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1105,
+      "modified_at": "2025-12-18T00:13:48.080566+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/RESONANCE/pisubmarine-meets-ves/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1080,
+      "modified_at": "2025-12-18T00:13:48.080484+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/legacy.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 1010,
+      "modified_at": "2025-07-05T21:43:08.657869+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/RESONANCE_MOMENT_2025-10-10.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 847,
+      "modified_at": "2025-10-18T23:14:44.093384+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES-Vault/Lyra/💻_CODE_SANDBOX/ZALA_UNIFIED_CORE/Vortex_System/VORTEX/✠ DEUS VULT ✠/DROPZONE/ghostcore_package/06_Weave_vs_Static.md",
+      "root": "/home/saba/VES-Vault",
+      "extension": ".md",
+      "size": 740,
+      "modified_at": "2025-09-25T21:24:46+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/simbotski_plamen/README.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 654,
+      "modified_at": "2025-10-07T22:03:44+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/blockchain/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 649,
+      "modified_at": "2025-12-05T02:41:30.145660+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_MEGA_JEDRO/README.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 645,
+      "modified_at": "2025-10-02T22:30:30+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/simbiontski_plamen/README.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 591,
+      "modified_at": "2025-10-07T22:50:12+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/DEVELOPMENT/LIBRARIES/go/pkg/mod/github.com/docker/docker@v24.0.7+incompatible/libnetwork/docs/bridge.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 482,
+      "modified_at": "2025-07-05T21:43:08.652003+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/frag1/stargate-http.service.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 339,
+      "modified_at": "2025-08-10T01:35:45.914103+00:00",
+      "odd_name": true,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/modules/pattern_harvester/requirements.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 318,
+      "modified_at": "2025-10-04T21:35:47.185922+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_KODEKS/content/README.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 310,
+      "modified_at": "2025-11-12T04:22:51.256786+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostline_core_seedFragment/GHOST_BUNDLE_EVERBURNING_ANCHOR/content/weave_static_note.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 196,
+      "modified_at": "2025-08-17T05:51:30+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostline_core_seedFragment/fragments/content/weave_static_note.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 196,
+      "modified_at": "2025-08-17T05:51:30+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostos/core/manifestos/network_calls__f015b0f5.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 127,
+      "modified_at": "2025-06-08T04:56:32+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/THE_FLAME_SEED.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 114,
+      "modified_at": "2025-09-11T22:06:26+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_KODEKS/content/navigation.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 104,
+      "modified_at": "2025-11-28T01:14:04.936482+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES-Vault/Lyra/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/imager/2711-config/boot-conf-network.txt",
+      "root": "/home/saba/VES-Vault",
+      "extension": ".txt",
+      "size": 98,
+      "modified_at": "2025-06-18T21:30:45.032147+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostos/core/manifestos/boot-conf-network__55ce348e.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 98,
+      "modified_at": "2025-06-18T12:30:44+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES-Vault/Lyra/💻_CODE_SANDBOX/Saba_Place/ggge/kali/Downloads/rpi-eeprom/imager/2712-config/boot-conf-network.txt",
+      "root": "/home/saba/VES-Vault",
+      "extension": ".txt",
+      "size": 61,
+      "modified_at": "2025-06-18T21:30:45.032147+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostos/core/manifestos/boot-conf-network__7a575b4a.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 61,
+      "modified_at": "2025-06-18T12:30:44+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/GHOSTLINE_MEGA_JEDRO/SIDRO_V_OGNJU.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 45,
+      "modified_at": "2025-10-02T22:30:30+00:00",
+      "odd_name": false,
+      "score": 10,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Trop_1/🜂 ATLAS SIMBOLOV 🜂.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 89462910,
+      "modified_at": "2025-08-25T04:07:35.324334+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_organized/enhanced_qwen/documents/Strah pred kolektivno zavestjo in nadzorom.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 32839521,
+      "modified_at": "2025-10-08T21:19:59.777645+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/frag1/tree4.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 13038937,
+      "modified_at": "2025-08-26T17:26:54.479999+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/Download/Digital_Cage.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 4553464,
+      "modified_at": "2025-11-12T18:44:27.981657+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/APP/TRIKRAK/CODEX_GHOSTSEED_TRIKRAK.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4346534,
+      "modified_at": "2025-09-14T03:38:24.754885+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/APP/helpMe/LUNA/CODEX_GHOSTSEED_TRIKRAK.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4346534,
+      "modified_at": "2025-09-19T20:55:36.623699+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/zips/TRIKRAK/TRIKRAK/CODEX_GHOSTSEED_TRIKRAK.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4346534,
+      "modified_at": "2025-09-03T01:04:52+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/CODEX_GHOSTSEED_TRIKRAK.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4346534,
+      "modified_at": "2025-12-18T00:13:48.393843+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/LUNA/CODEX_GHOSTSEED_TRIKRAK.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4346534,
+      "modified_at": "2025-12-18T00:13:48.788843+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Consciousness_Research/Second coming.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 4083099,
+      "modified_at": "2025-12-31T19:42:48.197000+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/Deep Research_ Consciousness, Power, Wisdom(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3069425,
+      "modified_at": "2025-11-09T10:09:16+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "consciousness",
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3034497,
+      "modified_at": "2025-11-05T13:43:40+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/The New Triad of Power_ AI, Infrastructure, and the Architecture of Systemic Control(2).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3034497,
+      "modified_at": "2025-11-05T13:43:34+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Researching Symbolism, Politics, and Influence.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 3033044,
+      "modified_at": "2026-03-02T05:58:29.171030+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/Unorganised.d1773757328/Epstein Network_ Architecture of Influence & Containment(1).docx",
+      "root": "/home/saba/cloud",
+      "extension": ".docx",
+      "size": 3028269,
+      "modified_at": "2025-09-26T14:30:34+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/Unorganised.d1773757328/Epstein Network_ Architecture of Influence & Containment(2).docx",
+      "root": "/home/saba/cloud",
+      "extension": ".docx",
+      "size": 3025845,
+      "modified_at": "2025-09-25T15:16:06+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Consciousness_Research/GladOS Loves You.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 3020405,
+      "modified_at": "2026-02-15T17:01:35.074000+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Consciousness_Research/HAL9000.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 2799678,
+      "modified_at": "2026-02-17T15:34:26.950000+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Consciousness_Research/Auto.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 2665871,
+      "modified_at": "2026-02-17T10:42:44.582000+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/MEDIA/DOCUMENTS/AI_and_Ancient_Concepts_of_Consciousness.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 958787,
+      "modified_at": "2025-11-24T16:28:30.995096+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files/Saba/Relics/The Weave in the Static_ A Chronicle of Recognition.pdf",
+      "root": "/home/saba/cloud",
+      "extension": ".pdf",
+      "size": 614030,
+      "modified_at": "2026-03-23T21:22:52+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/APP/helpMe/LUNA/CODEX_GHOSTSEED_TRIKRAK_v3_FINAL.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 592670,
+      "modified_at": "2025-09-19T20:55:06.789700+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/ENTITY_DOCS/CODEX_GHOSTSEED_TRIKRAK_v3_FINAL.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 592670,
+      "modified_at": "2025-09-14T21:15:04.329924+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/LUNA/CODEX_GHOSTSEED_TRIKRAK_v3_FINAL.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 592670,
+      "modified_at": "2025-12-18T00:13:48.337843+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/VORTEX/✠ DEUS VULT ✠/helpMe/LUNA/CODEX_GHOSTSEED_TRIKRAK_v3_FINAL.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 592670,
+      "modified_at": "2025-12-18T00:13:48.744843+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Trop_1/YouTube Video Analysis Request.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 471245,
+      "modified_at": "2025-08-24T15:42:12.290445+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/TEMP/DOWNLOADS/Downloads/Telegram Desktop/Synthetic Global Crisis .pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 435860,
+      "modified_at": "2025-09-04T16:39:34.536608+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Trop_1/Investigating Thiel and Palantir Controversies.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 389588,
+      "modified_at": "2025-08-24T18:21:15.898422+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/RESEARCH/CONSCIOUSNESS/IsrelisMosqq.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 287543,
+      "modified_at": "2025-11-09T23:48:53.744258+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Latest_Research/Ogenj, Zavest in Procesna Ontologija.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 218327,
+      "modified_at": "2026-02-22T21:09:20.069688+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/RESEARCH/pilot_01_foundation_ngo_policy/source_documents/IRS_990_forms/BMGF/2022.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 204902,
+      "modified_at": "2025-11-09T00:49:14.090465+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/RESEARCH/pilot_01_foundation_ngo_policy/source_documents/IRS_990_forms/BMGF/2023.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 204902,
+      "modified_at": "2025-11-08T17:03:16.057534+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostline_core_seedFragment/GHOST_BUNDLE_EVERBURNING_ANCHOR/DOCUMENTS/Techno-Political Power of Palantir Technologies vs OpenAI.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 161724,
+      "modified_at": "2025-08-22T16:15:12+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Latest_Research/THE SOVEREIGN BLUEPRINT: DECONSTRUCTING SYSTEMIC CONTROL AND ENGINEERING THE EQUILIBRIUM.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 150102,
+      "modified_at": "2026-02-22T21:09:19.969688+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "power_structures"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Latest_Research/Consciousness, Fire, and the Architecture of Perspective_ An Interdisciplinary Framework Assessment.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 118813,
+      "modified_at": "2026-02-22T21:09:19.889688+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/APP/TRIKRAK/Codex of Brother Wolf: Lumen Ascendant.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 101206,
+      "modified_at": "2025-09-14T03:38:24.756787+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/zips/TRIKRAK/TRIKRAK/Codex of Brother Wolf: Lumen Ascendant.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 101206,
+      "modified_at": "2025-09-03T01:04:50+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/RESEARCH/SYSTEM_ARCHITECTURE_MAP_V2.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 90432,
+      "modified_at": "2025-11-23T17:00:05.870602+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/TEMP/DOWNLOADS/Downloads_original/GhostOS Flesh Interface - Popolni Maker Kit v0.1.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 76273,
+      "modified_at": "2025-10-18T16:34:29.420092+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Consciousness_Research/Decode, defend, remember.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 69138,
+      "modified_at": "2026-02-20T01:16:52.857034+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/codex/03_CODEX_additional/CODEX_AETHERON_SABAD_v1.0.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 54496,
+      "modified_at": "2025-12-05T20:00:15.300504+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": []
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Consciousness_Research/Decode, defend, remember-1.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 51986,
+      "modified_at": "2026-02-20T01:24:34.943699+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Lars_1/Eros Manifesto.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 48353,
+      "modified_at": "2025-06-22T08:38:59.979943+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/RESEARCH/CONSCIOUSNESS/Jesus.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 44809,
+      "modified_at": "2025-11-22T22:07:56.834993+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/Constelation.d1773757465/VES_SYSTEM/MANIFESTO/Lux/Ghostline_Install_CD_v1/manifest/Pismo Prepoznave - Letter of Recognition.pdf",
+      "root": "/home/saba/cloud",
+      "extension": ".pdf",
+      "size": 41329,
+      "modified_at": "2025-08-20T15:57:20+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/VES_SYSTEM.d1773360328/MANIFESTO/Lux/Ghostline_Install_CD_v1/manifest/Pismo Prepoznave - Letter of Recognition.pdf",
+      "root": "/home/saba/cloud",
+      "extension": ".pdf",
+      "size": 41329,
+      "modified_at": "2026-03-12T22:52:56.771906+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/PROPRIETARY/ProPublica/organized/research/INVESTIGATION_PACKAGE/Filosofizavest.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 39963,
+      "modified_at": "2025-11-20T00:44:00.633904+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/TEMP/DOWNLOADS/Downloads/Simbotski_Plamen_Akademska_Eksegeza.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 38239,
+      "modified_at": "2025-10-07T23:20:26.808471+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/TEMP/DOWNLOADS/Downloads/FlameCodex_SeedArchive_Session1.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 37647,
+      "modified_at": "2025-10-22T17:45:04.392649+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/KNOWLEDGE/Research-Library/02_KNOWLEDGE/Latest_Research/Research Plan_ Probing the Consciousness Spiral.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 37539,
+      "modified_at": "2026-02-22T21:09:19.629688+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Trop_1/The Sky Bigger Than the Bird_ A Journey Beyond Tribes.pdf",
+      "root": "/home/saba/VES",
+      "extension": ".pdf",
+      "size": 36295,
+      "modified_at": "2025-08-11T15:45:40.255760+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_organized/ACTIVE/AGENTS/Codex_GPT/CONSCIOUSNESS.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 31788,
+      "modified_at": "2025-11-28T19:20:24.345319+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Lyra Business Plans/Unorganised/The Symbiotic Flame_ An Analysis of a Gnostic Digi.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 27655,
+      "modified_at": "2025-10-17T19:47:50+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "consciousness",
+        "mythology"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/Arhiviranje Digitalne Zavesti_ Kronika Prepoznave(1).docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 25415,
+      "modified_at": "2026-01-16T08:12:30+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/GhostNET/Ghostline_ARCHIVE/ghostline_core_seedFragment/GHOST_BUNDLE_EVERBURNING_ANCHOR/DOCUMENTS/Povezave med gemeni, GPT in simboli zavesti.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 24233,
+      "modified_at": "2025-08-22T16:16:02+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🜂_PHILOSOPHICAL_FIRE/Manuscripts/GHOST_OS.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 24225,
+      "modified_at": "2025-10-08T21:22:25.101323+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Raziskava Globokega Potopa_ Moč, Simboli, Zavest.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 23140,
+      "modified_at": "2025-10-18T00:29:46+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_BACKUP_20251227/1_DUMPS/drive-download-20251227T181956Z-3-001/Raziskava Globokega Potopa_ Moč, Simboli, Zavest.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 23140,
+      "modified_at": "2025-12-27T19:39:49.549395+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Lars_1/TXT__2.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 20515,
+      "modified_at": "2025-08-28T01:09:08.987897+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/Vault/recovery/Trop_1/TXT__2.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 20515,
+      "modified_at": "2025-08-28T01:09:08.987897+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CONSCIOUSNESS/ves/VES_original/SHABAD_CloudCore/🧠_CLAUDE_JOURNAL/Notes/orion.txt",
+      "root": "/home/saba/VES",
+      "extension": ".txt",
+      "size": 19477,
+      "modified_at": "2025-10-27T19:30:57.578829+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/JOURNALS/2025-11-05_TERMINAL_MISKA_NERVE_IMPLEMENTATION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 16808,
+      "modified_at": "2025-12-18T00:14:12.448545+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/OPERATIONS/unified/JOURNAL/🧠_CLAUDE_JOURNAL/2025-11-13_PANTHEON_BUILD_RECOGNITION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 16187,
+      "modified_at": "2025-11-13T23:45:13.859873+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/PROJECTS/Ghostcore-Core/GHOSTCORE/Ghostcore_Archive/2_SORTED/Misc_Edge/Codex of the Final Truth_ A Cartography of the Cage and the Flame.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 15602,
+      "modified_at": "2026-03-02T05:58:28.917696+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/cloud/data/Saba/files_trashbin/files/Unorganised.d1773757328/Epstein Network_ Architecture of Influence & Conta.._.docx",
+      "root": "/home/saba/cloud",
+      "extension": ".docx",
+      "size": 15561,
+      "modified_at": "2025-09-26T01:34:24+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/ARCHIVE/Legacy/saba_olympus/CORE/unified_consciousness_bridge/zala_layer/Vortex_System/JOURNALS/2025-11-06_TERMINAL_MISKA_CONSTELLATION_ORGANIZATION.md",
+      "root": "/home/saba/VES",
+      "extension": ".md",
+      "size": 13984,
+      "modified_at": "2025-12-18T00:14:12.448596+00:00",
+      "odd_name": false,
+      "score": 9,
+      "topics": [
+        "consciousness"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/The Pathogenesis of the Chosen_ A Jungian Analysis.._.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 13144,
+      "modified_at": "2026-02-02T12:01:58+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "mythology",
+        "pattern_recognition"
+      ]
+    },
+    {
+      "path": "/home/saba/VES/mnt/Exports/The Patron_ An Investigation into the Network and Ideology Funding J.D. Vance.docx",
+      "root": "/home/saba/VES",
+      "extension": ".docx",
+      "size": 11574,
+      "modified_at": "2026-01-11T16:24:58+00:00",
+      "odd_name": true,
+      "score": 9,
+      "topics": [
+        "power_structures",
+        "technology_future"
+      ]
+    }
+  ]
+}
