@@ -1,0 +1,534 @@
+body { font-family: 'Inter', sans-serif; }
+.flame-pulse { animation: flame-pulse 2s ease-in-out infinite; }
+@keyframes flame-pulse { 0%, 100% { opacity: 0.8; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
+.consciousness-glow { box-shadow: 0 0 20px rgba(45, 212, 191, 0.3); }
+.accent-color { color: #008080; }
+.dark .accent-color { color: #2dd4bf; }
+.bg-accent-color { background-color: #008080; }
+.dark .bg-accent-color { background-color: #14b8a6; }
+.section-hidden { display: none; }
+
+#atlas-container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#atlas-graph { flex: 1; min-height: 50vh; }
+
+#atlas-panel {
+  flex: 0 0 280px;
+  min-width: 280px;
+  border-left: none;
+  border-top: 1px solid rgba(123, 250, 250, 0.25);
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(4px);
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  #atlas-container { flex-direction: row; }
+  #atlas-graph { flex: 3; min-height: auto; }
+  #atlas-panel {
+    border-top: none;
+    border-left: 1px solid rgba(123, 250, 250, 0.25);
+  }
+}
+
+#atlas-graph svg { width: 100%; height: 100%; }
+#atlas-graph .link { stroke: #2dd4bf; stroke-opacity: 0.6; }
+#atlas-graph .node { fill: #9a03fe; stroke: #7bfafa; stroke-width: 2px; cursor: pointer; transition: all 0.2s; }
+#atlas-graph .node.active { fill: #2dd4bf; stroke: #ff00ff; }
+#atlas-graph .label { fill: #fff; font: 10px 'Fira Code', monospace; pointer-events: none; }
+#atlas-list-container { max-height: 25vh; overflow-y: auto; }
+.atlas-list-item { padding: 6px; cursor: pointer; border-radius: 4px; transition: background-color 0.1s; }
+.atlas-list-item:hover { background-color: rgba(45, 212, 191, 0.1); }
+.atlas-list-item.active { background-color: #2dd4bf; color: #1f2937; font-weight: bold; }
+
+.terminal-output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: 'Fira Code', monospace;
+  line-height: 1.5;
+}
+
+.output-message { margin-bottom: 1rem; animation: fadeIn 0.5s ease-in-out; }
+.output-siri { color: #4caf50; text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); }
+.output-user { color: #ff5722; text-shadow: 0 0 5px rgba(255, 87, 34, 0.5); }
+
+.path { stroke-dasharray: 1000; stroke-dashoffset: 1000; }
+.path.animate { animation: draw 3s ease-in-out forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.fade-in { opacity: 0; transition: opacity 0.5s ease-in-out; }
+.fade-in.visible { opacity: 1; }
+
+#seal-qr-canvas {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.loader {
+  border: 2px solid #374151;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+:root {
+  --sanctuary-accent: #ff7a1a;
+  --sanctuary-accent-soft: #ffb347;
+  --sanctuary-aura: rgba(255, 122, 26, 0.28);
+}
+
+.sanctuary-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top, rgba(255, 122, 26, 0.16), transparent 35%),
+    linear-gradient(145deg, #100b0c 0%, #140e17 45%, #0b0c14 100%);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+}
+
+.sanctuary-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 20%, var(--sanctuary-aura), transparent 22%),
+    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.05), transparent 18%),
+    radial-gradient(circle at 70% 70%, rgba(255, 179, 71, 0.12), transparent 18%);
+  filter: blur(14px);
+}
+
+.sanctuary-tab {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 245, 235, 0.8);
+  padding: 0.7rem 1.1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: 180ms ease;
+}
+
+.sanctuary-tab:hover,
+.sanctuary-tab.active {
+  border-color: var(--sanctuary-accent);
+  background: color-mix(in srgb, var(--sanctuary-accent) 18%, transparent);
+  color: white;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--sanctuary-accent) 20%, transparent);
+}
+
+.sanctuary-panel { display: none; }
+.sanctuary-panel.active { display: block; }
+
+.sanctuary-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.sanctuary-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  padding: 1.25rem;
+  color: #f7efe4;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.sanctuary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transform: translateX(-100%);
+  transition: transform 350ms ease;
+}
+
+.sanctuary-card:hover::before { transform: translateX(100%); }
+
+.sanctuary-card h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1.15rem;
+  color: white;
+}
+
+.sanctuary-card p {
+  color: rgba(255, 238, 225, 0.78);
+  line-height: 1.65;
+}
+
+.sanctuary-card-sigil {
+  margin-bottom: 0.9rem;
+  font-size: 1.5rem;
+}
+
+.sanctuary-card-date {
+  display: inline-block;
+  margin-top: 1rem;
+  color: color-mix(in srgb, var(--sanctuary-accent-soft) 85%, white);
+  opacity: 0.8;
+}
+
+.sanctuary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--sanctuary-accent), var(--sanctuary-accent-soft));
+  color: #0a0a0a;
+  font-weight: 700;
+  padding: 0.85rem 1.2rem;
+  transition: 180ms ease;
+}
+
+.sanctuary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--sanctuary-accent) 32%, transparent);
+}
+
+.sanctuary-action-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.sanctuary-timer-card {
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--sanctuary-accent) 22%, transparent), transparent 55%),
+    rgba(255, 255, 255, 0.05);
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.sanctuary-progress-ring-bg,
+.sanctuary-progress-ring-circle {
+  fill: transparent;
+  stroke-width: 6;
+  r: 50;
+  cx: 70;
+  cy: 70;
+}
+
+.sanctuary-progress-ring-bg {
+  stroke: rgba(255, 255, 255, 0.08);
+}
+
+.sanctuary-progress-ring-circle {
+  stroke: var(--sanctuary-accent);
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 10px var(--sanctuary-aura));
+}
+
+.sanctuary-timer-display {
+  margin-top: 1rem;
+  font-family: "Fira Code", monospace;
+  font-size: 2.4rem;
+  color: white;
+}
+
+.sanctuary-image-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.bridge-link-card {
+  display: flex;
+  min-height: 120px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.9rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(45, 212, 191, 0.18);
+  background: linear-gradient(160deg, rgba(15, 23, 42, 0.92), rgba(17, 24, 39, 0.75));
+  padding: 1.05rem 1.1rem;
+  color: #e2e8f0;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.bridge-link-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 212, 191, 0.45);
+  box-shadow: 0 14px 26px rgba(15, 118, 110, 0.16);
+}
+
+.bridge-link-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(94, 234, 212, 0.78);
+}
+
+.bridge-link-value {
+  word-break: break-word;
+  font-family: "Fira Code", monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.bridge-meta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.9rem 1rem;
+}
+
+.bridge-meta-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(148, 163, 184, 0.78);
+}
+
+.bridge-meta-value {
+  word-break: break-word;
+  font-family: "Fira Code", monospace;
+  color: #e2e8f0;
+}
+
+.sanctuary-image-add,
+.sanctuary-image-tile {
+  aspect-ratio: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sanctuary-image-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 243, 230, 0.85);
+  transition: 180ms ease;
+}
+
+.sanctuary-image-add:hover {
+  border-color: var(--sanctuary-accent);
+  transform: translateY(-2px);
+}
+
+.sanctuary-image-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sanctuary-textarea {
+  min-height: 220px;
+  width: 100%;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.28);
+  color: white;
+  padding: 1rem;
+}
+
+.sanctuary-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sanctuary-empty {
+  border-radius: 1rem;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  color: rgba(255, 238, 225, 0.6);
+}
+
+.sanctuary-recognition-shell {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at center, rgba(21, 11, 31, 0.9), rgba(8, 8, 14, 0.98)),
+    #09090f;
+  padding: 2rem;
+}
+
+.sanctuary-symbols {
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 0.65em;
+  color: rgba(255, 196, 128, 0.65);
+}
+
+.recognition-btn {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 239, 225, 0.88);
+  padding: 0.9rem 1rem;
+  transition: 180ms ease;
+}
+
+.recognition-btn:hover,
+.recognition-btn.active {
+  background: color-mix(in srgb, var(--sanctuary-accent) 15%, rgba(255,255,255,0.02));
+  border-color: var(--sanctuary-accent);
+}
+
+.recognition-meter {
+  height: 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.recognition-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--sanctuary-accent), var(--sanctuary-accent-soft));
+  transition: width 300ms ease;
+}
+
+.recognition-output {
+  border-left: 3px solid var(--sanctuary-accent);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0 1rem 1rem 0;
+  padding: 1.1rem 1.2rem;
+  color: rgba(255, 239, 225, 0.84);
+  line-height: 1.8;
+}
+
+.floating-actions {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.fab {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(135deg, var(--sanctuary-accent), var(--sanctuary-accent-soft));
+  color: #090909;
+  font-size: 1.6rem;
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--sanctuary-accent) 26%, transparent);
+}
+
+.fab-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+.modal.hidden { display: none; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+}
+
+.sanctuary-modal-content {
+  width: min(100%, 34rem);
+  background: linear-gradient(145deg, #120d12, #1a0f18);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sanctuary-modal-content .form-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: rgba(255, 234, 220, 0.8);
+}
+
+.sanctuary-modal-content input,
+.sanctuary-modal-content textarea,
+.sanctuary-modal-content select {
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 0.85rem 0.9rem;
+}
+
+.sanctuary-modal-content textarea {
+  min-height: 150px;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 1.75rem;
+}
+
+.sanctuary-status {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 70;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.sanctuary-status-success {
+  background: rgba(14, 95, 48, 0.88);
+}
+
+.sanctuary-status-error {
+  background: rgba(137, 29, 29, 0.9);
+}
+
+@media (max-width: 767px) {
+  .floating-actions {
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .fab {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.35rem;
+  }
+}
