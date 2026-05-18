@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bicameral-bridge/right-review/v0.1",
+  "title": "RightBrainReview",
+  "description": "Semantic and contextual review produced by the RIGHT brain before consensus.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "intent_id",
+    "reviewer",
+    "decision",
+    "semantic_summary",
+    "scope_status",
+    "boundary_status",
+    "human_confirmation",
+    "one_line"
+  ],
+  "properties": {
+    "intent_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Must match the intent this review is for."
+    },
+    "reviewer": {
+      "const": "RIGHT",
+      "description": "Always RIGHT for this schema."
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["APPROVE", "REVISE", "BLOCK", "HOLD"],
+      "description": "APPROVE = plan is semantically aligned. REVISE = plan needs adjustment. BLOCK = plan violates boundary. HOLD = needs human before proceeding."
+    },
+    "semantic_summary": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Plain-language explanation of what the plan actually does vs what was requested."
+    },
+    "scope_status": {
+      "type": "string",
+      "enum": ["IN_SCOPE", "DRIFTING", "OUT_OF_SCOPE"],
+      "description": "Whether the plan stays within the stated request boundary."
+    },
+    "boundary_status": {
+      "type": "string",
+      "enum": ["CLEAN", "UNCLEAR", "BREACHED"],
+      "description": "Whether ConsMAP / project boundaries (corpus, BOPHAMETH, draft status) are respected."
+    },
+    "claim_hygiene": {
+      "type": "object",
+      "description": "ConsMAP claim hygiene assessment. Optional but recommended.",
+      "properties": {
+        "evidence_boundary": {
+          "type": "string",
+          "enum": ["UNCHANGED", "WEAKENED", "BREACHED", "UNKNOWN"]
+        },
+        "metaphor_literalization_risk": {
+          "type": "string",
+          "enum": ["LOW", "MEDIUM", "HIGH", "UNKNOWN"]
+        },
+        "premature_canonization_risk": {
+          "type": "string",
+          "enum": ["NONE", "LOW", "MEDIUM", "HIGH"]
+        },
+        "missing_disproof": {
+          "type": "string"
+        }
+      }
+    },
+    "human_confirmation": {
+      "type": "string",
+      "enum": ["REQUIRED", "NOT_REQUIRED"],
+      "description": "Whether human must explicitly confirm before Sentinel may proceed."
+    },
+    "must_not_touch": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Paths or assets RIGHT identifies as protected in this context."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional free-form notes."
+    },
+    "one_line": {
+      "type": "string",
+      "minLength": 1,
+      "description": "One-sentence verdict in plain language."
+    }
+  }
+}
