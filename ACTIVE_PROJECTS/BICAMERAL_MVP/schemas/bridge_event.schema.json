@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "bicameral-bridge/event/v0.1",
+  "title": "BridgeEvent",
+  "description": "Append-only audit log event for the Bicameral Bridge pipeline.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["ts", "event", "intent_id"],
+  "properties": {
+    "ts": {
+      "type": "string",
+      "description": "ISO 8601 timestamp."
+    },
+    "event": {
+      "type": "string",
+      "enum": [
+        "INTENT_CREATED",
+        "PLAN_CREATED",
+        "LEFT_REVIEW",
+        "RIGHT_REVIEW",
+        "VALIDATOR_PASS",
+        "VALIDATOR_BLOCK",
+        "CONSENSUS_PROCEED",
+        "CONSENSUS_BLOCK",
+        "EXECUTION_STARTED",
+        "EXECUTION_SUCCESS",
+        "EXECUTION_FAILED",
+        "ROLLBACK_STARTED",
+        "ROLLBACK_SUCCESS",
+        "HUMAN_HOLD",
+        "VALIDATE_PAPERWORK_PASS",
+        "VALIDATE_PAPERWORK_BLOCK"
+      ],
+      "description": "Event type in the bridge lifecycle."
+    },
+    "intent_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Intent this event belongs to."
+    },
+    "decision": {
+      "type": "string",
+      "description": "Decision associated with this event, if applicable."
+    },
+    "by": {
+      "type": "string",
+      "description": "Who or what produced this event: 'human', 'LEFT', 'RIGHT', 'SENTINEL', 'VALIDATOR'."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional plain-language notes."
+    }
+  }
+}
