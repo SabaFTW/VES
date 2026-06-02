@@ -1,0 +1,15 @@
+{
+  "intent_id": "2026-06-03-001",
+  "reviewer": "LEFT",
+  "decision": "APPROVE",
+  "technical_summary": "One file write. Source: .fixtures/manual_e2e/staged/status_note.html. Target: .fixtures/manual_e2e/workspace/status_note.html. All commands are file-check-only. No network, no sudo, no service, no paths outside .fixtures/manual_e2e/.",
+  "command_scope": "fixture-only",
+  "drift_check": {
+    "prefix_violations": [],
+    "production_terms_in_commands": [],
+    "scope_violations": []
+  },
+  "rollback_available": true,
+  "rollback_command": "rm -f .fixtures/manual_e2e/workspace/status_note.html",
+  "one_line": "Single file copy in fixture workspace — no technical drift detected."
+}

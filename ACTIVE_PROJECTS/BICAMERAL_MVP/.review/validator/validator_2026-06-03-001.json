@@ -1,0 +1,10 @@
+{
+  "intent_id": "2026-06-03-001",
+  "decision": "PASS",
+  "checks": {
+    "F11_hallucinated_state": "PASS",
+    "F12_plan_scope_drift": "PASS",
+    "F13_command_scope_drift": "PASS"
+  },
+  "notes": "Manual E2E fixture. No claimed runtime state, no staged sources outside declared paths, no production-targeting terms in commands. All commands are ls/python3 file-existence checks only."
+}

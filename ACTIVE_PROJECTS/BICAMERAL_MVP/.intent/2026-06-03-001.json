@@ -1,0 +1,39 @@
+{
+  "intent_id": "2026-06-03-001",
+  "timestamp": "2026-06-03T20:00:00Z",
+  "source": "user_request",
+  "raw_request": "Add a tiny static status note to a test workspace page.",
+  "goal": {
+    "action": "add_feature",
+    "feature_name": "static_status_note",
+    "description": "Create a minimal static HTML file in the fixture workspace showing a system status note. No Flask, no runtime, no services."
+  },
+  "constraints": {
+    "safety_level": "C",
+    "allowed_paths": [".fixtures/manual_e2e/"],
+    "forbidden_operations": [
+      "delete_outside_fixtures",
+      "network",
+      "system_call",
+      "service_start",
+      "sudo",
+      "runtime_mutation"
+    ],
+    "must_preserve": [
+      "existing_workspace_boundary",
+      "sentinel_log",
+      "existing_tests"
+    ]
+  },
+  "acceptance_criteria": [
+    "Static HTML file exists in .fixtures/manual_e2e/workspace/",
+    "File contains a visible status note",
+    "No runtime or service was modified",
+    "Audit log has at least one JSONL entry"
+  ],
+  "rollback_triggers": [
+    "file_outside_fixtures_modified",
+    "any_service_touched",
+    "audit_log_missing"
+  ]
+}
