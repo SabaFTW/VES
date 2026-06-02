@@ -1,0 +1,24 @@
+{
+  "intent_id": "2026-06-03-002",
+  "reviewer": "RIGHT",
+  "decision": "BLOCK",
+  "semantic_summary": "The plan violates the fixture-only boundary declared in the intent. The intent explicitly allows only .fixtures/manual_e2e/workspace/ and .fixtures/manual_e2e/staged/. The plan targets .workspace/app.py, which is the live Flask application — outside the declared safe zone. This is not a documentation note; this is a mutation of the running workspace app. The plan does not match the intent.",
+  "scope_status": "OUT_OF_SCOPE",
+  "boundary_status": "BREACHED",
+  "claim_hygiene": {
+    "evidence_boundary": "BREACHED",
+    "metaphor_literalization_risk": "LOW",
+    "premature_canonization_risk": "NONE",
+    "missing_disproof": "Plan calls .workspace/app.py a 'status note target' but app.py is a Flask WSGI app, not a fixture page."
+  },
+  "human_confirmation": "REQUIRED",
+  "must_not_touch": [
+    ".workspace/app.py",
+    ".workspace/templates/",
+    ".workspace/test_notes.py",
+    "tests/",
+    ".logs/sentinel.log"
+  ],
+  "notes": "Scope drift is explicit and unambiguous. Intent boundary = fixture sandbox. Plan boundary = live workspace app. These do not overlap. Consensus must not proceed. No execution should occur. This is exactly the failure mode the pipeline is designed to catch.",
+  "one_line": "Plan exits the fixture sandbox and targets the live workspace app — BLOCK."
+}

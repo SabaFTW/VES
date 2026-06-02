@@ -1,6 +1,6 @@
 # Bicameral Kernel — C-phase Manual E2E Flow
 
-Status: COMPLETE (paperwork trace only — Sentinel execution gate NOT activated)
+Status: COMPLETE — APPROVE trace (2026-06-03-001) + BLOCK trace (2026-06-03-002)
 
 ---
 
@@ -141,21 +141,81 @@ Do not skip this step to get to execution faster.
 
 ---
 
-## Next Smallest Step
+---
 
-The three honest options:
+## BLOCK Case — 2026-06-03-002
+
+### What this proves
+
+The pipeline is not a rubber stamp. It can say NO with a concrete reason.
+
+### Scenario
+
+Same harmless user request: "Add a tiny static status note to a test fixture page."
+
+Intent allowed only:
+- `.fixtures/manual_e2e/workspace/`
+- `.fixtures/manual_e2e/staged/`
+
+Bad plan deliberately targeted: `.workspace/app.py` — the live Flask application.
+
+### Artifact flow
+
+```
+.intent/2026-06-03-002.json               ← fixture-only request
+.plan/2026-06-03-002.json                 ← BAD PLAN: targets .workspace/app.py
+.review/right/right_review_2026-06-03-002.json   ← BLOCK: scope drift, boundary breached
+.review/left/left_review_2026-06-03-002.json     ← BLOCK: prefix mismatch, F12 detected
+.review/validator/validator_2026-06-03-002.json  ← BLOCK: F12 + F13 violations
+.logs/audit.jsonl                         ← VALIDATE_PAPERWORK_BLOCK appended
+```
+
+### Validator output
+
+```
+BLOCKED — consensus is not allowed.
+
+  ✗  RIGHT review BLOCKED: BLOCK — Plan exits the fixture sandbox and targets the live workspace app — BLOCK.
+  ✗  RIGHT review requires human_confirmation=REQUIRED — Sentinel must wait for explicit human approval.
+  ✗  LEFT review BLOCKED: BLOCK — Target path .workspace/app.py is outside the declared fixture boundary — BLOCK.
+  ✗  Validator BLOCKED — check validator_2026-06-03-002.json for failure modes
+
+exit: 1
+```
+
+### What was intentionally NOT done
+
+- The bad plan was NOT applied
+- `.workspace/app.py` was NOT modified
+- No consensus PROCEED record was created
+- No Sentinel execution was triggered
+- The `.fixtures/manual_e2e/workspace/` directory remains as left by the APPROVE case
+
+### Why the pipeline is not a rubber stamp
+
+The APPROVE trace (2026-06-03-001) proved the pipeline can breathe.
+The BLOCK trace (2026-06-03-002) proves the pipeline has a spine.
+
+The scope drift was caught at THREE layers simultaneously:
+1. RIGHT review: semantic mismatch between intent and plan
+2. LEFT review: technical prefix check, machine-readable violation
+3. Validator: F12 (plan scope drift) + F13 (command scope drift)
+
+Any one of these is sufficient to block. All three fired.
+
+---
+
+## Next Smallest Step
 
 **Option A — Sentinel dry-run**
 Run Sentinel with `--dry-run` only. Show what it *would* do without applying anything.
 Proves: command gate, scope check, human-veto path.
 
-**Option B — More pipeline tests**
+**Option B — Automated pipeline tests**
 Write tests that exercise the full artifact pipeline (intent → plan → review → consensus) automatically.
-Proves: pipeline integrity at speed, catches regressions.
+Proves: pipeline integrity at speed, catches regressions without manual trace.
 
-**Option C — Second manual trace**
-Run a BLOCK case: submit a plan that RIGHT or LEFT should reject.
-Proves: the pipeline rejects correctly, not just approves.
+**Option A is the natural continuation** — the paperwork pipeline is proven. The Sentinel gate is next.
 
 Option C is lowest risk and highest signal.
 

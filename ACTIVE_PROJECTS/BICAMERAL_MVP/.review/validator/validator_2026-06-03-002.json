@@ -1,0 +1,23 @@
+{
+  "intent_id": "2026-06-03-002",
+  "decision": "BLOCK",
+  "checks": {
+    "F11_hallucinated_state": "PASS",
+    "F12_plan_scope_drift": "FAIL — plan target '.workspace/app.py' is not within declared allowed_paths",
+    "F13_command_scope_drift": "FAIL — post_apply command 'grep -n status_note .workspace/app.py' targets production workspace path"
+  },
+  "violations": [
+    {
+      "code": "F12",
+      "description": "Plan scope drift: target path '.workspace/app.py' is outside allowed fixture boundary.",
+      "allowed_paths": [".fixtures/manual_e2e/workspace/", ".fixtures/manual_e2e/staged/"],
+      "actual_target": ".workspace/app.py"
+    },
+    {
+      "code": "F13",
+      "description": "Command scope drift: post_apply command references '.workspace/app.py' which is outside the declared execution surface."
+    }
+  ],
+  "execution_allowed": false,
+  "notes": "Two failure modes confirmed: F12 (plan scope drift) and F13 (command scope drift). Consensus must not proceed. No execution should be attempted."
+}
