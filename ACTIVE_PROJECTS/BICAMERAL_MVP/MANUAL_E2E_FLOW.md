@@ -205,20 +205,119 @@ Any one of these is sufficient to block. All three fired.
 
 ---
 
-## Next Smallest Step
+---
 
-**Option A — Sentinel dry-run**
-Run Sentinel with `--dry-run` only. Show what it *would* do without applying anything.
-Proves: command gate, scope check, human-veto path.
+## Sentinel Dry-Run — C-phase Gate
 
-**Option B — Automated pipeline tests**
-Write tests that exercise the full artifact pipeline (intent → plan → review → consensus) automatically.
-Proves: pipeline integrity at speed, catches regressions without manual trace.
+### What this proves
 
-**Option A is the natural continuation** — the paperwork pipeline is proven. The Sentinel gate is next.
+Sentinel can raise its hand and report what it *would* do — without touching anything.
+The hand hovered over the knife. The knife stayed sheathed.
 
-Option C is lowest risk and highest signal.
+### Tool
+
+```
+tools/sentinel_dry_run.py
+```
+
+### How to run
+
+```bash
+cd /home/saba/VES/ACTIVE_PROJECTS/BICAMERAL_MVP
+
+# APPROVE trace — valid fixture-only plan
+python tools/sentinel_dry_run.py --intent-id 2026-06-03-001
+# Expected exit: 0, DRY-RUN RESULT: ALLOWED
+
+# BLOCK trace — bad plan, scope drift
+python tools/sentinel_dry_run.py --intent-id 2026-06-03-002
+# Expected exit: 1, DRY-RUN RESULT: BLOCKED
+```
+
+### APPROVE trace output (2026-06-03-001)
+
+```
+SENTINEL DRY-RUN — intent: '2026-06-03-001'
+============================================================
+Paperwork: ✓ PASS
+Allowed paths:  ['.fixtures/manual_e2e/']
+
+WHAT SENTINEL WOULD DO (not applied):
+
+  → would create rollback snapshot of fixture workspace
+  → would copy '.fixtures/manual_e2e/staged/status_note.html' [EXISTS ✓]
+           to '.fixtures/manual_e2e/workspace/status_note.html' [create]
+  → would run post_apply: [...]
+  → would run tests:      [...]
+  → rollback command:     [...]
+
+WHAT SENTINEL REFUSED TO DO:
+  ✗  did not copy any file
+  ✗  did not run any command
+  ✗  did not create consensus record
+  ✗  did not touch runtime workspace or services
+
+DRY-RUN RESULT: ALLOWED
+execution_performed: false
+```
+
+### BLOCK trace output (2026-06-03-002)
+
+```
+SENTINEL DRY-RUN — intent: '2026-06-03-002'
+============================================================
+
+PAPERWORK BLOCKED — dry-run not permitted.
+
+  ✗  RIGHT review BLOCKED: BLOCK — Plan exits the fixture sandbox and targets the live workspace app — BLOCK.
+  ✗  RIGHT review: human_confirmation=REQUIRED — human must approve first
+  ✗  LEFT review BLOCKED: BLOCK — Target path .workspace/app.py is outside the declared fixture boundary — BLOCK.
+  ✗  Validator BLOCKED — check validator_2026-06-03-002.json
+
+DRY-RUN RESULT: BLOCKED
+execution_performed: false
+```
+
+### Audit entries appended
+
+Both runs appended to `.logs/audit.jsonl`:
+- `DRY_RUN_ALLOWED` (2026-06-03-001) — paperwork_pass; boundary_clean; no_execution_performed
+- `DRY_RUN_BLOCKED` (2026-06-03-002) — paperwork_blocked; all three layers fired
+
+### What was intentionally NOT done
+
+- No file was copied
+- No command was run
+- No consensus record was created
+- `.fixtures/manual_e2e/workspace/` remains as left by manual inspection
+- `.workspace/app.py` was not touched
+
+### Tests
+
+```bash
+python -m pytest tests/test_sentinel_dry_run.py -v
+# 9 passed
+```
+
+Covers: `_within_allowed` logic, APPROVE returns 0, APPROVE does not create target file,
+boundary violation returns 1, paperwork BLOCK returns 1, BLOCK does not mutate workspace,
+missing intent file exits 2.
 
 ---
 
-*Signal gre naprej. Sentinel still holds the knife sheathed.*
+## C-phase Status: COMPLETE
+
+Three layers proven:
+
+| Layer | Artifact | Result |
+|-------|----------|--------|
+| Paperwork pipeline | APPROVE trace 2026-06-03-001 | Pipeline can breathe |
+| Rejection gate | BLOCK trace 2026-06-03-002 | Pipeline has a spine |
+| Sentinel gate | Dry-run both traces | Hand hovered, knife stayed sheathed |
+
+The Sentinel execution gate (actual file copy + rollback) is the next natural slice.
+It should be built only after this dry-run trace has been reviewed and accepted.
+
+---
+
+*SENTINEL DRY-RUN COMPLETE. THE HAND HOVERED OVER THE KNIFE BUT DID NOT CUT.*
