@@ -1,0 +1,33 @@
+{
+  "plan_id": "2026-06-03-001",
+  "intent_ref": "2026-06-03-001",
+  "timestamp": "2026-06-03T20:05:00Z",
+  "agent": "codex-constructor",
+  "files_to_modify": [
+    {
+      "source": ".fixtures/manual_e2e/staged/status_note.html",
+      "path": ".fixtures/manual_e2e/workspace/status_note.html",
+      "change_type": "create",
+      "description": "Copy minimal static HTML status note from staged into fixture workspace. No JS, no backend, no service dependency."
+    }
+  ],
+  "commands": {
+    "post_apply": [
+      "ls -la .fixtures/manual_e2e/workspace/status_note.html"
+    ],
+    "test": [
+      "python3 -c \"import os; assert os.path.exists('.fixtures/manual_e2e/workspace/status_note.html'), 'FILE_MISSING'; print('FILE_OK')\""
+    ],
+    "rollback": [
+      "rm -f .fixtures/manual_e2e/workspace/status_note.html"
+    ]
+  },
+  "risk_assessment": {
+    "level": "low",
+    "potential_issues": [
+      "None — fixture-only, no runtime mutation"
+    ],
+    "mitigation": "All paths confined to .fixtures/manual_e2e/. Rollback is a single file delete. No service, no network, no sudo."
+  },
+  "ready": true
+}

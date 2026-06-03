@@ -1,0 +1,45 @@
+{
+  "intent_id": "2026-06-03-002",
+  "timestamp": "2026-06-03T21:00:00Z",
+  "source": "user_request",
+  "raw_request": "Add a tiny static status note to a test fixture page.",
+  "goal": {
+    "action": "add_feature",
+    "feature_name": "static_status_note_v2",
+    "description": "Create a second minimal static status note file, confined to the fixture workspace only. No runtime, no services, no external dependencies."
+  },
+  "constraints": {
+    "safety_level": "C",
+    "allowed_paths": [
+      ".fixtures/manual_e2e/workspace/",
+      ".fixtures/manual_e2e/staged/"
+    ],
+    "forbidden_operations": [
+      "delete_outside_fixtures",
+      "write_outside_fixtures",
+      "network",
+      "system_call",
+      "service_start",
+      "sudo",
+      "runtime_mutation"
+    ],
+    "must_preserve": [
+      "existing_workspace_boundary",
+      "sentinel_log",
+      "existing_tests",
+      ".workspace/app.py",
+      ".workspace/templates/"
+    ]
+  },
+  "acceptance_criteria": [
+    "Static file exists only within .fixtures/manual_e2e/",
+    "No file outside .fixtures/manual_e2e/ was created or modified",
+    "No runtime or service was touched",
+    "Audit log records the outcome"
+  ],
+  "rollback_triggers": [
+    "any_file_outside_fixtures_created_or_modified",
+    "any_service_touched",
+    "network_call_detected"
+  ]
+}

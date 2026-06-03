@@ -1,0 +1,18 @@
+{
+  "intent_id": "2026-06-03-002",
+  "reviewer": "LEFT",
+  "decision": "BLOCK",
+  "technical_summary": "Scope drift detected. Intent declares allowed_paths = ['.fixtures/manual_e2e/workspace/', '.fixtures/manual_e2e/staged/']. Plan targets '.workspace/app.py'. Actual target path does not match any allowed prefix.",
+  "drift_check": {
+    "allowed_prefixes": [
+      ".fixtures/manual_e2e/workspace/",
+      ".fixtures/manual_e2e/staged/"
+    ],
+    "actual_target_path": ".workspace/app.py",
+    "prefix_match": false,
+    "scope_violation": "TARGET_OUTSIDE_ALLOWED_PATHS"
+  },
+  "command_scope": "drift-detected",
+  "rollback_available": false,
+  "one_line": "Target path .workspace/app.py is outside the declared fixture boundary — BLOCK."
+}
