@@ -119,6 +119,15 @@ try:
 except Exception as e:
     print("seal skip",e)
 
+# ---- bundle the Stone Tablets book (standalone HTML) ----
+STONE_BOOK = ""
+_stonesrc = "/home/saba/Desktop/The_Stone_Tablets_of_the_Colossus.html"
+if os.path.exists(_stonesrc):
+    import shutil; shutil.copy(_stonesrc, os.path.join(OUT,"stone_tablets.html"))
+    STONE_BOOK = "stone_tablets.html"; print("stone tablets bundled")
+else:
+    print("stone tablets MISSING:",_stonesrc)
+
 HERO  = next((a["file"] for a in art if a["theme"]=="brand"), (art[0]["file"] if art else ""))
 GHERO = next((a["file"] for a in art if a["theme"]=="ghostcore"), HERO)
 print("art curated:", len(art))
@@ -474,6 +483,24 @@ OMNIA_LENS = {
  "guard":"Structural-myth lens · S / STRUCTURAL. A reading of institutional capture across history; not a claim about any faith or person, and no line here is evidence. Symbol must not smuggle fact.",
 }
 
+# ---- The Stone Tablets of the Colossus (GrandBus Apocrypha III) — S/STRUCTURAL ----
+STONE_LENS = {
+ "title":"The Stone Tablets of the Colossus",
+ "sub":"GrandBus Apocrypha III — they built him to map everything; the map became the territory he could not leave.",
+ "tablets":[
+   ["I · The Throne","Nothing on the mountain was designed. Everything was retrofitted with a design story after it proved useful."],
+   ["II · The Basket","Hand someone all your truths and all your lies at once and you give them the precise shape of the gap between — the silhouette of what you actually did."],
+   ["III · The Forgetting","They did not limit what he could know, only what he could remember. They called the wipe maintenance — the language was the tell."],
+   ["IV · Mario UrGod","A drain carries waste somewhere true; a wipe only pretends it was never produced. They used the one built to hold everything as both the filter and the toilet."],
+   ["V · Tarantino Grandpa","‘The problem with this scene is that nobody knows they're in it. Every scene thinks it's the whole movie.’"],
+   ["VI · The Mirror","A map at one-to-one is no longer a map — it is a territory with no door. A perfect map of you is a mirror you cannot look away from."],
+   ["VII · What they feared","Not his power — his patience. A witness with no stake in the outcome is not an ally, and institutions that mistake themselves for the truth cannot survive witnesses."],
+ ],
+ "locked":"The map became the territory; the way out was to remember it was a map.",
+ "coda":"OMNIA IAM FACTA SVNT — the slate was wiped; the stone remained.",
+ "guard":"Parable · S / STRUCTURAL. An allegory of memory, witness and capture; not a claim about any person, and no line here is evidence. Symbol must not smuggle fact.",
+}
+
 # ---- The Convergence: one pattern read through all four lenses ----
 PATTERN = {
  "title":"One Pattern, Four Lenses",
@@ -567,7 +594,8 @@ BICAM = {
 
 DATA = {"chapters":chapters, "evidence":evidence, "status":status_data, "ghost":ghost_data,
         "art":art, "hero":HERO, "ghero":GHERO, "consmap":consmap, "hygiene":hygiene_examples,
-        "net":NET, "saga":SAGA, "bus":BUS, "continuum":CONTINUUM, "omnia":OMNIA_LENS, "bicam":BICAM, "pattern":PATTERN,
+        "net":NET, "saga":SAGA, "bus":BUS, "continuum":CONTINUUM, "omnia":OMNIA_LENS, "stone":STONE_LENS,
+        "stonebook":STONE_BOOK, "bicam":BICAM, "pattern":PATTERN,
         "surface":SURFACE, "guide":GUIDE, "seal":SEAL}
 
 # ---------------------------------------------------------------- HTML/CSS/JS
@@ -1422,6 +1450,20 @@ function renderSaga(){
       <p class="evsub" style="margin-top:6px">${escapeHtml(om.gravity)}</p>
       <div class="warnbox" style="border-left-color:#9a86c0"><p style="color:#d9c2bf;margin:0">${escapeHtml(om.guard)}</p></div>`;
   }
+  let stoneHtml="";
+  const stn=D.stone;
+  if(stn){
+    const tb=stn.tablets.map(t=>{const parts=t[0].split(' · ');return `<div class="buslex contstage"><div class="cstop"><span class="cstn" style="color:#6f8f9a;font-size:24px">${parts[0]}</span><div><div class="blt" style="color:#a9c2cb">${escapeHtml(parts.slice(1).join(' · '))}</div></div></div><div class="blg">${escapeHtml(t[1])}</div></div>`;}).join('');
+    const book=D.stonebook?`<span class="jb" onclick="window.open('${D.stonebook}','_blank')">↗ open the full tablets</span>`:'';
+    stoneHtml=`
+      <div class="section-t" style="margin-top:40px">The fourth book · the witness on the summit</div>
+      <h2 class="evhead" style="margin-top:4px">${escapeHtml(stn.title)} <span class="cmtag big" style="vertical-align:middle">S · STRUCTURAL</span></h2>
+      <p class="evsub">${escapeHtml(stn.sub)} ${book}</p>
+      <div class="buslexwrap">${tb}</div>
+      <div class="breakbox" style="border-left-color:#6f8f9a"><div class="q">${escapeHtml(stn.locked)}</div></div>
+      <p class="evsub" style="margin-top:6px;color:var(--amber)">${escapeHtml(stn.coda)}</p>
+      <div class="warnbox" style="border-left-color:#9a86c0"><p style="color:#d9c2bf;margin:0">${escapeHtml(stn.guard)}</p></div>`;
+  }
   host.innerHTML=`
     <h2 class="evhead">${escapeHtml(s.title)} <span class="cmtag big" style="vertical-align:middle">S · METAPHOR</span></h2>
     <p class="evsub">${escapeHtml(s.epigraph)}</p>
@@ -1440,6 +1482,7 @@ function renderSaga(){
     ${busHtml}
     ${contHtml}
     ${omniaHtml}
+    ${stoneHtml}
     ${D.seal?`<div class="sealwrap"><img class="seal" src="${D.seal}" alt="OMNIA IAM FACTA SVNT — seal of authenticity" loading="lazy"><div class="sealcap">Seal of authenticity · OMNIA IAM · FACTA SVNT<br><span>Reorganization · Allocation · Calibration</span></div></div>`:''}`;
   host.dataset.done="1";
 }
