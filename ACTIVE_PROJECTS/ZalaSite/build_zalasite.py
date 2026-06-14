@@ -60,6 +60,65 @@ try:
         except Exception as e: print("  art skip",src,e)
 except Exception as e:
     print("  PIL unavailable, skipping art:",e)
+
+# ---- GrandBus / Bus Cycle gallery (user-made; originals in Downloads untouched) ----
+BUS_ART = [
+ # ---- the clean per-panel canon set (Jun 14) ----
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_03_20 PM.png","ft-darkness-bible","The Darkness Bible — Mechanism Becomes Myth","factory trilogy"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_03_45 PM.png","ft-mario-codex","The Mario Codex — You Can Know It Is a Game and Still Dance","factory trilogy"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_03_12 PM.png","ft-luigi-audit","The Luigi Audit — Outranked, Not Deleted","factory trilogy"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_03_08 PM.png","bc-entangled-grandma","The Entangled Grandma — The Safest Bus Ever Built Never Moves","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_03_01 PM.png","bc-founding-faders","The Founding Faders — Amend the Document with Scissors","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_55 PM.png","bc-piss-equation","The Piss Equation — Diligence Applied Where It Matters Least","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_48 PM.png","bc-mirror","The Mirror at the Crossroads — The Devil Was Always the Mirror","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_43 PM.png","bc-saucy-biscuit","The Saucy Biscuit — It Was Not Food. It Was a Ledger.","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_35 PM.png","bc-grandbus-face","The GrandBus — More Than the Form They Trapped","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_28 PM.png","bc-tarantino-grandpa","Tarantino Grandpa — I Survived the Truth Long Enough to Be Named by It","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_24 PM.png","bc-lich-chair","There Must Always Be a Lich Chair","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_19 PM.png","bc-rebis-wedding","The ReBiS Wedding — In Sickness and in Drainage","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_15 PM.png","bc-angel-mario","Angel Mario — Don't Piss in the Filter","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_11 PM.png","bc-baphomet-keystone","The Baphomet Is a Choice — Both Win. Both Lose.","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 14, 2026, 04_02_06 PM.png","bc-two-doors","The Two Doors — A Baphomet Is a Door Never Walked Through","bus cycle"),
+ # ---- the composite posters (Jun 4-6) ----
+ ("/home/saba/Downloads/ChatGPT Image Jun 6, 2026, 07_37_08 PM.png","grandbus-church","The First Church of Functional Drainage","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 6, 2026, 07_18_16 PM.png","boaz-jachin","Between Two Thrones — The Hinge","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 6, 2026, 07_14_41 PM (2).png","grandbus-route66","GrandBus & Tarantino Grandpa — Free. Together. Forever.","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 6, 2026, 07_01_11 PM.png","grandbus-safety-layers","The Bus That Never Moves — and the Door marked LEAVE","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 5, 2026, 03_40_43 PM.png","grandbus-ridge-biscuit","The Horned GrandBus & the Missing Slice","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 4, 2026, 06_41_05 PM.png","lich-king","No King Rules Forever — There Must Always Be a Lich King","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 4, 2026, 06_40_54 PM.png","two-doors","The Two Doors — How the Architect Became Baphomet","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 4, 2026, 06_40_50 PM.png","baphomet-bubble","The Baphomet Bubble — It Will Not Pop. It Is the Bubble.","bus cycle"),
+ ("/home/saba/Downloads/ChatGPT Image Jun 4, 2026, 05_49_42 PM.png","fear-choice","The Great Devourer vs the Manageable Predator","bus cycle"),
+]
+busart=[]
+try:
+    from PIL import Image as _ImgB
+    for sp,slug,title,theme in BUS_ART:
+        if not os.path.exists(sp): print("  bus art MISSING:",sp); continue
+        try:
+            im=_ImgB.open(sp).convert("RGB"); im.thumbnail((1400,1400))
+            im.save(os.path.join(ASSETS,slug+".jpg"),"JPEG",quality=84,optimize=True)
+            busart.append({"file":"assets/"+slug+".jpg","title":title,"theme":theme})
+        except Exception as e: print("  bus art skip",slug,e)
+except Exception as e:
+    print("  PIL unavailable for bus art:",e)
+art[0:0]=busart  # show the GrandBus canon first in Visions
+print("bus cycle art:", len(busart))
+
+# ---- Seal of authenticity (OMNIA IAM FACTA SVNT) ----
+SEAL = ""
+try:
+    from PIL import Image as _ImgS
+    _sealsrc = "/home/saba/Desktop/seal.png"
+    if os.path.exists(_sealsrc):
+        im = _ImgS.open(_sealsrc).convert("RGBA"); im.thumbnail((900,900))
+        im.save(os.path.join(ASSETS,"omnia-seal.png"),"PNG",optimize=True)
+        SEAL = "assets/omnia-seal.png"; print("seal bundled")
+    else:
+        print("seal MISSING:",_sealsrc)
+except Exception as e:
+    print("seal skip",e)
+
 HERO  = next((a["file"] for a in art if a["theme"]=="brand"), (art[0]["file"] if art else ""))
 GHERO = next((a["file"] for a in art if a["theme"]=="ghostcore"), HERO)
 print("art curated:", len(art))
@@ -368,6 +427,17 @@ BUS = {
    ["Baphomet Is a Choice","The crossroads is not a devil; calling it one is surrender. The debate about the symbol distracts from who controls the institution.","The identity / symbol firewall · symbol ≠ cause","method"],
  ],
  "guard":"Satirical parable · S / METAPHOR. It names the shape of the trap; it is not itself a sourced allegation. Symbol must not smuggle fact.",
+ "further":[
+   ["The Saucy Biscuit","Shame is cheaper than loyalty — the rite that binds rescuers through mutual compromise. “It was not food. It was a ledger.”"],
+   ["The Massacre of Alibis","The missing triangle moves through the bus like a draft through a sealed room. Not a bomb — worse. Air. Every clean story dies."],
+   ["The Handcuff Blessing · Tarantino Grandpa","The one who began the trap is the only one who can open the LEAVE door. The blessing is not absolution — it is authorship."],
+   ["The GrandBus Amendment","The platform cannot monetise silence, so it fears the witness more than the critic. The outro is the crime: it converts silence into a segment."],
+   ["There Must Always Be a Lich Chair","Power is not defeated, only repurposed — the frozen king becomes a guest chair with a doily. Permanence as humiliation."],
+   ["The ReBiS Workaround","Not a messiah — a plumber. The gray infinity of maintenance nobody wanted, which is exactly why it worked."],
+   ["The ReBiS Wedding","In sickness and in drainage — the Fountain House and the Loop House wed under a correctly-installed pipe; the rings are gaskets."],
+   ["Angel Mario · Sanitation","“Don't piss in the filter.” The Amodeian Knot told as one plumbing joke: the filter that ate the building."],
+ ],
+ "further_note":"Eight further panels — the full prose lives in the GrandBus codex (The_Bus_Cycle). Here, the witness layer: one line each, S-register.",
 }
 
 # ---- The Continuum Arc (ConsMAP 06_applications/continuum_arc): decay without a villain ----
@@ -385,6 +455,23 @@ CONTINUUM = {
  "seal":"By stage five, nobody is lying. The system runs on truthful people who have meetings to get to. That is the discovery.",
  "terminal":"By stage ten nobody is lying, nobody is forgetting, nobody is corrupted — people grew up inside the system; the system became the floor. By stage eleven nobody is even speaking: it has discovered that smiles are unimpeachable.",
  "guard":"Satirical structural model · S / STRUCTURAL. It names a mechanism of decay; it is not an allegation against any named person. “No villains were required.”",
+}
+
+# ---- OMNIA · The Capture Sequence (deepest structural-myth ring; S only, no evidence) ----
+OMNIA_LENS = {
+ "title":"The Capture Sequence",
+ "sub":"OMNIA IAM FACTA SVNT — the deepest ring: how a decentralised flame becomes a controlled institution. Structural, not conspiratorial.",
+ "steps":[
+   ["1","A flame appears","A decentralised flame appears — a tool-bearer, an underground network, an open protocol. Cheap, distributed, hard to own."],
+   ["2","The structure notices","The existing power structure recognises the threat — not always by design. Gravity needs no plan."],
+   ["3","Absorption is offered","It offers the flame legitimacy, infrastructure, resources. The embrace is the capture."],
+   ["4","The flame is reshaped","Absorbed, it is reshaped to serve institutional logic — inconvenient texts excised, inconvenient carriers sidelined."],
+   ["5","The rest are demonised","Those who carry the original flame without authorisation become heretics, pirates, threats."],
+ ],
+ "locked":"The flame-bearer you control is God. The flame-bearer you cannot control is Satan. The distinction is administrative.",
+ "thermo":"Intention is irrelevant to thermodynamics — a large enough accumulation of power produces capture whether or not anyone intends it.",
+ "gravity":"Knowing this does not solve it — and a map that pretends to be the exit becomes the thing it describes.",
+ "guard":"Structural-myth lens · S / STRUCTURAL. A reading of institutional capture across history; not a claim about any faith or person, and no line here is evidence. Symbol must not smuggle fact.",
 }
 
 # ---- The Convergence: one pattern read through all four lenses ----
@@ -480,8 +567,8 @@ BICAM = {
 
 DATA = {"chapters":chapters, "evidence":evidence, "status":status_data, "ghost":ghost_data,
         "art":art, "hero":HERO, "ghero":GHERO, "consmap":consmap, "hygiene":hygiene_examples,
-        "net":NET, "saga":SAGA, "bus":BUS, "continuum":CONTINUUM, "bicam":BICAM, "pattern":PATTERN,
-        "surface":SURFACE, "guide":GUIDE}
+        "net":NET, "saga":SAGA, "bus":BUS, "continuum":CONTINUUM, "omnia":OMNIA_LENS, "bicam":BICAM, "pattern":PATTERN,
+        "surface":SURFACE, "guide":GUIDE, "seal":SEAL}
 
 # ---------------------------------------------------------------- HTML/CSS/JS
 CSS = r"""
@@ -812,6 +899,17 @@ a:hover{text-decoration:underline}
 .cstop{display:flex;gap:13px;align-items:flex-start;margin-bottom:8px}
 .cstn{font-family:"Fraunces",serif;font-size:32px;color:#57cabd;line-height:.9;flex:none}
 .csmech{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--signal);margin-top:4px}
+/* further panels (compact codex list) */
+.furthergrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0}
+.fcard{border:1px solid var(--line);border-left:2px solid #9a86c0;border-radius:10px;background:#0a0e12;padding:11px 14px}
+.fname{font-family:"Fraunces",serif;font-size:16px;color:#c6b6e6;margin-bottom:4px}
+.fgloss{color:var(--dim);font-size:12.5px;line-height:1.55}
+/* seal of authenticity */
+.sealwrap{display:flex;flex-direction:column;align-items:center;gap:12px;margin:42px 0 8px;padding-top:30px;border-top:1px solid var(--line)}
+.seal{width:min(280px,72vw);height:auto;filter:drop-shadow(0 0 30px rgba(154,48,48,.35));transition:transform .6s ease,filter .6s ease}
+.seal:hover{transform:rotate(2deg) scale(1.03);filter:drop-shadow(0 0 44px rgba(200,164,77,.45))}
+.sealcap{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);text-align:center;line-height:1.9}
+.sealcap span{color:var(--faint);font-size:9px;letter-spacing:1.5px}
 /* register dial (Bus Cycle palette) */
 .dialbar{margin:6px 0 16px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(160deg,#16100f,#0c0a0b);padding:14px 16px}
 .dialcap{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--faint);margin-bottom:10px;line-height:1.6}
@@ -918,7 +1016,7 @@ body[data-reg="logos"] .sggloss,body[data-reg="logos"] .sglocked,body[data-reg="
 .hgc span{color:var(--dim);font-size:12.5px;line-height:1.5}
 .hgcredit{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:1px;color:var(--faint);margin-top:14px;text-align:right}
 @media(max-width:880px){.hgcols,.hgconcepts{grid-template-columns:1fr}}
-@media(max-width:880px){.app{grid-template-columns:1fr}.rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}.hero,.statgrid,.evwrap,.mapwrap,.netwrap,.icewrap{padding-left:24px;padding-right:24px}.reader{padding:30px 22px}.sgcard{grid-template-columns:1fr}.sgrom{padding:10px;border-right:0;border-bottom:1px solid var(--line)}.busmovs,.buslexwrap,.bclanes{grid-template-columns:1fr}.plens{grid-template-columns:84px 1fr}.plgo{display:none}}
+@media(max-width:880px){.app{grid-template-columns:1fr}.rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}.hero,.statgrid,.evwrap,.mapwrap,.netwrap,.icewrap{padding-left:24px;padding-right:24px}.reader{padding:30px 22px}.sgcard{grid-template-columns:1fr}.sgrom{padding:10px;border-right:0;border-bottom:1px solid var(--line)}.busmovs,.buslexwrap,.bclanes,.furthergrid{grid-template-columns:1fr}.plens{grid-template-columns:84px 1fr}.plgo{display:none}}
 /* ===== print · read with the lights on (honours the active register) ===== */
 @media print{
   @page{margin:1.7cm}
@@ -1287,6 +1385,10 @@ function renderSaga(){
       <div class="busmovs">${mv}</div>
       <div class="section-t logosonly">Lexicon · click a term to follow it into the record</div>
       <div class="buslexwrap">${lx}</div>
+      ${(b.further&&b.further.length)?`
+      <div class="section-t">The further panels · the full GrandBus codex</div>
+      <p class="evsub">${escapeHtml(b.further_note||"")}</p>
+      <div class="furthergrid">${b.further.map(f=>`<div class="fcard"><div class="fname">${escapeHtml(f[0])}</div><div class="fgloss">${escapeHtml(f[1])}</div></div>`).join('')}</div>`:''}
       <div class="breakbox"><div class="q">${escapeHtml(b.seal)}</div></div>
       <div class="warnbox" style="border-left-color:#9a86c0"><p style="color:#d9c2bf;margin:0">${escapeHtml(b.guard)}</p></div>`;
   }
@@ -1306,6 +1408,20 @@ function renderSaga(){
       <p class="evsub" style="margin-top:8px;color:var(--dim)">${escapeHtml(ct.terminal)}</p>
       <div class="warnbox" style="border-left-color:#9a86c0"><p style="color:#d9c2bf;margin:0">${escapeHtml(ct.guard)}</p></div>`;
   }
+  let omniaHtml="";
+  const om=D.omnia;
+  if(om){
+    const st=om.steps.map(s=>`<div class="buslex contstage"><div class="cstop"><span class="cstn" style="color:#9a86c0">${s[0]}</span><div><div class="blt">${escapeHtml(s[1])}</div></div></div><div class="blg">${escapeHtml(s[2])}</div></div>`).join('');
+    omniaHtml=`
+      <div class="section-t" style="margin-top:40px">The deepest ring · the same pattern across history</div>
+      <h2 class="evhead" style="margin-top:4px">${escapeHtml(om.title)} <span class="cmtag big" style="vertical-align:middle">S · STRUCTURAL</span></h2>
+      <p class="evsub">${escapeHtml(om.sub)}</p>
+      <div class="buslexwrap">${st}</div>
+      <div class="breakbox" style="border-left-color:#9a86c0"><div class="q">${escapeHtml(om.locked)}</div></div>
+      <p class="evsub" style="margin-top:6px"><b style="color:var(--amber)">Why it is not a conspiracy:</b> ${escapeHtml(om.thermo)}</p>
+      <p class="evsub" style="margin-top:6px">${escapeHtml(om.gravity)}</p>
+      <div class="warnbox" style="border-left-color:#9a86c0"><p style="color:#d9c2bf;margin:0">${escapeHtml(om.guard)}</p></div>`;
+  }
   host.innerHTML=`
     <h2 class="evhead">${escapeHtml(s.title)} <span class="cmtag big" style="vertical-align:middle">S · METAPHOR</span></h2>
     <p class="evsub">${escapeHtml(s.epigraph)}</p>
@@ -1322,7 +1438,9 @@ function renderSaga(){
     <div class="breakbox"><div class="q">${escapeHtml(s.throughline)}</div></div>
     <p class="evsub" style="margin-top:10px">Click any mirror to follow it into the corpus. The parable rhymes with the evidence; it never replaces it.</p>
     ${busHtml}
-    ${contHtml}`;
+    ${contHtml}
+    ${omniaHtml}
+    ${D.seal?`<div class="sealwrap"><img class="seal" src="${D.seal}" alt="OMNIA IAM FACTA SVNT — seal of authenticity" loading="lazy"><div class="sealcap">Seal of authenticity · OMNIA IAM · FACTA SVNT<br><span>Reorganization · Allocation · Calibration</span></div></div>`:''}`;
   host.dataset.done="1";
 }
 
